@@ -1,0 +1,138 @@
+<!--头部公共部分-->
+<include file="Index/header" />
+<link href="__PUBLIC__/pc/css/info.css" rel="stylesheet" type="text/css" />
+<script>
+$(function(){
+    //回到顶部
+    var win=$(window);
+    var doc=$(document);
+    win.scroll(function(){
+         if(doc.scrollTop()>=182){
+             $(".up_top").fadeIn();
+                 
+         }else{
+
+        $(".up_top").fadeOut();
+
+         }  
+    });
+
+    $(".up_top").click(function(){
+     $('body,html').animate({scrollTop:0},600);  
+    });
+
+    //左右对齐
+    var divLeft=$(".enter").children("div").eq(0),
+        divRight=$(".enter").children("div").eq(1),
+        divLeftHeight=divLeft.height(),
+        divRightHeight=divRight.height();
+    if(divLeftHeight>=divRightHeight){
+        divRight.height(divLeftHeight);
+    }else{
+        divLeft.height(divRightHeight);
+    }
+
+});
+</script>
+<div class="up_top"><a></a></div><script>
+/* $(function(){
+ 	
+	//alert($(document).height());
+	var win=$(window);
+	var doc=$(document);
+	var nav=$(".left03");
+	win.scroll(function(){
+	     if(doc.scrollTop()>=182){
+		       
+			 nav.addClass("px");
+			 nav.height($("#aa").offset().top-doc.scrollTop());
+			
+			  	 
+		 }else{
+			 
+		   	nav.removeClass("px"); 
+	     }	
+		 
+		
+		
+	})
+}) */
+</script>
+<div class="main">
+	<div class="enter">
+        <div class="left03">
+<p class="left_title">
+    <img src="resources/fore/image/info/flag.png" />
+    走进找塑料网
+</p>
+<ul class="left_nav">
+    <li class="first"><a  href="about.html">关于我们</a></li>
+    <li><a  href="zixun/gsdt/default.htm">公司动态</a></li>
+    <li><a  href="zixun/mtbd/default.htm">媒体报道</a></li>
+    <li><a  href="job.html">诚聘英才</a></li>
+    <li><a  href="contact.html">联系我们</a></li>
+    <li><a  href="feedback.html">意见反馈</a></li>
+    <!-- <li><a  href="http://www.zhaosuliao.com/ceo_mailbox.html">CEO邮箱</a></li> -->
+    <li><a class="active" href="law.html">法律声明</a></li>
+    <li><a  href="sitemap.html">网站地图</a></li>
+    <li><a  href="links.html">友情链接</a></li>
+</ul>        </div>
+        <div class="r05">
+        	<div class="title05">
+                <div class="mark_line05"></div>
+                 法律声明
+            </div>
+            <div class="content05 mar">
+                <p>找塑料网提醒您：在使用找塑料网平台各项服务前，请您务必仔细阅读并透彻理解本声明。您可以选择不使用找塑料网平台服务，但如果您使用找塑料网，您的使用行为将被视为对本声明全部内容的认可。</p>
+                <p class="mar_t40">"找塑料网"网站上所有展示信息全部免费。包括提供免费价格信息(报价单下载、现货资源)、行情分析等。</p>
+                <p class="mar_t40"><b>一、服务声明：</b></p>
+                <p class="mar_t40">"找塑料网"向会员提供塑料原料销售信息、采购信息、撮合交易等服务。除将来"找塑料网"另有其它明示规定，所有新推出的产品或新增加的服务功能，均适用本声明条款之规范。</p>
+                <p class="mar_t40">"找塑料网"作为提供塑料原料销售、采购信息的服务属于电子公告牌（BBS）服务，用户在使用时应当了解明白"找塑料网"上所有信息均为会员(塑料供应商或采购商)自由发布，会员应依法对其提供的任何信息承担全部责任。"找塑料网"会对信息进行必要的核查(筛选)，但最终对信息的合法性、准确性、真实性不承担任何法律责任。</p>
+                <p class="mar_t40">如任何单位或个人认为找塑料网网页内容（包括但不限于找塑料网会员发布的商品信息）可能涉嫌侵犯其合法权益，应该及时向找塑料网提出书面权利通知，并提供身份证明、权属证明、具体链接（URL）及详细侵权情况证明。找塑料网在收到上述法律文件后，将会依法尽快移除相关涉嫌侵权的内容。"找塑料网"不对会员所发布的信息之删除或储存失败负责。</p>
+                <p class="mar_t40">买卖双方在通过"找塑料网"获取信息完成撮合交易的过程中应务必遵守国家相关法律法规，不得进行任何违法犯罪行为。找塑料网提醒您：在撮合交易过程中，买卖双方应各自自行核实、把控交易主体、商贸信息的真实性、合法性、准确性，签订书面协议，以保证交易双方的合法权益。在任何情况下，找塑料网均不会以任何名义干涉撮合交易各方正常交易，不涉及撮合交易各方之间因交易而产生的法律关系及法律纠纷，不对交易各方之间的任意纠纷承担法律责任。</p>
+                <p class="mar_t40">如买卖双方在交易过程中发生纠纷，在当事人自愿平等的前提下，买卖双方可提出要求"找塑料网"协助调解。"找塑料网"会在查明事实、分清是非的基础上，严格遵守国家法律法规来给出建议。不得因未经调解或者调解不成而阻止对方当事人向人民法院起诉。经调解达成的协议具有法律效力，但找塑料网对此协议内容不承担任何法律责任。</p>
+                <p class="mar_t40"><b>二、隐私权保护声明：</b></p>
+                <p class="mar_t40">找塑料网尊重并保护所有使用找塑料网平台服务用户的个人隐私权。为了给您提供更准确、更有个性化的服务，找塑料网会按照本隐私权政策的规定使用和披露您的个人信 息，但找塑料网将以高度的勤勉、审慎义务对待这些信息。除本隐私权政策另有规定外，在未征得您事先许可的情况下，找塑料网不会将这些信息对外披露或向第三方提供。 找塑料网会不时更新本隐私权政策。您在同意找塑料网服务协议之时，即视为您已经同意本隐私权政策全部内容。本隐私权政策属于找塑料网服务协议不可分割的一部分，请您务必仔细阅读。</p>
+                <p class="mar_t40">(一)个人资料的收集</p>
+                <p class="mar_t40">用户在匿名状态下即可访问本平台获取塑料信息。</p>
+                <p class="mar_t40">本公司仅在与交易项目有关的合法目的下，并经用户同意，以合法的方式收集必要的用户个人资料。本平台有可能根据收集到的用户姓名、地址、电话号码、电子邮件等信息向用户发送免费的信息宣传资料，或根据用户留下的真实有效的联系方式主动向用户发起呼叫，与用户联系。由于用户自行处置宣传信息或不接听我方电话而可能遭受的损失，我公司概不承担责任。用户在本平台注册时，须依注册内容之提示提供用户本人及单位的真实、准确、完整信息，并保证个人及单位资料的及时更新。因用户提供个人及单位信息不准确、不完整或未及时更新而可能遭受的任何损害，本公司不承担任何责任。因用户提供个人及单位信息不准确、不完整或未及时更新给本公司造成损失的，本公司保留追偿的权利。</p>
+                <p class="mar_t40">(二)个人资料的使用</p>
+                <p class="mar_t40">本公司有权为内部经营、管理、统计等目的使用您提供的个人及单位资料，包括但不限于：日常管理本公司提供给会员的服务及产品、监控本网站的安全使用、内部调研、对来访数据进行统计和研究;促进更新供会员享用的服务和产品;确认核对联络和消费名单、为宣传推广目的;为解决争议、排除纠纷和执行本法律声明目的等。</p>
+                <p class="mar_t40">(三)个人资料的披露</p>
+                <p class="mar_t40">找塑料网将采取合理的安全手段保护用户提供的个人及单位信息，在未得到用户许可之前，本平台不会擅自将用户信息披露给任何无关的第三方，但涉及下列情形之一的除外：</p>
+                <p style="text-indent:4em;">1、权力机关依照法定程序要求提供。</p>
+                <p  style="text-indent:4em;">2、为公共安全之目的。</p>
+                <p style="text-indent:4em;">3、由于用户对自身信息保密不当，从而导致用户资料的泄露。</p>
+                <p style="text-indent:4em;">4、由于网络线路、黑客攻击、计算机病毒等原因造成的资料泄露、丢失、被盗用或被篡改等。</p>
+                <p style="text-indent:4em;">5、为了保护本网站其他用户更为重要的权利或财产。</p>
+                <p style="text-indent:4em;">6、其他特殊或紧急情况。</p>
+                <p class="mar_t30">(四)Cookies技术的使用</p>
+                <p  class="mar_t40" style="text-indent:4em;">1、在您未拒绝接受cookies的情况下，找塑料网在您的计算机上设定或取用cookies，以便您能登录或使用依赖于cookies的找塑料网平台服务或功能。找塑料网使用cookies可为您提供更加周到的个性化服务，包括推广服务。</p>
+                <p class="mar_t40" style="text-indent:4em;">2、您有权选择接受或拒绝接受cookies。您可以通过修改浏览器设置的方式拒绝接受cookies。但如果您选择拒绝接受cookies，则您可能无法登录或使用依赖于cookies的找塑料网平台服务或功能。</p>
+                <p class="mar_t40" style="text-indent:4em;">3、通过找塑料网所设cookies所取得的有关信息，将适用本政策；</p>
+                <p class="mar_t40"><b>三、知识产权声明：</b></p>
+                <p class="mar_t40">广州找塑料网络科技有限公司拥有找塑料网站内所有信息内容（除找塑料网平台会员发布的商品信息外，包括但不限于文字、图片、软件）的版权，除适用相关法定许可或征得本公司同意，本网站的信息及其任何组成部分不得被重新编辑、复制、抄袭，或为任何未经本公司允许的商业目的所使用。如果本公司确定用户行为违法或有损本网站和本公司的合法权益，本公司将采取相关法律措施，包括但不限于拒绝提供服务、冻结或删除会员帐户等。</p>
+                
+                
+                
+                <p class="mar_t40">找塑料网(www.zhaosuliao.com)所有的产品、技术与所有程序及页面均属于知识产权。"找塑料"、"找塑料网"、"zhaosuliao.com"、"百塑"为广州找塑料网络科技有限公司注册商标,任何人不得擅自使用，否则将被依法追究法律责任。</p>
+                
+                
+                
+                
+                
+                
+                <p class="mar_t40"><b>四、免责条款：</b></p>
+                <p class="mar_t40">任何用户因使用本网站而可能遭致的意外及其造成的损失(包括因下载本网站可能链接到的第三方网站内容而感染电脑病毒)，我们对此概不负责，亦不承担任何法律责任。</p>
+                <p class="mar_t40">用户应对使用找塑料网得到的信息，包括免费撮合交易服务的结果自行承担风险。找塑料网仅作为一个促进塑料交易、提供塑料信息展示交流的平台，网站会员会自行上传资源信息，我们不对信息内容的安全性、准确性、真实性、合法性负责，也不承担任何法律责任。</p>
+                <p class="mar_t40" style="margin-bottom:40px;">任何单位或个人认为通过本网站网页内容可能涉嫌侵犯其著作权，应该及时向我们提出书面权利通知，并提供身份证明、权属证明及详细侵权情况证明。我们收到上述法律文件后，将会依法尽快处理。</p>
+                </p>
+            </div>
+           <!--  <div id="aa" style="height:2px;position:relative;clear:both;"></div> -->
+        </div>
+	</div>
+	
+	
+</div>
+<!--底部公共部分-->
+<include file="Index/footer" />

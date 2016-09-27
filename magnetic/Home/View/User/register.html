@@ -1,0 +1,353 @@
+<!--头部公共部分-->
+<include file="User/header2" />
+<link href="__PUBLIC__/pc/css/user.css" rel="stylesheet" type="text/css" />
+<script src="__PUBLIC__/pc/js/user.js" type="text/javascript"></script>
+<div class="user_logo">
+    <div class="logo">
+    	<a href="../default.htm"><img src="__PUBLIC__/pc/image/common/logo.png" title="找塑料网" alt="找塑料网" width="494" height="85" /></a>
+    	<span class="icon">欢迎注册</span>
+    </div>
+</div><div class="status_bar"></div>
+<div class="register" style="height:494px;">
+	<input type="hidden" id='nologin' value=""/>
+    <form id="myform" action='{:U("Home/User/register_bgd")}' method="post">
+    <div class="l">
+        <ul class="ul01">
+         	<li class="mar_b30">
+                <span class="s">用户名：</span> <input type="text" class="text w2"  value="6-12位字母或数字" name="username" id="username"/> <span></span>
+            </li>
+            <li class="mar_b30">
+                <span class="s">密码：</span><input style="display:none;" type="password" value="" class="text w2 paw" name="password" id="password" /> <input type="text" value="6-12位字母、数字或符号" class="text w2 paw-text"/> <span></span>
+            </li>
+            <li class="mar_b30">
+                <span class="s">确认密码：</span><input style="display:none;" type="password" value="" class="text w2 paw" name="password_two" id="password_two"/> <input type="text" value="6-12位字母、数字或符号" class="text w2 paw-text" /> <span></span>
+            </li>
+             <li class="mar_b30">
+                <p> <span class="s">手机号：</span> <input type="text" class="text w2" name="mobile" id="mobile" value="输入手机号码免费获取短信验证码" /><span></span><!--  <a href="javascript:void(0);" class="activation"></a><span id="hide_tip" style="display:none;"></span> --></p>
+            </li>
+            <!-- <li class="mar_b30">
+				<span class="s">验证码：</span> 
+				<input type="text" class="text w3" id="verifycode" name="verifycode"  value="请输入验证码" />&nbsp;&nbsp;&nbsp;
+       			<img id="captchaImage" class="captchaImage" width="90" height="34" src="../yzm/captcha-image" title="请输入验证码"  style="cursor: pointer;border: solid 1px #b7b7b7;margin-left:20px;float:left;height:34px;width:90px;" />
+       			<span class="upload" alt="点击更换">看不清楚，换一张</span>
+       			<span><span id="hide_tip_verifycode" style="display:none;"></span></span>
+       			<span></span>
+            </li>
+			<li class="mar_b30">
+				<span class="s">短信验证码：</span> 
+				<input type="text" class="text w2" id="captcha" name="captcha" value="请输入短信验证码"  style="width:140px;"/>
+				<a href="javascript:void(0);" class="activation"></a><span id="hide_tip" style="display:none;"></span>
+				<span></span>
+            </li> -->
+           
+            <li>
+                <p class="font_14">
+				<span class="s">&nbsp;</span>
+				<label><input type="checkbox" id="is_agree" checked="checked" />&nbsp;已阅读</label>
+				<a href="register/protocol" target="_blank">《找塑料网用户服务协议》</a>
+				</p>
+            </li>
+            <li class="h_42">
+                <p class="tc"><a id="submit_register" href="javascript:void(0);" class="button1"></a><span style="display:block;float:left;"></span></p>
+            </li>
+        </ul>
+    </div>
+    </form>
+    <div class="r">
+        <p class="p1">已有找塑料网账号？<a class="fcolor_0" href="login">立即登录</a></p>
+        <p class="p2">登录找塑料网，可以免费上传报价单，查看行业采购需求，更可免费享受我们提供的撮合交易服务。</p>
+        <p class="tc"><a href="login" class="button1"></a></p>
+        <p class="QQ"><span>使用QQ帐号快速登录：</span><a href="login/passport/qq" class="button2"></a></p>
+		<p class="kf_tel"><span>找塑料网客服热线：</span><span class="fcolor_8">020-83939808</span></p>
+		<p class="QQ" style="font-size:16px;"><span>找塑料网在线客服：</span><span><a target="_blank" href="../../wpa.qq.com/msgrd@v=3&uin=3115678895&site=qq&menu=yes"><img border="0" src="../../wpa.qq.com/pa@p=2_3A3115678895_3A51" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></span></p>
+      
+    </div>
+</div>
+<script>
+$(function()
+{
+	// 更换验证码
+	$(".upload").click( function() {
+		$("#captchaImage").attr("src", "../yzm/captcha-image@timestamp=" + (new Date()).valueOf());
+	});
+    //设置消息提示
+    function set_msg(o,class_name,msg)
+    {
+        o.attr("class",class_name).html(msg).show();
+        setTimeout(function()
+        {
+            o.hide();
+        },5000);
+    }
+
+    //发送验证码
+    $(".activation").on("click",function()
+    {
+        countdown.init($(this));//倒计时
+        var username=$.trim($("#username").val());
+        var password= $("#password").val();
+    	var password_two= $("#password_two").val();
+        var mobile=$.trim($("#mobile").val());
+        var verifycode=$.trim($("#verifycode").val());
+        if(verifycode==null||verifycode==""||verifycode=="请输入验证码"){
+        	set_msg($("#hide_tip_verifycode"),"wrong","请输入验证码");
+               $("#verifycode").focus();
+               countdown.stop();
+               return false;
+        }
+        if(username==null||username==""||username=="6-12位字母或数字"){
+       	 set_msg($("#username").next("span"),"wrong","请输入用户名");
+            $("#username").focus();
+            countdown.stop();
+            return false;
+        }else if(username.match('^[A-Za-z0-9]{6,12}$')==null){
+	       	set_msg($("#username").next("span"),"wrong","请输入用户名(6-12位字母或数字)");
+	           $("#username").focus();
+	           countdown.stop();
+	           return false;
+	    }
+        //密码 ! @ # $ % ?_
+        if(password==null ||password==""||password=="6-12位字母、数字或符号"){
+     	   set_msg($("#password").next("span"),"wrong","请输入密码");
+            $("#password").focus();
+            countdown.stop();
+            return false;
+        }else if(password.match('^[A-Za-z0-9! @ # $ % ?_&*()+=|../]{6,12}$')==null){
+ 	       	set_msg($("#password").next("span"),"wrong","请输入密码(6-12位字母、数字或符号)");
+ 	        $("#password").focus();
+ 	        countdown.stop();
+ 	        return false;
+ 	    }
+        if(password_two==null ||password_two==""||password_two=="6-12位字母、数字或符号"){
+     	   set_msg($("#password_two").next("span"),"wrong","请输入密码");
+            $("#password_two").focus();
+            countdown.stop();
+            return false;
+        }else if(password_two.match('^[A-Za-z0-9! @ # $ % ?_&*()+=|../]{6,12}$')==null){
+ 	       	set_msg($("#password_two").next("span"),"wrong","请输入密码(6-12位字母、数字或符号)");
+ 	        $("#password_two").focus();
+ 	        countdown.stop();
+ 	        return false;
+ 	    }else if(password!=password_two){
+ 	    	set_msg($("#password_two").next("span"),"wrong","两次输入密码不一致");
+ 	        $("#password_two").focus();
+ 	        countdown.stop();
+ 	        return false;
+ 	    }
+        if(!$.ismobile(mobile))
+        {
+        	
+            set_msg($("#mobile").closest("li").find("span").last("span"),"wrong","请输入正确的手机号");
+            $("#mobile").focus();
+            countdown.stop();
+            return false;
+        }
+        $.getJSON("register/msg",{"username":username,"mobile":mobile,"verifycode":$("#verifycode").val()},function(rs)
+        {
+        	
+            if(rs.status<0)
+            {
+                countdown.stop();
+                if(rs.status==-9){
+                	
+                	set_msg($("#username").next("span"),"wrong",rs.msg);
+                	countdown.stop();
+                }else if(rs.status==-12){
+                	set_msg($("#mobile").next("span"),"wrong",rs.msg);
+                	countdown.stop();
+                }else if(rs.status==-10){
+                	set_msg($("#username").closest("li").find("span").last("span"),"wrong",rs.msg);
+                	countdown.stop();
+                }else if(rs.status==-13){
+                	set_msg($("#verifycode").closest("li").find("span").last("span"),"wrong",rs.msg);
+                	countdown.stop();
+                	
+                }else{
+                	set_msg($("#verifycode").closest("li").find("span").last("span"),"wrong",rs.msg);
+                	//set_msg($("#hide_tip"),"wrong",rs.msg);
+                	countdown.stop();
+                }
+                $("#captchaImage").attr("src", "../yzm/captcha-image@timestamp=" + (new Date()).valueOf());
+               //$("#verifycode").val('输入手机号码免费获取短信验证码').css('color','#ccc');
+            }
+            else
+            {
+              
+                alert(rs.msg);
+		        //$("#mobile").val(mobile);
+		        //$("#verifycode").val('输入短信验证码').css('color','#ccc');
+            }
+        });
+    });
+
+    $("#submit_register").on("click",function()
+    {
+    	var username=$("#username").val();
+    	var password= $("#password").val();
+    	var password_two= $("#password_two").val();
+        var mobile=$.trim($("#mobile").val());
+        var captcha=$.trim($("#captcha").val());
+        var verifycode=$.trim($("#verifycode").val());
+        var is_agree=$("#is_agree").is(":checked");
+ 
+        if(username==null||username==""||username=="6-12位字母或数字"){
+        	 set_msg($("#username").next("span"),"wrong","请输入用户名");
+             $("#username").focus();
+             return false;
+        }else if(username.match('^[A-Za-z0-9]{6,12}$')==null){
+        	set_msg($("#username").next("span"),"wrong","请输入用户名(6-12位字母或数字)");
+            $("#username").focus();
+            return false;
+        }
+        //密码 ! @ # $ % ?_
+       if(password==null ||password==""||password=="6-12位字母、数字或符号"){
+    	   set_msg($("#password").next("span"),"wrong","请输入密码");
+           $("#password").focus();
+           return false;
+       }else if(password.match('^[A-Za-z0-9! @ # $ % ?_&*()+=|../]{6,12}$')==null){
+	       	set_msg($("#password").next("span"),"wrong","请输入密码(6-12位字母、数字或符号)");
+	        $("#password").focus();
+	        return false;
+	    }
+       if(password_two==null ||password_two==""||password_two=="6-12位字母、数字或符号"){
+    	   set_msg($("#password_two").next("span"),"wrong","请输入密码");
+           $("#password_two").focus();
+           return false;
+       }else if(password_two.match('^[A-Za-z0-9! @ # $ % ?_&*()+=|../]{6,12}$')==null){
+	       	set_msg($("#password_two").next("span"),"wrong","请输入密码(6-12位字母、数字或符号)");
+	        $("#password_two").focus();
+	        return false;
+	    }else if(password!=password_two){
+	    	set_msg($("#password_two").next("span"),"wrong","两次输入密码不一致");
+	        $("#password_two").focus();
+	        return false;
+	    }
+       
+       // if(mobile==null ||mobile==""||mobile=="输入手机号码免费获取短信验证码"){
+    	  //  set_msg($("#mobile").next("span"),"wrong","请输入手机号码");
+    	  //  $("#mobile").focus();
+	      //   return false;
+       // }
+       // if(verifycode==null ||verifycode==""||verifycode=="请输入验证码"){
+    	  //  set_msg($("#verifycode").closest("li").find("span").last("span"),"wrong","请输入验证码");
+    	  //  $("#verifycode").focus();
+	      //   return false;
+       // }
+       // if(captcha==null ||captcha==""||captcha=="请输入验证码"){
+    	  //  set_msg($("#captcha").closest("li").find("span").last("span"),"wrong","请输入验证码");
+    	  //  $("#captcha").focus();
+	      //   return false;
+    	   
+       // }
+       
+      
+       // /*  if(verifycode==null || verifycode =="")
+       //  {
+       //  	set_msg($("#hide_tip"),"wrong","请输入短信验证码");
+       //      $("#verifycode").focus();
+       //      return false;
+       //  } */
+       //  if(captcha==null || captcha ==""||captcha=="请输入短信验证码")
+       //  {
+       //  	set_msg($("#captcha").next("span"),"wrong","请输入短信验证码");
+       //      $("#captcha").focus();
+       //      return false;
+       //  }
+        if(!is_agree){
+        	alert("只有同意找塑料用户服务协议才能提交");
+        }
+        var myform = $("#myform").serialize();
+        var myform_action = $("#myform").attr("action");
+        $.post(myform_action,myform,function(rs)
+        {
+            // if(rs.status<0)
+            // {
+            //     set_msg($("#hide_tip"),"wrong",rs.msg);
+            //     $("#captchaImage").attr("src", "../yzm/captcha-image@timestamp=" + (new Date()).valueOf());
+            // }
+            // else
+            // {
+            // 	if($("#nologin").val()==1){
+            // 		location.href="register/success@mid="+rs.data;
+            // 	}else{
+            // 		location.href="register/add@mid="+rs.data;
+            // 	}
+            // }
+            if(rs.result){
+                alert("恭喜你，注册成功");
+                window.location.href="{:U('Home/User/member')}";
+            }else{
+                alert("注册失败，"+rs.msg);
+                return;
+            }
+            
+        },"json");
+    });
+    $("#username").blur(function(){
+    	var val=$.trim($(this).val());
+    	if(val==""){
+    		$(this).val('6-12位字母或数字').css('color','#ccc');
+    	}
+    }).focus(function(){
+    	if($(this).val()=='6-12位字母或数字'){
+    		$(this).val('').css('color','#000');
+    	}
+    });
+    /*
+    $(".paw").blur(function(){
+    	var val=$.trim($(this).val());
+    	if(val==""){
+    		$(this).attr('type','text').val('6-12位字母、数字或符号').css('color','#ccc');
+    	}else{
+    		$(this).attr('type','password');
+    	}
+    }).focus(function(){
+    	if($(this).val()=='6-12位字母、数字或符号'){
+    		$(this).val('').attr('type','password').css('color','#000');
+    	}
+    })*/
+    $(".paw-text").focus(function(){
+    	$(this).hide();
+    	$(this).siblings(".paw").show().focus();
+    });
+    $(".paw").blur(function(){
+    	if(!$.trim($(this).val())){
+    		$(this).hide();
+    		$(this).siblings(".paw-text").show();
+    	}
+    });
+    $("#mobile").blur(function(){
+    	var val=$.trim($(this).val());
+    	if(val==""){
+   			$(this).val('输入手机号码免费获取短信验证码').css('color','#ccc');
+    	}
+    }).focus(function(){
+    	if($(this).val()=='输入手机号码免费获取短信验证码'){
+    		$(this).val('').css('color','#000');
+    	}
+    });
+     $("#captcha").blur(function(){
+    	var val=$.trim($(this).val());
+    	if(val==""){
+    		$(this).val('请输入短信验证码').css('color','#ccc');
+    	}
+    }).focus(function(){
+    	if($(this).val()=='请输入短信验证码'){
+    		$(this).val('').css('color','#000');
+    	}
+    }); 
+     $("#verifycode").blur(function(){
+    	var val=$.trim($(this).val());
+    	if(val==""){
+    		$(this).val('请输入验证码').css('color','#ccc');
+    	}
+    }).focus(function(){
+    	if($(this).val()=='请输入验证码'){
+    		$(this).val('').css('color','#000');
+    	}
+    }); 
+   
+});
+</script>
+<!--底部公共部分-->
+<include file="Index/footer" />

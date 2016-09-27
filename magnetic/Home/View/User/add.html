@@ -1,0 +1,203 @@
+<!--头部公共部分-->
+<include file="User/header2" />
+<link href="__PUBLIC__/pc/css/member.css" rel="stylesheet" type="text/css" />
+<div class="top">
+    <div class="top_t">
+        <div class="w960">
+            <div class="r">
+                您好，<span class="color">study1228（18235100872）</span><a href="http://www.zhaosuliao.com/logout">【退出】</a>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;<span>交易热线：<span >020-83939808</span></span>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;交易时间：工作日 9:00-17:30
+            </div>
+            <a class="font_14" href="http://www.zhaosuliao.com/" target="_blank">回到首页</a>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;<a class="font_14" href="http://www.zhaosuliao.com/member">会员中心</a>
+        </div>
+    </div>
+    <div class="logo">
+        <div class="w960" style=" overflow:hidden;">
+            <img src="__PUBLIC__/pc/image/member/member_logo.png" title="找塑料网" alt="找塑料网logo"/>
+        </div>
+    </div>
+</div><script type="text/javascript">
+$(function()
+{
+	
+	
+	// 增加一行
+	var idx=0;
+	$(".add_btn").click(function(){
+		idx++;
+		var obj=$(".biaozhun").eq(0).clone(true);
+		$(this).before(obj);
+		$(".biaozhun").eq(idx).find("input").val('');
+		$(".biaozhun").eq(idx).find("input").each(function(){
+			var str=$(this).attr('name');
+				$(this).attr('name',str.replace(/0/, idx));
+		})
+	});
+	$(".tab_head ul li").each(function(i){
+		$(this).click(function(){
+			$(".tab_head ul li").removeClass('on');
+			$(this).addClass("on");
+			$(".toggle_div").hide().eq(i).show();
+			$("#flag").val(i+1);
+		})
+		
+	});
+	
+	
+	//弹框
+	$(".content_why").click(function(){
+		$("#mask").css({'height':$('body').height()}).show();
+		$(".tan_div").show();
+	});
+	$(".close").click(function(){
+		$("#mask").hide();
+		$(".tan_div").hide();
+	});
+	
+	//表单验证
+	
+if($(".inp_div1").length>0){
+	$("#myform").submit(function(){
+		if($.trim($('input[name="name"]').val())==''){
+			alert('请输入公司名称');
+			return false;
+		}else if($.trim($(".h_30").val())==''){
+			alert('请选择企业类型');
+			return false;
+		}else if($.trim($('input[name="provinceName"]').val())==''){
+			alert('请输入省份');
+			return false;
+		}else if($.trim($('input[name="cityName"]').val())==''){
+			alert('请输入城市');
+			return false;
+		}else if($.trim($('input[name="mainProducts"]').val())==''){
+			alert('请输入主营品种');
+			return false;
+		}else if($.trim($('input[name="linkman"]').val())==''){
+			alert('请输入联系人');
+			return false;
+		}
+		
+	});
+	
+}else{
+	$("#myform").submit(function(){
+		var str='';
+		$(".input_div").each(function(){
+			 $(this).find("input").each(function(){
+				str+=$(this).val();
+			})
+		})
+		var text_content=$(".text_content").val();
+		if(str=='' && text_content==''){
+			alert('请输入委托采购内容');
+			return false;
+		}
+		
+	})
+	
+}
+	
+});
+</script>
+
+	<div class="member_wrap" >
+	<div class="member_content" >
+<div class="left">
+	
+		<div class="lan">
+		<p class="title" style="margin-top:0;">我的报价单</p>
+		<p><a href="http://www.zhaosuliao.com/member/product/product_import" >批量上传报价</a></p>
+		<p><a href="http://www.zhaosuliao.com/member/product/add" >单条发布报价</a></p>
+		<p><a href="http://www.zhaosuliao.com/member/product/list" >我的报价单</a></p>
+	</div>
+	<div class="lan">
+		<p class="title">我的交易信息</p>
+		<p><a href="http://www.zhaosuliao.com/member/purchase/add" class="on">发布采购</a></p>
+		<p><a href="http://www.zhaosuliao.com/member/purchase/list" >我的采购</a></p>
+	</div>
+	<div class="lan">
+		<p class="title">账户管理</p>
+		<p><a href="http://www.zhaosuliao.com/member/account" >账户信息</a></p>
+		<p><a href="http://www.zhaosuliao.com/member/password/edit" >修改密码</a></p>
+	</div>
+	<div class="tel">
+		<img src="__PUBLIC__/pc/image/member/tel.png"alt="找塑料网交易热线"/>
+		<div class="jyrx">
+			<p>交易热线</p>
+			<p>020-83939808</p>
+		</div>
+	</div>
+	
+</div>
+	<div class="right index">
+	<div class="pulic_title">发布采购</div>
+	<div class="fbcg">
+		<p>您的委托采购内容：</p>
+		<form method="post" action="http://www.zhaosuliao.com/member/purchase/save" id="myform">
+			
+			<div class="tab_head">
+				<ul>
+					<li>标准格式</li>
+					<li class="on">文本格式</li>
+				</ul>
+				<a href="javascript:void(0)" class="content_why">如何填写采购内容？</a>
+			</div>
+			<div class="tab_content">
+				<div class="toggle_div" style="display:none;">
+					<div class="biaozhun" >
+						<div class="input_div">
+							<span class="span_text mar_l0">品种：</span>
+							<span class="span_input">
+								<input type="text" name="memberPurchase[0].name"/>
+							</span>
+							<span class="span_text">厂家：</span>
+							<span class="span_input">
+								<input type="text" name="memberPurchase[0].manufacturer"/>
+							</span>
+							<span class="span_text">牌号：</span>
+							<span class="span_input">
+								<input type="text" name="memberPurchase[0].material"/>
+							</span>
+							<span class="span_text">数量：</span>
+							<span class="span_input">
+								<input type="text" name="memberPurchase[0].onsaleNumber" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
+							</span>
+							<span class="span_text">价格：</span>
+							<span class="span_input">
+								<input type="text" name="memberPurchase[0].price" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
+							</span>
+						</div>
+						<div class="input_div mar_t10 mar_b20">
+							<span class="span_text mar_l0">备注：</span>
+							<span class="span_input">
+								<input class="max_input" type="text" name="memberPurchase[0].remarks"/>
+							</span>
+						</div>
+					</div>
+				    <div class="add_btn">增加一行</div>
+				 </div>
+				 <div class="text toggle_div" style="display:block;">
+					<textarea class="text_content" name="keyword" placeholder="写下您的真实需求，包括品种、牌号、厂家等，收到后我们会立即给您回电确认，剩下就交给我们吧。&#13;&#10;例子1： LLDPE  延长榆能化  7042   8800元/吨  10吨   &#13;&#10;例子2： PVC  新疆中泰  SG-5  5330元/吨   20吨"></textarea>
+				 </div>
+			 </div>
+			 <p class="queren">确认您发的采购信息真实无误，否则不能发布！谢谢！</p>
+			 <input type="submit" class="fb_btn" value="委托找货" />
+			 <input type="hidden" value="2" id="flag"  name="judge"/>
+		</form>
+	</div>
+</div>
+</div>
+</div>
+
+
+<div id="mask"></div>
+<div class="tan_div">
+		<div class="title">如何填写采购内容<span class="close"></span></div>
+		<div class="tan_content">
+			<p class="p1">写下您的真实需求，包括品种、牌号、厂家等。收到后我们会立即给您回电确认，剩下就交给我们吧。</p>
+			<p class="p2">可按标准格式或文本格式进行填写。<br/>
+				可填写多条采购信息。</p>
+		</div>
+</div>
+<!--底部公共部分-->
+<include file="Index/footer" />

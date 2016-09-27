@@ -1,0 +1,375 @@
+<!--头部公共部分-->
+<include file="Index/header" />
+<link href="__PUBLIC__/pc/css/info.css" rel="stylesheet" type="text/css" />
+<script>
+$(function(){
+    //回到顶部
+    var win=$(window);
+    var doc=$(document);
+    win.scroll(function(){
+         if(doc.scrollTop()>=182){
+             $(".up_top").fadeIn();
+                 
+         }else{
+
+        $(".up_top").fadeOut();
+
+         }  
+    });
+
+    $(".up_top").click(function(){
+     $('body,html').animate({scrollTop:0},600);  
+    });
+
+    //左右对齐
+    var divLeft=$(".enter").children("div").eq(0),
+        divRight=$(".enter").children("div").eq(1),
+        divLeftHeight=divLeft.height(),
+        divRightHeight=divRight.height();
+    if(divLeftHeight>=divRightHeight){
+        divRight.height(divLeftHeight);
+    }else{
+        divLeft.height(divRightHeight);
+    }
+
+});
+</script>
+<div class="up_top"><a></a></div><script type="text/javascript">
+$(function(){
+	$("#lst1").focus();
+	$("#lst3").focus();
+	$("#lst4").focus();
+	$("#lst5").focus();
+	$("#lst6").focus();
+    $("#lst7").focus();
+    $("#lst8").focus();
+    $("#lst9").focus();
+    $("#lst10").focus();
+	$(".focus_text1 p .click").click(function(e){
+		$(this).find(".wx_bg").show();
+		e.stopPropagation();
+		return false;
+	});
+	$(document).click(function(){
+		$(".focus_text1 p .click .wx_bg").hide();
+	});
+})
+//焦点图切换
+$.fn.focus=function(){
+	var $this=$(this);
+	var onesize=$this.children("li").eq(0).width();
+    var oLi=$this.children("li").eq(0).clone(true);
+    $this.append(oLi);
+    var len=$this.children("li").length;
+    $this.css({'width':len*onesize});
+    var iNow=0;
+    var times=null;
+    autoPlay();
+    var oPrev=$this.closest("div").children("a").eq(0);
+    var oNext=$this.closest("div").children("a").eq(1);
+    function autoPlay(){
+        times=setInterval(function(){
+            iNow++;
+            move(iNow);
+        },5000);
+    }
+    function move(num){
+        if(num>len-1){
+            $this.css({'left':0});
+            num=1
+            iNow=num;
+        }
+        if (num < 0) {
+           $this.css('left', -((len - 1) * onesize));
+           num = len - 2;
+           iNow = num;
+        }
+        $this.stop(true);
+   		$this.animate({'left':-(num*onesize)},600);
+    };
+   
+    $this.closest("div").mouseover(function(){
+    	clearInterval(times);
+    	oPrev.show();
+    	oNext.show();
+    });
+    $this.closest("div").mouseout(function(){
+    	oPrev.hide();
+    	oNext.hide();
+    	autoPlay();
+    });
+    oPrev.click(function(){
+    	iNow--;
+    	move(iNow);
+    });
+    oNext.click(function(){
+    	iNow++;
+    	move(iNow);
+    });
+}
+</script>
+<div class="main">
+    <div class="enter">
+        <div class="left05">
+<p class="left_title">
+    <img src="resources/fore/image/info/flag.png" />
+    走进找塑料网
+</p>
+<ul class="left_nav">
+    <li class="first"><a  href="about.html">关于我们</a></li>
+    <li><a  href="zixun/gsdt/default.htm">公司动态</a></li>
+    <li><a  href="zixun/mtbd/default.htm">媒体报道</a></li>
+    <li><a  href="job.html">诚聘英才</a></li>
+    <li><a class="active" href="contact.html">联系我们</a></li>
+    <li><a  href="feedback.html">意见反馈</a></li>
+    <!-- <li><a  href="http://www.zhaosuliao.com/ceo_mailbox.html">CEO邮箱</a></li> -->
+    <li><a  href="law.html">法律声明</a></li>
+    <li><a  href="sitemap.html">网站地图</a></li>
+    <li><a  href="links.html">友情链接</a></li>
+</ul>        </div>
+        <div class="r06">
+            <div class="title06">
+                <div class="mark_line06"></div>联系我们
+            </div>
+            <div class="focus_box1">
+                <div id="focus_pic1" class="focus_pic1">
+                    <ul id="lst1">
+                        <li><img src="resources/fore/image/info/tianyin01.png"/></li>
+                        <li><img src="resources/fore/image/info/tianyin02.jpg"/></li>
+                        <li><img src="resources/fore/image/info/tianyin03.jpg"/></li>
+                        <li><img src="resources/fore/image/info/tianyin04.jpg"/></li>
+                    </ul>
+                    <a href="javascript:;" class="prev" id="prev1"></a>
+                    <a href="javascript:;" class="next" id="next1"></a>
+                </div>
+                <div class="focus_text1">
+                	<div class="focus_text1_title">
+                        <span>公司总部</span>
+                        <h3>广州总部</h3>
+                    </div>
+                    <p>总机：020-83939808</p>
+                    <p>传真：020-32386772</p>
+                    <p>邮箱：<a class="__cf_email__" href="cdn-cgi/l/email-protection" data-cfemail="355e53754f5d545a4640595c545a1b565a58">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></p>
+                    <p class="p2"><span class="span1">地址：</span><span class="span2">广东省广州市天河区中山大道中439号天银大厦23、24楼05-12室</span></p>
+                    <p>
+                        <span class="sp1">官方微信：</span>
+                        <img src="resources/fore/image/info/wx_logo.jpg" class="img1"/>
+                        <a class="click" href="javascript:void(0)" style="color:#0088dd">点击关注找塑料网微信<span class="wx_bg"></span></a>
+                    </p>
+                    <p>
+                        <span class="sp1">官方微博：</span>
+                        <img src="resources/fore/image/info/weibo.png" class="img2"/>
+                        <a href="../weibo.com/zhaosuliao" class="weibo" style="color:#0088dd">点击关注找塑料网微博</a>
+                    </p>
+                </div>
+            </div>
+            <div class="map">
+                <div>
+                    <a href="../j.map.baidu.com/A60Ay" target="_blank">
+                    <img src="resources/fore/image/info/map.png" style="border:none"></a>
+                </div>
+                <div class="map_text">
+                    <h2><span>交易服务热线</span></h2>
+                    <p>
+                        <span>PVC ：  020-38950933</span>
+                        <span>PP PE：  020-38950908</span>
+                    </p>
+                    <p>
+                        <span>ABS PS：  020-38950920</span>
+                        <span>其它：  020-38950900</span>
+                    </p>
+                </div>
+            </div>
+    		<!-- 上海 -->
+            <div class="line_contact"></div>
+            <div class="focus_box2">
+                <div class="focus_text2">
+                    <div class="focus_text2_title">
+                        <span>上海</span>
+                        <h3>上海分公司</h3>
+                    </div>
+                    <p>总机：021-60317599</p>
+                    <p>传真：021-60317556</p>
+                    <p>邮箱：<a class="__cf_email__" href="cdn-cgi/l/email-protection" data-cfemail="dab1bc9aa0b2bbb5a9afb6b3bbb5f4b9b5b7">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></p>
+                    <p class="p2"><span class="span1">地址：</span><span class="span2">上海市闸北区裕通路100号宝矿洲际商务中心2902-2903</span></p>
+                </div>
+
+                <div id="focus_pic3" class="focus_pic2">
+                    <ul id="lst3">
+                        <li><img src="resources/fore/image/info/shanghai01.jpg"/></li>
+                        <li><img src="resources/fore/image/info/shanghai02.jpg"/></li>
+                        <li><img src="resources/fore/image/info/shanghai03.jpg"/></li>
+                    </ul>
+                    <a href="javascript:;" class="prev" id="prev3"></a>
+                    <a href="javascript:;" class="next" id="next3"></a>
+                </div>
+            </div>
+    		<!-- 余姚 -->
+            <div class="line_contact"></div>
+            <div class="focus_box3">
+                <div class="focus_text3">
+                    <div class="focus_text3_title">
+                        <span>余姚</span>
+                        <h3>余姚分公司</h3>
+                    </div>
+                    <p>总机：0574-62690270</p>
+                    <p>传真：0574-62690270</p>
+                    <p>邮箱：<a class="__cf_email__" href="cdn-cgi/l/email-protection" data-cfemail="650e03251f0d040a1610090c040a4b060a08">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></p>
+                    <p class="p2"><span class="span1">地址：</span><span class="span2">浙江省余姚市舜达西路285号塑料城国际商务中心3号楼1801室</span></p>
+                </div>
+
+                <div id="focus_pic4" class="focus_pic3">
+                    <ul id="lst4">
+                        <li><img src="resources/fore/image/info/yuyao01.png"/></li>
+                        <li><img src="resources/fore/image/info/yuyao02.png"/></li>
+                    </ul>
+                    <a href="javascript:;" class="prev" id="prev4"></a>
+                    <a href="javascript:;" class="next" id="next4"></a>
+                </div>
+            </div>
+    		<!-- 佛山 -->
+            <div class="line_contact"></div>
+            <div class="focus_box2">
+                <div class="focus_text2">
+                    <div class="focus_text2_title">
+                        <span>佛山</span>
+                        <h3>佛山分公司</h3>
+                    </div>
+                    <p>总机：0757-22198188</p>
+                    <p>传真：0757-22198162</p>
+                    <p>邮箱：<a class="__cf_email__" href="cdn-cgi/l/email-protection" data-cfemail="acc7caecd6c4cdc3dfd9c0c5cdc382cfc3c1">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></p>
+                    <p class="p2"><span class="span1">地址：</span><span class="span2">广东省佛山市顺德区乐从镇路州村委会乐从大道东B270号星光广场A座13层10-12号</span></p>
+                </div>
+
+                <div id="focus_pic5" class="focus_pic2">
+                    <ul id="lst5">
+                        <li><img src="resources/fore/image/info/lecong01.png"/></li>
+                        <li><img src="resources/fore/image/info/lecong02.jpg"/></li>
+                    </ul>
+                    <a href="javascript:;" class="prev" id="prev5"></a>
+                    <a href="javascript:;" class="next" id="next5"></a>
+                </div>
+            </div>
+			<!-- 东莞 -->
+            <div class="line_contact"></div>
+            <div class="focus_box3">
+                <div class="focus_text3">
+                    <div class="focus_text3_title">
+                        <span>东莞</span>
+                        <h3>东莞分公司</h3>
+                    </div>
+                    <p>总机：0769-86903033</p>
+                    <p>传真：0769-86051711</p>
+                    <p>邮箱：<a class="__cf_email__" href="cdn-cgi/l/email-protection" data-cfemail="91faf7d1ebf9f0fee2e4fdf8f0febff2fefc">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></p>
+                    <p class="p2"><span class="span1">地址：</span><span class="span2">广东省东莞市樟木头莞樟西路12号塑博科创中心5005室</span></p>
+                </div>
+
+                <div id="focus_pic6" class="focus_pic3">
+                    <ul id="lst6">
+                        <li><img src="resources/fore/image/info/dongguan01.png"/></li>
+                        <li><img src="resources/fore/image/info/dongguan02.jpg"/></li>
+                    </ul>
+                    <a href="javascript:;" class="prev" id="prev6"></a>
+                    <a href="javascript:;" class="next" id="next6"></a>
+                </div>
+            </div>
+            <!-- 厦门 -->
+            <div class="line_contact"></div>
+            <div class="focus_box2">
+                <div class="focus_text2">
+                    <div class="focus_text2_title">
+                        <span>厦门</span>
+                        <h3>厦门分公司</h3>
+                    </div>
+                    <p>总机：0592-5112358</p>
+                    <p>传真：0592-5112596</p>
+                    <p>邮箱：<a class="__cf_email__" href="cdn-cgi/l/email-protection" data-cfemail="94fff2d4eefcf5fbe7e1f8fdf5fbbaf7fbf9">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></p>
+                    <p class="p2"><span class="span1">地址：</span><span class="span2">福建省厦门市思明区嘉禾路新景中心B幢1808室</span></p>
+                </div>
+
+                <div id="focus_pic7" class="focus_pic2">
+                    <ul id="lst7">
+                        <li><img src="resources/fore/image/info/xiamen01.jpg"/></li>
+                        <li><img src="resources/fore/image/info/xiamen02.jpg"/></li>
+                    </ul>
+                    <a href="javascript:;" class="prev" id="prev7"></a>
+                    <a href="javascript:;" class="next" id="next7"></a>
+                </div>
+            </div>
+            <!-- 成都 -->
+            <div class="line_contact"></div>
+            <div class="focus_box3">
+                <div class="focus_text3">
+                    <div class="focus_text3_title">
+                        <span>成都</span>
+                        <h3>成都分公司</h3>
+                    </div>
+                    <p>总机：028-65069190</p>
+                    <p>传真：028-65069190</p>
+                    <p>邮箱：<a class="__cf_email__" href="cdn-cgi/l/email-protection" data-cfemail="f49f92b48e9c959b8781989d959bda979b99">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></p>
+                    <p class="p2"><span class="span1">地址：</span><span class="span2">四川省成都市成华区双庆路10号华润大厦1704室</span></p>
+                </div>
+
+                <div id="focus_pic8" class="focus_pic3">
+                    <ul id="lst8">
+                        <li><img src="resources/fore/image/info/cd1.jpg"/></li>
+                        <li><img src="resources/fore/image/info/cd2.jpg"/></li>
+                        <li><img src="resources/fore/image/info/cd3.jpg"/></li>
+                    </ul>
+                    <a href="javascript:;" class="prev" id="prev8"></a>
+                    <a href="javascript:;" class="next" id="next8"></a>
+                </div>
+            </div>
+            <!-- 常州 -->
+            <div class="line_contact"></div>
+            <div class="focus_box2">
+                <div class="focus_text2">
+                    <div class="focus_text2_title">
+                        <span>常州</span>
+                        <h3>常州分公司</h3>
+                    </div>
+                    <p>总机：0519-89881783</p>
+                    <p>传真：0519-89185760</p>
+                    <p>邮箱：<a class="__cf_email__" href="cdn-cgi/l/email-protection" data-cfemail="f29994b2889a939d81879e9b939ddc919d9f">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></p>
+                    <p class="p2"><span class="span1">地址：</span><span class="span2">江苏省常州市新北区通江中路266号浩源大厦2008室</span></p>
+                </div>
+
+                <div id="focus_pic9" class="focus_pic2">
+                    <ul id="lst9">
+                        <li><img src="resources/fore/image/info/cz1.jpg"/></li>
+                        <li><img src="resources/fore/image/info/cz2.jpg"/></li>
+                    </ul>
+                    <a href="javascript:;" class="prev" id="prev9"></a>
+                    <a href="javascript:;" class="next" id="next9"></a>
+                </div>
+            </div>
+            <!-- 临沂 -->
+            <div class="line_contact"></div>
+            <div class="focus_box3">
+                <div class="focus_text3">
+                    <div class="focus_text3_title">
+                        <span>临沂</span>
+                        <h3>临沂分公司</h3>
+                    </div>
+                    <p>总机：0539-2578390</p>
+                    <p>传真：0539-2578397</p>
+                    <p>邮箱：<a class="__cf_email__" href="cdn-cgi/l/email-protection" data-cfemail="1a717c5a60727b75696f76737b7534797577">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></p>
+                    <p class="p2"><span class="span1">地址：</span><span class="span2">山东省临沂市经济技术开发区沂河东路133号云龙国际大厦1151室</span></p>
+                </div>
+
+                <div id="focus_pic10" class="focus_pic3">
+                    <ul id="lst10">
+                        <li><img src="resources/fore/image/info/ly1.jpg"/></li>
+                        <li><img src="resources/fore/image/info/ly2.jpg"/></li>
+                        <li><img src="resources/fore/image/info/ly3.jpg"/></li>
+                    </ul>
+                    <a href="javascript:;" class="prev" id="prev10"></a>
+                    <a href="javascript:;" class="next" id="next10"></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--底部公共部分-->
+<include file="Index/footer" />

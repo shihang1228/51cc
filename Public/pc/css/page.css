@@ -1,0 +1,10 @@
+/*css digg style pagination*/
+div.digg{padding:10px;margin:3px;text-align:center;}
+div.digg a{border:#0088dd 1px solid;padding:12px 18px;margin:2px;color:#0088dd;text-decoration:none;border-radius: 3px;}
+div.digg a:hover{background:#0088dd;color:#fff;}
+div.digg a:active{border:#0088dd 1px solid;color:#000;}
+div.digg .current{border:solid 1px #0088dd;padding:12px 18px;font-weight:bold;margin:2px;color:#fff;background-color:#0088dd;}
+div.digg span.disabled{border:#eee 1px solid;padding:2px 5px;margin:2px;color:#ddd;}
+.page-num{border: 1px solid #ccc;border-radius: 2px;width: 45px;height: 40px;text-align: center;  margin-right: 5px;}
+.page-submit{padding: 12px 20px;border: 1px solid #0088dd;border-radius: 3px;background:#0088dd;color:#fff;}
+.jumpspan{padding: 0 5px;}

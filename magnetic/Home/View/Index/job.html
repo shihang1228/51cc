@@ -1,0 +1,256 @@
+<!--头部公共部分-->
+<include file="Index/header" />
+<link href="__PUBLIC__/pc/css/info.css" rel="stylesheet" type="text/css" />
+<script>
+$(function(){
+    //回到顶部
+    var win=$(window);
+    var doc=$(document);
+    win.scroll(function(){
+         if(doc.scrollTop()>=182){
+             $(".up_top").fadeIn();
+                 
+         }else{
+
+        $(".up_top").fadeOut();
+
+         }  
+    });
+
+    $(".up_top").click(function(){
+     $('body,html').animate({scrollTop:0},600);  
+    });
+
+    //左右对齐
+    var divLeft=$(".enter").children("div").eq(0),
+        divRight=$(".enter").children("div").eq(1),
+        divLeftHeight=divLeft.height(),
+        divRightHeight=divRight.height();
+    if(divLeftHeight>=divRightHeight){
+        divRight.height(divLeftHeight);
+    }else{
+        divLeft.height(divRightHeight);
+    }
+
+});
+</script>
+<div class="up_top"><a></a></div><script>
+$(function(){
+	/**///切换选项卡
+    $("#tab").find("a").each(function (i) {
+        $(this).mouseover(function () {
+            var divLeft=$(".enter").children("div").eq(0),
+                divRight=$(".enter").children("div").eq(1);
+                
+            divLeft.css("height","auto");
+            divRight.css("height","auto");
+
+            $("#tab").find("a").removeClass("active07");
+            $(this).addClass("active07");
+            $(".tab_content").hide();
+            $(".tab_content").eq(i).show();
+
+            var divLeftHeight=divLeft.height(),
+                divRightHeight=divRight.height();
+
+            if(divLeftHeight>=divRightHeight){
+                divRight.height(divLeftHeight);
+            }else{
+                divLeft.height(divRightHeight);
+            }
+        });
+    });
+
+})
+</script>
+<div class="main">
+	<div class="enter">
+        <div class="left04">
+<p class="left_title">
+    <img src="resources/fore/image/info/flag.png" />
+    走进找塑料网
+</p>
+<ul class="left_nav">
+    <li class="first"><a  href="about.html">关于我们</a></li>
+    <li><a  href="zixun/gsdt/default.htm">公司动态</a></li>
+    <li><a  href="zixun/mtbd/default.htm">媒体报道</a></li>
+    <li><a class="active" href="job.html">诚聘英才</a></li>
+    <li><a  href="contact.html">联系我们</a></li>
+    <li><a  href="feedback.html">意见反馈</a></li>
+    <!-- <li><a  href="http://www.zhaosuliao.com/ceo_mailbox.html">CEO邮箱</a></li> -->
+    <li><a  href="law.html">法律声明</a></li>
+    <li><a  href="sitemap.html">网站地图</a></li>
+    <li><a  href="links.html">友情链接</a></li>
+</ul>        </div>
+        <div class="r07">
+            <div class="title07">
+                <div class="mark_line07"></div>
+                 诚聘英才
+            </div>
+         
+            <div id="tab" class="tab">
+                   <a href="javascript:void(0);" class="active07">交易中心</a>
+                   <a href="javascript:void(0);" >运营中心</a>
+                <div class="tab_line"></div>
+            </div>
+            
+            <div class="tab_content">
+                <div class="content">
+                    <p class="title">交易员（20名）</p>
+                    <p>岗位职责：</p>
+                    <p>1、负责当地（广州、余姚、东莞、乐从、深圳）的塑料原料（PVC、PP、PE、PS、ABS等）交易工作；</p>
+                    <p>2、根据平台客户的采购需求，寻找市场上具有价格优势的货物，协助买家、卖家进行货物的交易，完成销售目标和任务；</p>
+                    <p>3、负责销售公司定期采购的现货；</p>
+                    <p>职位要求：</p>
+                    <p>1、大专以上学历，1-3年及以上塑胶原料销售工作经验，有丰富的销售经验；</p>
+                    <p>2、熟悉当地塑料市场，塑料相关产业，有上下游渠道、资源者优先考虑；
+                    <p>3、具备优秀的销售、谈判技巧，能适应工作压力和敢于面对挑战，创造良好的客户资源；</p>
+                    <p>4、男女不限，年龄22-35岁之间者最佳；</p>
+                    <div class="dotted"></div>
+                </div>
+                
+                <div class="content">
+                    <p class="title">区域负责人（5名 ）</p>
+                    <p>岗位职责：</p>
+                    <p>1、按照公司的经营目标，完成当地分公司或办事处（广州、余姚、东莞、乐从、深圳）的团队组建及培训；</p>
+                    <p>2、负责当地的交易团队的管理和考核，协助团队完成当地的塑料原料（PVC、PP、PE、PS、ABS等）交易工作；</p>
+                    <p>3、负责推广当地大客户的塑料原料，促使供求双方之间建立长期稳定的合作关系；</p>
+                    <p>职位要求：</p>
+                    <p>1、本科及以上学历，5年以上塑胶原料销售工作经验，有丰富的销售和团队管理经验；</p>
+                    <p>2、熟悉珠三角地区/长三角地区/当地塑料市场，塑料相关产业有上下游渠道、资源者优先考虑；</p>
+                    <p>3、有较强的沟通能力、市场开拓能力，以及团队合作、管理能力；</p>
+                    <div class="dotted"></div>
+                </div>
+            </div>
+
+            <div class="tab_content" style="display:none;">
+    			<div class="content">
+                    <p class="title">前端设计师(高薪)</p>
+                    <p>岗位职责：</p>
+                    <p>1、负责Web端功能设计、开发和实现；</p>
+                    <p>2、负责平台开发易用性改进和界面技术优化；</p>
+                    <p>3、参与网站底层JS框架的规划与构建；</p>
+    				<p>4、负责移动客户端产品设计等；</p>
+                    <p>职位要求：</p>
+                    <p>1、精通JavaScript、Ajax等Web开发技术；</p>
+                    <p>2、深刻理解Web标准，在可用性、可访问性、网站（性能）优化、浏览器兼容性等方面有实践经验熟悉页面架构和布局；</p>
+                    <p>3、熟悉W3C标准，对表现与数据分离、Web语义化等有较为深刻的理解；</p>
+                    <p>4、至少精通一种市面常见JavaScript框架（如jQuery等）；</p>
+    				<p>5、对互联网产品和前端技术有浓厚兴趣，有较好的学习能力和强烈的进取心；</p>
+    				<p>6、具有较强的沟通能力，分析和解决问题的能力；</p>
+    				<p>7、熟悉HTML5特性，了解HTML5最新规范，能够熟练运用HTML5相关技术开发移动平台、PC终端的web页面；</p>
+                    <div class="dotted"></div>
+                </div>
+    			<div class="content">
+                    <p class="title">高级UI设计师</p>
+                    <p>岗位职责：</p>
+                    <p>1、负责网站UI视觉设计；</p>
+                    <p>2、准确理解产品需求和交互原型，设计出优质用户体验的界面效果图；</p>
+                    <p>3、关注所负责产品的设计动向，为产品提供专业的美术意见及建议；</p>
+    				<p>4、关注同行产品等，并根据分析结果不断优化升级产品UI，提高界面的用户体验；</p>
+    				<p>5、规范产品在用户体验上的统一性和一致性；</p>
+    				<p>6、具有平面设计基础，熟悉产品推广相关物料的设计及准备；</p>
+                    <p>职位要求：</p>
+                    <p>1、大专或以上学历，美术类相关专业毕业（特别优秀者可放宽要求）；</p>
+                    <p>2、2年以上设计经验（请携带相应作品及案例介绍材料）；</p>
+                    <p>3、有出色的设计表达能力，能迅速有效的将想法表现为设计方案；</p>
+                    <p>4、熟悉WEB设计及移动产品GUI设计，了解Javasprict、CSS样式表Web2.0标准；</p>
+                    <div class="dotted"></div>
+                </div>
+    			
+    			<div class="content">
+                    <p class="title">高级产品经理</p>
+                    <p>岗位职责：</p>
+                    <p>1、负责公司产品线全流程管理，产品全体系搭建；</p>
+                    <p>2、根据公司战略制定短，中，长期产品规划；</p>
+                    <p>3、把握市场趋势，发掘机会研发新的产品项目；</p>
+    				<p>4、部门业绩考核及人力配置优化；</p>
+    				<p>5、面向市场的战略研究，及时做出产品策略调整；</p>
+                    <p>职位要求：</p>
+                    <p>1、熟悉塑料行业，3年以上互联网从业经验；</p>
+                    <p>2、熟悉产品项目研发流程，对大宗商品交易和互联网有一定积累；</p>
+                    <p>3、良好的口才与表达能力，沟通协调能力；</p>
+                    <p>4、热爱互联网，有大型网站产品经历优先考虑；</p>
+    				<p>5、熟悉产品设计理念及方法，对用户习性有独到认识，了解技术特性和系统构架；</p>
+    				<p>6、熟悉互联网或产品整体实现过程，包括从需求分析到产品发布；</p>
+    				<p>7、具备独立撰写产品文档的能力，熟练掌握产品需求分析、设计技巧,对交互设计过程有深入了解，有成功的产品策划案例；</p>
+                    <div class="dotted"></div>
+                </div>
+                <div class="content">
+                    <p class="title">高级JAVA工程师</p>
+                    <p>岗位职责：</p>
+                    <p>1、参与客户需求分析工作；</p>
+                    <p>2、进行公司产品研发及升级；</p>
+                    <p>3、负责系统功能详细设计，编码实现；</p>
+    				<p>4、负责应用程序相关技术文档的编写；</p>
+    				<p>5、系统的日常维护、修改工作；</p>
+                    <p>职位要求：</p>
+                    <p>1、计算机及相关专业，大专以上学历；</p>
+                    <p>2、3年以上java开发经验，参与过大型项目的需求、设计与开发；</p>
+                    <p>3、精通面向对象的分析和设计技术；</p>
+                    <p>4、对mysql数据库深入的理解，熟悉SQL语句；</p>
+    				<p>5、精通Spring、Hibernate、hadoop等开源框架；</p>
+    				<p>6、良好的沟通能力和合作精神、工作主动性强、耐心细致、责任心强，具有吃苦耐劳精神；</p>
+    				<p>7、有互联网/移动互联网领域用户推荐算法、数据挖掘研发经验者优先；</p>
+                    <div class="dotted"></div>
+                </div>
+    			
+    			<div class="content">
+                    <p class="title">平台运营（1名 ）</p>
+                    <p>岗位职责：</p>
+                    <p>1、负责网站、微信、微博的日常维护与信息更并新；</p>
+                    <p>2、网站的推广与外部合作；</p>
+                    <p>3、负责对后台运营数据进行统计、分析；</p>
+    				<p>4、负责定期策划执行网站、微信、微博活动及软文撰写；</p>
+    				<p>5、其他上级临时交代的任务；</p>
+                    <p>职位要求：</p>
+                    <p>1、计算机相关专业，大专以上学历；</p>
+                    <p>2、一年以上相关工作经验，有大型企业网站或门户网站项目工作经验者优先；</p>
+                    <p>3、熟悉网站seo及各种推广方式，包括微信微博等移动社交软件推广策划；</p>
+                    <p>4、有一定的html、php网站编程基础；</p>
+    				<p>5、有较强的逻辑思维及分析能力，善于表达，乐于沟通；</p>
+    				<p>6、工作认真细心，有强烈的责任感，具团队合作精神；</p>
+                    <div class="dotted"></div>
+                </div>
+    			
+    			<div class="content">
+                    <p class="title">网站编辑 （1名）</p>
+                    <p>岗位职责：</p>
+                    <p>1、负责网站各文章编辑、网站日常文章添加、内容更新、网站专题建设；</p>
+                    <p>2、负责对网站相关频道的文字、规划做相应策划、编辑；</p>
+                    <p>3、负责网站资讯搜集、整理，上传；</p>
+                    <p>职位要求：</p>
+                    <p>1、大专以上学历，热爱网络编辑工作。</p>
+                    <p>2、较强的文字功底和编辑能力，对塑胶行业了解优先考虑；</p>
+                    <p>3、对互联网操作熟练，熟悉使用Word、Excl，简单使用Dreamweaver，Photoshop、HTML；</p>
+                    <p>4、懂seo知识和网络营销的优先考虑；</p>
+    				<p>5、工作细致，耐心，有较强的抗压能力，良好的沟通能力，具有团队合作精神；</p>
+                    <div class="dotted"></div>
+                </div>
+            </div>
+			
+            <div class="payment">
+               <div class="txt">
+                    <p> 1、有竞争力的薪水，奖金丰厚；</p>
+                    <p>2、5天工作制，享有法定节假日及带薪年假；</p>
+                    <p>3、免费提供午餐，全天免费供应咖啡、饮料；</p>
+                    <p>4、完善的保险及公积金制度（六险一金，商业保险计划）；</p>
+                    <p>5、办公室位于天河区甲级写字楼；</p>
+                    <p>6、丰富多彩的文体活动：羽毛球活动、月度生日活动等；</p>
+                    <p>7、年度体检、旅游计划，生日礼金；</p>
+                    <p>8、ESOP计划（期权激励制度）。</p>
+               </div>   
+               <div class="pic"></div>
+            </div>
+            
+            <div class="contact">
+               <a href="#" class="a1">联系人：宋小姐</a>
+               <a href="#" class="a2">联系电话：020-38950995</a>
+               <a href="#" class="a3">E-mail：<span class="__cf_email__" data-cfemail="b6dec4f6ccded7d9c5c3dadfd7d998d5d9db">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a>
+            </div>
+        </div>
+	</div>
+	
+</div>
+<!--底部公共部分-->
+<include file="Index/footer" />

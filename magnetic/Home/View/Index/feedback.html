@@ -1,0 +1,169 @@
+<!--头部公共部分-->
+<include file="Index/header" />
+<link href="__PUBLIC__/pc/css/info.css" rel="stylesheet" type="text/css" />
+<script>
+$(function(){
+    //回到顶部
+    var win=$(window);
+    var doc=$(document);
+    win.scroll(function(){
+         if(doc.scrollTop()>=182){
+             $(".up_top").fadeIn();
+                 
+         }else{
+
+        $(".up_top").fadeOut();
+
+         }  
+    });
+
+    $(".up_top").click(function(){
+     $('body,html').animate({scrollTop:0},600);  
+    });
+
+    //左右对齐
+    var divLeft=$(".enter").children("div").eq(0),
+        divRight=$(".enter").children("div").eq(1),
+        divLeftHeight=divLeft.height(),
+        divRightHeight=divRight.height();
+    if(divLeftHeight>=divRightHeight){
+        divRight.height(divLeftHeight);
+    }else{
+        divLeft.height(divRightHeight);
+    }
+
+});
+</script>
+<div class="up_top"><a></a></div><script>
+$(function(){  //更换验证码
+	$("#captchaImage,#captchaChange").click( function() {
+		$("#captchaImage").attr("src", "yzm/captcha-image@timestamp=" + (new Date()).valueOf());
+	});
+
+    //验证表单
+    $("#form_feedback").validate(
+    {
+        rules:
+        {
+        	type:         		{required:true},
+            linkman:          	{required:true},
+           	contact:          	{required:true},
+            content:           	{required:true,minlength:10},
+            captcha:      		{required:true}
+        },
+        messages: {
+        	type: {required:"选择类别必填"},
+        	linkman: {required:"联系人必填"},
+        	contact: {required:"联系方式必填"},
+        	content: {required:"反馈内容必填",minlength:"请至少输入10个汉字"},
+        	captcha: {required:"验证码必填"}
+      	},
+        showErrors: function(errorMap, errorList) {
+           if(errorList.length > 0){
+	       	   alert(errorList[0].message);
+	           return false;
+           }
+  		},
+        onfocusout:false,
+        onkeyup:false,
+        submitHandler: function(form) {
+			$.ajax({
+				url: "article/feedback/save",
+				data:$("#form_feedback").serialize(),
+				type: "POST",
+				dataType: "json",
+				cache: false,
+				beforeSend: function() {
+					$("#submit").prop("disabled", true);
+				},
+				success: function(rs) {
+				 	$("#submit").prop("disabled",false);
+				 	 if(rs.status>0)
+			          {
+			              alert(rs.msg);
+			              location.reload(true); 
+			          }
+			          else
+			          {
+			              alert(rs.msg);
+			              $("#captchaImage").attr("src", "yzm/captcha-image@timestamp=" + (new Date()).valueOf());
+			          }
+				}
+			})
+    	}
+    })
+  
+});
+</script>
+<div class="main">
+    <div class="enter">
+        <div class="left02">
+<p class="left_title">
+    <img src="resources/fore/image/info/flag.png" />
+    走进找塑料网
+</p>
+<ul class="left_nav">
+    <li class="first"><a  href="about.html">关于我们</a></li>
+    <li><a  href="zixun/gsdt/default.htm">公司动态</a></li>
+    <li><a  href="zixun/mtbd/default.htm">媒体报道</a></li>
+    <li><a  href="job.html">诚聘英才</a></li>
+    <li><a  href="contact.html">联系我们</a></li>
+    <li><a class="active" href="feedback.html">意见反馈</a></li>
+    <!-- <li><a  href="http://www.zhaosuliao.com/ceo_mailbox.html">CEO邮箱</a></li> -->
+    <li><a  href="law.html">法律声明</a></li>
+    <li><a  href="sitemap.html">网站地图</a></li>
+    <li><a  href="links.html">友情链接</a></li>
+</ul>        </div>
+        <div class="r04">
+             <div class="title04">
+                <div class="mark_line04"></div>
+                 意见反馈
+             </div>
+             <form method="post" id="form_feedback" class="content04">
+                    <ul>
+                          <li>
+                            <label><span>*</span>选择类别：</label>
+                              <span style="margin-right:15px;"> <input type="checkbox" name="type" value="1" class="check" />
+                             网站建议</span>
+                              <span style="margin-right:15px;"> <input type="checkbox" name="type" value="2" class="check" />
+                             网站信息</span>
+                              <span style="margin-right:15px;"> <input type="checkbox" name="type" value="3" class="check" />
+                             网站功能</span>
+                              <span style="margin-right:15px;"> <input type="checkbox" name="type" value="4" class="check" />
+                             举报欺诈信息</span>
+                              <span style="margin-right:15px;"> <input type="checkbox" name="type" value="5" class="check" />
+                             其他</span>
+                        </li>
+                        <li>
+                            <label><span>*</span>联系人：</label>
+                            <input type="text" name="linkman" placeholder="联系人姓名或昵称" class="text" id="linkman"/>
+                        </li>
+                       <li>
+                            <label><span>*</span>联系方式：</label>
+                            <input  type="text" name="contact" placeholder="电话、email、QQ等可以联系到的方式" class="text" id="contact"/>
+                        </li>
+                        <li>
+                            <label>错误地址：</label>
+                            <input type="text" name="error_url" class="text"  placeholder="出现错误的地址，方便我们尽快准确找到" id="error_url"/>
+                        </li>
+                        <li>
+                            <label><span>*</span>反馈内容：</label>
+                            <textarea name="content" cols="40" class="textarea" rows="7" placeholder="欢迎在此提出您宝贵的建议和意见,请至少输入10个汉字。"></textarea>
+                        </li>
+                        <li>
+                            <label><span>*</span>验证码：</label>
+                            <input type="text" class="text" name="captcha" id="captcha" />&nbsp;&nbsp;
+                            <img width="90" height="30" id="captchaImage" src="yzm/captcha-image" />
+                            <span alt="点击更换" id="captchaChange">看不清楚，换一张</span>
+                        </li>
+                        <li>
+                            <input  type="submit" id="submit" value="提交"  class="submit" />
+                            <input  value="重置" class="reset" type="reset"/>
+                        </li>
+                    </ul>
+                </form>
+        </div> 
+    </div>
+</div>
+<!--底部公共部分-->
+<include file="Index/footer" />

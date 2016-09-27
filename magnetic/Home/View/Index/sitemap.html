@@ -1,0 +1,543 @@
+<!--头部公共部分-->
+<include file="Index/header" />
+<link href="__PUBLIC__/pc/css/info.css" rel="stylesheet" type="text/css" />
+<script>
+$(function(){
+    //回到顶部
+    var win=$(window);
+    var doc=$(document);
+    win.scroll(function(){
+         if(doc.scrollTop()>=182){
+             $(".up_top").fadeIn();
+                 
+         }else{
+
+        $(".up_top").fadeOut();
+
+         }  
+    });
+
+    $(".up_top").click(function(){
+     $('body,html').animate({scrollTop:0},600);  
+    });
+
+    //左右对齐
+    var divLeft=$(".enter").children("div").eq(0),
+        divRight=$(".enter").children("div").eq(1),
+        divLeftHeight=divLeft.height(),
+        divRightHeight=divRight.height();
+    if(divLeftHeight>=divRightHeight){
+        divRight.height(divLeftHeight);
+    }else{
+        divLeft.height(divRightHeight);
+    }
+
+});
+</script>
+<div class="up_top"><a></a></div><div class="main sitemap">
+    <div class="enter">
+        <div class="left07">
+<p class="left_title">
+    <img src="resources/fore/image/info/flag.png" />
+    走进找塑料网
+</p>
+<ul class="left_nav">
+    <li class="first"><a  href="about.html">关于我们</a></li>
+    <li><a  href="zixun/gsdt/default.htm">公司动态</a></li>
+    <li><a  href="zixun/mtbd/default.htm">媒体报道</a></li>
+    <li><a  href="job.html">诚聘英才</a></li>
+    <li><a  href="contact.html">联系我们</a></li>
+    <li><a  href="feedback.html">意见反馈</a></li>
+    <!-- <li><a  href="http://www.zhaosuliao.com/ceo_mailbox.html">CEO邮箱</a></li> -->
+    <li><a  href="law.html">法律声明</a></li>
+    <li><a class="active" href="sitemap.html">网站地图</a></li>
+    <li><a  href="links.html">友情链接</a></li>
+</ul>        </div>
+        <div class="r03">
+            <div class="title03">
+                <div class="mark_line03"></div>
+                <h1>网站地图</h1>
+            </div>
+            <div class="list_div">
+                <h2 class="list_title">交易服务</h2>
+                <div class="list">
+                    <p>
+                        <a href="member/purchase/add" target="_blank" title="发布采购">发布采购</a><a href="purchase" target="_blank" title="采购信息">采购信息</a>
+                    </p>
+                    <p>
+                        <a href="product" target="_blank" title="现货资源">现货资源</a>
+                        <a href="product/list@cate=HDPE" target="_blank" title="HDPE现货资源">HDPE现货资源</a>
+                        <a href="product/list@cate=LDPE" target="_blank" title="LDPE现货资源">LDPE现货资源</a>
+                        <a href="product/list@cate=LLDPE" target="_blank" title="LLDPE现货资源">LLDPE现货资源</a>
+                        <a href="product/list@cate=PP" target="_blank" title="PP现货资源">PP现货资源</a>
+                        <a href="product/list@cate=PVC" target="_blank" title="PVC现货资源">PVC现货资源</a>
+                        <a href="product/list@cate=ABS" target="_blank" title="ABS现货资源">ABS现货资源</a>
+                    </p>
+                    <p><a href="product" target="_blank" title="更多现货资源">更多现货资源</a></p>
+                </div>
+                <div class="list no_bd">
+                    <p>
+                        <a href="member/product/product_import" target="_blank" title="批量发布报价">批量发布报价</a>
+                        <a href="member/product/add" target="_blank" title="单条发布报价">单条发布报价</a>
+                    </p>
+                    <p>
+                        <a href="company" target="_blank" title="报价单下载">报价单下载</a>
+                        <a href="product/companylist@cate=HDPE" target="_blank" title="HDPE报价单下载">HDPE报价单下载</a>
+                        <a href="product/companylist@cate=LDPE" target="_blank" title="LDPE报价单下载">LDPE报价单下载</a>
+                        <a href="product/companylist@cate=LLDPE" target="_blank" title="LLDPE报价单下载">LLDPE报价单下载</a>
+                        <a href="product/companylist@cate=PP" target="_blank" title="PP报价单下载">PP报价单下载</a>
+                        <a href="product/companylist@cate=PVC" target="_blank" title="PVC报价单下载">PVC报价单下载</a>
+                    </p>
+                    <p>
+                        <a href="product/companylist@cate=ABS" target="_blank" title="ABS报价单下载">ABS报价单下载</a>
+                        <a href="company" target="_blank" title="更多报价单下载">更多报价单下载</a>
+                    </p>
+                </div>
+            </div>
+            <div class="list_div">
+                <h2 class="list_title">衍生服务</h2>
+                <div class="list no_bd">
+                    <p>
+                        <a href="../jr.zhaosuliao.com/default.htm" target="_blank" title="找塑金融">找塑金融</a>
+                        <a href="../jr.zhaosuliao.com/fqa" target="_blank" title="找塑金融新手指南">找塑金融新手指南</a>
+                    </p>
+                    <p><a href="../wuliu.zhaosuliao.com/default.htm" target="_blank" title="福牛物流">福牛物流</a></p>
+                    <p><a href="jingjia" target="_blank" title="竞价专区">竞价专区</a></p>
+                    <p><a href="app.html" target="_blank" title="找塑料APP下载">找塑料APP下载</a></p>
+                    <p><a href="../hq.zhaosuliao.com/activitycenter" target="_blank" title="精彩活动">精彩活动</a></p>
+                </div>
+            </div>
+            <div class="list_div">
+                <h2 class="list_title">价格中心</h2>
+                <div class="list">
+                    <p class="color">今日焦点：</p>
+                    <p>
+                        <a href="zixun/dtjg/22.html" target="_blank" title="Nymex WTI">Nymex WTI</a>
+                        <a href="zixun/dtjg/23.html" target="_blank" title="ICE Brent">ICE Brent</a>
+                        <a href="zixun/dtjg/18.html" target="_blank" title="乙烯(CFR东北亚)">乙烯(CFR东北亚)</a>
+                        <a href="zixun/dtjg/18.html" target="_blank" title="乙烯(CFR东南亚)">乙烯(CFR东南亚)</a>
+                        <a href="zixun/dtjg/20.html" target="_blank" title="丙烯(FOB韩国)">丙烯(FOB韩国)</a>
+                        <a href="zixun/dtjg/24.html" target="_blank" title="苯乙烯(FOB韩国)">苯乙烯(FOB韩国)</a>
+                        <a href="zixun/dtjg/17.html" target="_blank" title="美元指数" style="padding-right:0;">美元指数</a>
+                    </p>
+                </div>
+                <div class="list no_bd">
+                    <p>
+                        <a href="../hq.zhaosuliao.com/finalPrice/default.htm" target="_blank" class="color" title="实时成交价">实时成交价：</a>
+                    </p>
+                    <p>
+                        <a href="../hq.zhaosuliao.com/finalPrice/HDPE.html" target="_blank" title="HDPE今日实时成交价">HDPE今日实时成交价</a>
+                        <a href="../hq.zhaosuliao.com/finalPrice/LDPE.html" target="_blank" title="LDPE今日实时成交价">LDPE今日实时成交价</a>
+                        <a href="../hq.zhaosuliao.com/finalPrice/LLDPE.html" target="_blank" title="LLDPE今日实时成交价">LLDPE今日实时成交价</a>
+                        <a href="../hq.zhaosuliao.com/finalPrice/PP.html" target="_blank" title="PP今日实时成交价">PP今日实时成交价</a>
+                        <a href="../hq.zhaosuliao.com/finalPrice/PVC.html" target="_blank" title="PVC今日实时成交价">PVC今日实时成交价</a>
+                    </p>
+                    <p>
+                        <a href="../hq.zhaosuliao.com/finalPrice/ABS.html" target="_blank" title="ABS今日实时成交价">ABS今日实时成交价</a>
+                        <a href="../hq.zhaosuliao.com/finalPrice/default.htm" target="_blank" title="更多今日实时成交价">更多今日实时成交价</a>
+                    </p>
+                </div>
+            </div>
+            <div class="list_div">
+                <h2 class="list_title">出厂价</h2>
+                <div class="list">
+                    <p><a href="../hq.zhaosuliao.com/price/cc.html" target="_blank" class="color" title="国内出厂价">国内出厂价：</a></p>
+                    <p>
+                        <a href="../hq.zhaosuliao.com/price/cc/LDPE.html" target="_blank" title="LDPE">LDPE</a>
+                        <a href="../hq.zhaosuliao.com/price/cc/HDPE.html" target="_blank" title="HDPE">HDPE</a>
+                        <a href="../hq.zhaosuliao.com/price/cc/LLDPE.html" target="_blank" title="LLDPE">LLDPE</a>
+                        <a href="../hq.zhaosuliao.com/price/cc/_25E5_259D_2587_25E8_2581_259APP_25E7_25B2_2592.html" target="_blank" title="均聚PP粒">均聚PP粒</a>
+                        <a href="../hq.zhaosuliao.com/price/cc/_25E5_2585_25B1_25E8_2581_259APP_25E7_25B2_2592.html" target="_blank" title="共聚PP粒">共聚PP粒</a>
+                        <a href="../hq.zhaosuliao.com/price/cc/PP_25E7_25B2_2589.html" target="_blank" title="PP粉">PP粉</a>
+                        <a href="../hq.zhaosuliao.com/price/cc/PVC_25E7_25B2_2589.html" target="_blank" title="PVC粉">PVC粉</a>
+                        <a href="../hq.zhaosuliao.com/price/cc/PVC_25E7_25B3_258A.html" target="_blank" title="PVC糊">PVC糊</a>
+                    </p>
+                </div>
+                <div class="list">
+                    <p><a href="../hq.zhaosuliao.com/price/gn.html" target="_blank" class="color" title="国内市场价">国内市场价：</a></p>
+                    <p>
+                        <a href="../hq.zhaosuliao.com/price/gn/LDPE.html" target="_blank" title="LDPE">LDPE</a>
+                        <a href="../hq.zhaosuliao.com/price/gn/HDPE.html" target="_blank" title="HDPE">HDPE</a>
+                        <a href="../hq.zhaosuliao.com/price/gn/LLDPE.html" target="_blank" title="LLDPE">LLDPE</a>
+                        <a href="../hq.zhaosuliao.com/price/gn/_25E5_259D_2587_25E8_2581_259APP_25E7_25B2_2592.html" target="_blank" title="均聚PP粒">均聚PP粒</a>
+                        <a href="../hq.zhaosuliao.com/price/gn/_25E5_2585_25B1_25E8_2581_259APP_25E7_25B2_2592.html" target="_blank" title="共聚PP粒">共聚PP粒</a>
+                        <a href="../hq.zhaosuliao.com/price/gn/PP_25E7_25B2_2589.html" target="_blank" title="PP粉">PP粉</a>
+                        <a href="../hq.zhaosuliao.com/price/gn/PVC_25E7_25B2_2589.html" target="_blank" title="PVC粉">PVC粉</a>
+                        <a href="../hq.zhaosuliao.com/price/gn/PVC_25E7_25B3_258A.html" target="_blank" title="PVC糊">PVC糊</a>
+                    </p>
+                </div>
+                <div class="list no_bd">
+                    <p><a href="../hq.zhaosuliao.com/price/gj.html" target="_blank" class="color" title="国际市场价">国际市场价：</a></p>
+                    <p>
+                        <a href="../hq.zhaosuliao.com/price/gj/LDPE.html" target="_blank" title="LDPE">LDPE</a>
+                        <a href="../hq.zhaosuliao.com/price/gj/HDPE.html" target="_blank" title="HDPE">HDPE</a>
+                        <a href="../hq.zhaosuliao.com/price/gj/LLDPE.html" target="_blank" title="LLDPE">LLDPE</a>
+                        <a href="../hq.zhaosuliao.com/price/gj/_25E5_259D_2587_25E8_2581_259APP_25E7_25B2_2592.html" target="_blank" title="均聚PP粒">均聚PP粒</a>
+                        <a href="../hq.zhaosuliao.com/price/gj/_25E5_2585_25B1_25E8_2581_259APP_25E7_25B2_2592.html" target="_blank" title="共聚PP粒">共聚PP粒</a>
+                        <a href="../hq.zhaosuliao.com/price/gj/PP_25E7_25B2_2589.html" target="_blank" title="PVC粉">PVC粉</a>
+                    </p>
+                </div>
+            </div>
+            <div class="list_div">
+                <h2 class="list_title"><a href="../hq.zhaosuliao.com/default.htm" target="_blank" class="color" title="行情中心首页">行情中心</a></h2>
+                <div class="list">
+                    <p><b><a href="../hq.zhaosuliao.com/default.htm" target="_blank" class="color" title="行情中心首页">行情中心首页</a></b></p>
+                    <p>
+                        <a href="../hq.zhaosuliao.com/indexcpzts.html" target="_blank" title="操盘早提示">操盘早提示</a>
+                        <a href="../hq.zhaosuliao.com/finalPrice/default.htm" target="_blank" title="实时成交">实时成交</a>
+                        <a href="../hq.zhaosuliao.com/indexsdgc.html" target="_blank" title="深度观察">深度观察</a>
+                        <a href="../hq.zhaosuliao.com/indexqwzl.html" target="_blank" title="权威专栏">权威专栏</a>
+                        <a href="../hq.zhaosuliao.com/indexwpdt.html" target="_blank" title="外盘动态">外盘动态</a>
+                        <a href="../hq.zhaosuliao.com/indexsydt.html" target="_blank" title="上游动态">上游动态</a>
+                        <a href="../hq.zhaosuliao.com/indexdybg.html" target="_blank" title="调研报告">调研报告</a>
+                        <a href="../hq.zhaosuliao.com/indexzphydt.html" target="_blank" title="制品行业动态">制品行业动态</a>
+                        <a href="../hq.zhaosuliao.com/indexslqh.html" target="_blank" title="塑料期货">塑料期货</a>
+                        <a href="../hq.zhaosuliao.com/indexsjzx.html" target="_blank" title="数据中心">数据中心</a>
+                        <a href="../hq.zhaosuliao.com/indexhqcj.html" target="_blank" title="环球财经">环球财经</a>
+                    </p>
+                    <p>
+                        <a href="../hq.zhaosuliao.com/hqzb.html" target="_blank" title="塑料行情直播">塑料行情直播</a>
+                        <a href="../hq.zhaosuliao.com/pehqzb.html" target="_blank" title="PE塑料行情直播">PE塑料行情直播</a>
+                        <a href="../hq.zhaosuliao.com/pplhqzb.html" target="_blank" title="PP粒塑料行情直播">PP粒塑料行情直播</a>
+                        <a href="../hq.zhaosuliao.com/ppfhqzb.html" target="_blank" title="PP粉塑料行情直播">PP粉塑料行情直播</a>
+                        <a href="../hq.zhaosuliao.com/pvchqzb.html" target="_blank" title="PVC塑料行情直播">PVC塑料行情直播</a>
+                    </p>
+                </div>
+                <div class="list">
+                    <p><b><a href="../hq.zhaosuliao.com/pe" target="_blank" class="color" title="PE/聚乙烯">PE/聚乙烯</a></b></p>
+                    <p>
+                        <a href="../hq.zhaosuliao.com/pecpzts.html" target="_blank" title="操盘早提示">操盘早提示</a>
+                        <a href="../hq.zhaosuliao.com/pesydt.html" target="_blank" title="上游动态">上游动态</a>
+                        <a href="../hq.zhaosuliao.com/peshzzjpc.html" target="_blank" title="石化装置及排产">石化装置及排产</a>
+                        <a href="../hq.zhaosuliao.com/peqwzl.html" target="_blank" title="权威专栏">权威专栏</a>
+                        <a href="../hq.zhaosuliao.com/peslqh.html" target="_blank" title="塑料期货">塑料期货</a>
+                        <a href="../hq.zhaosuliao.com/pewpdt.html" target="_blank" title="外盘动态">外盘动态</a>
+                        <a href="../hq.zhaosuliao.com/pesdgc.html" target="_blank" title="深度观察">深度观察</a>
+                        <a href="../hq.zhaosuliao.com/pezphydt.html" target="_blank" title="制品行业动态">制品行业动态</a>
+                    </p>
+                    <p>
+                        <a href="../hq.zhaosuliao.com/pesjzx.html" target="_blank" title="数据中心">数据中心</a><a href="../hq.zhaosuliao.com/pedybg.html" target="_blank" title="调研报告">调研报告</a>
+                    </p>
+                </div>
+                <div class="list">
+                    <p><a href="../hq.zhaosuliao.com/peshjgdt.html" target="_blank" class="color" title="石化价格动态">石化价格动态：</a></p>
+                    <p>
+                        <a href="../hq.zhaosuliao.com/peshjgdt/2.html" target="_blank" title="中石化PE价格动态">中石化PE价格动态</a>
+                        <a href="../hq.zhaosuliao.com/peshjgdt/3.html" target="_blank" title="中石油PE价格动态">中石油PE价格动态</a>
+                        <a href="../hq.zhaosuliao.com/peshjgdt/4.html" target="_blank" title="合资/地方PE价格动态">合资/地方PE价格动态</a>
+                        <a href="../hq.zhaosuliao.com/peshjgdt/5.html" target="_blank" title="煤化工PE价格动态">煤化工PE价格动态</a>
+                    </p>
+                </div>
+                <div class="list">
+                    <p><a href="../hq.zhaosuliao.com/pesccjjc.html" target="_blank" class="color" title="市场成交监测">市场成交监测：</a></p>
+                    <p>
+                        <a href="../hq.zhaosuliao.com/pesccjjc/19.html" target="_blank" title="东北PE市场成交监测">东北PE市场成交监测</a>
+                        <a href="../hq.zhaosuliao.com/pesccjjc/20.html" target="_blank" title="华北PE市场成交监测">华北PE市场成交监测</a>
+                        <a href="../hq.zhaosuliao.com/pesccjjc/21.html" target="_blank" title="华中PE市场成交监测">华中PE市场成交监测</a>
+                        <a href="../hq.zhaosuliao.com/pesccjjc/22.html" target="_blank" title="华东PE市场成交监测">华东PE市场成交监测</a>
+                        <a href="../hq.zhaosuliao.com/pesccjjc/23.html" target="_blank" title="华南PE市场成交监测">华南PE市场成交监测</a>
+                    </p>
+                    <p>
+                        <a href="../hq.zhaosuliao.com/pesccjjc/24.html" target="_blank" title="西北PE市场成交监测">西北PE市场成交监测</a>
+                        <a href="../hq.zhaosuliao.com/pesccjjc/25.html" target="_blank" title="西南PE市场成交监测">西南PE市场成交监测</a>
+                    </p>
+                </div>
+                <div class="list">
+                    <p><b><a href="../hq.zhaosuliao.com/ppl" target="_blank" class="color" title="PP粒料/聚丙烯粒料">PP粒料/聚丙烯粒料</a></b></p>
+                    <p>
+                        <a href="../hq.zhaosuliao.com/pplcpzts.html" target="_blank" title="操盘早提示">操盘早提示</a>
+                        <a href="../hq.zhaosuliao.com/pplsydt.html" target="_blank" title="上游动态">上游动态</a>
+                        <a href="../hq.zhaosuliao.com/pplshzzjpc.html" target="_blank" title="石化装置及排产">石化装置及排产</a>
+                        <a href="../hq.zhaosuliao.com/pplqwzl.html" target="_blank" title="权威专栏">权威专栏</a>
+                        <a href="../hq.zhaosuliao.com/pplslqh.html" target="_blank" title="塑料期货">塑料期货</a>
+                        <a href="../hq.zhaosuliao.com/pplwpdt.html" target="_blank" title="外盘动态">外盘动态</a>
+                        <a href="../hq.zhaosuliao.com/pplsdgc.html" target="_blank" title="深度观察">深度观察</a>
+                        <a href="../hq.zhaosuliao.com/pplzphydt.html" target="_blank" title="制品行业动态">制品行业动态</a>
+                    </p>
+                    <p>
+                        <a href="../hq.zhaosuliao.com/pplsjzx.html" target="_blank" title="数据中心">数据中心</a>
+                        <a href="../hq.zhaosuliao.com/ppldybg.html" target="_blank" title="调研报告">调研报告</a>
+                    </p>
+                </div>
+                <div class="list">
+                    <p><a href="../hq.zhaosuliao.com/pplshjgdt.html" target="_blank" class="color" title="石化价格动态">石化价格动态：</a></p>
+                    <p>
+                        <a href="../hq.zhaosuliao.com/pplshjgdt/14.html" target="_blank" title="中石化PP价格动态">中石化PP价格动态</a>
+                        <a href="../hq.zhaosuliao.com/pplshjgdt/15.html" target="_blank" title="中石油PP价格动态">中石油PP价格动态</a>
+                        <a href="../hq.zhaosuliao.com/pplshjgdt/16.html" target="_blank" title="合资/地方PP价格动态">合资/地方PP价格动态</a>
+                        <a href="../hq.zhaosuliao.com/pplshjgdt/17.html" target="_blank" title="煤化工PP价格动态">煤化工PP价格动态</a>
+                    </p>
+                </div>
+                <div class="list">
+                    <p><a href="../hq.zhaosuliao.com/pplsccjjc.html" target="_blank" class="color" title="市场成交检测">市场成交检测：</a></p>
+                    <p>
+                        <a href="../hq.zhaosuliao.com/pplsccjjc/27.html" target="_blank" title="华北PP粒料市场成交监测">华北PP粒料市场成交监测</a>
+                        <a href="../hq.zhaosuliao.com/pplsccjjc/28.html" target="_blank" title="华中PP粒料市场成交监测">华中PP粒料市场成交监测</a>
+                        <a href="../hq.zhaosuliao.com/pplsccjjc/29.html" target="_blank" title="华东PP粒料市场成交监测">华东PP粒料市场成交监测</a>
+                        <a href="../hq.zhaosuliao.com/pplsccjjc/30.html" target="_blank" title="华南PP粒料市场成交监测">华南PP粒料市场成交监测</a>
+                    </p>
+                    <p>
+                        <a href="../hq.zhaosuliao.com/pplsccjjc/32.html" target="_blank" title="西南PP粒料市场成交监测">西南PP粒料市场成交监测</a>
+                    </p>
+                </div>
+                <div class="list">
+                    <p><b><a href="../hq.zhaosuliao.com/ppf" target="_blank" class="color" title="PP粉料/聚丙烯粉料">PP粉料/聚丙烯粉料</a></b></p>
+                    <p>
+                        <a href="../hq.zhaosuliao.com/ppfcpzts.html" target="_blank" title="操盘早提示">操盘早提示</a>
+                        <a href="../hq.zhaosuliao.com/ppfsydt.html" target="_blank" title="上游动态">上游动态</a>
+                        <a href="../hq.zhaosuliao.com/ppfqydt.html" target="_blank" title="企业动态">企业动态</a>
+                        <a href="../hq.zhaosuliao.com/ppfqwzl.html" target="_blank" title="权威专栏">权威专栏</a>
+                        <a href="../hq.zhaosuliao.com/ppfsccjjc.html" target="_blank" title="市场成交检测">市场成交检测</a>
+                        <a href="../hq.zhaosuliao.com/ppfslqh.html" target="_blank" title="塑料期货">塑料期货</a>
+                        <a href="../hq.zhaosuliao.com/ppfsdgc.html" target="_blank" title="深度观察">深度观察</a>
+                        <a href="../hq.zhaosuliao.com/ppfzphydt.html" target="_blank" title="制品行业动态">制品行业动态</a>
+                    </p>
+                    <p>
+                        <a href="../hq.zhaosuliao.com/ppfsjzx.html" title="数据中心">数据中心</a>
+                        <a href="../hq.zhaosuliao.com/ppfdybg.html" target="_blank" title="调研报告">调研报告</a>
+                    </p>
+                </div>
+                <div class="list no_bd">
+                    <p><b><a href="../hq.zhaosuliao.com/pvc" target="_blank" class="color" title="PVC/聚氯乙烯">PVC/聚氯乙烯</a></b></p>
+                    <p>
+                        <a href="../hq.zhaosuliao.com/pvccpzts.html" target="_blank" title="操盘早提示">操盘早提示</a>
+                        <a href="../hq.zhaosuliao.com/pvcsydt.html" target="_blank" title="上游动态">上游动态</a>
+                        <a href="../hq.zhaosuliao.com/pvcqydt.html" target="_blank" title="企业动态">企业动态</a>
+                        <a href="../hq.zhaosuliao.com/pvcqwzl.html" target="_blank" title="权威专栏">权威专栏</a>
+                        <a href="../hq.zhaosuliao.com/pvcsccjjc.html" target="_blank" title="市场成交检测">市场成交检测</a>
+                        <a href="../hq.zhaosuliao.com/pvcslqh.html" target="_blank" title="塑料期货">塑料期货</a>
+                        <a href="../hq.zhaosuliao.com/pvcdybg.html" target="_blank" title="调研报告">调研报告</a>
+                        <a href="../hq.zhaosuliao.com/pvcsdgc.html" target="_blank" title="深度观察">深度观察</a>
+                    </p>
+                    <p>
+                        <a href="../hq.zhaosuliao.com/pvczphydt.html" target="_blank" title="制品行业动态">制品行业动态</a>
+                        <a href="../hq.zhaosuliao.com/pvcwpdt.html" target="_blank" title="外盘动态">外盘动态</a>
+                        <a href="../hq.zhaosuliao.com/pvcsjzx.html" target="_blank" title="数据中心">数据中心</a>
+                    </p>
+                </div>
+            </div>
+            <div class="list_div">
+                <h2 class="list_title"><a href="wuxingbiao" target="_blank" title="物性表" class="color">物性表</a></h2>
+                <div class="list no_bd">
+                    <a href="wuxingbiao/search@word=PP" target="_blank" title="PP">PP</a>
+                    <a href="wuxingbiao/search@word=ABS" target="_blank" title="ABS">ABS</a>
+                    <a href="wuxingbiao/search@word=PVC" target="_blank" title="PVC">PVC</a>
+                    <a href="wuxingbiao/search@word=AS" target="_blank" title="AS">AS</a>
+                    <a href="wuxingbiao/search@word=PA6" target="_blank" title="PA6">PA6</a>
+                    <a href="wuxingbiao/search@word=HDPE" target="_blank" title="HDPE">HDPE</a>
+                    <a href="wuxingbiao/search@word=PA66" target="_blank" title="PA66">PA66</a>
+                    <a href="wuxingbiao/search@word=PC" target="_blank" title="PC">PC</a>
+                    <a href="wuxingbiao/search@word=LLDPE" target="_blank" title="LLDPE">LLDPE</a>
+                    <a href="wuxingbiao/search@word=LDPE" target="_blank" title="LDPE">LDPE</a>
+
+                    <a href="wuxingbiao/search@word=EVA" target="_blank" title="EVA">EVA</a>
+                    <a href="wuxingbiao/search@word=TPE" target="_blank" title="TPE">TPE</a>
+                    <a href="wuxingbiao/search@word=TPU" target="_blank" title="TPU">TPU</a>
+                    <a href="wuxingbiao/search@word=PBT" target="_blank" title="PBT">PBT</a>
+                    <a href="wuxingbiao/search@word=GPPS" target="_blank" title="GPPS">GPPS</a>
+                    <a href="wuxingbiao/search@word=ABS_2FPC" target="_blank" title="ABS/PC">ABS/PC</a>
+                    <a href="wuxingbiao/search@word=PPS" target="_blank" title="PPS">PPS</a>
+                    <a href="wuxingbiao/search@word=HIPS" target="_blank" title="HIPS">HIPS</a>
+                    <a href="wuxingbiao/search@word=PET" target="_blank" title="PET">PET</a>
+                    <a href="wuxingbiao/search@word=EPS" target="_blank" title="EPS">EPS</a>
+
+                    <a href="wuxingbiao/search@word=POM" target="_blank" title="POM">POM</a>
+                    <a href="wuxingbiao/search@word=MS" target="_blank" title="MS">MS</a>
+                    <a href="wuxingbiao/search@word=TPV" target="_blank" title="TPV">TPV</a>
+                    <a href="wuxingbiao/search@word=SEBS" target="_blank" title="SEBS">SEBS</a>
+                    <a href="wuxingbiao/search@word=CA" target="_blank" title="CA">CA</a>
+                    <a href="wuxingbiao/search@word=TPO" target="_blank" title="TPO">TPO</a>
+                    <a href="wuxingbiao/search@word=ASA" target="_blank" title="ASA">ASA</a>
+                    <a href="wuxingbiao/search@word=600" target="_blank" title="600">600</a>
+                    <a href="wuxingbiao/search@word=7042" target="_blank" title="7042">7042</a>
+                    <a href="wuxingbiao/search@word=EPDM" target="_blank" title="EPDM">EPDM</a>
+
+                    <a href="wuxingbiao/search@word=SBS" target="_blank" title="SBS">SBS</a>
+                    <a href="wuxingbiao/search@word=PC_2FABS" target="_blank" title="PC/ABS">PC/ABS</a>
+                    <a href="wuxingbiao/search@word=H3" target="_blank" title="H3">H3</a>
+                    <a href="wuxingbiao/search@word=LCP" target="_blank" title="LCP">LCP</a>
+                    <a href="wuxingbiao/search@word=PLA" target="_blank" title="PLA">PLA</a>
+                    <a href="wuxingbiao/search@word=PMMA" target="_blank" title="PMMA">PMMA</a>
+                    <a href="wuxingbiao/search@word=ER" target="_blank" title="ER">ER</a>
+                    <a href="wuxingbiao/search@word=ASA_2FPC" target="_blank" title="ASA/PC">ASA/PC</a>
+                    <a href="wuxingbiao/search@word=PEEK" target="_blank" title="PEEK">PEEK</a>
+                    <a href="wuxingbiao/search@word=5502" target="_blank" title="5502">5502</a>
+
+                    <a href="wuxingbiao/search@word=MDPE" target="_blank" title="MDPE">MDPE</a>
+                    <a href="wuxingbiao/search@word=PA612" target="_blank" title="PA612">PA612</a>
+                    <a href="wuxingbiao/search@word=PPA" target="_blank" title="PPA">PPA</a>
+                    <a href="wuxingbiao/search@word=DG-EX75" target="_blank" title="DG-EX75">DG-EX75</a>
+                    <a href="wuxingbiao/search@word=T30S" target="_blank" title="T30S">T30S</a>
+                    <a href="wuxingbiao/search@word=TM" target="_blank" title="TM">TM</a>
+                    <a href="wuxingbiao/search@word=H4" target="_blank" title="H4">H4</a>
+                    <a href="wuxingbiao/search@word=TPR" target="_blank" title="TPR">TPR</a>
+                    <a href="wuxingbiao/search@word=TB" target="_blank" title="TB">TB</a>
+                    <a href="wuxingbiao/search@word=PPO" target="_blank" title="PPO">PPO</a>
+
+                    <a href="wuxingbiao/search@word=k8003" target="_blank" title="k8003">k8003</a>
+                    <a href="wuxingbiao/search@word=PA12" target="_blank" title="PA12">PA12</a>
+                    <a href="wuxingbiao/search@word=960" target="_blank" title="960">960</a>
+                    <a href="wuxingbiao/search@word=TPEE" target="_blank" title="TPEE">TPEE</a>
+                    <a href="wuxingbiao/search@word=AES" target="_blank" title="AES">AES</a>
+                    <a href="wuxingbiao/search@word=PTFE" target="_blank" title="PTFE">PTFE</a>
+                    <a href="wuxingbiao/search@word=PB" target="_blank" title="PB">PB</a>
+                    <a href="wuxingbiao/search@word=123" target="_blank" title="123">123</a>
+                    <a href="wuxingbiao/search@word=PF" target="_blank" title="PF">PF</a>
+                    <a href="wuxingbiao/search@word=MLLDPE" target="_blank" title="MLLDPE">MLLDPE</a>
+
+                    <a href="wuxingbiao/search@word=813" target="_blank" title="813">813</a>
+                    <a href="wuxingbiao/search@word=PC_2FPBT" target="_blank" title="PC/PBT">PC/PBT</a>
+                    <a href="wuxingbiao/search@word=NBR" target="_blank" title="NBR">NBR</a>
+                    <a href="wuxingbiao/search@word=EVOH" target="_blank" title="EVOH">EVOH</a>
+                    <a href="wuxingbiao/search@word=T03" target="_blank" title="T03">T03</a>
+                    <a href="wuxingbiao/search@word=UHMWPE" target="_blank" title="UHMWPE">UHMWPE</a>
+                    <a href="wuxingbiao/search@word=EAA" target="_blank" title="EAA">EAA</a>
+                    <a href="wuxingbiao/search@word=MH" target="_blank" title="MH">MH</a>
+                    <a href="wuxingbiao/search@word=2503 A" target="_blank" title="2503 A">2503 A</a>
+                    <a href="wuxingbiao/search@word=V30G" target="_blank" title="V30G">V30G</a>
+
+                    <a href="wuxingbiao/search@word=CPE" target="_blank" title="CPE">CPE</a>
+                    <a href="wuxingbiao/search@word=SPS" target="_blank" title="SPS">SPS</a>
+                    <a href="wuxingbiao/search@word=8007" target="_blank" title="8007">8007</a>
+                    <a href="wuxingbiao/search@word=BOPP" target="_blank" title="BOPP">BOPP</a>
+                    <a href="wuxingbiao/search@word=COC" target="_blank" title="COC">COC</a>
+                    <a href="wuxingbiao/search@word=590" target="_blank" title="590">590</a>
+                    <a href="wuxingbiao/search@word=PEI" target="_blank" title="PEI">PEI</a>
+                    <a href="wuxingbiao/search@word=2426H" target="_blank" title="2426H">2426H</a>
+                    <a href="wuxingbiao/search@word=PSU" target="_blank" title="PSU">PSU</a>
+                    <a href="wuxingbiao/search@word=2420H" target="_blank" title="2420H">2420H</a>
+
+                    <a href="wuxingbiao/search@word=CPVC" target="_blank" title="CPVC">CPVC</a>
+                    <a href="wuxingbiao/search@word=SIS" target="_blank" title="SIS">SIS</a>
+                    <a href="wuxingbiao/search@word=COP" target="_blank" title="COP">COP</a>
+                    <a href="wuxingbiao/search@word=EBA" target="_blank" title="EBA">EBA</a>
+                    <a href="wuxingbiao/search@word=PBT_2FABS" target="_blank" title="PBT/ABS">PBT/ABS</a>
+                    <a href="wuxingbiao/search@word=HR-5009A" target="_blank" title="HR-5009A">HR-5009A</a>
+                    <a href="wuxingbiao/search@word=783" target="_blank" title="783">783</a>
+                    <a href="wuxingbiao/search@word=DG-MG94" target="_blank" title="DG-MG94">DG-MG94</a>
+                    <a href="wuxingbiao/search@word=PS" target="_blank" title="PS">PS</a>
+                    <a href="wuxingbiao/search@word=7000f" target="_blank" title="7000f">7000f</a>
+
+                    <a href="wuxingbiao/search@word=210" target="_blank" title="210">210</a>
+                    <a href="wuxingbiao/search@word=PA66_2F6" target="_blank" title="PA66/6">PA66/6</a>
+                    <a href="wuxingbiao/search@word=6097" target="_blank" title="6097">6097</a>
+                    <a href="wuxingbiao/search@word=7050" target="_blank" title="7050">7050</a>
+                    <a href="wuxingbiao/search@word=PP_2FEPDM" target="_blank" title="PP/EPDM">PP/EPDM</a>
+                    <a href="wuxingbiao/search@word=POE" target="_blank" title="POE">POE</a>
+                    <a href="wuxingbiao/search@word=PUR" target="_blank" title="PUR">PUR</a>
+                    <a href="wuxingbiao/search@word=SBR" target="_blank" title="SBR">SBR</a>
+                    <a href="wuxingbiao/search@word=417" target="_blank" title="417">417</a>
+                    <a href="wuxingbiao/search@word=A700" target="_blank" title="A700">A700</a>
+                    <a href="wuxingbiao" target="_blank" title="更多">更多&gt;&gt;</a>
+
+                </div>
+            </div>
+            <div class="list_div">
+                <h2 class="list_title"><a href="help/user.html" target="_blank" title="如何委托交易" class="color">帮助中心</a></h2>
+                <div class="list">
+                    <p class="color">我要买塑料：</p>
+                    <p>
+                        <a href="help/trade.html#trade2" target="_blank" title="如何委托交易">如何委托交易</a>
+                        <a href="help/trade.html#trade3" target="_blank" title="如何自己找货">如何自己找货</a>
+                        <a href="help/trade.html#trade4" target="_blank" title="如何查看采购单状态">如何查看采购单状态</a>
+                    </p>
+                </div>
+                <div class="list">
+                    <p class="color">我要卖塑料：</p>
+                    <p>
+                        <a href="help/trade.html#trade7" target="_blank" title="如何发布报价单">如何发布报价单</a>
+                        <a href="help/trade.html#trade6" target="_blank" title="如何单条发布报价">如何单条发布报价</a>
+                        <a href="help/trade.html#trade8" target="_blank" title="如何报价采购信息">如何报价采购信息</a>
+                    </p>
+                </div>
+                <div class="list no_bd">
+                    <p class="color">常见问题：</p>
+                    <p>
+                        <a href="help/user.html#user1" target="_blank" title="注册流程">注册流程</a>
+                        <a href="help/user.html#user2" target="_blank" title="无法登录/忘记密码">无法登录/忘记密码</a>
+                        <a href="help/user.html#user3" target="_blank" title="修改账户信息">修改账户信息</a>
+                    </p>
+                </div>
+            </div>
+            <div class="list_div">
+                <h2 class="list_title"><a href="contact.html" target="_blank" title="联系我们" class="color">联系我们</a></h2>
+                <div class="list no_bd">
+                    <p>
+                        <a href="about.html" target="_blank" title="关于我们">关于我们</a>
+                        <a href="zixun/gsdt/default.htm" target="_blank" title="公司动态">公司动态</a>
+                        <a href="zixun/mtbd/default.htm" target="_blank" title="媒体报道">媒体报道</a>
+                        <a href="job.html" target="_blank" title="诚聘英才">诚聘英才</a>
+                        <a href="contact.html" target="_blank" title="联系我们">联系我们</a>
+                        <a href="feedback.html" target="_blank" title="意见反馈">意见反馈</a>
+                        <!-- <a href="http://www.zhaosuliao.com/ceo_mailbox.html" target="_blank" title="CEO邮箱">CEO邮箱</a> -->
+                        <a href="law.html" target="_blank" title="法律声明">法律声明</a>
+                        <a href="sitemap.html" target="_blank" title="网站地图">网站地图</a>
+                        <a href="links.html" target="_blank" title="友情链接">友情链接</a>
+                    </p>
+                </div>
+            </div>
+            <div class="list_div">
+                <h2 class="list_title"><a href="baike/default.htm" class="color" target="_blank" title="塑料百科">塑料百科</a></h2>
+                <div class="list no_bd">
+                    <p>
+                        <a href="baike/16568.html" target="_blank" title="LCP塑料">LCP塑料</a>
+                        <a href="baike/16565.html" target="_blank" title="HIPS塑料">HIPS塑料</a>
+                        <a href="baike/16563.html" target="_blank" title="GPPS塑料">GPPS塑料</a>
+                        <a href="baike/16558.html" target="_blank" title="注塑制品">注塑制品</a>
+                        <a href="baike/16557.html" target="_blank" title="工程塑料">工程塑料</a>
+                        <a href="baike/16552.html" target="_blank" title="EVA材料">EVA材料</a>
+                        <a href="baike/16546.html" target="_blank" title="ABS塑料">ABS塑料</a>
+                        <a href="baike/16545.html" target="_blank" title="HDPE塑料">HDPE塑料</a>
+                        <a href="baike/16544.html" target="_blank" title="PBT塑料">PBT塑料</a>
+                        <a href="baike/16570.html" target="_blank" title="PC塑料">PC塑料</a>
+                        <a href="baike/16571.html" target="_blank" title="PPS塑料">PPS塑料</a>
+                        <a href="baike/16573.html" target="_blank" title="PET塑料">PET塑料</a>
+                        <a href="baike/16574.html" target="_blank" title="PE塑料">PE塑料</a>
+                        <a href="baike/16582.html" target="_blank" title="POE塑料">POE塑料</a>
+                        <a href="baike/16583.html" target="_blank" title="POM塑料">POM塑料</a>
+                        <a href="baike/16586.html" target="_blank" title="PPO塑料">PPO塑料</a>
+                        <a href="baike/16587.html" target="_blank" title="PP塑料">PP塑料</a>
+                        <a href="baike/16588.html" target="_blank" title="PS塑料">PS塑料</a>
+                        <a href="baike/16589.html" target="_blank" title="PVC塑料">PVC塑料</a>
+                        <a href="baike/16590.html" target="_blank" title="LDPE塑料">LDPE塑料</a>
+                        <a href="baike/16591.html" target="_blank" title="改性塑料">改性塑料</a>
+                        <a href="baike/16592.html" target="_blank" title="HDPE塑料">HDPE塑料</a>
+                        <a href="baike/16594.html" target="_blank" title="EPS塑料">EPS塑料</a>
+                        <a href="baike/16595.html" target="_blank" title="通用塑料">通用塑料</a>
+                        <a href="baike/16596.html" target="_blank" title="LLDPE塑料">LLDPE塑料</a>
+                        <a href="baike/16597.html" target="_blank" title="PA塑料">PA塑料</a>
+                        <a href="baike/16599.html" target="_blank" title="塑料管材">塑料管材</a>
+                        <a href="baike/16600.html" target="_blank" title="塑料原料物性">塑料原料物性</a>
+                        <a href="baike/16601.html" target="_blank" title="辨别塑料原料">辨别塑料原料</a>
+                        <a href="baike/16602.html" target="_blank" title="聚苯乙烯">聚苯乙烯</a>
+                        <a href="baike/16603.html" target="_blank" title="TPU材料">TPU材料</a>
+                        <a href="baike/16604.html" target="_blank" title="PEEK塑料">PEEK塑料</a>
+                        <a href="baike/16606.html" target="_blank" title="LCP塑料">LCP塑料</a>
+                        <a href="baike/16607.html" target="_blank" title="PEI塑料">PEI塑料</a>
+                    </p>
+                </div>
+            </div>
+            <div class="list_div" style="margin-bottom:30px;">
+                <h2 class="list_title">热门标签</h2>
+                <div class="list no_bd">
+                    <p>
+    				<a href="company" target="_blank" title="塑料价格">塑料价格</a>
+    				<a href="../hq.zhaosuliao.com/zzrl.html" target="_blank" title="最全石化装置动态">最全石化装置动态</a>
+    				<a href="baike/16587.html" target="_blank" title="PP塑料">PP塑料</a>
+    				<a href="baike/16583.html" target="_blank" title="POM塑料">POM塑料</a>
+    				<a href="baike/16595.html" target="_blank" title="通用塑料">通用塑料</a>
+    				<a href="baike/16600.html" target="_blank" title="塑料原料物性">塑料原料物性</a>
+    				<a href="baike/16574.html" target="_blank" title="PE塑料">PE塑料</a>
+    				<a href="baike/16544.html" target="_blank" title="PBT塑料">PBT塑料</a>
+    				<a href="baike/16545.html" target="_blank" title="HDPE塑料">HDPE塑料</a>
+    				<a href="baike/16565.html" target="_blank" title="HIPS塑料">HIPS塑料</a>
+    				<a href="../hq.zhaosuliao.com/price/0_1_0_0_0_1_0_0.html" target="_blank" title="塑料价格行情">塑料价格行情</a>
+    				<a href="../hq.zhaosuliao.com/price/cc.html" target="_blank" title="石化出厂价格查询">石化出厂价格查询</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部公共部分-->
+<include file="Index/footer" />

@@ -1,0 +1,111 @@
+<!--头部公共部分-->
+<include file="Index/header" />
+<link href="__PUBLIC__/pc/css/info.css" rel="stylesheet" type="text/css" />
+<script>
+$(function(){
+    //回到顶部
+    var win=$(window);
+    var doc=$(document);
+    win.scroll(function(){
+         if(doc.scrollTop()>=182){
+             $(".up_top").fadeIn();
+                 
+         }else{
+
+        $(".up_top").fadeOut();
+
+         }  
+    });
+
+    $(".up_top").click(function(){
+     $('body,html').animate({scrollTop:0},600);  
+    });
+
+    //左右对齐
+    var divLeft=$(".enter").children("div").eq(0),
+        divRight=$(".enter").children("div").eq(1),
+        divLeftHeight=divLeft.height(),
+        divRightHeight=divRight.height();
+    if(divLeftHeight>=divRightHeight){
+        divRight.height(divLeftHeight);
+    }else{
+        divLeft.height(divRightHeight);
+    }
+
+});
+</script>
+<div class="up_top"><a></a></div><div class="main">
+    <div class="enter">
+        <div class="left07">
+<p class="left_title">
+    <img src="resources/fore/image/info/flag.png" />
+    走进找塑料网
+</p>
+<ul class="left_nav">
+    <li class="first"><a  href="about.html">关于我们</a></li>
+    <li><a  href="zixun/gsdt/default.htm">公司动态</a></li>
+    <li><a  href="zixun/mtbd/default.htm">媒体报道</a></li>
+    <li><a  href="job.html">诚聘英才</a></li>
+    <li><a  href="contact.html">联系我们</a></li>
+    <li><a  href="feedback.html">意见反馈</a></li>
+    <!-- <li><a  href="http://www.zhaosuliao.com/ceo_mailbox.html">CEO邮箱</a></li> -->
+    <li><a  href="law.html">法律声明</a></li>
+    <li><a  href="sitemap.html">网站地图</a></li>
+    <li><a class="active" href="links.html">友情链接</a></li>
+</ul>        </div>
+        <div class="r03">
+            <div class="title03">
+                <span class="s"><a target="_blank" class="a" href="../wpa.qq.com/msgrd@v=3&uin=3061808046&site=qq&menu=yes">3061808046</a>申请友链</span>
+                <div class="mark_line03"></div>
+                友情链接
+            </div>
+            <div class="content03">
+                <p class="links_title">资讯网站</p>
+                <ul class="links">
+                    <li><a target="_blank" href="../hq.zhaosuliao.com/default.htm">塑料原料价格</a></li>
+                    <li><a target="_blank" href="../www.chyxx.com/industry/shiyou/default.htm">石油天然气行业资讯</a></li>
+                    <li><a target="_blank" href="../www.xincailiao.com/index.html">新材料在线</a></li>
+                    <li><a target="_blank" href="../www.tysl.net/default.htm">中国通用塑料信息网</a></li>
+                </ul>
+                <p class="links_title">石油网站</p>
+                <ul class="links">
+                    <li><a target="_blank" href="../www.chemall.com.cn/default.htm">中国石油和化工网</a></li>
+                    <li><a target="_blank" href="../www.emioil.com/default.htm">亿米石油网</a></li>
+                    <li><a target="_blank" href="../www.cnpec.net/default.htm">中华石油化工网</a></li>
+                    <li><a target="_blank" href="../www.oilgas.com.cn/default.htm">东方油气网</a></li>
+                </ul>
+                <p class="links_title">协会网站</p>
+                <ul class="links">
+                    <li><a target="_blank" href="../www.cppia.com.cn/default.htm">中国塑协</a></li>
+                    <li><a target="_blank" href="../cnzbsl.com/default.htm">河南塑协</a></li>
+                    <li><a target="_blank" href="../www.gdpia.com/default.htm">广东塑料网</a></li>
+                </ul>
+                <p class="links_title">综合网站</p>
+                <ul class="links">
+                    <li><a target="_blank" href="../www.suliaojishu.com/default.htm">塑料技术咨询网</a></li>
+                    <li><a target="_blank" href="default.htm">找塑料网</a></li>
+                    <li><a target="_blank" href="../www.dgpengxu.com/default.htm">塑胶原料</a></li>
+                    <li><a target="_blank" href="../www.zz91.com/default.htm">zz91再生网</a></li>
+                    <li><a target="_blank" href="../www.cnslc.cn/default.htm">中国塑料城</a></li>
+                    <li><a target="_blank" href="../www.ch-em.com/default.htm">中国化工园区网</a></li>
+                    <li><a target="_blank" href="../www.cn-plastics.net/default.htm">塑料制造网</a></li>
+                    <li><a target="_blank" href="../www.zhaohuagong.com/default.htm">找化工网</a></li>
+                    <li><a target="_blank" href="../www.chemcp.com/default.htm">中国化工产品网</a></li>
+                    <li><a target="_blank" href="../www.slzp11.com/default.htm">塑料招聘网</a></li>
+                    <li><a target="_blank" href="../m.kuaidi100.com/default.htm">快递查询</a></li>
+                    <li><a target="_blank" href="../www.seekchem.com/default.htm">Seek Chemical</a></li>
+                    <li><a target="_blank" href="baike/default.htm">塑料百科</a></li>
+                    <li><a target="_blank" href="../www.zhankoo.com/default.htm">展会网</a></li>
+                    <li><a target="_blank" href="../www.youliao.com.cn/default.htm">有料网</a></li>
+                    <li><a target="_blank" href="../www.pujyt.com/default.htm">中国PU聚义堂网</a></li>
+                    <li><a target="_blank" href="../www.ezaisheng.com/default.htm">再生资源</a></li>
+                    <li><a target="_blank" href="baike/default.htm">塑料百科</a></li>
+                    <li><a target="_blank" href="../www.u-tpe.com/default.htm">全球弹性体产业门户</a></li>
+                    <li><a target="_blank" href="../www.clime.cc/web/index.jsp">临沂国际商品交易中心有限公司</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部公共部分-->
+<include file="Index/footer" />
