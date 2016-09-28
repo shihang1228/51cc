@@ -2,6 +2,7 @@
 namespace Home\Controller;
 use Think\Controller;
 use Home\Model\CompanyModel;
+use Home\Model\VarietyModel;
 
 class CompanyController extends Controller {
 	protected $tablename = 'company';

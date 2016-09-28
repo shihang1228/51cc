@@ -91,6 +91,7 @@ class UserController extends BaseController {
 				session('nickname',$userinfo['nickname']);
 				session('phone',$userinfo['phone']);
 				//控制跳转？
+				unset($rtn['userinfo']);
 			}
 		}
 		else{
