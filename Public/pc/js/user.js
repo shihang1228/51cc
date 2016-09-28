@@ -60,9 +60,10 @@ $(function() {
                     var location_url = $(".location_url").val();
                     if(rs.result){
                         alert("恭喜你，登录成功");
-                        window.location.href=;
+                        window.location.href=location_url;
                     }else{
-                        alert("登录失败，"+rs.msg);
+                        $("#submit_login").prop("disabled", false).val("登录");
+                        $("#error").html(rs.msg);
                         return;
                     }
                 }
