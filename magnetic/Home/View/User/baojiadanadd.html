@@ -102,35 +102,10 @@ if($(".inp_div1").length>0){
 
 	<div class="member_wrap" >
 	<div class="member_content" >
-<div class="left">
-	
-		<div class="lan">
-		<p class="title" style="margin-top:0;">我的报价单</p>
-		<p><a href="http://www.zhaosuliao.com/member/product/product_import" >批量上传报价</a></p>
-		<p><a href="http://www.zhaosuliao.com/member/product/add" >单条发布报价</a></p>
-		<p><a href="http://www.zhaosuliao.com/member/product/list" >我的报价单</a></p>
-	</div>
-	<div class="lan">
-		<p class="title">我的交易信息</p>
-		<p><a href="http://www.zhaosuliao.com/member/purchase/add" class="on">发布采购</a></p>
-		<p><a href="http://www.zhaosuliao.com/member/purchase/list" >我的采购</a></p>
-	</div>
-	<div class="lan">
-		<p class="title">账户管理</p>
-		<p><a href="http://www.zhaosuliao.com/member/account" >账户信息</a></p>
-		<p><a href="http://www.zhaosuliao.com/member/password/edit" >修改密码</a></p>
-	</div>
-	<div class="tel">
-		<img src="__PUBLIC__/pc/image/member/tel.png"alt="找塑料网交易热线"/>
-		<div class="jyrx">
-			<p>交易热线</p>
-			<p>020-83939808</p>
-		</div>
-	</div>
-	
-</div>
+ 		<!--左侧公共部分-->
+        <include file="User/left" />
 	<div class="right index">
-	<div class="pulic_title">发布采购</div>
+	<div class="pulic_title">单条上传报价</div>
 	<div class="fbcg">
 		<p>您的委托采购内容：</p>
 		<form method="post" action="http://www.zhaosuliao.com/member/purchase/save" id="myform">
@@ -143,7 +118,7 @@ if($(".inp_div1").length>0){
 				<a href="javascript:void(0)" class="content_why">如何填写采购内容？</a>
 			</div>
 			<div class="tab_content">
-				<div class="toggle_div" style="display:none;">
+				<div class="toggle_div" style="display:block;">
 					<div class="biaozhun" >
 						<div class="input_div">
 							<span class="span_text mar_l0">品种：</span>
@@ -168,20 +143,37 @@ if($(".inp_div1").length>0){
 							</span>
 						</div>
 						<div class="input_div mar_t10 mar_b20">
+							<span class="span_text">吨数：</span>
+							<span class="span_input">
+								<input type="text" name="memberPurchase[0].price" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
+							</span>
+							<span class="span_text">交货时间：</span>
+							<span class="span_input">
+								<input type="text" name="memberPurchase[0].price" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
+							</span>
+							<span class="span_text">地点：</span>
+							<span class="span_input">
+								<input type="text" name="memberPurchase[0].price" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
+							</span>
+							<span class="span_text">仓库：</span>
+							<span class="span_input">
+								<input type="text" name="memberPurchase[0].price" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
+							</span>
+						</div>
+						<div class="input_div mar_t10 mar_b20">
 							<span class="span_text mar_l0">备注：</span>
 							<span class="span_input">
 								<input class="max_input" type="text" name="memberPurchase[0].remarks"/>
 							</span>
 						</div>
 					</div>
-				    <div class="add_btn">增加一行</div>
 				 </div>
-				 <div class="text toggle_div" style="display:block;">
+				 <div class="text toggle_div">
 					<textarea class="text_content" name="keyword" placeholder="写下您的真实需求，包括品种、牌号、厂家等，收到后我们会立即给您回电确认，剩下就交给我们吧。&#13;&#10;例子1： LLDPE  延长榆能化  7042   8800元/吨  10吨   &#13;&#10;例子2： PVC  新疆中泰  SG-5  5330元/吨   20吨"></textarea>
 				 </div>
 			 </div>
 			 <p class="queren">确认您发的采购信息真实无误，否则不能发布！谢谢！</p>
-			 <input type="submit" class="fb_btn" value="委托找货" />
+			 <input type="submit" class="fb_btn" value="发布" />
 			 <input type="hidden" value="2" id="flag"  name="judge"/>
 		</form>
 	</div>
