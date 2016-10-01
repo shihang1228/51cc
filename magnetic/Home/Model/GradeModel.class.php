@@ -13,7 +13,7 @@ class GradeModel extends BaseModel{
 	
 	/*牌号列表,返回数组*/
 	public function getGradeList(){
-		$sqlstr = 'select varietyid,varietyname,gradeid,gradename ';
+		$sqlstr = 'select g.varietyid,v.varietyname,g.gradeid,g.gradename ';
 		$sqlstr .= 'from tb_mm_grade g ';
 		$sqlstr .= 'inner join tb_mm_variety v on g.varietyid=v.varietyid ';
 		$sqlstr .= 'where g.delstatus=0 order by g.gradeid';

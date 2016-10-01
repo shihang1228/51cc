@@ -86,10 +86,10 @@ class UserController extends BaseController {
 			if($rtn['result']==true){  //登录成功
 				$userinfo = $rtn['userinfo'];
 				//设置session
-				session('userid',$userinfo['userid']);
-				session('username',$userinfo['username']);
-				session('nickname',$userinfo['nickname']);
-				session('phone',$userinfo['phone']);
+				session('userid',$userinfo['userid']);      //用户id
+				session('username',$userinfo['username']);  //用户名(注册时限定成英文了)
+				session('nickname',$userinfo['nickname']);  //昵称(注册时间未填写,个人中心要加设定入口)
+				session('phone',$userinfo['phone']);        //手机号
 				//控制跳转？
 				unset($rtn['userinfo']);
 			}

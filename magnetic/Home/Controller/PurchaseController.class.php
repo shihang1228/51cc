@@ -2,6 +2,9 @@
 namespace Home\Controller;
 use Think\Controller;
 use Home\Model\BaseModel;
+use Home\Model\VarietyModel;
+use Home\Model\GradeModel;
+use Home\Model\ManufacturerModel;
 
 class PurchaseController extends Controller {
 
@@ -38,5 +41,40 @@ class PurchaseController extends Controller {
         $this->assign('json_arr',$ret[1]);  //数据集
 		//调模板
 		$this->display();
+	}
+	
+	//发布采购
+	public function purchaseadd(){
+		//品种
+		$tb = new VarietyModel();
+		$ret = $tb->getVarietyList();
+		// dump($ret);
+		$this->assign('variety',$ret);
+		
+		//牌号(牌号应该在选择品牌后动态加载(联动)))
+		$tb = new GradeModel();
+		$ret = $tb->getGradeList();
+		// dump($ret);
+		$this->assign('grade',$ret);
+		
+		//厂家
+		$tb = new ManufacturerModel();
+		$ret = $tb->getFactoryList();
+		// dump($ret);
+		$this->assign('factory',$ret);
+		$this->display();
+	}
+	
+	//ajax请求牌号列表
+	public function getGradeListByVariety(){
+		$varietyid = I('varietyid',0);
+		$tb = new GradeModel();
+		$ret = $tb->getGradeByVariety($varietyid);
+		$this->ajaxReturn($ret);
+	}
+	
+	//发布采购后台
+	public function purchaseadd_bgd(){
+		dump(I('post.'));
 	}
 }
