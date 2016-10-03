@@ -120,7 +120,7 @@
                 if(trim($row['score'])!='') MysqlDB::execute_sql('call p_examrecord_save('.$examId.','.$courId.','.($row['score']=='是'?1:0).',now(),1,\''.$batchId.'\')');
             }
             else{
-                echo '没找到.'.$row['idcardNo'].'的数据.';
+                echo '没找到.'.$row['idcardNo'].'的数据 .';
             }
             //if(MysqlDB::execute_sql($sql)===false) echo '保存失败'.$sql.'<br>';
             //echo $sql.'<br>';
