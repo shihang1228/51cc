@@ -3,6 +3,10 @@ namespace Home\Controller;
 use Think\Controller;
 use Home\Model\BaseModel;
 use Home\Model\VarietyModel;
+use Home\Model\GradeModel;
+use Home\Model\ManufacturerModel;
+use Home\Model\OrderSupplyModel;
+use Home\Model\DetailSupplyModel;
 
 class ProductController extends Controller {
 
@@ -61,6 +65,65 @@ class ProductController extends Controller {
 	}
 	
 	public function baojidanadd(){
+		//品种
+		$tb = new VarietyModel();
+		$ret = $tb->getVarietyList();
+		// dump($ret);
+		$this->assign('variety',$ret);
+		
+		//牌号(牌号应该在选择品牌后动态加载(联动)))
+		$tb = new GradeModel();
+		$ret = $tb->getGradeList();
+		// dump($ret);
+		$this->assign('grade',$ret);
+		
+		//厂家
+		$tb = new ManufacturerModel();
+		$ret = $tb->getFactoryList();
+		// dump($ret);
+		$this->assign('factory',$ret);
+		//模板
 		$this->display();
+	}
+	
+	public function addbaojiandan_bgd(){
+		$data = I('post.');
+		// dump($data);
+		//主信息
+		$supply = $data;
+		$supply['ordercode'] = date('YmdHi').rand(1000,9999);
+		$supply['createdby'] = I('session.userid',0);
+		$supply['companyid'] = I('session.companyid',0);
+		$supply['statusid'] = 1;  //待审核
+		$supply['instime'] = date('Y-m-d H:i:s');
+		$supply['updatetime'] = date('Y-m-d H:i:s');
+		
+		$result = array('result'=>false,'msg'=>'','pk'=>'','rowcount'=>'');
+		
+		$tb_o = new OrderSupplyModel();
+		$tb_o->startTrans();
+		$ret_supply = $tb->add($supply);
+		if($ret_supply['result']===true){
+			//明细信息
+			$detail = $data;
+			$detail['orderid'] = $ret_supply['pk'];  //外键
+			$supply['instime'] = date('Y-m-d H:i:s');
+			$supply['updatetime'] = date('Y-m-d H:i:s');
+			$tb_d = new DetailSupplyModel();
+			$ret_detail = $tb_d->add($detail);
+			if($ret_detail['result']===true){
+				$tb_o->commit();
+				$result['result'] = true;
+			}
+			else{
+				$tb_o->rollback();
+			}
+		}
+		else{
+			$tb_o->rollback();
+		}
+
+		//返回结果
+		$this->ajaxReturn($result);
 	}
 }

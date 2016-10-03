@@ -38,4 +38,14 @@ class IndexController extends Controller {
 		//dump($rtn);
 		$this->display();
     }
+	
+	public function header(){
+		$data['userid'] = I('session.userid',0);
+		$data['username'] = I('session.username','');
+		$data['nickname'] = I('session.nickname','');
+		$data['phone'] = I('session.phone','');
+		$this->assign('userdata',$data);
+		// dump($data);
+		$this->display();
+	}
 }
