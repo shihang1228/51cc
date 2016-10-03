@@ -59,4 +59,8 @@ class ProductController extends Controller {
 	public function test(){
 		
 	}
+	
+	public function baojidanadd(){
+		$this->display();
+	}
 }
