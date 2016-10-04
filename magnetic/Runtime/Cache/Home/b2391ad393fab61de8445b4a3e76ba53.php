@@ -169,47 +169,47 @@ if($(".inp_div1").length>0){
 						<div class="input_div">
 							<span class="span_text mar_l0">品种：</span>
 							<span class="span_input">
-								<input type="text" name="memberPurchase[0].name"/>
+								<input type="text" name="varietyid"/>
 							</span>
 							<span class="span_text">厂家：</span>
 							<span class="span_input">
-								<input type="text" name="memberPurchase[0].manufacturer"/>
+								<input type="text" name="factoryid"/>
 							</span>
 							<span class="span_text">牌号：</span>
 							<span class="span_input">
-								<input type="text" name="memberPurchase[0].material"/>
+								<input type="text" name="gradeid"/>
 							</span>
 							<span class="span_text">数量：</span>
 							<span class="span_input">
-								<input type="text" name="memberPurchase[0].onsaleNumber" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
+								<input type="text" name="quantity" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
 							</span>
 							<span class="span_text">价格：</span>
 							<span class="span_input">
-								<input type="text" name="memberPurchase[0].price" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
+								<input type="text" name="unitprice" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
 							</span>
 						</div>
 						<div class="input_div mar_t10 mar_b20">
-							<span class="span_text">吨数：</span>
+							<span class="span_text">单位：</span>
 							<span class="span_input">
-								<input type="text" name="memberPurchase[0].price" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
+								<input type="text" name="unitid" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
 							</span>
 							<span class="span_text">交货时间：</span>
 							<span class="span_input">
-								<input type="text" name="memberPurchase[0].price" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
+								<input type="text" name="deliverydate" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
 							</span>
 							<span class="span_text">地点：</span>
 							<span class="span_input">
-								<input type="text" name="memberPurchase[0].price" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
+								<input type="text" name="deliveryplace" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
 							</span>
 							<span class="span_text">仓库：</span>
 							<span class="span_input">
-								<input type="text" name="memberPurchase[0].price" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
+								<input type="text" name="warehouse" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
 							</span>
 						</div>
 						<div class="input_div mar_t10 mar_b20">
 							<span class="span_text mar_l0">备注：</span>
 							<span class="span_input">
-								<input class="max_input" type="text" name="memberPurchase[0].remarks"/>
+								<input class="max_input" type="text" name="comments"/>
 							</span>
 						</div>
 					</div>
