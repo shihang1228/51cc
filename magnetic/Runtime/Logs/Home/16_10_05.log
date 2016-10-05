@@ -1154,3 +1154,110 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
 
+[ 2016-10-05T22:29:21+08:00 ] 127.0.0.1 /index.php/Home/Purchase/purchaseadd_bgd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: data C:\51ccnew\51cc\magnetic\Home\Controller\PurchaseController.class.php 第 103 行.
+NOTIC: [8] Undefined variable: data C:\51ccnew\51cc\magnetic\Home\Controller\PurchaseController.class.php 第 104 行.
+NOTIC: [8] Undefined variable: data C:\51ccnew\51cc\magnetic\Home\Controller\PurchaseController.class.php 第 105 行.
+
+[ 2016-10-05T22:31:37+08:00 ] 127.0.0.1 /index.php/Home/Purchase/purchaseadd_bgd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: data C:\51ccnew\51cc\magnetic\Home\Controller\PurchaseController.class.php 第 105 行.
+NOTIC: [8] Undefined variable: data C:\51ccnew\51cc\magnetic\Home\Controller\PurchaseController.class.php 第 106 行.
+NOTIC: [8] Undefined variable: data C:\51ccnew\51cc\magnetic\Home\Controller\PurchaseController.class.php 第 107 行.
+SQL: SHOW COLUMNS FROM `tb_order_purchase` [ RunTime:0.0660s ]
+ERR: 1048:Column 'deliveryplace' cannot be null
+ [ SQL语句 ] : INSERT INTO `tb_order_purchase` (`ordercode`,`createdby`,`companyid`,`statusid`,`instime`,`updatetime`,`deliveryplace`,`deliverydate`,`comments`) VALUES ('2016100522319872','0','0','1','2016-10-05 22:31:37','2016-10-05 22:31:37',NULL,NULL,NULL)
+ERR: 1048:Column 'deliveryplace' cannot be null
+ [ SQL语句 ] : INSERT INTO `tb_order_purchase` (`ordercode`,`createdby`,`companyid`,`statusid`,`instime`,`updatetime`,`deliveryplace`,`deliverydate`,`comments`) VALUES ('2016100522319872','0','0','1','2016-10-05 22:31:37','2016-10-05 22:31:37',NULL,NULL,NULL)
+
+[ 2016-10-05T22:32:14+08:00 ] 127.0.0.1 /index.php/Home/Purchase/purchaseadd_bgd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: data C:\51ccnew\51cc\magnetic\Home\Controller\PurchaseController.class.php 第 106 行.
+NOTIC: [8] Undefined variable: data C:\51ccnew\51cc\magnetic\Home\Controller\PurchaseController.class.php 第 107 行.
+SQL: SHOW COLUMNS FROM `tb_order_purchase` [ RunTime:0.0650s ]
+ERR: 1048:Column 'deliverydate' cannot be null
+ [ SQL语句 ] : INSERT INTO `tb_order_purchase` (`ordercode`,`createdby`,`companyid`,`statusid`,`instime`,`updatetime`,`deliveryplace`,`deliverydate`,`comments`) VALUES ('2016100522323131','0','0','1','2016-10-05 22:32:14','2016-10-05 22:32:14','',NULL,NULL)
+ERR: 1048:Column 'deliverydate' cannot be null
+ [ SQL语句 ] : INSERT INTO `tb_order_purchase` (`ordercode`,`createdby`,`companyid`,`statusid`,`instime`,`updatetime`,`deliveryplace`,`deliverydate`,`comments`) VALUES ('2016100522323131','0','0','1','2016-10-05 22:32:14','2016-10-05 22:32:14','',NULL,NULL)
+
+[ 2016-10-05T22:32:40+08:00 ] 127.0.0.1 /index.php/Home/Purchase/purchaseadd_bgd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: data C:\51ccnew\51cc\magnetic\Home\Controller\PurchaseController.class.php 第 107 行.
+SQL: SHOW COLUMNS FROM `tb_order_purchase` [ RunTime:0.0930s ]
+ERR: 1048:Column 'comments' cannot be null
+ [ SQL语句 ] : INSERT INTO `tb_order_purchase` (`ordercode`,`createdby`,`companyid`,`statusid`,`instime`,`updatetime`,`deliveryplace`,`deliverydate`,`comments`) VALUES ('2016100522326217','0','0','1','2016-10-05 22:32:39','2016-10-05 22:32:39','','2016-10-05',NULL)
+ERR: 1048:Column 'comments' cannot be null
+ [ SQL语句 ] : INSERT INTO `tb_order_purchase` (`ordercode`,`createdby`,`companyid`,`statusid`,`instime`,`updatetime`,`deliveryplace`,`deliverydate`,`comments`) VALUES ('2016100522326217','0','0','1','2016-10-05 22:32:39','2016-10-05 22:32:39','','2016-10-05',NULL)
+
+[ 2016-10-05T22:32:56+08:00 ] 127.0.0.1 /index.php/Home/Purchase/purchaseadd_bgd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_order_purchase` [ RunTime:0.0710s ]
+SQL: INSERT INTO `tb_order_purchase` (`ordercode`,`createdby`,`companyid`,`statusid`,`instime`,`updatetime`,`deliveryplace`,`deliverydate`,`comments`) VALUES ('2016100522326131','0','0','1','2016-10-05 22:32:55','2016-10-05 22:32:55','','2016-10-05','') [ RunTime:0.0710s ]
+NOTIC: [8] Undefined variable: data C:\51ccnew\51cc\magnetic\Home\Controller\PurchaseController.class.php 第 118 行.
+NOTIC: [8] Undefined variable: data C:\51ccnew\51cc\magnetic\Home\Controller\PurchaseController.class.php 第 119 行.
+NOTIC: [8] Undefined variable: data C:\51ccnew\51cc\magnetic\Home\Controller\PurchaseController.class.php 第 120 行.
+NOTIC: [8] Undefined variable: data C:\51ccnew\51cc\magnetic\Home\Controller\PurchaseController.class.php 第 122 行.
+NOTIC: [8] Undefined variable: data C:\51ccnew\51cc\magnetic\Home\Controller\PurchaseController.class.php 第 123 行.
+NOTIC: [8] Undefined variable: data C:\51ccnew\51cc\magnetic\Home\Controller\PurchaseController.class.php 第 124 行.
+NOTIC: [8] Undefined variable: data C:\51ccnew\51cc\magnetic\Home\Controller\PurchaseController.class.php 第 126 行.
+SQL: SHOW COLUMNS FROM `tb_detail_purchase` [ RunTime:0.0610s ]
+ERR: 1048:Column 'varietyid' cannot be null
+ [ SQL语句 ] : INSERT INTO `tb_detail_purchase` (`orderid`,`varietyid`,`gradeid`,`factoryid`,`specid`,`quantity`,`unitid`,`unitprice`,`claddingid`,`comments`,`instime`,`updatetime`) VALUES ('10',NULL,NULL,NULL,'1',NULL,NULL,NULL,'1',NULL,'2016-10-05 22:32:56','2016-10-05 22:32:56')
+ERR: 1048:Column 'varietyid' cannot be null
+ [ SQL语句 ] : INSERT INTO `tb_detail_purchase` (`orderid`,`varietyid`,`gradeid`,`factoryid`,`specid`,`quantity`,`unitid`,`unitprice`,`claddingid`,`comments`,`instime`,`updatetime`) VALUES ('10',NULL,NULL,NULL,'1',NULL,NULL,NULL,'1',NULL,'2016-10-05 22:32:56','2016-10-05 22:32:56')
+
+[ 2016-10-05T22:34:02+08:00 ] 127.0.0.1 /index.php/Home/Purchase/purchaseadd_bgd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_order_purchase` [ RunTime:0.0790s ]
+SQL: INSERT INTO `tb_order_purchase` (`ordercode`,`createdby`,`companyid`,`statusid`,`instime`,`updatetime`,`deliveryplace`,`deliverydate`,`comments`) VALUES ('2016100522342108','0','0','1','2016-10-05 22:34:01','2016-10-05 22:34:01','','2016-10-05','1') [ RunTime:0.0710s ]
+NOTIC: [8] Undefined index: unitid C:\51ccnew\51cc\magnetic\Home\Controller\PurchaseController.class.php 第 123 行.
+SQL: SHOW COLUMNS FROM `tb_detail_purchase` [ RunTime:0.0730s ]
+ERR: 1452:Cannot add or update a child row: a foreign key constraint fails (`qdm122976199_db`.`tb_detail_purchase`, CONSTRAINT `tb_detail_purchase_ibfk_4` FOREIGN KEY (`factoryid`) REFERENCES `tb_manufacturer` (`factoryid`))
+ [ SQL语句 ] : INSERT INTO `tb_detail_purchase` (`orderid`,`varietyid`,`gradeid`,`factoryid`,`specid`,`quantity`,`unitid`,`unitprice`,`claddingid`,`comments`,`instime`,`updatetime`) VALUES ('11','1','1','1','1','1',NULL,'1','1','1','2016-10-05 22:34:02','2016-10-05 22:34:02')
+ERR: 1452:Cannot add or update a child row: a foreign key constraint fails (`qdm122976199_db`.`tb_detail_purchase`, CONSTRAINT `tb_detail_purchase_ibfk_4` FOREIGN KEY (`factoryid`) REFERENCES `tb_manufacturer` (`factoryid`))
+ [ SQL语句 ] : INSERT INTO `tb_detail_purchase` (`orderid`,`varietyid`,`gradeid`,`factoryid`,`specid`,`quantity`,`unitid`,`unitprice`,`claddingid`,`comments`,`instime`,`updatetime`) VALUES ('11','1','1','1','1','1',NULL,'1','1','1','2016-10-05 22:34:02','2016-10-05 22:34:02')
+
+[ 2016-10-05T22:34:49+08:00 ] 127.0.0.1 /index.php/Home/Purchase/purchaseadd_bgd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_order_purchase` [ RunTime:0.3310s ]
+SQL: INSERT INTO `tb_order_purchase` (`ordercode`,`createdby`,`companyid`,`statusid`,`instime`,`updatetime`,`deliveryplace`,`deliverydate`,`comments`) VALUES ('2016100522346815','0','0','1','2016-10-05 22:34:48','2016-10-05 22:34:48','','2016-10-05','1') [ RunTime:0.0660s ]
+NOTIC: [8] Undefined index: unitid C:\51ccnew\51cc\magnetic\Home\Controller\PurchaseController.class.php 第 123 行.
+SQL: SHOW COLUMNS FROM `tb_detail_purchase` [ RunTime:0.3330s ]
+SQL: INSERT INTO `tb_detail_purchase` (`orderid`,`varietyid`,`gradeid`,`factoryid`,`specid`,`quantity`,`unitid`,`unitprice`,`claddingid`,`comments`,`instime`,`updatetime`) VALUES ('12','1','1','0','1','1',NULL,'1','1','1','2016-10-05 22:34:49','2016-10-05 22:34:49') [ RunTime:0.0680s ]
+
