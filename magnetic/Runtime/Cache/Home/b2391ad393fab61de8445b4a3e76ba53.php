@@ -134,7 +134,7 @@ if($(".inp_div1").length>0){
     </div>
     <div class="lan">
         <p class="title">我的交易信息</p>
-        <p><a href="<?php echo U('Home/User/purchaseadd');?>" >发布采购</a></p>
+        <p><a href="<?php echo U('Home/Purchase/purchaseadd');?>" >发布采购</a></p>
         <p><a href="http://www.zhaosuliao.com/member/purchase/list" >我的采购</a></p>
     </div>
     <div class="lan">

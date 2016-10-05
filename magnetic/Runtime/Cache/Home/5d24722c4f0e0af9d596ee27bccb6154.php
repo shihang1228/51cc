@@ -134,7 +134,7 @@ if($(".inp_div1").length>0){
     </div>
     <div class="lan">
         <p class="title">我的交易信息</p>
-        <p><a href="<?php echo U('Home/User/purchaseadd');?>" >发布采购</a></p>
+        <p><a href="<?php echo U('Home/Purchase/purchaseadd');?>" >发布采购</a></p>
         <p><a href="http://www.zhaosuliao.com/member/purchase/list" >我的采购</a></p>
     </div>
     <div class="lan">
@@ -154,7 +154,7 @@ if($(".inp_div1").length>0){
 	<div class="pulic_title">发布采购</div>
 	<div class="fbcg">
 		<p>您的委托采购内容：</p>
-		<form method="post" action="http://www.zhaosuliao.com/member/purchase/save" id="myform">
+		<form method="post" action="<?php echo U('Home/Purchase/purchaseadd_bgd');?>" id="myform">
 			
 			<div class="tab_head">
 				<ul>
@@ -169,29 +169,29 @@ if($(".inp_div1").length>0){
 						<div class="input_div">
 							<span class="span_text mar_l0">品种：</span>
 							<span class="span_input">
-								<input type="text" name="memberPurchase[0].name"/>
+								<input type="text" name="varietyid"/>
 							</span>
 							<span class="span_text">厂家：</span>
 							<span class="span_input">
-								<input type="text" name="memberPurchase[0].manufacturer"/>
+								<input type="text" name="factoryid"/>
 							</span>
 							<span class="span_text">牌号：</span>
 							<span class="span_input">
-								<input type="text" name="memberPurchase[0].material"/>
+								<input type="text" name="gradeid"/>
 							</span>
 							<span class="span_text">数量：</span>
 							<span class="span_input">
-								<input type="text" name="memberPurchase[0].onsaleNumber" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
+								<input type="text" name="quantity" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
 							</span>
 							<span class="span_text">价格：</span>
 							<span class="span_input">
-								<input type="text" name="memberPurchase[0].price" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
+								<input type="text" name="unitprice" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
 							</span>
 						</div>
 						<div class="input_div mar_t10 mar_b20">
 							<span class="span_text mar_l0">备注：</span>
 							<span class="span_input">
-								<input class="max_input" type="text" name="memberPurchase[0].remarks"/>
+								<input class="max_input" type="text" name="comments"/>
 							</span>
 						</div>
 					</div>
