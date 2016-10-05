@@ -4,7 +4,9 @@ use Think\Controller;
 use Home\Model\BaseModel;
 use Home\Model\VarietyModel;
 use Home\Model\GradeModel;
+use Home\Model\SpecificationModel;
 use Home\Model\ManufacturerModel;
+use Home\Model\CladdingModel;
 
 class PurchaseController extends Controller {
 
@@ -62,6 +64,20 @@ class PurchaseController extends Controller {
 		$ret = $tb->getFactoryList();
 		// dump($ret);
 		$this->assign('factory',$ret);
+		
+		//规格形状
+		$tb = new SpecificationModel();
+		$ret = $tb->getSpecList();
+		// dump($ret);
+		$this->assign('spec',$ret);
+		
+		//镀层
+		$tb = new CladdingModel();
+		$ret = $tb->getCladdingList();
+		// dump($ret);
+		$this->assign('cladding',$ret);
+		
+		//模板
 		$this->display();
 	}
 	

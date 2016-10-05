@@ -5,8 +5,10 @@ use Home\Model\BaseModel;
 use Home\Model\VarietyModel;
 use Home\Model\GradeModel;
 use Home\Model\ManufacturerModel;
+use Home\Model\SpecificationModel;
 use Home\Model\OrderSupplyModel;
 use Home\Model\DetailSupplyModel;
+use Home\Model\CladdingModel;
 
 class ProductController extends Controller {
 
@@ -64,7 +66,7 @@ class ProductController extends Controller {
 		
 	}
 	
-	public function baojidanadd(){
+	public function baojiadanadd(){
 		//品种
 		$tb = new VarietyModel();
 		$ret = $tb->getVarietyList();
@@ -82,6 +84,19 @@ class ProductController extends Controller {
 		$ret = $tb->getFactoryList();
 		// dump($ret);
 		$this->assign('factory',$ret);
+		
+		//规格形状
+		$tb = new SpecificationModel();
+		$ret = $tb->getSpecList();
+		// dump($ret);
+		$this->assign('spec',$ret);
+		
+		//镀层
+		$tb = new CladdingModel();
+		$ret = $tb->getCladdingList();
+		// dump($ret);
+		$this->assign('cladding',$ret);
+		
 		//模板
 		$this->display();
 	}
