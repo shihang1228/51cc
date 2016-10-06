@@ -194,6 +194,7 @@ $(function() {
             }
         });
     });
+    /*退出登录 author：sh*/
     $(".logout").on("click",function(e){
         e.preventDefault();
         var href = $(this).attr("href");
@@ -204,6 +205,37 @@ $(function() {
                 if(data.result){
                     alert(data.msg);
                     window.location.href=url;
+                }
+            }
+        })
+    })
+    /*可输可选下拉框 author:sh*/
+    $(".combobox input").on('keyup',function(){
+        var $ul = $(this).next();
+        $ul.find(".no-result").remove();
+        var $results = $ul.find("li").hide().filter(":contains('"+this.value+"')").show();
+        if(this.value == ''){
+            $ul.find("li").show();
+        }
+    }).next().on('mouseenter',"li",function(){
+        $(this).parent().prev().val(this.innerHTML);
+    });
+    
+    /*品牌级联 author:sh*/
+    $("#varietyid").on("change",function(){
+        var val = $(this).val();
+        var jladdress = $(".jladdress").val();
+        $("#gradelist").empty();
+        $(".gradeid").val("");
+        $.ajax({
+            type: "post",
+            url: jladdress,
+            data: "varietyid="+val,
+            success: function (msg) {
+                if(msg.length != 0){
+                    for(var i=0;i<msg.length;i++){
+                        $("#gradelist").append("<li data-id='"+msg[i].gradeid+"'>"+msg[i].gradename+"</li>")
+                    }
                 }
             }
         })

@@ -72,18 +72,6 @@
 </div><script type="text/javascript">
 $(function()
 {
-	/*可输可选下拉框*/
-    $(".combobox input").on('keyup',function(){
-        var $ul = $(this).next();
-        $ul.find(".no-result").remove();
-        var $results = $ul.find("li").hide().filter(":contains('"+this.value+"')").show();
-        if(this.value == ''){
-            $ul.find("li").show();
-        }
-    }).next().find("li").on('mouseenter',function(){
-        $(this).parent().prev().val(this.innerHTML);
-    });
-	
 	// 增加一行
 	var idx=0;
 	$(".add_btn").click(function(){
@@ -105,7 +93,6 @@ $(function()
 		})
 		
 	});
-	
 	
 	//弹框
 	$(".content_why").click(function(){
@@ -195,15 +182,16 @@ if($(".inp_div1").length>0){
 	<div class="right index">
 	<div class="pulic_title">单条上传报价</div>
 	<div class="fbcg">
-		<p>您的委托采购内容：</p>
+		<p>您的报价单内容：</p>
 		<form method="post" action="<?php echo U('Home/Product/addbaojiandan_bgd');?>" id="myform">
-			
+			<!--级联地址-->
+			<input type="hidden" value="<?php echo U('Home/Base/gradelist');?>" class="jladdress" />			
 			<div class="tab_head">
 				<ul>
-					<li>标准格式</li>
-					<li class="on">文本格式</li>
+					<li class="on">单条报价单</li>
+					<li>批量报价单</li>
 				</ul>
-				<a href="javascript:void(0)" class="content_why">如何填写采购内容？</a>
+				<!-- <a href="javascript:void(0)" class="content_why">如何填写采购内容？</a> -->
 			</div>
 			<div class="tab_content">
 				<div class="toggle_div" style="display:block;">
@@ -211,16 +199,16 @@ if($(".inp_div1").length>0){
 						<div class="input_div">
 							<span class="span_text mar_l0">品种：</span>
 							<span class="span_input">
-								<select name="varietyid" id="">
+								<select name="varietyid" id="varietyid">
 									<option value="0">请选择品种</option>
 									<?php if(is_array($variety)): $i = 0; $__LIST__ = $variety;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo['varietyid']); ?>"><?php echo ($vo['varietyname']); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
 								</select>
 							</span>
 							<span class="span_text">牌号：</span>
 							<span class="span_input combobox">
-								<input type="text" name="gradeid"/>
-								<ul>
-									<?php if(is_array($grade)): $i = 0; $__LIST__ = $grade;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li data-id="<?php echo ($vo['gradeid']); ?>"><?php echo ($vo['gradename']); ?></li><?php endforeach; endif; else: echo "" ;endif; ?>
+								<input type="text" name="gradeid" class="gradeid"/>
+								<ul id="gradelist">
+									
 								</ul>
 							</span>
 							<span class="span_text">厂家：</span>
@@ -232,11 +220,11 @@ if($(".inp_div1").length>0){
 							</span>
 							<span class="span_text">数量：</span>
 							<span class="span_input">
-								<input type="text" name="quantity" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
+								<input type="text" name="quantity"/>
 							</span>
 							<span class="span_text">价格：</span>
 							<span class="span_input">
-								<input type="text" name="unitprice" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
+								<input type="text" name="unitprice"/>
 							</span>
 						</div>
 						<div class="input_div mar_t10 mar_b20">
@@ -244,20 +232,48 @@ if($(".inp_div1").length>0){
 							<span class="span_input">
 								<select name="unitid" id="">
 									<option value="0">请选择单位</option>
-									<?php if(is_array($unitid)): $i = 0; $__LIST__ = $unitid;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo['factoryid']); ?>"><?php echo ($vo['factoryname']); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+									<?php if(is_array($unit)): $i = 0; $__LIST__ = $unit;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo['unitid']); ?>"><?php echo ($vo['unitname']); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
 								</select>
 							</span>
-							<span class="span_text">交货时间：</span>
+							<span class="span_text">时间：</span>
 							<span class="span_input">
-								<input type="text" name="deliverydate" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
+								<input type="text" name="deliverydate"/>
 							</span>
 							<span class="span_text">地点：</span>
 							<span class="span_input">
-								<input type="text" name="deliveryplace" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
+								<input type="text" name="deliveryplace"/>
 							</span>
 							<span class="span_text">仓库：</span>
 							<span class="span_input">
-								<input type="text" name="warehouse" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
+								<input type="text" name="warehouse"/>
+							</span>
+						</div>
+						<div class="input_div mar_t10 mar_b20">
+							<span class="span_text">形状：</span>
+							<span class="span_input">
+								<select name="specid" id="">
+									<option value="0">请选择形状</option>
+									<?php if(is_array($spec)): $i = 0; $__LIST__ = $spec;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo['specid']); ?>"><?php echo ($vo['specname']); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+								</select>
+							</span>
+							<span class="span_text">镀层：</span>
+							<span class="span_input">
+								<select name="claddingid" id="">
+									<option value="0">请选择镀层</option>
+									<?php if(is_array($cladding)): $i = 0; $__LIST__ = $cladding;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo['claddingid']); ?>"><?php echo ($vo['claddingname']); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+								</select>
+							</span>
+							<span class="span_text mar_l0">长：</span>
+							<span class="span_input">
+								<input type="text" name="length_diameter"/>
+							</span>
+							<span class="span_text mar_l0">宽：</span>
+							<span class="span_input">
+								<input type="text" name="width_aperture"/>
+							</span>
+							<span class="span_text mar_l0">高：</span>
+							<span class="span_input">
+								<input type="text" name="height_thickness"/>
 							</span>
 						</div>
 						<div class="input_div mar_t10 mar_b20">
@@ -268,7 +284,7 @@ if($(".inp_div1").length>0){
 						</div>
 					</div>
 				 </div>
-				 <div class="text toggle_div">
+				 <div class="text toggle_div hide">
 					<textarea class="text_content" name="keyword" placeholder="写下您的真实需求，包括品种、牌号、厂家等，收到后我们会立即给您回电确认，剩下就交给我们吧。&#13;&#10;例子1： LLDPE  延长榆能化  7042   8800元/吨  10吨   &#13;&#10;例子2： PVC  新疆中泰  SG-5  5330元/吨   20吨"></textarea>
 				 </div>
 			 </div>
