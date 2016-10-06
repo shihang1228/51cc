@@ -49,6 +49,7 @@ class PurchaseController extends BaseController {
 	
 	//发布采购
 	public function purchaseadd(){
+		$this->header();
 		//品种
 		$tb = new VarietyModel();
 		$ret = $tb->getVarietyList();

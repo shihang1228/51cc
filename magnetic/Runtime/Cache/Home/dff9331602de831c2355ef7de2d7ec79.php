@@ -1,4 +1,6 @@
-<?php if (!defined('THINK_PATH')) exit();?><!--头部公共部分-->
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <!--头部公共部分-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
     <head>
@@ -22,39 +24,7 @@
         <script src="/51ccnew/Public/pc/js/common.js" type="text/javascript"></script>        
     </head>
 <body>
-<link href="/51ccnew/Public/pc/css/member.css" rel="stylesheet" type="text/css" />
-<style type="text/css">
-	/*可输可选下拉*/
-.combobox input:focus ~ ul{display:block;}
-.combobox ul{
-    position: absolute;
-    left: 224px;
-    top: 32px;
-    width: 106px;
-    border: 1px solid #bbb;
-    z-index: 100;
-    background: #fff;
-    border-top: 0;
-    max-height: 243px;
-    overflow: auto;
-    display:none;
-}
-.combobox ul li{
-    font-size: 14px;
-    text-indent: 10px;
-    cursor: pointer;
-    border-bottom: 1px solid #dedede;
-}
-.combobox ul li:hover{
-    background-color: #abcdef;
-}
-.combobox ul li.no-result{
-    color:#eee;
-}
-.combobox ul li.no-result:hover{
-    background-color:#fff;
-}
-</style>
+<link href="http://www.zhaosuliao.com/resources/fore/css/member.css?v=20151030" rel="stylesheet" type="text/css" />
 <div class="top">
     <div class="top_t">
         <div class="w960">
@@ -66,107 +36,13 @@
     </div>
     <div class="logo">
         <div class="w960" style=" overflow:hidden;">
-            <img src="/51ccnew/Public/pc/image/member/member_logo.png" title="找塑料网" alt="找塑料网logo"/>
+            <img src="http://www.zhaosuliao.com/resources/fore/image/member/member_logo.png" title="找塑料网" alt="找塑料网logo"/>
         </div>
     </div>
-</div><script type="text/javascript">
-$(function()
-{
-	/*可输可选下拉框*/
-    $(".combobox input").on('keyup',function(){
-        var $ul = $(this).next();
-        $ul.find(".no-result").remove();
-        var $results = $ul.find("li").hide().filter(":contains('"+this.value+"')").show();
-        if(this.value == ''){
-            $ul.find("li").show();
-        }
-    }).next().find("li").on('mouseenter',function(){
-        $(this).parent().prev().val(this.innerHTML);
-    });
-	
-	// 增加一行
-	var idx=0;
-	$(".add_btn").click(function(){
-		idx++;
-		var obj=$(".biaozhun").eq(0).clone(true);
-		$(this).before(obj);
-		$(".biaozhun").eq(idx).find("input").val('');
-		$(".biaozhun").eq(idx).find("input").each(function(){
-			var str=$(this).attr('name');
-				$(this).attr('name',str.replace(/0/, idx));
-		})
-	});
-	$(".tab_head ul li").each(function(i){
-		$(this).click(function(){
-			$(".tab_head ul li").removeClass('on');
-			$(this).addClass("on");
-			$(".toggle_div").hide().eq(i).show();
-			$("#flag").val(i+1);
-		})
-		
-	});
-	
-	
-	//弹框
-	$(".content_why").click(function(){
-		$("#mask").css({'height':$('body').height()}).show();
-		$(".tan_div").show();
-	});
-	$(".close").click(function(){
-		$("#mask").hide();
-		$(".tan_div").hide();
-	});
-	
-	//表单验证
-	
-if($(".inp_div1").length>0){
-	$("#myform1").submit(function(){
-		if($.trim($('input[name="name"]').val())==''){
-			alert('请输入公司名称');
-			return false;
-		}else if($.trim($(".h_30").val())==''){
-			alert('请选择企业类型');
-			return false;
-		}else if($.trim($('input[name="provinceName"]').val())==''){
-			alert('请输入省份');
-			return false;
-		}else if($.trim($('input[name="cityName"]').val())==''){
-			alert('请输入城市');
-			return false;
-		}else if($.trim($('input[name="mainProducts"]').val())==''){
-			alert('请输入主营品种');
-			return false;
-		}else if($.trim($('input[name="linkman"]').val())==''){
-			alert('请输入联系人');
-			return false;
-		}
-		
-	});
-	
-}else{
-	$("#myform1").submit(function(){
-		var str='';
-		$(".input_div").each(function(){
-			 $(this).find("input").each(function(){
-				str+=$(this).val();
-			})
-		})
-		var text_content=$(".text_content").val();
-		if(str=='' && text_content==''){
-			alert('请输入委托采购内容');
-			return false;
-		}
-		
-	})
-	
-}
-	
-});
-</script>
-
-	<div class="member_wrap" >
-	<div class="member_content" >
- 		<!--左侧公共部分-->
+</div>
+<div class="member_wrap" >
+    <div class="member_content" >
+        <!--底部公共部分-->
         <div class="left">
     <div class="lan">
         <p class="title" style="margin-top:0;">我的报价单</p>
@@ -192,105 +68,136 @@ if($(".inp_div1").length>0){
         </div>
     </div>
 </div>  
-	<div class="right index">
-	<div class="pulic_title">单条上传报价</div>
-	<div class="fbcg">
-		<p>您的委托采购内容：</p>
-		<form method="post" action="<?php echo U('Home/Product/addbaojiandan_bgd');?>" id="myform">
-			
-			<div class="tab_head">
-				<ul>
-					<li>标准格式</li>
-					<li class="on">文本格式</li>
-				</ul>
-				<a href="javascript:void(0)" class="content_why">如何填写采购内容？</a>
-			</div>
-			<div class="tab_content">
-				<div class="toggle_div" style="display:block;">
-					<div class="biaozhun pr" >
-						<div class="input_div">
-							<span class="span_text mar_l0">品种：</span>
-							<span class="span_input">
-								<select name="varietyid" id="">
-									<option value="0">请选择品种</option>
-									<?php if(is_array($variety)): $i = 0; $__LIST__ = $variety;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo['varietyid']); ?>"><?php echo ($vo['varietyname']); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-								</select>
-							</span>
-							<span class="span_text">牌号：</span>
-							<span class="span_input combobox">
-								<input type="text" name="gradeid"/>
-								<ul>
-									<?php if(is_array($grade)): $i = 0; $__LIST__ = $grade;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li data-id="<?php echo ($vo['gradeid']); ?>"><?php echo ($vo['gradename']); ?></li><?php endforeach; endif; else: echo "" ;endif; ?>
-								</ul>
-							</span>
-							<span class="span_text">厂家：</span>
-							<span class="span_input">
-								<select name="factoryid" id="">
-									<option value="0">请选择厂家</option>
-									<?php if(is_array($factory)): $i = 0; $__LIST__ = $factory;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo['factoryid']); ?>"><?php echo ($vo['factoryname']); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-								</select>
-							</span>
-							<span class="span_text">数量：</span>
-							<span class="span_input">
-								<input type="text" name="quantity" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
-							</span>
-							<span class="span_text">价格：</span>
-							<span class="span_input">
-								<input type="text" name="unitprice" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
-							</span>
-						</div>
-						<div class="input_div mar_t10 mar_b20">
-							<span class="span_text">单位：</span>
-							<span class="span_input">
-								<select name="unitid" id="">
-									<option value="0">请选择单位</option>
-									<?php if(is_array($unitid)): $i = 0; $__LIST__ = $unitid;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo['factoryid']); ?>"><?php echo ($vo['factoryname']); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-								</select>
-							</span>
-							<span class="span_text">交货时间：</span>
-							<span class="span_input">
-								<input type="text" name="deliverydate" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
-							</span>
-							<span class="span_text">地点：</span>
-							<span class="span_input">
-								<input type="text" name="deliveryplace" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
-							</span>
-							<span class="span_text">仓库：</span>
-							<span class="span_input">
-								<input type="text" name="warehouse" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
-							</span>
-						</div>
-						<div class="input_div mar_t10 mar_b20">
-							<span class="span_text mar_l0">备注：</span>
-							<span class="span_input">
-								<input class="max_input" type="text" name="comments"/>
-							</span>
-						</div>
-					</div>
-				 </div>
-				 <div class="text toggle_div">
-					<textarea class="text_content" name="keyword" placeholder="写下您的真实需求，包括品种、牌号、厂家等，收到后我们会立即给您回电确认，剩下就交给我们吧。&#13;&#10;例子1： LLDPE  延长榆能化  7042   8800元/吨  10吨   &#13;&#10;例子2： PVC  新疆中泰  SG-5  5330元/吨   20吨"></textarea>
-				 </div>
-			 </div>
-			 <p class="queren">确认您发的采购信息真实无误，否则不能发布！谢谢！</p>
-			 <input type="submit" class="fb_btn" value="发布" />
-			 <input type="hidden" value="2" id="flag"  name="judge"/>
-		</form>
-	</div>
-</div>
+    <div class="right index">
+        <p class="welcome">2016年08月28日  尊敬的 <span class="color_f90"><?php echo ($userdata['username']); ?>(<?php echo ($userdata['phone']); ?>)</span>，欢迎来到找塑料网会员中心！<a href="http://jr.zhaosuliao.com/my" style="margin-left: 60px; color: #3232FF;">申请金融服务</a></p>
+        <div class="apply_vip">
+            <img class="tan" src="http://www.zhaosuliao.com/resources/fore/image/member/tan.png"/>
+            <div class="vip_text">
+                    <p>您的基本资料未填写完成。</p>
+                    <p>请完善您的基本资料并申请正式会员，享受更多会员服务。</p>
+                    <a class="vip_btn" href="http://www.zhaosuliao.com/member/account/preAudit">立即申请正式会员</a>
+            </div>
+        </div>
+        <div class="pulic_title">我的专属交易员</div>
+            <p class="no_vip">您还未申请正式会员，不能享有专属交易员服务。</p>
+            <p class="p_a">
+                <a class="btn_a" href="http://www.zhaosuliao.com/member/account/preAudit">立即申请认证</a>
+            </p>
+        <div class="pulic_title mar_t15">最新采购信息</div>
+        <div class="list_div">
+            <ul class="list_ul">
+                <li>
+                    <span class="sp1">采购：</span>
+                    <span class="sp2"> DMDA8008 </span>
+                    <span class="sp3">中石化福炼 </span>
+                    <span class="sp4"> 10吨  </span>
+                    <span class="sp5"> 8900 至  8950 元/吨 </span>
+                    <span class="sp6">佛山 </span>
+                    <span class="sp7">正在洽谈</span>
+                    <a class="supply_button" href="javascript:void(0)" data-id="231212">我要供货</a>
+                </li>
+                <li>
+                    <span class="sp1">采购：</span>
+                    <span class="sp2"> S1003 </span>
+                    <span class="sp3">宁夏宝丰 </span>
+                    <span class="sp4"> 200吨  </span>
+                    <span class="sp5"> 8200 至  8210 元/吨 </span>
+                    <span class="sp6">佛山 </span>
+                    <span class="sp7">正在洽谈</span>
+                    <a class="supply_button" href="javascript:void(0)" data-id="231210">我要供货</a>
+                </li>
+                <li>
+                    <span class="sp1">采购：</span>
+                    <span class="sp2"> SG-5 </span>
+                    <span class="sp3">新疆圣雄能源 </span>
+                    <span class="sp4"> 30吨  </span>
+                    <span class="sp5"> 5550 元/吨 </span>
+                    <span class="sp6">佛山 </span>
+                    <span class="sp7">正在洽谈</span>
+                    <a class="supply_button" href="javascript:void(0)" data-id="231206">我要供货</a>
+                </li>
+                <li>
+                    <span class="sp1">采购：</span>
+                    <span class="sp2"> PA-757 </span>
+                    <span class="sp3">台湾奇美 </span>
+                    <span class="sp4"> 2吨  </span>
+                    <span class="sp5"> 12050 至  12100 元/吨 </span>
+                    <span class="sp6">中山 </span>
+                    <span class="sp7">正在洽谈</span>
+                    <a class="supply_button" href="javascript:void(0)" data-id="231204">我要供货</a>
+                </li>
+                <li>
+                    <span class="sp1">采购：</span>
+                    <span class="sp2"> SG-5 </span>
+                    <span class="sp3">新疆中泰 </span>
+                    <span class="sp4"> 30吨  </span>
+                    <span class="sp5"> 6060 元/吨 </span>
+                    <span class="sp6">佛山 </span>
+                    <span class="sp7">正在洽谈</span>
+                    <a class="supply_button" href="javascript:void(0)" data-id="231203">我要供货</a>
+                </li>
+            </ul>
+        </div>   
+    </div>
 </div>
 </div>
 
-
-<div id="mask"></div>
-<div class="tan_div">
-		<div class="title">如何填写采购内容<span class="close"></span></div>
-		<div class="tan_content">
-			<p class="p1">写下您的真实需求，包括品种、牌号、厂家等。收到后我们会立即给您回电确认，剩下就交给我们吧。</p>
-			<p class="p2">可按标准格式或文本格式进行填写。<br/>
-				可填写多条采购信息。</p>
-		</div>
+<!-- <div id="myMask" style="display:block"></div> 
+<div id="mysupply" style="display:block;">
+    <div class="supply_title">
+        <a class="close_supply" href="javascript:void(0)"></a>
+    </div>
+    <div class="supply_content">
+        <p class="supply_p1">采购内容： 采购：LDPE 2102TX00 伊朗国家石化 20吨 9800元 上海</p>
+        <p class="supply_p2">请在下方填写您的真实报价（价格必填），并对您的货物描述清楚。</p>
+        <p class="supply_p3">例如：ABS HP171 惠州中海油乐金 5吨 13450元 东莞市 东莞塑胶交易市场</p>
+        <p class="supply_p4">ABS AG15E1 台湾台化 5吨 13800 东莞塑胶交易市场</p>
+        <div class="supply_input">
+            <div class="supply_line_input">
+                <span class="supply_input_text">公司名称：</span>
+                <input type="text" class="supply_input_inp" />
+                <span class="supply_input_text">企业类型：</span>
+                <select class="supply_select">
+                    <option value="">--请选择--</option>
+                    <option value="">上游厂家</option>
+                    <option value="">贸易商</option>
+                    <option value="">终端</option>
+                </select>
+                  
+                <span class="supply_input_text">地区：</span>
+                <div class="area_wrapper">
+                    <div class="rovince_parent parent_div province_div" data-target="province">
+                        <input type="text" readonly class="areapop_input"/>
+                        <input type="hidden"  name="provinceId" />
+                    </div>
+                    <div class="city_parent parent_div city_div" data-target="city">
+                        <input type="text" readonly class="areapop_input" />
+                        <input type="hidden"  name="cityId" />
+                    </div>
+                </div>
+                
+            </div>
+            <div class="supply_line_input">
+                <span class="supply_input_text">主营品种：</span>
+                <input type="text" class="supply_input_inp " />
+                
+                <span class="supply_input_text">联系人：</span>
+                <input type="text" class="supply_input_inp "  />
+                
+            </div>
+        </div>
+        
+        <div class="supply_textarea_div">
+            <div class="textarea_left">货物描述：</div>
+            <div class="textarea_right">
+                <textarea></textarea>
+            </div>
+        </div>
+        <p class="supply_tips"><span>不合理报价会被系统自动屏蔽</span></p>
+        <input class="supply_submit" type="submit" value="我要供货"/>
+    </div>
 </div>
+-->
 <!--底部公共部分-->
 <!-- 页面底部start -->
 <div class="footer_wrap">

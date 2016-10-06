@@ -68,10 +68,11 @@ class ProductController extends BaseController {
 	}
 	
 	public function baojiadanadd(){
+		$this->header();
 		//品种
 		$tb = new VarietyModel();
 		$ret = $tb->getVarietyList();
-		// dump($ret);
+		 //dump($ret);
 		$this->assign('variety',$ret);
 		
 		//牌号(牌号应该在选择品牌后动态加载(联动)))
