@@ -98,6 +98,12 @@ class ProductController extends BaseController {
 		// dump($ret);
 		$this->assign('cladding',$ret);
 		
+		//单位
+		$tb = new UnitModel();
+		$ret = $tb->getUnitList();
+		// dump($ret);
+		$this->assign('unit',$ret);
+
 		//模板
 		$this->display();
 	}

@@ -7,6 +7,7 @@ use Home\Model\GradeModel;
 use Home\Model\SpecificationModel;
 use Home\Model\ManufacturerModel;
 use Home\Model\CladdingModel;
+use Home\Model\UnitModel;
 use Home\Model\OrderPurchaseModel;
 use Home\Model\DetailPurchaseModel;
 
@@ -78,6 +79,12 @@ class PurchaseController extends BaseController {
 		$ret = $tb->getCladdingList();
 		// dump($ret);
 		$this->assign('cladding',$ret);
+		
+		//单位
+		$tb = new UnitModel();
+		$ret = $tb->getUnitList();
+		// dump($ret);
+		$this->assign('unit',$ret);
 		
 		//模板
 		$this->display();
