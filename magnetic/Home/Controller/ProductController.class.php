@@ -5,8 +5,10 @@ use Home\Model\BaseModel;
 use Home\Model\VarietyModel;
 use Home\Model\GradeModel;
 use Home\Model\ManufacturerModel;
+use Home\Model\SpecificationModel;
 use Home\Model\OrderSupplyModel;
 use Home\Model\DetailSupplyModel;
+use Home\Model\CladdingModel;
 
 class ProductController extends BaseController {
 
@@ -65,7 +67,7 @@ class ProductController extends BaseController {
 		
 	}
 	
-	public function baojidanadd(){
+	public function baojiadanadd(){
 		//品种
 		$tb = new VarietyModel();
 		$ret = $tb->getVarietyList();
@@ -83,33 +85,58 @@ class ProductController extends BaseController {
 		$ret = $tb->getFactoryList();
 		// dump($ret);
 		$this->assign('factory',$ret);
+		
+		//规格形状
+		$tb = new SpecificationModel();
+		$ret = $tb->getSpecList();
+		// dump($ret);
+		$this->assign('spec',$ret);
+		
+		//镀层
+		$tb = new CladdingModel();
+		$ret = $tb->getCladdingList();
+		// dump($ret);
+		$this->assign('cladding',$ret);
+		
 		//模板
 		$this->display();
 	}
 	
 	public function addbaojiandan_bgd(){
 		$data = I('post.');
-		// dump($data);
+		// dump($data);die();
 		//主信息
-		$supply = $data;
+		//$supply = $data;
 		$supply['ordercode'] = date('YmdHi').rand(1000,9999);
 		$supply['createdby'] = I('session.userid',0);
 		$supply['companyid'] = I('session.companyid',0);
 		$supply['statusid'] = 1;  //待审核
 		$supply['instime'] = date('Y-m-d H:i:s');
 		$supply['updatetime'] = date('Y-m-d H:i:s');
+		$supply['deliveryplace'] = $data['deliveryplace'];
+		$supply['deliverydate'] = $data['deliverydate'];
+		$supply['comments'] = $data['comments'];
 		
 		$result = array('result'=>false,'msg'=>'','pk'=>'','rowcount'=>'');
 		
 		$tb_o = new OrderSupplyModel();
 		$tb_o->startTrans();
-		$ret_supply = $tb->add($supply);
+		$ret_supply = $tb_o->add($supply);
 		if($ret_supply['result']===true){
 			//明细信息
-			$detail = $data;
+			// $detail = $data;
 			$detail['orderid'] = $ret_supply['pk'];  //外键
-			$supply['instime'] = date('Y-m-d H:i:s');
-			$supply['updatetime'] = date('Y-m-d H:i:s');
+			$detail['varietyid'] = $data['varietyid'];
+			$detail['gradeid'] = $data['gradeid'];
+			$detail['factoryid'] = $data['factoryid'];
+			$detail['specid'] = 1;//$data['specid'];  //暂时没有
+			$detail['quantity'] = $data['quantity'];
+			$detail['unitid'] = $data['unitid'];
+			$detail['unitprice'] = $data['unitprice'];
+			$detail['claddingid'] = 1;//$data['claddingid'];  //暂缺
+			$detail['comments'] = $data['comments'];
+			$detail['instime'] = date('Y-m-d H:i:s');
+			$detail['updatetime'] = date('Y-m-d H:i:s');
 			$tb_d = new DetailSupplyModel();
 			$ret_detail = $tb_d->add($detail);
 			if($ret_detail['result']===true){
@@ -123,7 +150,6 @@ class ProductController extends BaseController {
 		else{
 			$tb_o->rollback();
 		}
-
 		//返回结果
 		$this->ajaxReturn($result);
 	}
