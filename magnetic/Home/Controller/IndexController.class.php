@@ -5,7 +5,7 @@ use Home\Model\OrderSupplyModel;
 use Home\Model\OrderPurchaseModel;
 use Home\Model\VarietyModel;
 
-class IndexController extends Controller {
+class IndexController extends BaseController {
 	
 	public function __construct(){
 		parent::__construct();
@@ -25,6 +25,7 @@ class IndexController extends Controller {
 	
 	//显示主页(index.html)
     public function index(){
+    	$this->header();
 		$siteinfo = C('WEBSITEINFO');
 		$this->assign('siteinfo',$siteinfo);  //网站信息数组，配置文件中读取。
 		
@@ -38,14 +39,11 @@ class IndexController extends Controller {
 		//dump($rtn);
 		$this->display();
     }
+
+    /*手机客户端*/
+    public function app(){
+    	$this->header();
+    	$this->display();
+    }
 	
-	public function header(){
-		$data['userid'] = I('session.userid',0);
-		$data['username'] = I('session.username','');
-		$data['nickname'] = I('session.nickname','');
-		$data['phone'] = I('session.phone','');
-		$this->assign('userdata',$data);
-		// dump($data);
-		$this->display();
-	}
 }

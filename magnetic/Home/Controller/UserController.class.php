@@ -12,7 +12,11 @@ class UserController extends BaseController {
 		// $this->display();
 		$this->show('个人中心');
     }
-	
+	//个人中心主页
+	public function member(){
+		$this->header();
+		$this->display();
+	}
 	//注册页面显示
 	public function register(){
 		$this->display();

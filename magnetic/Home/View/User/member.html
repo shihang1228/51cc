@@ -7,7 +7,7 @@
     <div class="top_t">
         <div class="w960">
             <div class="r">
-                您好，<span class="color">study1228（18235100872）</span><a href="http://www.zhaosuliao.com/logout">【退出】</a>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;<span>交易热线：<span >020-83939808</span></span>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;交易时间：工作日 9:00-17:30
+                您好，<span class="color">{$userdata['username']}({$userdata['phone']})</span><a href="{:U('Home/User/logout')}" class="logout" data-url="{:U('Home/Index/index')}">【退出】</a>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;<span>交易热线：<span >020-83939808</span></span>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;交易时间：工作日 9:00-17:30
             </div>
             <a class="font_14" href="{:U('Home/Index/index')}" target="_blank">回到首页</a>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;<a class="font_14" href="{:U('Home/User/member')}">会员中心</a>
         </div>
@@ -23,7 +23,7 @@
         <!--底部公共部分-->
         <include file="User/left" />
     <div class="right index">
-        <p class="welcome">2016年08月28日  尊敬的 <span class="color_f90">study1228（18235100872）</span>，欢迎来到找塑料网会员中心！<a href="http://jr.zhaosuliao.com/my" style="margin-left: 60px; color: #3232FF;">申请金融服务</a></p>
+        <p class="welcome">2016年08月28日  尊敬的 <span class="color_f90">{$userdata['username']}({$userdata['phone']})</span>，欢迎来到找塑料网会员中心！<a href="http://jr.zhaosuliao.com/my" style="margin-left: 60px; color: #3232FF;">申请金融服务</a></p>
         <div class="apply_vip">
             <img class="tan" src="http://www.zhaosuliao.com/resources/fore/image/member/tan.png"/>
             <div class="vip_text">

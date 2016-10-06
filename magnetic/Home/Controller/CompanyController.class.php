@@ -4,7 +4,7 @@ use Think\Controller;
 use Home\Model\CompanyModel;
 use Home\Model\VarietyModel;
 
-class CompanyController extends Controller {
+class CompanyController extends BaseController {
 	protected $tablename = 'company';
 	
 	//增加公司数据
@@ -45,6 +45,7 @@ class CompanyController extends Controller {
 	}
 	
 	public function pricelist(){
+		$this->header();
 		$hotcity = getHotCity();
 		$this->assign('hotcity',$hotcity);
 		$tb = new VarietyModel();

@@ -6,12 +6,12 @@ use Home\Model\VarietyModel;
 use Home\Model\GradeModel;
 use Home\Model\ManufacturerModel;
 
-class PurchaseController extends Controller {
+class PurchaseController extends BaseController {
 
 	public function purchase(){
 		// $data = array();
 		// $this->assign('data',$data);
-		
+		$this->header();
 		$page_num = I('get.page_num',0);  //当前页(一直是0)
         $pagesize = C('PAGESIZE');  //配置文件读取每页行数
 		$tb = M();

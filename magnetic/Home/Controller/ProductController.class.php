@@ -8,9 +8,10 @@ use Home\Model\ManufacturerModel;
 use Home\Model\OrderSupplyModel;
 use Home\Model\DetailSupplyModel;
 
-class ProductController extends Controller {
+class ProductController extends BaseController {
 
 	public function product(){
+		$this->header();
 		$hotcity = getHotCity();
 		$this->assign('hotcity',$hotcity);
 		$tb = new VarietyModel();

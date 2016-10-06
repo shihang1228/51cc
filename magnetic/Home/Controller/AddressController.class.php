@@ -3,7 +3,7 @@ namespace Home\Controller;
 use Think\Controller;
 use Home\Model\BaseModel;
 
-class AddressController extends Controller {
+class AddressController extends BaseController {
 	
 	/*模板:区域列表*/
 	public function regionlist(){

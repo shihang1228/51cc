@@ -8,7 +8,7 @@ use Home\Model\UnitModel;
 use Home\Model\CladdingModel;
 use Home\Model\ManufacturerModel;
 
-class SysController extends Controller {
+class SysController extends BaseController {
 	
 	/*模板:分类列表*/
 	public function categorylist(){
