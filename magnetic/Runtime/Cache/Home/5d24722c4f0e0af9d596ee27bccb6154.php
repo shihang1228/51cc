@@ -9,20 +9,20 @@
         <title>会员登陆 - 找塑料网</title>
         <meta name="keywords" content='找塑料网登录,找塑料网会员登录,会员登录'/>
         <meta name="description" content='找塑料网zhaosuliao.com领先的一站式塑化电商。专注于聚乙烯PE，聚丙烯PP、PVC、ABS等塑料原料交易，提供撮合交易及代销代购（自营）、物流、金融、行情分析、改性塑料OEM等服务。' />
-        <link href="/51ccnew/Public/pc/plugin/artdialog/dialog.css" rel="stylesheet" type="text/css"/>     
-        <link href="/51ccnew/Public/pc/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="/Public/pc/plugin/artdialog/dialog.css" rel="stylesheet" type="text/css"/>     
+        <link href="/Public/pc/css/common.css" rel="stylesheet" type="text/css" />
         <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
-        <link href="/51ccnew/Public/pc/plugin/jquery-validate/jquery.validate.min.css" type="text/css" rel="stylesheet" />
-        <script src="/51ccnew/Public/pc/plugin/jquery-validate/jquery.validate.min.js" type="text/javascript"></script>
-        <script src="/51ccnew/Public/pc/plugin/jquery-validate/jquery.validate.method.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="/51ccnew/Public/pc/plugin/jquery-areapop/jquery-areapop.js"></script>
-        <script src="/51ccnew/Public/pc/plugin/artdialog/dialog.js" type="text/javascript"></script>
-        <script src="/51ccnew/Public/pc/plugin/form.js" type="text/javascript"></script>
-        <script src="/51ccnew/Public/pc/js/js.js" type="text/javascript"></script>
-        <script src="/51ccnew/Public/pc/js/common.js" type="text/javascript"></script>        
+        <link href="/Public/pc/plugin/jquery-validate/jquery.validate.min.css" type="text/css" rel="stylesheet" />
+        <script src="/Public/pc/plugin/jquery-validate/jquery.validate.min.js" type="text/javascript"></script>
+        <script src="/Public/pc/plugin/jquery-validate/jquery.validate.method.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="/Public/pc/plugin/jquery-areapop/jquery-areapop.js"></script>
+        <script src="/Public/pc/plugin/artdialog/dialog.js" type="text/javascript"></script>
+        <script src="/Public/pc/plugin/form.js" type="text/javascript"></script>
+        <script src="/Public/pc/js/js.js" type="text/javascript"></script>
+        <script src="/Public/pc/js/common.js" type="text/javascript"></script>        
     </head>
 <body>
-<link href="/51ccnew/Public/pc/css/member.css" rel="stylesheet" type="text/css" />
+<link href="/Public/pc/css/member.css" rel="stylesheet" type="text/css" />
 <div class="top">
     <div class="top_t">
         <div class="w960">
@@ -34,7 +34,7 @@
     </div>
     <div class="logo">
         <div class="w960" style=" overflow:hidden;">
-            <img src="/51ccnew/Public/pc/image/member/member_logo.png" title="找塑料网" alt="找塑料网logo"/>
+            <img src="/Public/pc/image/member/member_logo.png" title="找塑料网" alt="找塑料网logo"/>
         </div>
     </div>
 </div><script type="text/javascript">
@@ -209,7 +209,6 @@ if($(".inp_div1").length>0){
 </div>
 </div>
 </div>
-<!--小史，你睡着了吗？又扔下我不管啦。-->
 
 <div id="mask"></div>
 <div class="tan_div">
@@ -266,11 +265,11 @@ if($(".inp_div1").length>0){
         
         <div class="box3">
             <div class="code">
-                <p class="img"><img src="/51ccnew/Public/pc/image/common/code_wechat.jpg" alt="找塑料网微信二维码" /></p>
+                <p class="img"><img src="/Public/pc/image/common/code_wechat.jpg" alt="找塑料网微信二维码" /></p>
                 <p>扫一扫，看行情资讯</p>
             </div>
             <div class="code">
-                <p class="img"><img src="/51ccnew/Public/pc/image/common/code_app.jpg" alt="找塑料网APP二维码" /></p>
+                <p class="img"><img src="/Public/pc/image/common/code_app.jpg" alt="找塑料网APP二维码" /></p>
                 <p>扫一扫，下载移动端</p>
             </div>
         </div>
@@ -340,15 +339,15 @@ if($(".inp_div1").length>0){
             </p>
         </div>
         <div class="box6">
-            <!--<a  key ="54a107ffc274e76dc1035520"  logo_size="124x47"  logo_type="realname"  href="http://www.anquan.org" ><script src="http://static.anquan.org//51ccnew/Public/pc/outer/js/aq_auth.js"></script></a>
+            <!--<a  key ="54a107ffc274e76dc1035520"  logo_size="124x47"  logo_type="realname"  href="http://www.anquan.org" ><script src="http://static.anquan.org//Public/pc/outer/js/aq_auth.js"></script></a>
             <a href="http://webscan.360.cn/index/checkwebsite/url/zhaosuliao.com"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/ef7e1c147d6253064bea858dfeeb5ebc"/></a> -->
-            <a target="_blank" href="../www.anquan.org/authenticate/cert/@site=www.zhaosuliao.com&at=realname"><img alt="安全联盟实名验证" src="/51ccnew/Public/pc/image/common/aqlm.png" /></a>
-            <a target="_blank" href="../webscan.360.cn/index/checkwebsite/url/zhaosuliao.com"><img alt="360网站安全检测" src="/51ccnew/Public/pc/image/common/aqjc_360.png" /></a>
-            <a target="_blank" href="../si.trustutn.org/info@sn=137141229010801735265&certType=1"><img alt="实名认证" src="/51ccnew/Public/pc/image/common/smrz.png" /></a>
-            <a id='___szfw_logo___' href='../https@credit.szfw.org/CX20160123013832180167.html' target='_blank'><img alt="诚信网站" src="/51ccnew/Public/pc/image/common/cxrz.png" /></a>
+            <a target="_blank" href="../www.anquan.org/authenticate/cert/@site=www.zhaosuliao.com&at=realname"><img alt="安全联盟实名验证" src="/Public/pc/image/common/aqlm.png" /></a>
+            <a target="_blank" href="../webscan.360.cn/index/checkwebsite/url/zhaosuliao.com"><img alt="360网站安全检测" src="/Public/pc/image/common/aqjc_360.png" /></a>
+            <a target="_blank" href="../si.trustutn.org/info@sn=137141229010801735265&certType=1"><img alt="实名认证" src="/Public/pc/image/common/smrz.png" /></a>
+            <a id='___szfw_logo___' href='../https@credit.szfw.org/CX20160123013832180167.html' target='_blank'><img alt="诚信网站" src="/Public/pc/image/common/cxrz.png" /></a>
             <script type='text/javascript'>(function(){document.getElementById('___szfw_logo___').oncontextmenu = function(){return false;}})();</script>
-            <a target="_blank" href="../www.itrust.org.cn/Home/Index/itrust_certifi@wm=1304763357"><img alt="ICP网站征信" src="/51ccnew/Public/pc/image/common/qyxypj.png" /></a>
-            <a target="_blank" href='../netadreg.gzaic.gov.cn/ntmm/WebSear/WebLogoPub.aspx@logo=440115115012014072300011'><img alt="工商网监电子标识" src="/51ccnew/Public/pc/image/common/gswj.png" width="124" height="47"/></a>
+            <a target="_blank" href="../www.itrust.org.cn/Home/Index/itrust_certifi@wm=1304763357"><img alt="ICP网站征信" src="/Public/pc/image/common/qyxypj.png" /></a>
+            <a target="_blank" href='../netadreg.gzaic.gov.cn/ntmm/WebSear/WebLogoPub.aspx@logo=440115115012014072300011'><img alt="工商网监电子标识" src="/Public/pc/image/common/gswj.png" width="124" height="47"/></a>
         </div>
     </div></div>
 <!-- 页面底部end -->

@@ -106,248 +106,257 @@
 </div>
 <link href="/Public/pc/css/main.css" rel="stylesheet" type="text/css" />
 <script src="/Public/pc/js/main.js" type="text/javascript"></script>
-<meta name="renderer" content="webkit"/>
-<meta name="renderer" content="ie-stand">
-    <div id="cgxx">
-        <div class="cgxx_content mar_t20">
-            <div class="cgxx_left">
-                <form method="get" id="form_filter" action="<?php echo U('Home/Purchase/purchase');?>">
-                 <!-- <input id="pageNo" name="pageNo" type="hidden" value="1" /> -->
-				 <input id="pageSize" name="pageSize" type="hidden" value="15" />
-                <div class="cgxx_search clearfix">
-                    <i class="cgxx_search_text">品种</i>
-                    <input type="text" class="cgxx_search_inp" name="varietyname" value="PE" />
-                    <i class="cgxx_search_text">牌号</i>
-                    <input type="text" class="cgxx_search_inp" name="gradename" value="" />
-                    <i class="cgxx_search_text">厂家</i>
-                    <input type="text" class="cgxx_search_inp" name="factoryname" value="" />
-                    <i class="cgxx_search_text">交货地</i>
-                    <input type="text" class="cgxx_search_inp" name="city" value="" />
-                    <input type="submit" class="cgxx_search_sub" value="" />  
-                </div>
-                </form>
-                <?php if(is_array($json_arr)): $i = 0; $__LIST__ = $json_arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="cgxx_state mar_t10">
-                    <div class="state_left">
-                        <p class="p_h45">
-                            <span class="fcolor_0 sp1 pu_co"><?php echo ($vo['gradename']); ?> <?php echo ($vo['varietyname']); ?> <?php echo ($vo['factoryname']); ?> <?php echo ($vo['quantity']); ?></span>
-                            <span class="sp2">发布时间：<?php echo ($vo['deliverydate']); ?></span>
-                        </p>
-                        <p class="p_h38">
-                            <span class="sp1">价格&nbsp;:</span>
-                            <span class="sp2 fcolor_8"><?php echo ($vo['price']); ?></span>
-                            <span class="sp1">&nbsp;&nbsp;&nbsp;&nbsp;交货地：<?php echo ($vo['deliveryplace']); ?></span>
-                        </p>
-                        <p class="p_h23">
-                            <span class="mar_r_none">跟进交易员：<?php echo ($vo['dealer']); ?> <?php echo ($vo['tel']); ?></span>
-                            <a href="../../wpa.qq.com/msgrd@v=1&uin=1647459768&site=www.zhaosuliao.com&menu=yes" target="blank"><img border="0" src="../../wpa.qq.com/pa@p=1_3A1647459768_3A17" alt="点击这里给我发消息" border="0" /></a>
-                        </p>
-                    </div>
-                    <div class="state_right">
-                        <p class="state_tip2"><span><?php echo ($vo['status']); ?></span></p>
-                        <a class="state_img2"><?php echo ($vo['action']); ?></a>
-                    </div>
-                </div><?php endforeach; endif; else: echo "" ;endif; ?>
-                
-               <!--分页-->
-                <div class="pager">
-                    <div class="digg" style="center"><?php echo ($page); ?></div>
-                </div>
-
-                
-            </div>
-            
-            <div class="cgxx_right">
-                    <div class="reg_cont">
-                            <div class="reg_cont_img">
-                                <img src="/Public/pc/image/index/icon0008.jpg" width="230" height="29"/>
-                            </div> 
-                            <textarea class="textarea_text" id="purchase_content" placeholder="写下您的真实需求，包括规格、材质等，收到后我们会立即给您回电确认，剩下的就交给我们吧。" ></textarea>
-                   </div>
-                   <input class="reg_sub" type="button" id="submit_purchase" />
-                   
-                     <div class="deal" >
-                        <p class="title">&nbsp;&nbsp;最近成交</p>
-                        <div id="scroll_new_purchase">
-                            <span class="loading"><img src="/Public/pc/image/common/loading.gif"><br />正在努力加载中，请稍候……</span>
-                            <ul id="recent_detail_ul">
-                            </ul>
-                        </div>
-                    </div>
-            </div>
-            
-        </div>
-    </div>
-
-<input type="hidden" id="pageUrlPre" value="/purchaseView/list?name=PE&material=&manufacturer=&cityRemark=&pageSize=15&pageNo="/>
-
-
-<!--发布成功弹出框start-->
-<div class="Dwt" style="display: none;">
-	<p class="title"><a href="javascript:void(0)" id="close_purchase">
-		<!--关闭-->
-		</a>&nbsp;&nbsp;&nbsp;&nbsp;采购单：<span id="purchase_sn"></span>&nbsp;成功发布</p>
-	<div class="d">
-		<p class="p1">&nbsp;&nbsp;您的委托采购内容：</p>
-		<p class="p2" id="issue_content"></p>
-		<p><i></i>您的以下委托已成功发布，请等待交易员为您审核采购内容，您的委托通过审核后将开始接受报价并由交易员为您找货。</p>
-		<p style="padding-left:36px; margin-top:10px;">您可以从会员中心“我的采购”中了解您的委托进度 </p>
-		<p style="padding-left:36px;">&gt;&gt; 点击查看"<a href='../member/purchase/list' style='color:#08d;'>我的采购</a>"</p>
-	</div>
-</div>
-<!--发布成功弹出end框-->
-<!--客服qq-->
-<!--{template common/common_kf_qq}-->
-
 <script src="/Public/pc/js/page.js" type="text/javascript"></script>
-<script>
-$(function()
-{
-	//$("#scroll_new_purchase").find("ul").scrollcontent(50);
-   
-    //免费发布采购信息
-    $("#submit_purchase").on("click",function()
-    {
-        if(!tip_open_time())
-        {
-            return false;
-        }
+	<script>
+	$(function(){
+		
+		
+		/***资源列表 公司移入显示效果***/
+		$(".company").mouseover(function(){
+			$(this).find('.company_div').show();
+			$(this).css('position','relative');
+		}).mouseout(function(){
+			$(this).find('.company_div').hide();
+			$(this).css('position','static');
+		});
+		
+		/*显示条数点击效果**/
+		$(".page_limit span").click(function(){
+			$(".page_limit span").removeClass('click');
+			$(this).addClass('click');
+		});
+		/******价格范围效果******/
+		
+		
 
-        var content=$.trim($("#purchase_content").val());
-
-        $.get(SITE_URL+'common/check_login',function(rs)
+        //选择价格范围提交
+        $(".absolute_span").on("click",function()
         {
-            if(rs.status==0)
-            {
-            	show_dialog_login();
-            }
-            else if(rs.data.is_checked==1 && rs.data.name!='')
-            {
-                if(!content)
-                {
-                    alert("请输入你要委托的信息");
-                    return false;
-                }
-                else
-                {
-                    $.post(SITE_URL+'/purchaseView/save',{"keyword":content},function(rs)
-                    {
-                        if(rs.status<0)
-                        {
-                            alert(rs.msg);
-                        }
-                        else
-                        {
-                           // $(".Dwt").show();
-                          //  $(".Dwt").find('#purchase_sn').html(rs.data[0]);
-                          //  $(".Dwt").find('.p2#issue_content').html(rs.data[1]);
-                            publishingSuccess.init({'width':500,'height':275,'num':rs.data[0],'content':rs.data[1]});
-                        }
-                    });
-                }
-            }else{
-            	location.href = SITE_URL + "product/entrust_add";
-            }
+            $("#form_filter").submit();
         });
 
-    });
-    $(".Dwt").find("#close_purchase").bind("click",function(){
-        $(".Dwt").hide();
-    });
-	
-    //初始化deal的高度
-
- 
-	function fixed(){
-		    var t=$(".deal").offset().top;
-            var logo_t=$("#new_logo").height();
-            var nav_t=$("#new_nav").height();
-            var top_t=$("#new_top").height();
-            var reg_t=$(".reg_cont").height();
-            var reg_sub=$(".reg_sub").height();
-
-            var t3=logo_t+nav_t+top_t+reg_t+reg_sub;
-
-            var l_h=$(".cgxx_left").height();
-            var r_h=$(".cgxx_right").height();
-            var deal_h=$(".deal").height();
-        
-             if($(".cgxx_left").height()<$(".cgxx_right").height()){
-                $(".deal").css('height',l_h-reg_sub-reg_t-92);
-             }
-             if($(".cgxx_left").height()<500){
-                $(".deal").css('height',500-reg_sub-reg_t-15);
-             }
-
-			$(window).scroll(function(){
-				if($(window).scrollTop()>t){
-					$(".deal").css({'position':'fixed','left':'50%','marginLeft':'340px','top':'0','z-index':'999'});
-					if($(window).scrollTop()>l_h-r_h+t3+20){
-                        $(".deal").css('height',deal_h+l_h-r_h+t3-58-$(window).scrollTop());
-                    }
-				}else{
-					$(".deal").css({'position':'static','marginLeft':'0'});
-					
-				}
-			});
-	 };
-	
-	//fixed();
-	
-	
-	//求购信息过长
-	$(function() {
-	    var jmz = {}
-	    jmz.GetLength = function(str) {
-	        var realLength = 0, len = str.length, charCode = -1;
-	        for (var i = 0; i < len; i++) {
-	            charCode = str.charCodeAt(i);
-	            if (charCode >= 0 && charCode <= 128) realLength += 1;
-	            else realLength += 2;
-	        }
-	        return realLength;
-	    };
-	    $(".pu_co").each(function(i){
-	       if(jmz.GetLength($(this).html())>=30 && jmz.GetLength($(this).html())<35){
-	    	   $(this).css({
-	                "font-size":"20px",
-	                "line-height":"40px"
-	            });
-	       }if(jmz.GetLength($(this).html())>=35 && jmz.GetLength($(this).html())<40){
-	    	   $(this).css({
-	                "font-size":"18px",
-	                "line-height":"40px"
-	            });
-	       }if(jmz.GetLength($(this).html())>=40 && jmz.GetLength($(this).html())<45){
-	    	   $(this).css({
-	                "font-size":"14px",
-	                "line-height":"40px"
-	            });
-	       }if(jmz.GetLength($(this).html())>=45){
-	    	   $(this).css({
-	                "font-size":"12px",
-	                "line-height":"40px"
-	            });
-	       }
-	    });
+        //排序
+        $(".list_content_title .paixu,.list_content_title .paixu2").on("click",function()
+        {
+            $("#sort").val($(this).data("sort"));
+            $("#form_filter").submit();
+        });
+		$(".jgfw_sub").click(function(){
+			 $("#form_filter").submit();
+		});
 	});
+    
+    </script>
+   	    
+    <form method="get" action="/product/list" id="form_filter">
+         <div id="xhzysx" class="clearfix">
+     		<div class="xhzysx_content">
+            	<div class="content_theme">
+                        <h3 class="xhzysx_title"><span class="fcolor_0">现货资源</span>筛选</h3>	
+<div class="flxz_type">
+    <div class="sx_type clearfix">
+        <h4><?php echo ($hotcity['name']); ?></h4>
+        <p style="display:block;">
+            <?php if(is_array($hotcity['city'])): $i = 0; $__LIST__ = $hotcity['city'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><a href="<?php echo U('Home/Product/product');?>?city=<?php echo ($vo['cityname']); ?>" data-key="city" data-val="<?php echo ($vo['citycode']); ?>" class="f "><?php echo ($vo['cityname']); ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
+        </p>
+    </div>
+    
+    <?php if(is_array($variety)): $i = 0; $__LIST__ = $variety;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo1): $mod = ($i % 2 );++$i;?><div class="sx_type clearfix">
+        <h4><?php echo ($vo1['varietyname']); ?></h4>
+        <p>
+            <?php if(is_array($vo1['grade'])): $i = 0; $__LIST__ = $vo1['grade'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo2): $mod = ($i % 2 );++$i;?><a href="<?php echo U('Home/Product/product');?>?gradeid=<?php echo ($vo2['gradeid']); ?>" data-key="<?php echo ($vo1['varietyid']); ?>" data-val="<?php echo ($vo2['gradeid']); ?>" class="f"><?php echo ($vo2['gradename']); ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
+        </p>     
+        <span style="display:none" class="down_btn open" href="javascript:void(0)">展开</span>
+        <span class="up_btn close" href="javascript:void(0)">收起</span>
+    </div><?php endforeach; endif; else: echo "" ;endif; ?> 
+          <p class="sxtj clearfix">
+          	<span class="sxtj_text">筛选条件：</span>
+              <span class="sxtj_qb">全部</span>
+          </p>
+          
+          <p class="sxtj_sear">
+         
+          	<span> <i>品 种 ： </i> <input class="inp_yu" type="text" name="cate" id="cate" value="" /> </span>
+              <span> <i>牌 号 ： </i> <input class="inp_yu" type="text" name="material" id="material" value="" /> </span>
+              <span> <i>厂 家 ： </i> <input class="inp_yu" type="text" name="manufacturer" id="manufacturer" value="" /> </span>
+              <span> <i>公 司 ： </i> <input class="inp_yu" type="text" name="company" id="company" value="" /> </span>
+          	<input class="submit_btn" type="submit"  value=" "/>
+              <input type="hidden" name="city" id="city"  value="" />
+             <!--  <input type="hidden" name="keyword" id="keyword"  value="" /> -->
+          </p>
+          
+</div>
+   
+             		 </div>
+            </div>   
+     </div>
+    <!-----现货资源列表--------> 
+     
+     <div id="xhzy_list" class="mar_t20">
+     	<div class="xhzy_list_content">
+        	<div class="list_content">
+            	<div class="list_content_title">
+                	<div class="list_title fl"><span class="fcolor_0">现货资源</span>列表</div>
+                    <div class="limit_su fl">共搜到<span class="fcolor_8"><?php echo ($data_count); ?></span>条数据</div>
 
+                   
 
-	 $.get(SITE_URL+'purchaseView/recent_deal',function(rs)
-     {
-         if(rs.status==1)
-         {
-         	$("#recent_detail_ul").empty();
-		   	$.each(rs.data, function(i, m){
-	   			$("#recent_detail_ul").append('<li><p><span class="color1">'+m.modifyView+'</span>&nbsp;&nbsp;'+m.linkmanView+'&nbsp;&nbsp;成功以'+m.factCurrency+'元/吨 </p><p>采购了<span class="color2">&nbsp;&nbsp;'+m.cate+'&nbsp;&nbsp;'+m.material+'&nbsp;&nbsp;'+m.manufacturer+'</span></p></li>');
-		   	});
-		   	$("#scroll_new_purchase").find("ul").scrollcontent(50);
-		   	fixed();
-         }else{
-        	 $("#recent_detail_ul").empty().append('<li><p style="text-align: center;">最近没有成交记录</p></li>');
-         }
-         $("#scroll_new_purchase .loading").hide();
-     });
-});
+                    <div class="paixu fl click" data-sort="0">默认排序</div>
+                    <div class="paixu2 fl " data-sort="1">价格从低到高</div>
+
+                    <input type="hidden" name="defaultSort" id="sort" value="" />
+                    <div class="jgfw fl">
+                    	<p class="jgfw_text">价格范围</p>
+                        <p class="jgfw_shuru">
+                        	<input type="text" name="price_from" id="price_from" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " placeholder="最低价" value="0" class="on" />
+                           	<i>-</i>
+                            <input type="text" name="price_to" id="price_to" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " placeholder="最高价" value="0" class="on"/>
+                        </p>
+                        <a href="javascript:void(0);" class="jgfw_sub">确定</a>
+                    </div>
+                    <div class="yxsj fl">
+                    	<i>有效时间&nbsp;&nbsp;</i>
+                         <div class="select">
+                        	<a href="javascript:void(0)" class="moren">5天内</a>
+                         	<ul class="select_list">
+                            	<li data-val="-1">1天内</li>
+                            	<li data-val="-3">3天内</li>
+                            	<li data-val="-5">5天内</li>
+                            	<li data-val="-10">10天内</li>
+                            	<li data-val="-15">15天内</li>
+                            	<li data-val="-30">30天内</li>
+                            </ul>
+                            <input type="hidden" name="dayCon" id="time" value="-5" />
+                         </div>
+                    </div>
+                    <div class="page_limit fl">
+                        <i>每页显示</i>
+                        <span data-val="20"  class="click">20条</span>
+                        <span data-val="40" >40条</span>
+                        <span data-val="60" >60条</span>
+                        <input id="pageNo" name="pageNo" type="hidden" value="1" />
+						<input id="pageSize" name="pageSize" type="hidden" value="20" />
+                    </div>
+                </div>
+            </div>
+            <table class="xhzy_table">
+            	<tr class="tr_h39">
+                	<th class="td_w80">品种 </th>
+                    <th class="td_w120">牌号 </th>
+                    <th class="td_w130">厂家</th>
+                    <th class="td_w100">数量</th>
+                    <th class="td_w100">价格</th>
+                    <th class="td_w100">交货地</th>
+                    <th class="td_w120">交货时间</th>
+                    <th class="td_w200">公司</th>
+                    <th class="td_w100">更新时间</th>
+                    <th class="td_w150">操作</th>
+                </tr>
+                <?php if(is_array($json_arr)): $i = 0; $__LIST__ = $json_arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="tr_h56">
+                	<td class="td_w80"><span><?php echo ($vo['varietyname']); ?></span></td>
+                    <td class="td_w120"><span><?php echo ($vo['gradename']); ?></span></td>
+                    <td class="td_w130"><?php echo ($vo['factoryname']); ?></td>
+                    <td class="td_w100"><?php echo ($vo['quantity']); echo ($vo['unitname']); ?></td>
+                    <td class="td_w100 fcolor_8">￥<?php echo ($vo['unitprice']); ?></td>
+                    <td class="td_w100"><?php echo ($vo['deliveryplace']); ?></td>
+                    <td class="td_w120">现货</td>
+                    <td class="td_w200">
+                    	<div class="company"><p class="gs"><?php echo ($vo['companyname']); ?></p>
+                            <div class="company_div">
+                            	<p><?php echo ($vo['companyname']); ?></p>
+                                <p>江小姐 13723792661</p>
+                                <p class="tip">联系我时，请说是在找塑料网上看到的，谢谢！</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="td_w100">
+                        2小时前
+                    </td>
+                    <td class="td_w150">
+                        <img src="/Public/pc/image/main/resource_close.png" />
+                    </td>
+                </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+                
+            </table>
+        </div>
+     </div>     
+    </form>
+<!--页码开始-->            
+<div class="pager">
+    <div class="digg" style="center"><?php echo ($page); ?></div>
+</div>
+<!--页码结束-->
+<!--     <input type="hidden" id="pageUrlPre" value="/product/list?cate=&material=&manufacturer=&company=&city=&keyword=&defaultSort=0&price_from=0&price_to=0&dayCon=-5&pageSize=20&pageNo="/>
+    <div class="page_a02">
+    	<div class="page_box">
+<span class="on">1</span>
+<a href="list@cate=&material=&manufacturer=&company=&city=&keyword=&defaultSort=0&price_from=0&price_to=0&dayCon=-5&pageSize=20&pageNo=2">2</a>
+<a href="list@cate=&material=&manufacturer=&company=&city=&keyword=&defaultSort=0&price_from=0&price_to=0&dayCon=-5&pageSize=20&pageNo=3">3</a>
+<a href="list@cate=&material=&manufacturer=&company=&city=&keyword=&defaultSort=0&price_from=0&price_to=0&dayCon=-5&pageSize=20&pageNo=4">4</a>
+<a href="list@cate=&material=&manufacturer=&company=&city=&keyword=&defaultSort=0&price_from=0&price_to=0&dayCon=-5&pageSize=20&pageNo=5">5</a>
+<a href="list@cate=&material=&manufacturer=&company=&city=&keyword=&defaultSort=0&price_from=0&price_to=0&dayCon=-5&pageSize=20&pageNo=6">6</a>
+<a href="list@cate=&material=&manufacturer=&company=&city=&keyword=&defaultSort=0&price_from=0&price_to=0&dayCon=-5&pageSize=20&pageNo=7">7</a>
+<a href="list@cate=&material=&manufacturer=&company=&city=&keyword=&defaultSort=0&price_from=0&price_to=0&dayCon=-5&pageSize=20&pageNo=2">下一页</a>
+<a href="list@cate=&material=&manufacturer=&company=&city=&keyword=&defaultSort=0&price_from=0&price_to=0&dayCon=-5&pageSize=20&pageNo=785">尾页</a>
+<span class="total">共 785 页</span>
+<span class="to">转到第 <input type="text" value="1" class="n jump_page" /> 页</span>
+<span class="go">GO</span>
+</div>
+
+	</div> -->
+    
+<!--客服qq-->
+<!-- <div class="kf">
+    <div class="kf_box">
+        <dl class="b">
+            <dt>在线客服</dt>
+            <dd>
+                <div class="b1">服务时间</div>
+                <div class="b2">9:00-17:30</div>
+                <div class="b3"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3115678895&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:3115678895:51" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></div>
+                <div class="b4">客服热线</div>
+                <div class="b5">020-8 3939 808</div>
+            </dd>
+        </dl>
+        <div class="t">
+            <a href="javascript:void(0);"></a>
+        </div>
+    </div>
+</div> -->
+
+<div class="kf">
+    <ul>
+        <li class="one">
+            <div class="on" style="display:none;">服务<br />时间</div>
+            <div class="other" style="display:none;">9:00-17:30</div>
+        </li>
+        <li class="two">
+            <div class="on" style="display:none;">在线<br />客服</div>
+            <div class="other" style="display:none;"><a target="_blank" href="../../wpa.qq.com/msgrd@v=3&uin=3115678895&site=qq&menu=yes"><img border="0" src="../../wpa.qq.com/pa@p=2_3A3115678895_3A51" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></div>
+        </li>
+        <li class="three">
+            <div class="on" style="display:none;">客服<br />热线</div>
+            <div class="other" style="display:none;">020-8 3939 808</div>
+        </li>
+        <li class="four" id="up_top">
+            <div class="on" style="display:none;">返回<br />顶部</div>
+        </li>
+    </ul>
+</div>
+<script>
+    function getInputPage() {
+        var page = $("#page-num").val();
+        var page_url = decodeURI($("#page-submit").attr("data-page"));
+        page_url = page_url.replace('[PAGE]', page)
+        location.href = page_url;
+    }
+    $("#page-num").keydown(function(e) {
+        var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
+        if (key == 13) {
+            e.preventDefault();
+            getInputPage()
+        }
+    });
 </script>
 <!--底部公共部分-->
 <!-- 页面底部start -->

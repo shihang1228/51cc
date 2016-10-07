@@ -32,14 +32,33 @@
         </div>
            <script type="text/javascript">
             $(document).ready(function(){
-                var linkman = getCookie("linkman");
-                if (linkman != "" && linkman != "null" && linkman != null) {
-                    $("#js-login-info").prepend('<div style="float:left;">尊敬的<a href="member" style="color: red;">&nbsp;'+ linkman +'&nbsp;</a><a href="logout">【退出】</a>&nbsp;&nbsp;欢迎来到找塑料网!&nbsp;&nbsp;</div>');
+
+                //var linkman = getCookie("linkman");
+                var linkman = "<?php echo ($userdata['userid']); ?>";
+                var username = "<?php echo ($userdata['username']); ?>(<?php echo ($userdata['phone']); ?>)";
+                if (linkman != "" && linkman != "null" && linkman != null && linkman != 0) {
+                    $("#js-login-info").prepend('<div style="float:left;">尊敬的<a href="member" style="color: red;">&nbsp;'+ username +'&nbsp;</a><a href="<?php echo U('Home/User/logout');?>" class="logout" data-url="<?php echo U('Home/Index/index');?>">【退出】</a>&nbsp;&nbsp;欢迎来到找塑料网!&nbsp;&nbsp;</div>');
                 }else{
                     var register = "<?php echo U('User/register');?>";
                     var login = "<?php echo U('User/login');?>";
                     $("#js-login-info").prepend('<div style="float:left;"><span class="login fl">您好，欢迎来到找塑料网!  【<a href="'+login+'">会员登录</a> | <a href="'+register+'">免费注册</a>】</span></div>');
                 }
+
+
+                $("#js-login-info").on("click",".logout",function(e){
+                    e.preventDefault();
+                    var href = $(this).attr("href");
+                    var url = $(this).data("url");
+                    $.ajax({
+                        url:href,
+                        success:function(data){
+                            if(data.result){
+                                alert(data.msg);
+                                window.location.href=url;
+                            }
+                        }
+                    })
+                })
             });
             </script>
 </div><div id="new_logo">

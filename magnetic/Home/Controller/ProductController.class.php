@@ -136,28 +136,45 @@ class ProductController extends BaseController {
 			$detail['orderid'] = $ret_supply['pk'];  //外键
 			$detail['varietyid'] = $data['varietyid'];
 			$detail['gradeid'] = $data['gradeid'];
-			$detail['factoryid'] = $data['factoryid'];
-			$detail['specid'] = 1;//$data['specid'];  //暂时没有
-			$detail['quantity'] = $data['quantity'];
-			$detail['unitid'] = $data['unitid'];
-			$detail['unitprice'] = $data['unitprice'];
-			$detail['claddingid'] = 1;//$data['claddingid'];  //暂缺
-			$detail['comments'] = $data['comments'];
-			$detail['instime'] = date('Y-m-d H:i:s');
-			$detail['updatetime'] = date('Y-m-d H:i:s');
-			$tb_d = new DetailSupplyModel();
-			$ret_detail = $tb_d->add($detail);
-			if($ret_detail['result']===true){
-				$tb_o->commit();
-				$result['result'] = true;
+			$grade = new GradeModel();
+			$ret = $grade->isNameExists($detail['gradeid']);
+			if($ret['result']===true) $detail['gradeid'] = $ret['pk'];
+			else{  //用户输入的，需要增加
+				$ret = $grade->add(array('gradename'=>$detail['gradeid'],'varietyid'=>$detail['varietyid'],'instime'=>date('Y-m-d H:i:s'),'createdby'=>I('session.userid',0),'delstatus'=>0));
+				if($ret['result']===true) $detail['gradeid'] = $ret['pk'];
+				else{  //自动添加失败，操作无法继续
+				}
+				\Think\Log::Record(var_export($ret,true));
 			}
-			else{
-				$tb_o->rollback();
+			if($ret['result']===true){
+				$detail['factoryid'] = $data['factoryid'];
+				$detail['specid'] = $data['specid'];  //暂时没有
+				$detail['quantity'] = $data['quantity'];
+				$detail['unitid'] = $data['unitid'];
+				$detail['unitprice'] = $data['unitprice'];
+				$detail['claddingid'] = $data['claddingid'];  //暂缺
+				$detail['comments'] = $data['comments'];
+				$detail['instime'] = date('Y-m-d H:i:s');
+				$detail['updatetime'] = date('Y-m-d H:i:s');
+				$detail['length_diameter'] = $data['length_diameter'];
+				$detail['width_aperture'] = $data['width_aperture'];
+				$detail['height_thickness'] = $data['height_thickness'];
+				$tb_d = new DetailSupplyModel();
+				$ret_detail = $tb_d->add($detail);
+				if($ret_detail['result']===true){
+					//$tb_o->commit();
+					$result['result'] = true;
+				}
+				else{
+					//$tb_o->rollback();
+				}
 			}
 		}
 		else{
-			$tb_o->rollback();
+			//$tb_o->rollback();
 		}
+		if($result['result']===true) $tb_o->commit();
+		else $tb_o->rollback();
 		//返回结果
 		$this->ajaxReturn($result);
 	}

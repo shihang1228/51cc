@@ -9,18 +9,18 @@
         <title>找塑料网 - 塑料原料价格|塑料颗粒|ABS塑料|PVC塑料|PE塑料|PP塑料 - 领先的一站式塑化电商</title>
         <meta name="keywords" content='塑料原料价格,塑料价格,聚乙烯价格,聚丙烯价格,ABS塑料,PVC塑料,PE塑料,PP塑料,zhaosuliao.com'/>
         <meta name="description" content='找塑料网zhaosuliao.com领先的一站式塑化电商。专注于聚乙烯PE，聚丙烯PP、PVC、ABS等塑料原料交易，提供撮合交易及代销代购（自营）、物流、金融、行情分析、改性塑料OEM等服务。' />
-        <link href="/51ccnew/Public/pc/plugin/artdialog/dialog.css" rel="stylesheet" type="text/css"/>       
-        <link href="/51ccnew/Public/pc/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="/Public/pc/plugin/artdialog/dialog.css" rel="stylesheet" type="text/css"/>       
+        <link href="/Public/pc/css/common.css" rel="stylesheet" type="text/css" />
         <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
-        <link href="/51ccnew/Public/pc/plugin/jquery-validate/jquery.validate.min.css" type="text/css" rel="stylesheet" />
-        <link href="/51ccnew/Public/pc/css/page.css" rel="stylesheet" type="text/css" />
-        <script src="/51ccnew/Public/pc/plugin/jquery-validate/jquery.validate.min.js" type="text/javascript"></script>
-        <script src="/51ccnew/Public/pc/plugin/jquery-validate/jquery.validate.method.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="/51ccnew/Public/pc/plugin/jquery-areapop/jquery-areapop.js"></script>
-        <script src="/51ccnew/Public/pc/plugin/artdialog/dialog.js" type="text/javascript"></script>
-        <script src="/51ccnew/Public/pc/plugin/form.js" type="text/javascript"></script>
-        <script src="/51ccnew/Public/pc/js/js.js" type="text/javascript"></script>
-        <script src="/51ccnew/Public/pc/js/common.js" type="text/javascript"></script>        
+        <link href="/Public/pc/plugin/jquery-validate/jquery.validate.min.css" type="text/css" rel="stylesheet" />
+        <link href="/Public/pc/css/page.css" rel="stylesheet" type="text/css" />
+        <script src="/Public/pc/plugin/jquery-validate/jquery.validate.min.js" type="text/javascript"></script>
+        <script src="/Public/pc/plugin/jquery-validate/jquery.validate.method.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="/Public/pc/plugin/jquery-areapop/jquery-areapop.js"></script>
+        <script src="/Public/pc/plugin/artdialog/dialog.js" type="text/javascript"></script>
+        <script src="/Public/pc/plugin/form.js" type="text/javascript"></script>
+        <script src="/Public/pc/js/js.js" type="text/javascript"></script>
+        <script src="/Public/pc/js/common.js" type="text/javascript"></script>        
     </head>
 <body><div id="new_top">
         <div class="new_top_content clearfix" id="js-login-info">
@@ -64,7 +64,7 @@
 </div><div id="new_logo">
     <div class="new_logo_content">
         <h1>
-            <a href="default.htm"><img class="logo_img" src="/51ccnew/Public/pc/image/common/logo.png" alt="找塑料网logo" width="494"  height="85" /></a>
+            <a href="default.htm"><img class="logo_img" src="/Public/pc/image/common/logo.png" alt="找塑料网logo" width="494"  height="85" /></a>
             <span class="dis_none">找塑料网</span>
         </h1>
         <div class="search">
@@ -104,8 +104,8 @@
         <a href="member/product/add" target="_blank" class="a1"><i class="ico01"></i>快速报价</a>
     </div>
 </div>
-<link href="/51ccnew/Public/pc/css/index.css" rel="stylesheet" type="text/css" />
-<script src="/51ccnew/Public/pc/js/index.js" type="text/javascript"></script>
+<link href="/Public/pc/css/index.css" rel="stylesheet" type="text/css" />
+<script src="/Public/pc/js/index.js" type="text/javascript"></script>
 <!--顶层搜索start-->
 <script type="text/javascript">
 $(function(){
@@ -243,16 +243,16 @@ $(function(){
 <!--[if lte IE 8]>
 <script type="text/javascript">
 $(function(){
-    $(".center_wrap .box1 .img_div .text").css("background","url(/51ccnew/Public/pc/image/common/black_opcity.png)");
-    $(".center_wrap .box3 .ad_div .content .dot a").css("background","url(/51ccnew/Public/pc/image/common/black_opcity.png)");
+    $(".center_wrap .box1 .img_div .text").css("background","url(/Public/pc/image/common/black_opcity.png)");
+    $(".center_wrap .box3 .ad_div .content .dot a").css("background","url(/Public/pc/image/common/black_opcity.png)");
     $(".center_wrap .box1 .img_div .prev,.center_wrap .box1 .img_div .next").css({
-        "background":"url(/51ccnew/Public/pc/image/index/center_arrow.png)",
+        "background":"url(/Public/pc/image/index/center_arrow.png)",
         "background-repeat":"no-repeat"
     });
     $(".center_wrap .box1 .img_div .prev").css("background-position","6px 16px");
     $(".center_wrap .box1 .img_div .next").css("background-position","-44px 16px");
     $(".center_wrap .box3 .ad_div .content .prev, .center_wrap .box3 .ad_div .content .next").css({
-        "background":"url(/51ccnew/Public/pc/image/index/center_arrow.png)",
+        "background":"url(/Public/pc/image/index/center_arrow.png)",
         "background-repeat":"no-repeat"
     });
     $(".center_wrap .box3 .ad_div .content .prev").css("background-position","6px 16px");
@@ -265,7 +265,7 @@ $(function(){
 
 <div id="search" style="display:none;">
     <div class="search_content">
-        <a href="default.htm"><img src="/51ccnew/Public/pc/image/index/logo2.jpg" alt="找塑料网logo" width="141" height="47"/></a>
+        <a href="default.htm"><img src="/Public/pc/image/index/logo2.jpg" alt="找塑料网logo" width="141" height="47"/></a>
         <div class="search_div">
             <div class="selecd_btn">
                 <span>搜现货</span>
@@ -523,10 +523,10 @@ $(function(){
             </div>
             <div class="banner_img">
                 <ul class="img_list">
-                        <li><a target="_blank" href="../hq.zhaosuliao.com/pe/pedybg/21028.html"><img alt="中国塑料市场(PE/PP/PVC)周度报告（20160820-0826）" src="/51ccnew/Public/pc/upload/gallery/201608/2d55d3da-d23d-4934-8a78-2d6c3b33309b.jpg" width="700" height="270"/></a></li>
-                        <li><a target="_blank" href="zixun/gsdt/16683.html"><img alt="找塑料网牵手广和新材料，改性塑料OEM体系又添新成员" src="/51ccnew/Public/pc/upload/gallery/201608/b66de3f1-ec23-4e62-b898-a21ea0cd76f4.jpg" width="700" height="270"/></a></li>
-                        <li><a target="_blank" href="zixun/rmhd/16682.html"><img alt="拆超级红包，赚100倍翻倍！" src="/51ccnew/Public/pc/upload/gallery/201608/6bd7526a-33a7-4883-8335-24eb79a8e0a2.jpg" width="700" height="270"/></a></li>
-                        <li><a target="_blank" href="huodong/saomachaihongbao"><img alt="【激情奥运季】采购成交，拆取红包，惊喜100%" src="/51ccnew/Public/pc/upload/gallery/201608/365e32a3-6e6a-430c-8f83-1095f8b12c84.jpg" width="700" height="270"/></a></li>
+                        <li><a target="_blank" href="../hq.zhaosuliao.com/pe/pedybg/21028.html"><img alt="中国塑料市场(PE/PP/PVC)周度报告（20160820-0826）" src="/Public/pc/upload/gallery/201608/2d55d3da-d23d-4934-8a78-2d6c3b33309b.jpg" width="700" height="270"/></a></li>
+                        <li><a target="_blank" href="zixun/gsdt/16683.html"><img alt="找塑料网牵手广和新材料，改性塑料OEM体系又添新成员" src="/Public/pc/upload/gallery/201608/b66de3f1-ec23-4e62-b898-a21ea0cd76f4.jpg" width="700" height="270"/></a></li>
+                        <li><a target="_blank" href="zixun/rmhd/16682.html"><img alt="拆超级红包，赚100倍翻倍！" src="/Public/pc/upload/gallery/201608/6bd7526a-33a7-4883-8335-24eb79a8e0a2.jpg" width="700" height="270"/></a></li>
+                        <li><a target="_blank" href="huodong/saomachaihongbao"><img alt="【激情奥运季】采购成交，拆取红包，惊喜100%" src="/Public/pc/upload/gallery/201608/365e32a3-6e6a-430c-8f83-1095f8b12c84.jpg" width="700" height="270"/></a></li>
                 </ul>
                 <p class="banner_focus">
                     <a href="javascript:void(0)"></a>
@@ -542,7 +542,7 @@ $(function(){
                 </p>
                 <div class="free_message_content">
                     <textarea name="purchase_content" id="purchase_content" class="textarea_message" placeholder="写下您的真实需求，包括品种、牌号、厂家等，收到后我们会立即给您回电确认，剩下的就交给我们吧。"></textarea>
-                    <img src="/51ccnew/Public/pc/image/index/fbxx.jpg" alt="找塑料网免费委托找货" width="240" height="28"/>
+                    <img src="/Public/pc/image/index/fbxx.jpg" alt="找塑料网免费委托找货" width="240" height="28"/>
                     <input type="submit" class="free_btn" id="purchase_submit" value=" "/>
                 </div>
             </div>
@@ -555,7 +555,7 @@ $(function(){
         <div class="price_left">
             <div class="price_title">
                 <div class="price_title_left">
-                    <img src="/51ccnew/Public/pc/image/index/price.jpg" width="80" height="30" alt="找塑料网石化价格"/>
+                    <img src="/Public/pc/image/index/price.jpg" width="80" height="30" alt="找塑料网石化价格"/>
                     <p>最后更新：08月26日 16:55</p>
                 </div>
                 <div class="price_title_right">
@@ -935,13 +935,13 @@ $(function(){
                     </div>
                 </div>
                 <div class="f_content_bot">
-                	<img class="gys_tj" src="/51ccnew/Public/pc/image/index/gys_tj02.png" alt="找塑料网供应商推荐" width="96" height="78"/>
-	                    <a target="_blank" href="company/121842.html"><img alt="找塑料网供应商推荐" src="/51ccnew/Public/pc/upload/memberRecommend/201606/90155bf1-350f-4e91-80d0-b78d1a5d6ce3.jpg" width="183" height="78"/></a>
-	                    <a target="_blank" href="company/787.html"><img alt="找塑料网供应商推荐" src="/51ccnew/Public/pc/upload/memberRecommend/201602/0083ff00-6a63-4567-b5df-0ea5277917e6.jpg" width="183" height="78"/></a>
-	                    <a target="_blank" href="company/23552.html"><img alt="找塑料网供应商推荐" src="/51ccnew/Public/pc/upload/memberRecommend/201602/edd0476b-3391-4bdd-903b-a15ef022ea93.jpg" width="183" height="78"/></a>
-	                    <a target="_blank" href="company/108240.html"><img alt="找塑料网供应商推荐" src="/51ccnew/Public/pc/upload/memberRecommend/201602/9451da09-4a88-469a-966c-158fe6172ea4.jpg" width="183" height="78"/></a>
-	                    <a target="_blank" href="company/2770.html"><img alt="找塑料网供应商推荐" src="/51ccnew/Public/pc/upload/memberRecommend/201602/8ba01702-96de-494c-8ba1-e3bd1da1c032.jpg" width="183" height="78"/></a>
-	                    <a target="_blank" href="company/398.html"><img alt="找塑料网供应商推荐" src="/51ccnew/Public/pc/upload/recomm/398.jpg" width="183" height="78"/></a>
+                	<img class="gys_tj" src="/Public/pc/image/index/gys_tj02.png" alt="找塑料网供应商推荐" width="96" height="78"/>
+	                    <a target="_blank" href="company/121842.html"><img alt="找塑料网供应商推荐" src="/Public/pc/upload/memberRecommend/201606/90155bf1-350f-4e91-80d0-b78d1a5d6ce3.jpg" width="183" height="78"/></a>
+	                    <a target="_blank" href="company/787.html"><img alt="找塑料网供应商推荐" src="/Public/pc/upload/memberRecommend/201602/0083ff00-6a63-4567-b5df-0ea5277917e6.jpg" width="183" height="78"/></a>
+	                    <a target="_blank" href="company/23552.html"><img alt="找塑料网供应商推荐" src="/Public/pc/upload/memberRecommend/201602/edd0476b-3391-4bdd-903b-a15ef022ea93.jpg" width="183" height="78"/></a>
+	                    <a target="_blank" href="company/108240.html"><img alt="找塑料网供应商推荐" src="/Public/pc/upload/memberRecommend/201602/9451da09-4a88-469a-966c-158fe6172ea4.jpg" width="183" height="78"/></a>
+	                    <a target="_blank" href="company/2770.html"><img alt="找塑料网供应商推荐" src="/Public/pc/upload/memberRecommend/201602/8ba01702-96de-494c-8ba1-e3bd1da1c032.jpg" width="183" height="78"/></a>
+	                    <a target="_blank" href="company/398.html"><img alt="找塑料网供应商推荐" src="/Public/pc/upload/recomm/398.jpg" width="183" height="78"/></a>
                 </div>
             </div>
         </div>
@@ -1346,13 +1346,13 @@ $(function(){
                     </div>
                 </div>
                 <div class="f_content_bot">
-                	<img class="gys_tj" src="/51ccnew/Public/pc/image/index/tj_03.jpg" alt="找塑料网供应商推荐" width="96" height="78"/>
-	                    <a target="_blank" href="company/143687.html"><img alt="找塑料网供应商推荐" src="/51ccnew/Public/pc/upload/memberRecommend/201604/61640b8a-0594-47c1-9ee0-ed6c1abe89b6.jpg" width="183" height="78"/></a>
-	                    <a target="_blank" href="company/55681.html"><img alt="找塑料网供应商推荐" src="/51ccnew/Public/pc/upload/memberRecommend/201604/efb82bac-4c03-4e6a-b33d-427352f9a607.jpg" width="183" height="78"/></a>
-	                    <a target="_blank" href="company/328.html"><img alt="找塑料网供应商推荐" src="/51ccnew/Public/pc/upload/memberRecommend/201507/58858210-7719-4efb-aa8c-06fe262f16a6.png" width="183" height="78"/></a>
-	                    <a target="_blank" href="company/5030.html"><img alt="找塑料网供应商推荐" src="/51ccnew/Public/pc/upload/memberRecommend/201602/8805ec32-cfe6-464f-8732-7f04cc9ae145.jpg" width="183" height="78"/></a>
-	                    <a target="_blank" href="company/4829.html"><img alt="找塑料网供应商推荐" src="/51ccnew/Public/pc/upload/memberRecommend/201602/871de69d-6ad3-4ad1-a484-56918a39515f.jpg" width="183" height="78"/></a>
-	                    <a target="_blank" href="company/3641.html"><img alt="找塑料网供应商推荐" src="/51ccnew/Public/pc/upload/memberRecommend/201602/940edb29-0cad-45cd-ac14-1d66b9fd5e70.jpg" width="183" height="78"/></a>
+                	<img class="gys_tj" src="/Public/pc/image/index/tj_03.jpg" alt="找塑料网供应商推荐" width="96" height="78"/>
+	                    <a target="_blank" href="company/143687.html"><img alt="找塑料网供应商推荐" src="/Public/pc/upload/memberRecommend/201604/61640b8a-0594-47c1-9ee0-ed6c1abe89b6.jpg" width="183" height="78"/></a>
+	                    <a target="_blank" href="company/55681.html"><img alt="找塑料网供应商推荐" src="/Public/pc/upload/memberRecommend/201604/efb82bac-4c03-4e6a-b33d-427352f9a607.jpg" width="183" height="78"/></a>
+	                    <a target="_blank" href="company/328.html"><img alt="找塑料网供应商推荐" src="/Public/pc/upload/memberRecommend/201507/58858210-7719-4efb-aa8c-06fe262f16a6.png" width="183" height="78"/></a>
+	                    <a target="_blank" href="company/5030.html"><img alt="找塑料网供应商推荐" src="/Public/pc/upload/memberRecommend/201602/8805ec32-cfe6-464f-8732-7f04cc9ae145.jpg" width="183" height="78"/></a>
+	                    <a target="_blank" href="company/4829.html"><img alt="找塑料网供应商推荐" src="/Public/pc/upload/memberRecommend/201602/871de69d-6ad3-4ad1-a484-56918a39515f.jpg" width="183" height="78"/></a>
+	                    <a target="_blank" href="company/3641.html"><img alt="找塑料网供应商推荐" src="/Public/pc/upload/memberRecommend/201602/940edb29-0cad-45cd-ac14-1d66b9fd5e70.jpg" width="183" height="78"/></a>
                 </div>
             </div>
     	</div>
@@ -1757,13 +1757,13 @@ $(function(){
                     </div>
                 </div>
                 <div class="f_content_bot">
-                	<img class="gys_tj" src="/51ccnew/Public/pc/image/index/gys_tj03.png" alt="找塑料网供应商推荐" width="96" height="78"/>
-	                    <a target="_blank" href="company/1039.html"><img alt="找塑料网供应商推荐" src="/51ccnew/Public/pc/upload/memberRecommend/201603/721de1c2-75c2-4a33-b709-a5c28583d7dd.jpg" width="183" height="78"/></a>
-	                    <a target="_blank" href="company/71819.html"><img alt="找塑料网供应商推荐" src="/51ccnew/Public/pc/upload/memberRecommend/201604/aabfe6ac-f165-44b7-870f-ca53081ab73a.jpg" width="183" height="78"/></a>
-	                    <a target="_blank" href="company/9282.html"><img alt="找塑料网供应商推荐" src="/51ccnew/Public/pc/upload/memberRecommend/201603/eef82f93-0fab-437c-89c3-8d47a9484a15.jpg" width="183" height="78"/></a>
-	                    <a target="_blank" href="company/39738.html"><img alt="找塑料网供应商推荐" src="/51ccnew/Public/pc/upload/memberRecommend/201603/221741df-a479-4107-96fa-5777abfa1f6e.jpg" width="183" height="78"/></a>
-	                    <a target="_blank" href="company/141796.html"><img alt="找塑料网供应商推荐" src="/51ccnew/Public/pc/upload/memberRecommend/201603/faccfbd8-f428-44a9-83cf-f13cc24693b5.jpg" width="183" height="78"/></a>
-	                    <a target="_blank" href="company/793.html"><img alt="找塑料网供应商推荐" src="/51ccnew/Public/pc/upload/recomm/793.jpg" width="183" height="78"/></a>
+                	<img class="gys_tj" src="/Public/pc/image/index/gys_tj03.png" alt="找塑料网供应商推荐" width="96" height="78"/>
+	                    <a target="_blank" href="company/1039.html"><img alt="找塑料网供应商推荐" src="/Public/pc/upload/memberRecommend/201603/721de1c2-75c2-4a33-b709-a5c28583d7dd.jpg" width="183" height="78"/></a>
+	                    <a target="_blank" href="company/71819.html"><img alt="找塑料网供应商推荐" src="/Public/pc/upload/memberRecommend/201604/aabfe6ac-f165-44b7-870f-ca53081ab73a.jpg" width="183" height="78"/></a>
+	                    <a target="_blank" href="company/9282.html"><img alt="找塑料网供应商推荐" src="/Public/pc/upload/memberRecommend/201603/eef82f93-0fab-437c-89c3-8d47a9484a15.jpg" width="183" height="78"/></a>
+	                    <a target="_blank" href="company/39738.html"><img alt="找塑料网供应商推荐" src="/Public/pc/upload/memberRecommend/201603/221741df-a479-4107-96fa-5777abfa1f6e.jpg" width="183" height="78"/></a>
+	                    <a target="_blank" href="company/141796.html"><img alt="找塑料网供应商推荐" src="/Public/pc/upload/memberRecommend/201603/faccfbd8-f428-44a9-83cf-f13cc24693b5.jpg" width="183" height="78"/></a>
+	                    <a target="_blank" href="company/793.html"><img alt="找塑料网供应商推荐" src="/Public/pc/upload/recomm/793.jpg" width="183" height="78"/></a>
                 </div>
             </div>
     	</div>
@@ -2169,13 +2169,13 @@ $(function(){
                     </div>
                 </div>
                 <div class="f_content_bot">
-                	<img class="gys_tj" src="/51ccnew/Public/pc/image/index/gys_04.jpg" alt="找塑料网供应商推荐" width="96" height="78"/>
-	                    <a target="_blank" href="company/1932.html"><img alt="找塑料网供应商推荐" src="/51ccnew/Public/pc/upload/memberRecommend/201604/cf52b7ce-4967-4863-ae0a-b10a4c219f33.jpg" width="183" height="78"/></a>
-	                    <a target="_blank" href="company/144570.html"><img alt="找塑料网供应商推荐" src="/51ccnew/Public/pc/upload/memberRecommend/201604/a1b1f4e7-df55-4a41-bb08-b5b1de5399b7.jpg" width="183" height="78"/></a>
-	                    <a target="_blank" href="company/121185.html"><img alt="找塑料网供应商推荐" src="/51ccnew/Public/pc/upload/memberRecommend/201604/fdef7828-4439-4ffd-bba3-0bc92154b045.jpg" width="183" height="78"/></a>
-	                    <a target="_blank" href="company/45817.html"><img alt="找塑料网供应商推荐" src="/51ccnew/Public/pc/upload/memberRecommend/201602/a75345d7-48c3-43d8-ac1d-fce5311b3659.jpg" width="183" height="78"/></a>
-	                    <a target="_blank" href="company/6099.html"><img alt="找塑料网供应商推荐" src="/51ccnew/Public/pc/upload/memberRecommend/201509/e69b557b-bebb-4845-a4ab-4d8e9c47c765.jpg" width="183" height="78"/></a>
-	                    <a target="_blank" href="company/350.html"><img alt="找塑料网供应商推荐" src="/51ccnew/Public/pc/upload/memberRecommend/201506/c339b555-02ea-44c1-992c-b60790d38c78.jpg" width="183" height="78"/></a>
+                	<img class="gys_tj" src="/Public/pc/image/index/gys_04.jpg" alt="找塑料网供应商推荐" width="96" height="78"/>
+	                    <a target="_blank" href="company/1932.html"><img alt="找塑料网供应商推荐" src="/Public/pc/upload/memberRecommend/201604/cf52b7ce-4967-4863-ae0a-b10a4c219f33.jpg" width="183" height="78"/></a>
+	                    <a target="_blank" href="company/144570.html"><img alt="找塑料网供应商推荐" src="/Public/pc/upload/memberRecommend/201604/a1b1f4e7-df55-4a41-bb08-b5b1de5399b7.jpg" width="183" height="78"/></a>
+	                    <a target="_blank" href="company/121185.html"><img alt="找塑料网供应商推荐" src="/Public/pc/upload/memberRecommend/201604/fdef7828-4439-4ffd-bba3-0bc92154b045.jpg" width="183" height="78"/></a>
+	                    <a target="_blank" href="company/45817.html"><img alt="找塑料网供应商推荐" src="/Public/pc/upload/memberRecommend/201602/a75345d7-48c3-43d8-ac1d-fce5311b3659.jpg" width="183" height="78"/></a>
+	                    <a target="_blank" href="company/6099.html"><img alt="找塑料网供应商推荐" src="/Public/pc/upload/memberRecommend/201509/e69b557b-bebb-4845-a4ab-4d8e9c47c765.jpg" width="183" height="78"/></a>
+	                    <a target="_blank" href="company/350.html"><img alt="找塑料网供应商推荐" src="/Public/pc/upload/memberRecommend/201506/c339b555-02ea-44c1-992c-b60790d38c78.jpg" width="183" height="78"/></a>
                 </div>
             </div>
     	</div>
@@ -2194,9 +2194,9 @@ $(function(){
         	<div class="box1">
         		<div class="img_div"  >
 		            <ul class="img_list">
-		                <li><a href="../hq.zhaosuliao.com/pe/pedybg/21028.html" target="_blank" title="中国塑料市场(PE/PP/PVC)周度报告（20160820-0826）"><img src="/51ccnew/Public/pc/upload/gallery/201608/fe9945eb-d3cb-40d4-9375-516a550ff11a.png" width="500" height="240" title="中国塑料市场(PE/PP/PVC)周度报告（20160820-0826）" alt="中国塑料市场(PE/PP/PVC)周度报告（20160820-0826）" /></a></li>
-		                <li><a href="../hq.zhaosuliao.com/ppl/pplqwzl/21039.html" target="_blank" title="【宏观塑评】伊朗参会欧佩克 国际油价迎反弹"><img src="/51ccnew/Public/pc/upload/gallery/201608/738e8e1b-8b4e-4c11-ac99-3be39dd6ede4.jpg" width="500" height="240" title="【宏观塑评】伊朗参会欧佩克 国际油价迎反弹" alt="【宏观塑评】伊朗参会欧佩克 国际油价迎反弹" /></a></li>
-		                <li><a href="../hq.zhaosuliao.com/ppl/pplqwzl/20234.html" target="_blank" title="【装置扩能】2016年下半年PP装置投产计划（最新跟踪统计）"><img src="/51ccnew/Public/pc/upload/gallery/201608/1aeeb1ee-fc64-43d0-8c3c-a4ac93d498ee.png" width="500" height="240" title="【装置扩能】2016年下半年PP装置投产计划（最新跟踪统计）" alt="【装置扩能】2016年下半年PP装置投产计划（最新跟踪统计）" /></a></li>
+		                <li><a href="../hq.zhaosuliao.com/pe/pedybg/21028.html" target="_blank" title="中国塑料市场(PE/PP/PVC)周度报告（20160820-0826）"><img src="/Public/pc/upload/gallery/201608/fe9945eb-d3cb-40d4-9375-516a550ff11a.png" width="500" height="240" title="中国塑料市场(PE/PP/PVC)周度报告（20160820-0826）" alt="中国塑料市场(PE/PP/PVC)周度报告（20160820-0826）" /></a></li>
+		                <li><a href="../hq.zhaosuliao.com/ppl/pplqwzl/21039.html" target="_blank" title="【宏观塑评】伊朗参会欧佩克 国际油价迎反弹"><img src="/Public/pc/upload/gallery/201608/738e8e1b-8b4e-4c11-ac99-3be39dd6ede4.jpg" width="500" height="240" title="【宏观塑评】伊朗参会欧佩克 国际油价迎反弹" alt="【宏观塑评】伊朗参会欧佩克 国际油价迎反弹" /></a></li>
+		                <li><a href="../hq.zhaosuliao.com/ppl/pplqwzl/20234.html" target="_blank" title="【装置扩能】2016年下半年PP装置投产计划（最新跟踪统计）"><img src="/Public/pc/upload/gallery/201608/1aeeb1ee-fc64-43d0-8c3c-a4ac93d498ee.png" width="500" height="240" title="【装置扩能】2016年下半年PP装置投产计划（最新跟踪统计）" alt="【装置扩能】2016年下半年PP装置投产计划（最新跟踪统计）" /></a></li>
 		            </ul>
                 		<p class="text"><a href="../hq.zhaosuliao.com/pe/pedybg/21028.html" target="_blank" title="中国塑料市场(PE/PP/PVC)周度报告（20160820-0826）">中国塑料市场(PE/PP/PVC)周度报告（20160820-0826）</a></p>              
                 		              
@@ -2624,9 +2624,9 @@ $(function(){
         			<p class="box_title title">&nbsp;&nbsp;&nbsp;<a href="javascript:;" class="on">活动</a>&nbsp;&nbsp;&nbsp;<a href="javascript:;">专题</a></p>
         			<div class="content" id="gg_scroll1">
 			            <ul class="img_list">
-                            <li><a href="zixun/rmhd/16682.html" target="_blank"><img src="/51ccnew/Public/pc/upload/gallery/201608/f8213faf-01f5-4789-af63-9a2cd0666136.jpg" width="326" height="210" /></a></li>
-                            <li><a href="huodong/saomachaihongbao" target="_blank"><img src="/51ccnew/Public/pc/upload/gallery/201608/a260ce1f-a603-4567-85bb-901b36e01a7c.jpg" width="326" height="210" /></a></li>
-                            <li><a href="zixun/rmhd/16679.html" target="_blank"><img src="/51ccnew/Public/pc/upload/gallery/201608/b5412a3e-ef61-4b95-982e-4683fffdde07.jpg" width="326" height="210" /></a></li>
+                            <li><a href="zixun/rmhd/16682.html" target="_blank"><img src="/Public/pc/upload/gallery/201608/f8213faf-01f5-4789-af63-9a2cd0666136.jpg" width="326" height="210" /></a></li>
+                            <li><a href="huodong/saomachaihongbao" target="_blank"><img src="/Public/pc/upload/gallery/201608/a260ce1f-a603-4567-85bb-901b36e01a7c.jpg" width="326" height="210" /></a></li>
+                            <li><a href="zixun/rmhd/16679.html" target="_blank"><img src="/Public/pc/upload/gallery/201608/b5412a3e-ef61-4b95-982e-4683fffdde07.jpg" width="326" height="210" /></a></li>
 			            </ul>
 			            <p class="dot">
                             <a href="javascript:void(0);" class="on"></a>
@@ -2639,9 +2639,9 @@ $(function(){
         			</div>
         			<div class="content" id="gg_scroll2" style="display:none;">
 			            <ul class="img_list">
-			                <li><a href="web/subject/expansion" target="_blank" title="找塑料网2016团队拓展暨周年庆活动"><img src="/51ccnew/Public/pc/upload/gallery/201608/025f88de-a6ea-4293-a7ce-4e8a0de99739.jpg" width="326" height="210" title="找塑料网2016团队拓展暨周年庆活动" alt="找塑料网2016团队拓展暨周年庆活动" /></a></li>
-			                <li><a href="huodong/exhibition_2016" target="_blank" title="共襄盛会 塑造未来  找塑料网与您相约2016国际橡塑展"><img src="/51ccnew/Public/pc/upload/gallery/201608/114c66ef-d6c5-46a6-8016-ad80eddd97df.jpg" width="326" height="210" title="共襄盛会 塑造未来  找塑料网与您相约2016国际橡塑展" alt="共襄盛会 塑造未来  找塑料网与您相约2016国际橡塑展" /></a></li>
-			                <li><a href="article/train" target="_blank" title="找塑料网打造巅峰团队铸就辉煌未来"><img src="/51ccnew/Public/pc/upload/gallery/201608/0ccdfd25-138d-4221-8461-adb28154c774.jpg" width="326" height="210" title="找塑料网打造巅峰团队铸就辉煌未来" alt="找塑料网打造巅峰团队铸就辉煌未来" /></a></li>
+			                <li><a href="web/subject/expansion" target="_blank" title="找塑料网2016团队拓展暨周年庆活动"><img src="/Public/pc/upload/gallery/201608/025f88de-a6ea-4293-a7ce-4e8a0de99739.jpg" width="326" height="210" title="找塑料网2016团队拓展暨周年庆活动" alt="找塑料网2016团队拓展暨周年庆活动" /></a></li>
+			                <li><a href="huodong/exhibition_2016" target="_blank" title="共襄盛会 塑造未来  找塑料网与您相约2016国际橡塑展"><img src="/Public/pc/upload/gallery/201608/114c66ef-d6c5-46a6-8016-ad80eddd97df.jpg" width="326" height="210" title="共襄盛会 塑造未来  找塑料网与您相约2016国际橡塑展" alt="共襄盛会 塑造未来  找塑料网与您相约2016国际橡塑展" /></a></li>
+			                <li><a href="article/train" target="_blank" title="找塑料网打造巅峰团队铸就辉煌未来"><img src="/Public/pc/upload/gallery/201608/0ccdfd25-138d-4221-8461-adb28154c774.jpg" width="326" height="210" title="找塑料网打造巅峰团队铸就辉煌未来" alt="找塑料网打造巅峰团队铸就辉煌未来" /></a></li>
 			            </ul>
 			            <p class="dot">
                             <a href="javascript:void(0);" class="on"></a>
@@ -2755,11 +2755,11 @@ $(function(){
         
         <div class="box3">
             <div class="code">
-                <p class="img"><img src="/51ccnew/Public/pc/image/common/code_wechat.jpg" alt="找塑料网微信二维码" /></p>
+                <p class="img"><img src="/Public/pc/image/common/code_wechat.jpg" alt="找塑料网微信二维码" /></p>
                 <p>扫一扫，看行情资讯</p>
             </div>
             <div class="code">
-                <p class="img"><img src="/51ccnew/Public/pc/image/common/code_app.jpg" alt="找塑料网APP二维码" /></p>
+                <p class="img"><img src="/Public/pc/image/common/code_app.jpg" alt="找塑料网APP二维码" /></p>
                 <p>扫一扫，下载移动端</p>
             </div>
         </div>
@@ -2829,15 +2829,15 @@ $(function(){
             </p>
         </div>
         <div class="box6">
-            <!--<a  key ="54a107ffc274e76dc1035520"  logo_size="124x47"  logo_type="realname"  href="http://www.anquan.org" ><script src="http://static.anquan.org//51ccnew/Public/pc/outer/js/aq_auth.js"></script></a>
+            <!--<a  key ="54a107ffc274e76dc1035520"  logo_size="124x47"  logo_type="realname"  href="http://www.anquan.org" ><script src="http://static.anquan.org//Public/pc/outer/js/aq_auth.js"></script></a>
             <a href="http://webscan.360.cn/index/checkwebsite/url/zhaosuliao.com"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/ef7e1c147d6253064bea858dfeeb5ebc"/></a> -->
-            <a target="_blank" href="../www.anquan.org/authenticate/cert/@site=www.zhaosuliao.com&at=realname"><img alt="安全联盟实名验证" src="/51ccnew/Public/pc/image/common/aqlm.png" /></a>
-            <a target="_blank" href="../webscan.360.cn/index/checkwebsite/url/zhaosuliao.com"><img alt="360网站安全检测" src="/51ccnew/Public/pc/image/common/aqjc_360.png" /></a>
-            <a target="_blank" href="../si.trustutn.org/info@sn=137141229010801735265&certType=1"><img alt="实名认证" src="/51ccnew/Public/pc/image/common/smrz.png" /></a>
-            <a id='___szfw_logo___' href='../https@credit.szfw.org/CX20160123013832180167.html' target='_blank'><img alt="诚信网站" src="/51ccnew/Public/pc/image/common/cxrz.png" /></a>
+            <a target="_blank" href="../www.anquan.org/authenticate/cert/@site=www.zhaosuliao.com&at=realname"><img alt="安全联盟实名验证" src="/Public/pc/image/common/aqlm.png" /></a>
+            <a target="_blank" href="../webscan.360.cn/index/checkwebsite/url/zhaosuliao.com"><img alt="360网站安全检测" src="/Public/pc/image/common/aqjc_360.png" /></a>
+            <a target="_blank" href="../si.trustutn.org/info@sn=137141229010801735265&certType=1"><img alt="实名认证" src="/Public/pc/image/common/smrz.png" /></a>
+            <a id='___szfw_logo___' href='../https@credit.szfw.org/CX20160123013832180167.html' target='_blank'><img alt="诚信网站" src="/Public/pc/image/common/cxrz.png" /></a>
             <script type='text/javascript'>(function(){document.getElementById('___szfw_logo___').oncontextmenu = function(){return false;}})();</script>
-            <a target="_blank" href="../www.itrust.org.cn/Home/Index/itrust_certifi@wm=1304763357"><img alt="ICP网站征信" src="/51ccnew/Public/pc/image/common/qyxypj.png" /></a>
-            <a target="_blank" href='../netadreg.gzaic.gov.cn/ntmm/WebSear/WebLogoPub.aspx@logo=440115115012014072300011'><img alt="工商网监电子标识" src="/51ccnew/Public/pc/image/common/gswj.png" width="124" height="47"/></a>
+            <a target="_blank" href="../www.itrust.org.cn/Home/Index/itrust_certifi@wm=1304763357"><img alt="ICP网站征信" src="/Public/pc/image/common/qyxypj.png" /></a>
+            <a target="_blank" href='../netadreg.gzaic.gov.cn/ntmm/WebSear/WebLogoPub.aspx@logo=440115115012014072300011'><img alt="工商网监电子标识" src="/Public/pc/image/common/gswj.png" width="124" height="47"/></a>
         </div>
     </div></div>
 <!-- 页面底部end -->

@@ -3949,3 +3949,1265 @@ ERR: 1452:Cannot add or update a child row: a foreign key constraint fails (`qdm
 ERR: 1452:Cannot add or update a child row: a foreign key constraint fails (`qdm122976199_db`.`tb_detail_supply`, CONSTRAINT `tb_detail_supply_ibfk_3` FOREIGN KEY (`gradeid`) REFERENCES `tb_mm_grade` (`gradeid`))
  [ SQL语句 ] : INSERT INTO `tb_detail_supply` (`orderid`,`varietyid`,`gradeid`,`factoryid`,`specid`,`quantity`,`unitid`,`unitprice`,`claddingid`,`comments`,`instime`,`updatetime`) VALUES ('45','8','0','0','1','44','2','55','1','无','2016-10-06 17:39:43','2016-10-06 17:39:43')
 
+[ 2016-10-06T22:44:25+08:00 ] 127.0.0.1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_order_supply` [ RunTime:0.0660s ]
+SQL: call p_ordersupply(3) [ RunTime:0.6690s ]
+NOTIC: [2] PDOStatement::fetchAll(): SQLSTATE[HY000]: General error C:\51ccnew\51cc\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 220 行.
+SQL: SHOW COLUMNS FROM `tb_order_purchase` [ RunTime:0.0680s ]
+SQL: call p_orderpurchase(5) [ RunTime:0.0810s ]
+NOTIC: [2] PDOStatement::fetchAll(): SQLSTATE[HY000]: General error C:\51ccnew\51cc\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 220 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.004000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.119007s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.119007s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-10-06T22:44:32+08:00 ] 127.0.0.1 /index.php/Home/Product/product.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0760s ]
+SQL: select v.varietyid,v.varietyname,group_concat(concat(cast(g.gradeid as char),'__',g.gradename)) as grade from tb_mm_variety v inner join tb_mm_grade g on v.varietyid=g.varietyid group by v.varietyid  [ RunTime:0.0770s ]
+SQL: call p_search_supply(0,10,"") [ RunTime:0.0910s ]
+NOTIC: [2] PDOStatement::fetchAll(): SQLSTATE[HY000]: General error C:\51ccnew\51cc\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 220 行.
+NOTIC: [2] Missing argument 1 for Think\cPage::show(), called in C:\51ccnew\51cc\magnetic\Home\Controller\ProductController.class.php on line 44 and defined C:\51ccnew\51cc\ThinkPHP\Library\Think\cPage.class.php 第 81 行.
+SQL: call p_search_supply(0,10,"") [ RunTime:0.0810s ]
+NOTIC: [2] PDOStatement::fetchAll(): SQLSTATE[HY000]: General error C:\51ccnew\51cc\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 220 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-06T22:44:35+08:00 ] 127.0.0.1 /index.php/Home/Company/pricelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0690s ]
+SQL: select v.varietyid,v.varietyname,group_concat(concat(cast(g.gradeid as char),'__',g.gradename)) as grade from tb_mm_variety v inner join tb_mm_grade g on v.varietyid=g.varietyid group by v.varietyid  [ RunTime:0.0580s ]
+SQL: call p_search_supply(0,10,"") [ RunTime:0.0980s ]
+NOTIC: [2] PDOStatement::fetchAll(): SQLSTATE[HY000]: General error C:\51ccnew\51cc\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 220 行.
+NOTIC: [2] Missing argument 1 for Think\cPage::show(), called in C:\51ccnew\51cc\magnetic\Home\Controller\CompanyController.class.php on line 80 and defined C:\51ccnew\51cc\ThinkPHP\Library\Think\cPage.class.php 第 81 行.
+SQL: call p_search_supply(0,10,"") [ RunTime:0.0610s ]
+NOTIC: [2] PDOStatement::fetchAll(): SQLSTATE[HY000]: General error C:\51ccnew\51cc\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 220 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.055003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.055003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-06T22:44:39+08:00 ] 127.0.0.1 /index.php/Home/Purchase/purchase.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined variable: query C:\51ccnew\51cc\magnetic\Home\Controller\PurchaseController.class.php 第 23 行.
+SQL: call p_search_purchase(0,10,"") [ RunTime:0.0760s ]
+NOTIC: [2] PDOStatement::fetchAll(): SQLSTATE[HY000]: General error C:\51ccnew\51cc\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 220 行.
+NOTIC: [2] Missing argument 1 for Think\cPage::show(), called in C:\51ccnew\51cc\magnetic\Home\Controller\PurchaseController.class.php on line 29 and defined C:\51ccnew\51cc\ThinkPHP\Library\Think\cPage.class.php 第 81 行.
+NOTIC: [8] Undefined variable: query C:\51ccnew\51cc\magnetic\Home\Controller\PurchaseController.class.php 第 33 行.
+SQL: call p_search_purchase(0,10,"") [ RunTime:0.0720s ]
+NOTIC: [2] PDOStatement::fetchAll(): SQLSTATE[HY000]: General error C:\51ccnew\51cc\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 220 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-06T22:44:44+08:00 ] 127.0.0.1 /index.php/Home/Hq/hq.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-10-06T22:44:57+08:00 ] 127.0.0.1 /index.php/Home/User/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-06T22:45:02+08:00 ] 127.0.0.1 /index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-06T22:45:13+08:00 ] 127.0.0.1 /index.php/Home/User/login_bgd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.0670s ]
+SQL: SELECT `userid`,`phone`,`username`,`nickname`,`logintimes` FROM `tb_user` WHERE ( phone='18734569008' and userpwd='e99a18c428cb38d5f260853678922e03' )  [ RunTime:0.0660s ]
+SQL: UPDATE `tb_user` SET `logintimes`='10',`lastlogin`='2016-10-06 22:45:13' WHERE `userid` = 1 [ RunTime:0.0730s ]
+
+[ 2016-10-06T22:45:15+08:00 ] 127.0.0.1 /index.php/Home/User/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-10-06T22:45:35+08:00 ] 127.0.0.1 /index.php/Home/Product/baojiadanadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.1150s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.0650s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.1530s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:0.0700s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:0.1250s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:0.0670s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:0.0660s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:0.0840s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:0.0650s ]
+SQL: SELECT `claddingid`,`claddingname` FROM `tb_mm_claddingmaterial` WHERE ( delstatus=0 )  [ RunTime:0.1040s ]
+SQL: SHOW COLUMNS FROM `tb_mm_unit` [ RunTime:0.0670s ]
+SQL: SELECT `unitid`,`unitname`,`raw` FROM `tb_mm_unit` WHERE ( delstatus=0 )  [ RunTime:0.1340s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-06T22:45:46+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0640s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=1 and g.delstatus=0 order by g.gradeid [ RunTime:0.0750s ]
+
+[ 2016-10-06T22:46:02+08:00 ] 127.0.0.1 /index.php/Home/Product/baojiadanadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0650s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.0830s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0670s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:0.0640s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:0.0950s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:0.0750s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:0.0630s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:0.0630s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:0.0710s ]
+SQL: SELECT `claddingid`,`claddingname` FROM `tb_mm_claddingmaterial` WHERE ( delstatus=0 )  [ RunTime:0.0650s ]
+SQL: SHOW COLUMNS FROM `tb_mm_unit` [ RunTime:0.0650s ]
+SQL: SELECT `unitid`,`unitname`,`raw` FROM `tb_mm_unit` WHERE ( delstatus=0 )  [ RunTime:0.0640s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-06T22:46:07+08:00 ] 127.0.0.1 /index.php/Home/Product/baojiadanadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0620s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.0620s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0630s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:0.0630s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:0.0630s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:0.0630s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:0.0640s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:0.0620s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:0.0630s ]
+SQL: SELECT `claddingid`,`claddingname` FROM `tb_mm_claddingmaterial` WHERE ( delstatus=0 )  [ RunTime:0.0700s ]
+SQL: SHOW COLUMNS FROM `tb_mm_unit` [ RunTime:0.0640s ]
+SQL: SELECT `unitid`,`unitname`,`raw` FROM `tb_mm_unit` WHERE ( delstatus=0 )  [ RunTime:0.0620s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.047003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-06T22:46:10+08:00 ] 127.0.0.1 /index.php/Home/Product/baojiadanadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0630s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.0630s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0630s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:0.0820s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:0.0630s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:0.0650s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:0.0650s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:0.0630s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:0.0650s ]
+SQL: SELECT `claddingid`,`claddingname` FROM `tb_mm_claddingmaterial` WHERE ( delstatus=0 )  [ RunTime:0.0660s ]
+SQL: SHOW COLUMNS FROM `tb_mm_unit` [ RunTime:0.0620s ]
+SQL: SELECT `unitid`,`unitname`,`raw` FROM `tb_mm_unit` WHERE ( delstatus=0 )  [ RunTime:0.0640s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.040002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-06T22:46:12+08:00 ] 127.0.0.1 /index.php/Home/Purchase/purchaseadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0710s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.0630s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0650s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:0.0740s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:0.0920s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:0.0630s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:0.0640s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:0.0650s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:0.0640s ]
+SQL: SELECT `claddingid`,`claddingname` FROM `tb_mm_claddingmaterial` WHERE ( delstatus=0 )  [ RunTime:0.0630s ]
+SQL: SHOW COLUMNS FROM `tb_mm_unit` [ RunTime:0.0640s ]
+SQL: SELECT `unitid`,`unitname`,`raw` FROM `tb_mm_unit` WHERE ( delstatus=0 )  [ RunTime:0.0630s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-10-06T22:46:20+08:00 ] 127.0.0.1 /index.php/Home/Product/baojiadanadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0630s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.0630s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0640s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:0.0640s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:0.0660s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:0.0630s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:0.0640s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:0.0620s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:0.0640s ]
+SQL: SELECT `claddingid`,`claddingname` FROM `tb_mm_claddingmaterial` WHERE ( delstatus=0 )  [ RunTime:0.0630s ]
+SQL: SHOW COLUMNS FROM `tb_mm_unit` [ RunTime:0.0630s ]
+SQL: SELECT `unitid`,`unitname`,`raw` FROM `tb_mm_unit` WHERE ( delstatus=0 )  [ RunTime:0.0620s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-06T22:46:27+08:00 ] 127.0.0.1 /index.php/Home/Product/baojiadanadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0580s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.0590s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0600s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:0.0600s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:0.0600s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:0.0590s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:0.0590s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:0.0580s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:0.0590s ]
+SQL: SELECT `claddingid`,`claddingname` FROM `tb_mm_claddingmaterial` WHERE ( delstatus=0 )  [ RunTime:0.0590s ]
+SQL: SHOW COLUMNS FROM `tb_mm_unit` [ RunTime:0.0600s ]
+SQL: SELECT `unitid`,`unitname`,`raw` FROM `tb_mm_unit` WHERE ( delstatus=0 )  [ RunTime:0.0630s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-06T22:46:30+08:00 ] 127.0.0.1 /index.php/Home/Purchase/purchaseadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0600s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.0570s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0580s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:0.0580s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:0.0590s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:0.0570s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:0.0580s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:0.0570s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:0.0660s ]
+SQL: SELECT `claddingid`,`claddingname` FROM `tb_mm_claddingmaterial` WHERE ( delstatus=0 )  [ RunTime:0.0610s ]
+SQL: SHOW COLUMNS FROM `tb_mm_unit` [ RunTime:0.0650s ]
+SQL: SELECT `unitid`,`unitname`,`raw` FROM `tb_mm_unit` WHERE ( delstatus=0 )  [ RunTime:0.0570s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2016-10-06T22:46:36+08:00 ] 127.0.0.1 /index.php/Home/Product/baojiadanadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0680s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.0670s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0680s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:0.0670s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:0.0700s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:0.0660s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:0.0790s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:0.0660s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:0.0710s ]
+SQL: SELECT `claddingid`,`claddingname` FROM `tb_mm_claddingmaterial` WHERE ( delstatus=0 )  [ RunTime:0.0680s ]
+SQL: SHOW COLUMNS FROM `tb_mm_unit` [ RunTime:0.0670s ]
+SQL: SELECT `unitid`,`unitname`,`raw` FROM `tb_mm_unit` WHERE ( delstatus=0 )  [ RunTime:0.0660s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-06T22:47:24+08:00 ] 127.0.0.1 /index.php/Home/Purchase/purchaseadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0660s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.0650s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0650s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:0.0680s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:0.0650s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:0.0640s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:0.0650s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:0.0650s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:0.0650s ]
+SQL: SELECT `claddingid`,`claddingname` FROM `tb_mm_claddingmaterial` WHERE ( delstatus=0 )  [ RunTime:0.0640s ]
+SQL: SHOW COLUMNS FROM `tb_mm_unit` [ RunTime:0.0640s ]
+SQL: SELECT `unitid`,`unitname`,`raw` FROM `tb_mm_unit` WHERE ( delstatus=0 )  [ RunTime:0.0620s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2016-10-06T22:47:32+08:00 ] 127.0.0.1 /index.php/Home/Product/baojiadanadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0570s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.0770s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0580s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:0.0560s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:0.0560s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:0.0560s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:0.0570s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:0.0580s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:0.0590s ]
+SQL: SELECT `claddingid`,`claddingname` FROM `tb_mm_claddingmaterial` WHERE ( delstatus=0 )  [ RunTime:0.0580s ]
+SQL: SHOW COLUMNS FROM `tb_mm_unit` [ RunTime:0.0570s ]
+SQL: SELECT `unitid`,`unitname`,`raw` FROM `tb_mm_unit` WHERE ( delstatus=0 )  [ RunTime:0.0620s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.040003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-06T22:48:38+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0630s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=1 and g.delstatus=0 order by g.gradeid [ RunTime:0.0600s ]
+
+[ 2016-10-06T23:03:19+08:00 ] 127.0.0.1 /index.php/Home/Product/baojiadanadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0860s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.0740s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0820s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:0.0740s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:0.0720s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:0.1010s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:0.0730s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:0.0730s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:0.0730s ]
+SQL: SELECT `claddingid`,`claddingname` FROM `tb_mm_claddingmaterial` WHERE ( delstatus=0 )  [ RunTime:0.0730s ]
+SQL: SHOW COLUMNS FROM `tb_mm_unit` [ RunTime:0.0990s ]
+SQL: SELECT `unitid`,`unitname`,`raw` FROM `tb_mm_unit` WHERE ( delstatus=0 )  [ RunTime:0.0720s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-10-06T23:03:22+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0710s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=1 and g.delstatus=0 order by g.gradeid [ RunTime:0.0660s ]
+
+[ 2016-10-06T23:03:24+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0600s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=6 and g.delstatus=0 order by g.gradeid [ RunTime:0.0620s ]
+
+[ 2016-10-06T23:03:26+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0580s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=7 and g.delstatus=0 order by g.gradeid [ RunTime:0.0570s ]
+
+[ 2016-10-06T23:03:29+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0670s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=8 and g.delstatus=0 order by g.gradeid [ RunTime:0.0650s ]
+
+[ 2016-10-06T23:03:31+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0580s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=1 and g.delstatus=0 order by g.gradeid [ RunTime:0.0570s ]
+
+[ 2016-10-06T23:03:40+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0600s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=2 and g.delstatus=0 order by g.gradeid [ RunTime:0.0590s ]
+
+[ 2016-10-06T23:03:53+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0580s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=3 and g.delstatus=0 order by g.gradeid [ RunTime:0.0660s ]
+
+[ 2016-10-06T23:04:07+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.2960s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=1 and g.delstatus=0 order by g.gradeid [ RunTime:0.0630s ]
+
+[ 2016-10-06T23:04:09+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0640s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=2 and g.delstatus=0 order by g.gradeid [ RunTime:0.0650s ]
+
+[ 2016-10-06T23:04:17+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0700s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=3 and g.delstatus=0 order by g.gradeid [ RunTime:0.0690s ]
+
+[ 2016-10-06T23:04:24+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0660s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=4 and g.delstatus=0 order by g.gradeid [ RunTime:0.0840s ]
+
+[ 2016-10-06T23:04:27+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0710s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=5 and g.delstatus=0 order by g.gradeid [ RunTime:0.0710s ]
+
+[ 2016-10-06T23:04:30+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0720s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=6 and g.delstatus=0 order by g.gradeid [ RunTime:0.0730s ]
+
+[ 2016-10-06T23:04:33+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0660s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=7 and g.delstatus=0 order by g.gradeid [ RunTime:0.0700s ]
+
+[ 2016-10-06T23:04:36+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0670s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=8 and g.delstatus=0 order by g.gradeid [ RunTime:0.0690s ]
+
+[ 2016-10-06T23:04:40+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0740s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=9 and g.delstatus=0 order by g.gradeid [ RunTime:0.0760s ]
+
+[ 2016-10-06T23:05:27+08:00 ] 127.0.0.1 /index.php/Home/Product/addbaojiandan_bgd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_order_supply` [ RunTime:0.0590s ]
+SQL: INSERT INTO `tb_order_supply` (`ordercode`,`createdby`,`companyid`,`statusid`,`instime`,`updatetime`,`deliveryplace`,`deliverydate`,`comments`) VALUES ('2016100623054798','0','0','1','2016-10-06 23:05:26','2016-10-06 23:05:26','交货','','') [ RunTime:0.0600s ]
+SQL: SHOW COLUMNS FROM `tb_detail_supply` [ RunTime:0.0610s ]
+ERR: 1452:Cannot add or update a child row: a foreign key constraint fails (`qdm122976199_db`.`tb_detail_supply`, CONSTRAINT `tb_detail_supply_ibfk_3` FOREIGN KEY (`gradeid`) REFERENCES `tb_mm_grade` (`gradeid`))
+ [ SQL语句 ] : INSERT INTO `tb_detail_supply` (`orderid`,`varietyid`,`gradeid`,`factoryid`,`specid`,`quantity`,`unitid`,`unitprice`,`claddingid`,`comments`,`instime`,`updatetime`) VALUES ('47','9','0','0','1','2','2','111','1','','2016-10-06 23:05:27','2016-10-06 23:05:27')
+ERR: 1452:Cannot add or update a child row: a foreign key constraint fails (`qdm122976199_db`.`tb_detail_supply`, CONSTRAINT `tb_detail_supply_ibfk_3` FOREIGN KEY (`gradeid`) REFERENCES `tb_mm_grade` (`gradeid`))
+ [ SQL语句 ] : INSERT INTO `tb_detail_supply` (`orderid`,`varietyid`,`gradeid`,`factoryid`,`specid`,`quantity`,`unitid`,`unitprice`,`claddingid`,`comments`,`instime`,`updatetime`) VALUES ('47','9','0','0','1','2','2','111','1','','2016-10-06 23:05:27','2016-10-06 23:05:27')
+
+[ 2016-10-06T23:14:47+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0640s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=2 and g.delstatus=0 order by g.gradeid [ RunTime:0.0640s ]
+
+[ 2016-10-06T23:18:58+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0690s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=1 and g.delstatus=0 order by g.gradeid [ RunTime:0.0690s ]
+
+[ 2016-10-06T23:19:02+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0680s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=2 and g.delstatus=0 order by g.gradeid [ RunTime:0.0670s ]
+
+[ 2016-10-06T23:19:05+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0610s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=1 and g.delstatus=0 order by g.gradeid [ RunTime:0.0630s ]
+
+[ 2016-10-06T23:19:11+08:00 ] 127.0.0.1 /index.php/Home/Product/baojiadanadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0630s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.0620s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0630s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:0.0670s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:0.0690s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:0.0620s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:0.0630s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:0.0630s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:0.0630s ]
+SQL: SELECT `claddingid`,`claddingname` FROM `tb_mm_claddingmaterial` WHERE ( delstatus=0 )  [ RunTime:0.0630s ]
+SQL: SHOW COLUMNS FROM `tb_mm_unit` [ RunTime:0.0650s ]
+SQL: SELECT `unitid`,`unitname`,`raw` FROM `tb_mm_unit` WHERE ( delstatus=0 )  [ RunTime:0.0620s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-06T23:19:16+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0620s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=1 and g.delstatus=0 order by g.gradeid [ RunTime:0.0590s ]
+
+[ 2016-10-06T23:19:25+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0730s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=3 and g.delstatus=0 order by g.gradeid [ RunTime:0.0710s ]
+
+[ 2016-10-06T23:23:49+08:00 ] 127.0.0.1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_order_supply` [ RunTime:0.0730s ]
+SQL: call p_ordersupply(3) [ RunTime:0.6720s ]
+NOTIC: [2] PDOStatement::fetchAll(): SQLSTATE[HY000]: General error C:\51ccnew\51cc\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 220 行.
+SQL: SHOW COLUMNS FROM `tb_order_purchase` [ RunTime:0.0670s ]
+SQL: call p_orderpurchase(5) [ RunTime:0.0710s ]
+NOTIC: [2] PDOStatement::fetchAll(): SQLSTATE[HY000]: General error C:\51ccnew\51cc\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 220 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003001s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.099006s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.100006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-06T23:23:52+08:00 ] 127.0.0.1 /index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-06T23:24:00+08:00 ] 127.0.0.1 /index.php/Home/User/login_bgd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.0780s ]
+SQL: SELECT `userid`,`phone`,`username`,`nickname`,`logintimes` FROM `tb_user` WHERE ( phone='18734569008' and userpwd='e99a18c428cb38d5f260853678922e03' )  [ RunTime:0.0630s ]
+SQL: UPDATE `tb_user` SET `logintimes`='11',`lastlogin`='2016-10-06 23:24:00' WHERE `userid` = 1 [ RunTime:0.0720s ]
+
+[ 2016-10-06T23:24:01+08:00 ] 127.0.0.1 /index.php/Home/User/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-06T23:24:06+08:00 ] 127.0.0.1 /index.php/Home/Product/baojiadanadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0710s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.0800s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.4200s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:0.1900s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:0.2180s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:0.1500s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:0.0690s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:0.0690s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:0.0930s ]
+SQL: SELECT `claddingid`,`claddingname` FROM `tb_mm_claddingmaterial` WHERE ( delstatus=0 )  [ RunTime:0.0690s ]
+SQL: SHOW COLUMNS FROM `tb_mm_unit` [ RunTime:0.0790s ]
+SQL: SELECT `unitid`,`unitname`,`raw` FROM `tb_mm_unit` WHERE ( delstatus=0 )  [ RunTime:0.1590s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-06T23:24:20+08:00 ] 127.0.0.1 /index.php/Home/Product/baojiadanadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.7370s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.5390s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.3140s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:0.0910s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:0.1030s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:2.9152s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:1.1601s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:2.6281s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:2.2301s ]
+SQL: SELECT `claddingid`,`claddingname` FROM `tb_mm_claddingmaterial` WHERE ( delstatus=0 )  [ RunTime:1.1721s ]
+SQL: SHOW COLUMNS FROM `tb_mm_unit` [ RunTime:0.6750s ]
+SQL: SELECT `unitid`,`unitname`,`raw` FROM `tb_mm_unit` WHERE ( delstatus=0 )  [ RunTime:0.2680s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-06T23:24:38+08:00 ] 127.0.0.1 /index.php/Home/Product/baojiadanadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.1120s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:1.3681s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:1.9671s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:2.1611s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:1.9271s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:1.6571s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:0.5580s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:0.2310s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:0.0990s ]
+
+[ 2016-10-06T23:24:42+08:00 ] 127.0.0.1 /index.php/Home/Product/baojiadanadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0930s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.1040s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0850s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:0.0720s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:0.0730s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:0.0720s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:0.0770s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:0.0730s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:0.0740s ]
+SQL: SELECT `claddingid`,`claddingname` FROM `tb_mm_claddingmaterial` WHERE ( delstatus=0 )  [ RunTime:0.0720s ]
+SQL: SHOW COLUMNS FROM `tb_mm_unit` [ RunTime:0.0750s ]
+
+[ 2016-10-06T23:24:44+08:00 ] 127.0.0.1 /index.php/Home/Product/baojiadanadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0720s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.0720s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0720s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:0.0710s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:0.0700s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:0.0710s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:0.0720s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:0.0720s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:0.0740s ]
+SQL: SELECT `claddingid`,`claddingname` FROM `tb_mm_claddingmaterial` WHERE ( delstatus=0 )  [ RunTime:0.0820s ]
+SQL: SHOW COLUMNS FROM `tb_mm_unit` [ RunTime:0.0720s ]
+SQL: SELECT `unitid`,`unitname`,`raw` FROM `tb_mm_unit` WHERE ( delstatus=0 )  [ RunTime:0.0720s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.040003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-06T23:24:45+08:00 ] 127.0.0.1 /index.php/Home/Product/baojiadanadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0720s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.0740s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0740s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:0.0730s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:0.0740s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:0.0740s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:0.0920s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:0.0720s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:0.0750s ]
+SQL: SELECT `claddingid`,`claddingname` FROM `tb_mm_claddingmaterial` WHERE ( delstatus=0 )  [ RunTime:0.0730s ]
+SQL: SHOW COLUMNS FROM `tb_mm_unit` [ RunTime:0.0760s ]
+SQL: SELECT `unitid`,`unitname`,`raw` FROM `tb_mm_unit` WHERE ( delstatus=0 )  [ RunTime:0.0730s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-06T23:24:46+08:00 ] 127.0.0.1 /index.php/Home/Product/baojiadanadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0880s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.0610s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0800s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:0.0620s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:0.0650s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:0.0730s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:0.0670s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:0.0620s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:0.0650s ]
+SQL: SELECT `claddingid`,`claddingname` FROM `tb_mm_claddingmaterial` WHERE ( delstatus=0 )  [ RunTime:0.0620s ]
+SQL: SHOW COLUMNS FROM `tb_mm_unit` [ RunTime:0.0620s ]
+SQL: SELECT `unitid`,`unitname`,`raw` FROM `tb_mm_unit` WHERE ( delstatus=0 )  [ RunTime:0.0620s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-06T23:24:51+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0600s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=1 and g.delstatus=0 order by g.gradeid [ RunTime:0.0590s ]
+
+[ 2016-10-06T23:24:56+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0630s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=2 and g.delstatus=0 order by g.gradeid [ RunTime:0.0640s ]
+
+[ 2016-10-06T23:25:00+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0790s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=3 and g.delstatus=0 order by g.gradeid [ RunTime:0.0790s ]
+
+[ 2016-10-06T23:25:07+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0630s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=1 and g.delstatus=0 order by g.gradeid [ RunTime:0.0710s ]
+
+[ 2016-10-06T23:25:11+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0650s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=9 and g.delstatus=0 order by g.gradeid [ RunTime:0.0730s ]
+
+[ 2016-10-06T23:25:12+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0630s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=0 and g.delstatus=0 order by g.gradeid [ RunTime:0.0620s ]
+
+[ 2016-10-06T23:25:14+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0690s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=1 and g.delstatus=0 order by g.gradeid [ RunTime:0.0650s ]
+
+[ 2016-10-06T23:25:32+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0570s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=4 and g.delstatus=0 order by g.gradeid [ RunTime:0.0560s ]
+
+[ 2016-10-06T23:25:37+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0810s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=1 and g.delstatus=0 order by g.gradeid [ RunTime:0.0690s ]
+
+[ 2016-10-06T23:27:44+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0660s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=2 and g.delstatus=0 order by g.gradeid [ RunTime:0.0660s ]
+
+[ 2016-10-06T23:27:46+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0630s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=1 and g.delstatus=0 order by g.gradeid [ RunTime:0.0610s ]
+
+[ 2016-10-06T23:54:14+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0660s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=2 and g.delstatus=0 order by g.gradeid [ RunTime:0.0650s ]
+
