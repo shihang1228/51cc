@@ -8,6 +8,7 @@ use Home\Model\SpecificationModel;
 use Home\Model\ManufacturerModel;
 use Home\Model\CladdingModel;
 use Home\Model\UnitModel;
+use Home\Model\UserModel;
 use Home\Model\OrderPurchaseModel;
 use Home\Model\DetailPurchaseModel;
 
@@ -152,6 +153,9 @@ class PurchaseController extends BaseController {
 				$detail['comments'] = $data['comments'];
 				$detail['instime'] = date('Y-m-d H:i:s');
 				$detail['updatetime'] = date('Y-m-d H:i:s');
+				$detail['length_diameter'] = $data['length_diameter'];
+				$detail['width_aperture'] = $data['width_aperture'];
+				$detail['height_thickness'] = $data['height_thickness'];
 				$tb_d = new DetailPurchaseModel();
 				$ret_detail = $tb_d->add($detail);
 				if($ret_detail['result']===true){
