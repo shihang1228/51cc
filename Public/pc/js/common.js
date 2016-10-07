@@ -224,7 +224,7 @@ $(function() {
     /*品牌级联 author:sh*/
     $(".tab_content").on("change",".input_div .varietyid",function(){
     //$("#varietyid").on("change",function(){
-        var $parent = $(this).closest(".input_div");
+        var $parent = $(this).closest(".biaozhun");
         var val = $(this).val();
         var jladdress = $(".jladdress").val();
         //var jladdress = $(".jladdress").val();
