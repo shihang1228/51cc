@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 [ 2016-10-07T18:46:58+08:00 ] ::1 /51ccnew/
+=======
+[ 2016-10-07T19:02:39+08:00 ] 127.0.0.1 /index.php/Home/Product/baojiadanadd.html
+>>>>>>> bb5195aea9a2eafbfd407bde6b4adc3c6e5c156e
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
 INFO: [ app_begin ] --START--
 INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+<<<<<<< HEAD
 SQL: SHOW COLUMNS FROM `tb_order_supply` [ RunTime:0.0380s ]
 SQL: call p_ordersupply(3) [ RunTime:0.9671s ]
 SQL: SHOW COLUMNS FROM `tb_order_purchase` [ RunTime:0.0370s ]
@@ -31,10 +36,25 @@ INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
 SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.0390s ]
 SQL: SELECT * FROM `tb_user` WHERE ( userid =16 )  [ RunTime:0.2800s ]
+=======
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0740s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.0710s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0720s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:0.0780s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:0.0850s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:0.0710s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:0.0710s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:0.0730s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:0.0710s ]
+SQL: SELECT `claddingid`,`claddingname` FROM `tb_mm_claddingmaterial` WHERE ( delstatus=0 )  [ RunTime:0.0710s ]
+SQL: SHOW COLUMNS FROM `tb_mm_unit` [ RunTime:0.0760s ]
+SQL: SELECT `unitid`,`unitname`,`raw` FROM `tb_mm_unit` WHERE ( delstatus=0 )  [ RunTime:0.0790s ]
+>>>>>>> bb5195aea9a2eafbfd407bde6b4adc3c6e5c156e
 INFO: [ view_parse ] --START--
 INFO: [ template_filter ] --START--
 INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
 INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+<<<<<<< HEAD
 INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013000s ]
 INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
 INFO: [ view_filter ] --START--
@@ -57,6 +77,10 @@ INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
 INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
 INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
 INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+=======
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.044003s ]
+>>>>>>> bb5195aea9a2eafbfd407bde6b4adc3c6e5c156e
 INFO: [ view_filter ] --START--
 INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
 INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
@@ -64,6 +88,7 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
 
+<<<<<<< HEAD
 [ 2016-10-07T19:08:25+08:00 ] ::1 /51ccnew/home/user/edit.html
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
@@ -87,10 +112,24 @@ INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
 
 [ 2016-10-07T19:08:40+08:00 ] ::1 /51ccnew/home/user/edit.html
+=======
+[ 2016-10-07T19:02:42+08:00 ] 127.0.0.1 /index.php/Home/Base/gradelist.html
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
 INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0740s ]
+SQL: select gradeid,gradename from tb_mm_grade g where g.varietyid=1 and g.delstatus=0 order by g.gradeid [ RunTime:0.0720s ]
+
+[ 2016-10-07T19:03:33+08:00 ] 127.0.0.1 /index.php/Home/Product/addbaojiandan_bgd.html
+>>>>>>> bb5195aea9a2eafbfd407bde6b4adc3c6e5c156e
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+<<<<<<< HEAD
 INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
 SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.0370s ]
@@ -149,12 +188,74 @@ INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
 
 [ 2016-10-07T19:11:16+08:00 ] ::1 /51ccnew/index.php/Home/Product/baojiadanadd.html
+=======
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tb_order_supply` [ RunTime:0.0670s ]
+SQL: INSERT INTO `tb_order_supply` (`ordercode`,`createdby`,`companyid`,`statusid`,`instime`,`updatetime`,`deliveryplace`,`deliverydate`,`comments`) VALUES ('2016100719038748','1','0','1','2016-10-07 19:03:32','2016-10-07 19:03:32','太原','2016-3-9','什么也没有') [ RunTime:0.0680s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0670s ]
+SQL: SELECT `gradeid` FROM `tb_mm_grade` WHERE ( gradename='N3022' ) LIMIT 1   [ RunTime:0.0670s ]
+SQL: INSERT INTO `tb_mm_grade` (`gradename`,`varietyid`,`instime`,`createdby`,`delstatus`) VALUES ('N3022','1','2016-10-07 19:03:33','1','0') [ RunTime:0.0670s ]
+ERR: array (
+  'result' => true,
+  'msg' => '',
+  'pk' => '94',
+  'rowcount' => '',
+)
+SQL: SHOW COLUMNS FROM `tb_detail_supply` [ RunTime:0.0670s ]
+SQL: INSERT INTO `tb_detail_supply` (`orderid`,`varietyid`,`gradeid`,`factoryid`,`specid`,`quantity`,`unitid`,`unitprice`,`claddingid`,`comments`,`instime`,`updatetime`) VALUES ('55','1','94','0','1','56','1','3','1','什么也没有','2016-10-07 19:03:33','2016-10-07 19:03:33') [ RunTime:0.0890s ]
+
+[ 2016-10-07T19:04:17+08:00 ] 127.0.0.1 /index.php/Home/Product/addbaojiandan_bgd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tb_order_supply` [ RunTime:0.0710s ]
+SQL: INSERT INTO `tb_order_supply` (`ordercode`,`createdby`,`companyid`,`statusid`,`instime`,`updatetime`,`deliveryplace`,`deliverydate`,`comments`) VALUES ('2016100719048790','1','0','1','2016-10-07 19:04:16','2016-10-07 19:04:16','太原','2016-3-9','什么也没有') [ RunTime:0.0660s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0670s ]
+SQL: SELECT `gradeid` FROM `tb_mm_grade` WHERE ( gradename='N3022' ) LIMIT 1   [ RunTime:0.0670s ]
+SQL: SHOW COLUMNS FROM `tb_detail_supply` [ RunTime:0.0720s ]
+SQL: INSERT INTO `tb_detail_supply` (`orderid`,`varietyid`,`gradeid`,`factoryid`,`specid`,`quantity`,`unitid`,`unitprice`,`claddingid`,`comments`,`instime`,`updatetime`) VALUES ('56','1','94','0','2','56','1','3','1','什么也没有','2016-10-07 19:04:16','2016-10-07 19:04:16') [ RunTime:0.0670s ]
+
+[ 2016-10-07T19:05:44+08:00 ] 127.0.0.1 /index.php/Home/Product/addbaojiandan_bgd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_order_supply` [ RunTime:0.0690s ]
+SQL: INSERT INTO `tb_order_supply` (`ordercode`,`createdby`,`companyid`,`statusid`,`instime`,`updatetime`,`deliveryplace`,`deliverydate`,`comments`) VALUES ('2016100719052236','1','0','1','2016-10-07 19:05:43','2016-10-07 19:05:43','太原','2016-3-9','什么也没有') [ RunTime:0.0670s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0670s ]
+SQL: SELECT `gradeid` FROM `tb_mm_grade` WHERE ( gradename='N3022' ) LIMIT 1   [ RunTime:0.0850s ]
+SQL: SHOW COLUMNS FROM `tb_detail_supply` [ RunTime:0.0760s ]
+SQL: INSERT INTO `tb_detail_supply` (`orderid`,`varietyid`,`gradeid`,`factoryid`,`specid`,`quantity`,`unitid`,`unitprice`,`claddingid`,`comments`,`instime`,`updatetime`) VALUES ('57','1','94','0','3','56','1','3','3','什么也没有','2016-10-07 19:05:44','2016-10-07 19:05:44') [ RunTime:0.0690s ]
+
+[ 2016-10-07T19:08:21+08:00 ] 127.0.0.1 /index.php/Home/Product/addbaojiandan_bgd.html
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
 INFO: [ app_begin ] --START--
 INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_order_supply` [ RunTime:0.0770s ]
+SQL: INSERT INTO `tb_order_supply` (`ordercode`,`createdby`,`companyid`,`statusid`,`instime`,`updatetime`,`deliveryplace`,`deliverydate`,`comments`) VALUES ('2016100719089520','1','0','1','2016-10-07 19:08:20','2016-10-07 19:08:20','太原','2016-3-9','什么也没有') [ RunTime:0.0760s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0730s ]
+SQL: SELECT `gradeid` FROM `tb_mm_grade` WHERE ( gradename='N3022' ) LIMIT 1   [ RunTime:0.0770s ]
+SQL: SHOW COLUMNS FROM `tb_detail_supply` [ RunTime:0.0740s ]
+SQL: INSERT INTO `tb_detail_supply` (`orderid`,`varietyid`,`gradeid`,`factoryid`,`specid`,`quantity`,`unitid`,`unitprice`,`claddingid`,`comments`,`instime`,`updatetime`) VALUES ('58','1','94','0','3','56','1','3','3','什么也没有','2016-10-07 19:08:21','2016-10-07 19:08:21') [ RunTime:0.0950s ]
+
+[ 2016-10-07T19:10:40+08:00 ] 127.0.0.1 /index.php/Home/Product/addbaojiandan_bgd.html
+>>>>>>> bb5195aea9a2eafbfd407bde6b4adc3c6e5c156e
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+<<<<<<< HEAD
 SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0440s ]
 SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.0410s ]
 SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0460s ]
@@ -179,4 +280,12 @@ INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
 INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+=======
+SQL: SHOW COLUMNS FROM `tb_order_supply` [ RunTime:0.0660s ]
+SQL: INSERT INTO `tb_order_supply` (`ordercode`,`createdby`,`companyid`,`statusid`,`instime`,`updatetime`,`deliveryplace`,`deliverydate`,`comments`) VALUES ('2016100719107289','1','0','1','2016-10-07 19:10:39','2016-10-07 19:10:39','太原','2016-3-9','什么也没有') [ RunTime:0.0650s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0700s ]
+SQL: SELECT `gradeid` FROM `tb_mm_grade` WHERE ( gradename='N3022' ) LIMIT 1   [ RunTime:0.0640s ]
+SQL: SHOW COLUMNS FROM `tb_detail_supply` [ RunTime:0.0660s ]
+SQL: INSERT INTO `tb_detail_supply` (`orderid`,`varietyid`,`gradeid`,`factoryid`,`specid`,`quantity`,`unitid`,`unitprice`,`claddingid`,`comments`,`instime`,`updatetime`,`length_diameter`,`width_aperture`,`height_thickness`) VALUES ('59','1','94','0','3','56','1','3','3','什么也没有','2016-10-07 19:10:40','2016-10-07 19:10:40','8','9','10') [ RunTime:0.0680s ]
+>>>>>>> bb5195aea9a2eafbfd407bde6b4adc3c6e5c156e
 
