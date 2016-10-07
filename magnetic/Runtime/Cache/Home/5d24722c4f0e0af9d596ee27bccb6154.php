@@ -9,20 +9,20 @@
         <title>会员登陆 - 找塑料网</title>
         <meta name="keywords" content='找塑料网登录,找塑料网会员登录,会员登录'/>
         <meta name="description" content='找塑料网zhaosuliao.com领先的一站式塑化电商。专注于聚乙烯PE，聚丙烯PP、PVC、ABS等塑料原料交易，提供撮合交易及代销代购（自营）、物流、金融、行情分析、改性塑料OEM等服务。' />
-        <link href="/Public/pc/plugin/artdialog/dialog.css" rel="stylesheet" type="text/css"/>     
-        <link href="/Public/pc/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="/51ccnew/Public/pc/plugin/artdialog/dialog.css" rel="stylesheet" type="text/css"/>     
+        <link href="/51ccnew/Public/pc/css/common.css" rel="stylesheet" type="text/css" />
         <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
-        <link href="/Public/pc/plugin/jquery-validate/jquery.validate.min.css" type="text/css" rel="stylesheet" />
-        <script src="/Public/pc/plugin/jquery-validate/jquery.validate.min.js" type="text/javascript"></script>
-        <script src="/Public/pc/plugin/jquery-validate/jquery.validate.method.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="/Public/pc/plugin/jquery-areapop/jquery-areapop.js"></script>
-        <script src="/Public/pc/plugin/artdialog/dialog.js" type="text/javascript"></script>
-        <script src="/Public/pc/plugin/form.js" type="text/javascript"></script>
-        <script src="/Public/pc/js/js.js" type="text/javascript"></script>
-        <script src="/Public/pc/js/common.js" type="text/javascript"></script>        
+        <link href="/51ccnew/Public/pc/plugin/jquery-validate/jquery.validate.min.css" type="text/css" rel="stylesheet" />
+        <script src="/51ccnew/Public/pc/plugin/jquery-validate/jquery.validate.min.js" type="text/javascript"></script>
+        <script src="/51ccnew/Public/pc/plugin/jquery-validate/jquery.validate.method.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="/51ccnew/Public/pc/plugin/jquery-areapop/jquery-areapop.js"></script>
+        <script src="/51ccnew/Public/pc/plugin/artdialog/dialog.js" type="text/javascript"></script>
+        <script src="/51ccnew/Public/pc/plugin/form.js" type="text/javascript"></script>
+        <script src="/51ccnew/Public/pc/js/js.js" type="text/javascript"></script>
+        <script src="/51ccnew/Public/pc/js/common.js" type="text/javascript"></script>        
     </head>
 <body>
-<link href="/Public/pc/css/member.css" rel="stylesheet" type="text/css" />
+<link href="/51ccnew/Public/pc/css/member.css" rel="stylesheet" type="text/css" />
 <div class="top">
     <div class="top_t">
         <div class="w960">
@@ -34,7 +34,7 @@
     </div>
     <div class="logo">
         <div class="w960" style=" overflow:hidden;">
-            <img src="/Public/pc/image/member/member_logo.png" title="找塑料网" alt="找塑料网logo"/>
+            <img src="/51ccnew/Public/pc/image/member/member_logo.png" title="找塑料网" alt="找塑料网logo"/>
         </div>
     </div>
 </div><script type="text/javascript">
@@ -139,8 +139,8 @@ if($(".inp_div1").length>0){
     </div>
     <div class="lan">
         <p class="title">账户管理</p>
-        <p><a href="http://www.zhaosuliao.com/member/account" >账户信息</a></p>
-        <p><a href="http://www.zhaosuliao.com/member/password/edit" >修改密码</a></p>
+        <p><a href="<?php echo U('Home/User/account');?>">账户信息</a></p>
+        <p><a href="<?php echo U('Home/User/editpassword');?>" >修改密码</a></p>
     </div>
     <div class="tel">
         <img src="http://www.zhaosuliao.com/resources/fore/image/member/tel.png"alt="找塑料网交易热线"/>
@@ -155,7 +155,8 @@ if($(".inp_div1").length>0){
 	<div class="fbcg">
 		<p>您的委托采购内容：</p>
 		<form method="post" action="<?php echo U('Home/Purchase/purchaseadd_bgd');?>" id="myform">
-			
+			<!--级联地址-->
+			<input type="hidden" value="<?php echo U('Home/Base/gradelist');?>" class="jladdress" />
 			<div class="tab_head">
 				<ul>
 					<li>标准格式</li>
@@ -165,27 +166,85 @@ if($(".inp_div1").length>0){
 			</div>
 			<div class="tab_content">
 				<div class="toggle_div" style="display:none;">
-					<div class="biaozhun" >
+					<div class="biaozhun pr" >
 						<div class="input_div">
 							<span class="span_text mar_l0">品种：</span>
 							<span class="span_input">
-								<input type="text" name="varietyid"/>
+								<select name="varietyid" class="varietyid">
+									<option value="0">请选择品种</option>
+									<?php if(is_array($variety)): $i = 0; $__LIST__ = $variety;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo['varietyid']); ?>"><?php echo ($vo['varietyname']); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+								</select>
+							</span>
+							<span class="span_text">牌号：</span>
+							<span class="span_input combobox">
+								<input type="text" name="gradeid" class="gradeid"/>
+								<ul class="gradelist">
+									
+								</ul>
 							</span>
 							<span class="span_text">厂家：</span>
 							<span class="span_input">
-								<input type="text" name="factoryid"/>
-							</span>
-							<span class="span_text">牌号：</span>
-							<span class="span_input">
-								<input type="text" name="gradeid"/>
+								<select name="factoryid" id="">
+									<option value="0">请选择厂家</option>
+									<?php if(is_array($factory)): $i = 0; $__LIST__ = $factory;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo['factoryid']); ?>"><?php echo ($vo['factoryname']); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+								</select>
 							</span>
 							<span class="span_text">数量：</span>
 							<span class="span_input">
-								<input type="text" name="quantity" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
+								<input type="text" name="quantity"/>
 							</span>
 							<span class="span_text">价格：</span>
 							<span class="span_input">
-								<input type="text" name="unitprice" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
+								<input type="text" name="unitprice"/>
+							</span>
+						</div>
+						<div class="input_div mar_t10 mar_b20">
+							<span class="span_text">单位：</span>
+							<span class="span_input">
+								<select name="unitid" id="">
+									<option value="0">请选择单位</option>
+									<?php if(is_array($unit)): $i = 0; $__LIST__ = $unit;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo['unitid']); ?>"><?php echo ($vo['unitname']); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+								</select>
+							</span>
+							<span class="span_text">时间：</span>
+							<span class="span_input">
+								<input type="text" name="deliverydate"/>
+							</span>
+							<span class="span_text">地点：</span>
+							<span class="span_input">
+								<input type="text" name="deliveryplace"/>
+							</span>
+							<span class="span_text">仓库：</span>
+							<span class="span_input">
+								<input type="text" name="warehouse"/>
+							</span>
+						</div>
+						<div class="input_div mar_t10 mar_b20">
+							<span class="span_text">形状：</span>
+							<span class="span_input">
+								<select name="specid" id="">
+									<option value="0">请选择形状</option>
+									<?php if(is_array($spec)): $i = 0; $__LIST__ = $spec;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo['specid']); ?>"><?php echo ($vo['specname']); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+								</select>
+							</span>
+							<span class="span_text">镀层：</span>
+							<span class="span_input">
+								<select name="claddingid" id="">
+									<option value="0">请选择镀层</option>
+									<?php if(is_array($cladding)): $i = 0; $__LIST__ = $cladding;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo['claddingid']); ?>"><?php echo ($vo['claddingname']); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+								</select>
+							</span>
+							<span class="span_text mar_l0">长：</span>
+							<span class="span_input">
+								<input type="text" name="length_diameter"/>
+							</span>
+							<span class="span_text mar_l0">宽：</span>
+							<span class="span_input">
+								<input type="text" name="width_aperture"/>
+							</span>
+							<span class="span_text mar_l0">高：</span>
+							<span class="span_input">
+								<input type="text" name="height_thickness"/>
 							</span>
 						</div>
 						<div class="input_div mar_t10 mar_b20">
@@ -265,11 +324,11 @@ if($(".inp_div1").length>0){
         
         <div class="box3">
             <div class="code">
-                <p class="img"><img src="/Public/pc/image/common/code_wechat.jpg" alt="找塑料网微信二维码" /></p>
+                <p class="img"><img src="/51ccnew/Public/pc/image/common/code_wechat.jpg" alt="找塑料网微信二维码" /></p>
                 <p>扫一扫，看行情资讯</p>
             </div>
             <div class="code">
-                <p class="img"><img src="/Public/pc/image/common/code_app.jpg" alt="找塑料网APP二维码" /></p>
+                <p class="img"><img src="/51ccnew/Public/pc/image/common/code_app.jpg" alt="找塑料网APP二维码" /></p>
                 <p>扫一扫，下载移动端</p>
             </div>
         </div>
@@ -339,15 +398,15 @@ if($(".inp_div1").length>0){
             </p>
         </div>
         <div class="box6">
-            <!--<a  key ="54a107ffc274e76dc1035520"  logo_size="124x47"  logo_type="realname"  href="http://www.anquan.org" ><script src="http://static.anquan.org//Public/pc/outer/js/aq_auth.js"></script></a>
+            <!--<a  key ="54a107ffc274e76dc1035520"  logo_size="124x47"  logo_type="realname"  href="http://www.anquan.org" ><script src="http://static.anquan.org//51ccnew/Public/pc/outer/js/aq_auth.js"></script></a>
             <a href="http://webscan.360.cn/index/checkwebsite/url/zhaosuliao.com"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/ef7e1c147d6253064bea858dfeeb5ebc"/></a> -->
-            <a target="_blank" href="../www.anquan.org/authenticate/cert/@site=www.zhaosuliao.com&at=realname"><img alt="安全联盟实名验证" src="/Public/pc/image/common/aqlm.png" /></a>
-            <a target="_blank" href="../webscan.360.cn/index/checkwebsite/url/zhaosuliao.com"><img alt="360网站安全检测" src="/Public/pc/image/common/aqjc_360.png" /></a>
-            <a target="_blank" href="../si.trustutn.org/info@sn=137141229010801735265&certType=1"><img alt="实名认证" src="/Public/pc/image/common/smrz.png" /></a>
-            <a id='___szfw_logo___' href='../https@credit.szfw.org/CX20160123013832180167.html' target='_blank'><img alt="诚信网站" src="/Public/pc/image/common/cxrz.png" /></a>
+            <a target="_blank" href="../www.anquan.org/authenticate/cert/@site=www.zhaosuliao.com&at=realname"><img alt="安全联盟实名验证" src="/51ccnew/Public/pc/image/common/aqlm.png" /></a>
+            <a target="_blank" href="../webscan.360.cn/index/checkwebsite/url/zhaosuliao.com"><img alt="360网站安全检测" src="/51ccnew/Public/pc/image/common/aqjc_360.png" /></a>
+            <a target="_blank" href="../si.trustutn.org/info@sn=137141229010801735265&certType=1"><img alt="实名认证" src="/51ccnew/Public/pc/image/common/smrz.png" /></a>
+            <a id='___szfw_logo___' href='../https@credit.szfw.org/CX20160123013832180167.html' target='_blank'><img alt="诚信网站" src="/51ccnew/Public/pc/image/common/cxrz.png" /></a>
             <script type='text/javascript'>(function(){document.getElementById('___szfw_logo___').oncontextmenu = function(){return false;}})();</script>
-            <a target="_blank" href="../www.itrust.org.cn/Home/Index/itrust_certifi@wm=1304763357"><img alt="ICP网站征信" src="/Public/pc/image/common/qyxypj.png" /></a>
-            <a target="_blank" href='../netadreg.gzaic.gov.cn/ntmm/WebSear/WebLogoPub.aspx@logo=440115115012014072300011'><img alt="工商网监电子标识" src="/Public/pc/image/common/gswj.png" width="124" height="47"/></a>
+            <a target="_blank" href="../www.itrust.org.cn/Home/Index/itrust_certifi@wm=1304763357"><img alt="ICP网站征信" src="/51ccnew/Public/pc/image/common/qyxypj.png" /></a>
+            <a target="_blank" href='../netadreg.gzaic.gov.cn/ntmm/WebSear/WebLogoPub.aspx@logo=440115115012014072300011'><img alt="工商网监电子标识" src="/51ccnew/Public/pc/image/common/gswj.png" width="124" height="47"/></a>
         </div>
     </div></div>
 <!-- 页面底部end -->

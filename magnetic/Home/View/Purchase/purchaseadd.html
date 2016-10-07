@@ -109,7 +109,8 @@ if($(".inp_div1").length>0){
 	<div class="fbcg">
 		<p>您的委托采购内容：</p>
 		<form method="post" action="{:U('Home/Purchase/purchaseadd_bgd')}" id="myform">
-			
+			<!--级联地址-->
+			<input type="hidden" value="{:U('Home/Base/gradelist')}" class="jladdress" />
 			<div class="tab_head">
 				<ul>
 					<li>标准格式</li>
@@ -119,27 +120,95 @@ if($(".inp_div1").length>0){
 			</div>
 			<div class="tab_content">
 				<div class="toggle_div" style="display:none;">
-					<div class="biaozhun" >
+					<div class="biaozhun pr" >
 						<div class="input_div">
 							<span class="span_text mar_l0">品种：</span>
 							<span class="span_input">
-								<input type="text" name="varietyid"/>
+								<select name="varietyid" class="varietyid">
+									<option value="0">请选择品种</option>
+									<volist id="vo" name="variety">
+										<option value="{$vo['varietyid']}">{$vo['varietyname']}</option>
+									</volist>
+								</select>
+							</span>
+							<span class="span_text">牌号：</span>
+							<span class="span_input combobox">
+								<input type="text" name="gradeid" class="gradeid"/>
+								<ul class="gradelist">
+									
+								</ul>
 							</span>
 							<span class="span_text">厂家：</span>
 							<span class="span_input">
-								<input type="text" name="factoryid"/>
-							</span>
-							<span class="span_text">牌号：</span>
-							<span class="span_input">
-								<input type="text" name="gradeid"/>
+								<select name="factoryid" id="">
+									<option value="0">请选择厂家</option>
+									<volist id="vo" name="factory">
+										<option value="{$vo['factoryid']}">{$vo['factoryname']}</option>
+									</volist>
+								</select>
 							</span>
 							<span class="span_text">数量：</span>
 							<span class="span_input">
-								<input type="text" name="quantity" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
+								<input type="text" name="quantity"/>
 							</span>
 							<span class="span_text">价格：</span>
 							<span class="span_input">
-								<input type="text" name="unitprice" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'') "/>
+								<input type="text" name="unitprice"/>
+							</span>
+						</div>
+						<div class="input_div mar_t10 mar_b20">
+							<span class="span_text">单位：</span>
+							<span class="span_input">
+								<select name="unitid" id="">
+									<option value="0">请选择单位</option>
+									<volist id="vo" name="unit">
+										<option value="{$vo['unitid']}">{$vo['unitname']}</option>
+									</volist>
+								</select>
+							</span>
+							<span class="span_text">时间：</span>
+							<span class="span_input">
+								<input type="text" name="deliverydate"/>
+							</span>
+							<span class="span_text">地点：</span>
+							<span class="span_input">
+								<input type="text" name="deliveryplace"/>
+							</span>
+							<span class="span_text">仓库：</span>
+							<span class="span_input">
+								<input type="text" name="warehouse"/>
+							</span>
+						</div>
+						<div class="input_div mar_t10 mar_b20">
+							<span class="span_text">形状：</span>
+							<span class="span_input">
+								<select name="specid" id="">
+									<option value="0">请选择形状</option>
+									<volist id="vo" name="spec">
+										<option value="{$vo['specid']}">{$vo['specname']}</option>
+									</volist>
+								</select>
+							</span>
+							<span class="span_text">镀层：</span>
+							<span class="span_input">
+								<select name="claddingid" id="">
+									<option value="0">请选择镀层</option>
+									<volist id="vo" name="cladding">
+										<option value="{$vo['claddingid']}">{$vo['claddingname']}</option>
+									</volist>
+								</select>
+							</span>
+							<span class="span_text mar_l0">长：</span>
+							<span class="span_input">
+								<input type="text" name="length_diameter"/>
+							</span>
+							<span class="span_text mar_l0">宽：</span>
+							<span class="span_input">
+								<input type="text" name="width_aperture"/>
+							</span>
+							<span class="span_text mar_l0">高：</span>
+							<span class="span_input">
+								<input type="text" name="height_thickness"/>
 							</span>
 						</div>
 						<div class="input_div mar_t10 mar_b20">

@@ -222,11 +222,14 @@ $(function() {
     });
     
     /*品牌级联 author:sh*/
-    $("#varietyid").on("change",function(){
+    $(".tab_content").on("change",".input_div .varietyid",function(){
+    //$("#varietyid").on("change",function(){
+        var $parent = $(this).closest(".input_div");
         var val = $(this).val();
         var jladdress = $(".jladdress").val();
-        $("#gradelist").empty();
-        $(".gradeid").val("");
+        //var jladdress = $(".jladdress").val();
+        $parent.find(".gradelist").empty();
+        $parent.find(".gradeid").val("");
         $.ajax({
             type: "post",
             url: jladdress,
@@ -234,7 +237,7 @@ $(function() {
             success: function (msg) {
                 if(msg.length != 0){
                     for(var i=0;i<msg.length;i++){
-                        $("#gradelist").append("<li data-id='"+msg[i].gradeid+"'>"+msg[i].gradename+"</li>")
+                        $parent.find(".gradelist").append("<li data-id='"+msg[i].gradeid+"'>"+msg[i].gradename+"</li>")
                     }
                 }
             }

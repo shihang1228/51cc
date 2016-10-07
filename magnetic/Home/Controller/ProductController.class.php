@@ -9,6 +9,7 @@ use Home\Model\SpecificationModel;
 use Home\Model\OrderSupplyModel;
 use Home\Model\DetailSupplyModel;
 use Home\Model\UnitModel;
+use Home\Model\UserModel;
 use Home\Model\CladdingModel;
 
 class ProductController extends BaseController {
@@ -115,7 +116,14 @@ class ProductController extends BaseController {
 		// dump($data);die();
 		//主信息
 		//$supply = $data;
-		$supply['ordercode'] = date('YmdHi').rand(1000,9999);
+		$tb = new UserModel();
+		$ret = $tb->where('userid='.I('session.userid',0))->field('ordercode_supply')->find();
+		if(strlen($ret['ordercode_supply'])==0){
+			$ordercode = date('YmdHi').rand(1000,9999);
+			$tb->save(array('ordercode_supply'=>$ordercode,'userid'=>I('session.userid',0)));
+		}
+		else $ordercode = $ret['ordercode_supply'];
+		$supply['ordercode'] = $ordercode;
 		$supply['createdby'] = I('session.userid',0);
 		$supply['companyid'] = I('session.companyid',0);
 		$supply['statusid'] = 1;  //待审核

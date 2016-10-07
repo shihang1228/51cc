@@ -104,14 +104,21 @@ class PurchaseController extends BaseController {
 		$data = I('post.');
 		//主信息
 		//$supply = $data;
-		$purchase['ordercode'] = date('YmdHi').rand(1000,9999);
+		$tb = new UserModel();
+		$ret = $tb->where('userid='.I('session.userid',0))->field('ordercode_purchase')->find();
+		if(strlen($ret['ordercode_purchase'])==0){
+			$ordercode = date('YmdHi').rand(1000,9999);
+			$tb->save(array('ordercode_purchase'=>$ordercode,'userid'=>I('session.userid',0)));
+		}
+		else $ordercode = $ret['ordercode_purchase'];
+		$purchase['ordercode'] = $ordercode;
 		$purchase['createdby'] = I('session.userid',0);
 		$purchase['companyid'] = I('session.companyid',0);
 		$purchase['statusid'] = 1;  //待审核
 		$purchase['instime'] = date('Y-m-d H:i:s');
 		$purchase['updatetime'] = date('Y-m-d H:i:s');
-		$purchase['deliveryplace'] = '';//$data['deliveryplace'];  //暂缺
-		$purchase['deliverydate'] = date('Y-m-d');//$data['deliverydate'];  //暂缺
+		$purchase['deliveryplace'] = $data['deliveryplace'];  //暂缺
+		$purchase['deliverydate'] = $data['deliverydate'];  //暂缺
 		$purchase['comments'] = $data['comments'];  //暂缺
 		
 		$result = array('result'=>false,'msg'=>'','pk'=>'','rowcount'=>'');
@@ -125,28 +132,42 @@ class PurchaseController extends BaseController {
 			$detail['orderid'] = $ret_purchase['pk'];  //外键
 			$detail['varietyid'] = $data['varietyid'];
 			$detail['gradeid'] = $data['gradeid'];
-			$detail['factoryid'] = $data['factoryid'];
-			$detail['specid'] = 1;//$data['specid'];  //暂时没有
-			$detail['quantity'] = $data['quantity'];
-			$detail['unitid'] = $data['unitid'];
-			$detail['unitprice'] = $data['unitprice'];
-			$detail['claddingid'] = 1;//$data['claddingid'];  //暂缺
-			$detail['comments'] = $data['comments'];
-			$detail['instime'] = date('Y-m-d H:i:s');
-			$detail['updatetime'] = date('Y-m-d H:i:s');
-			$tb_d = new DetailPurchaseModel();
-			$ret_detail = $tb_d->add($detail);
-			if($ret_detail['result']===true){
-				$tb_o->commit();
-				$result['result'] = true;
+			$grade = new GradeModel();
+			$ret = $grade->isNameExists($detail['gradeid']);
+			if($ret['result']===true) $detail['gradeid'] = $ret['pk'];
+			else{  //用户输入的，需要增加
+				$ret = $grade->add(array('gradename'=>$detail['gradeid'],'varietyid'=>$detail['varietyid'],'instime'=>date('Y-m-d H:i:s'),'createdby'=>I('session.userid',0),'delstatus'=>0));
+				if($ret['result']===true) $detail['gradeid'] = $ret['pk'];
+				else{  //自动添加失败，操作无法继续
+				}
+				\Think\Log::Record(var_export($ret,true));
 			}
-			else{
-				$tb_o->rollback();
+			if($ret['result']===true){
+				$detail['factoryid'] = $data['factoryid'];
+				$detail['specid'] = $data['specid'];  //暂时没有
+				$detail['quantity'] = $data['quantity'];
+				$detail['unitid'] = $data['unitid'];
+				$detail['unitprice'] = $data['unitprice'];
+				$detail['claddingid'] = $data['claddingid'];  //暂缺
+				$detail['comments'] = $data['comments'];
+				$detail['instime'] = date('Y-m-d H:i:s');
+				$detail['updatetime'] = date('Y-m-d H:i:s');
+				$tb_d = new DetailPurchaseModel();
+				$ret_detail = $tb_d->add($detail);
+				if($ret_detail['result']===true){
+					// $tb_o->commit();
+					$result['result'] = true;  //标记为所有操作全部成功
+				}
+				else{
+					// $tb_o->rollback();
+				}
 			}
 		}
 		else{
-			$tb_o->rollback();
+			// $tb_o->rollback();
 		}
+		if($result['result']===true) $tb_o->commit();
+		else $tb_o->rollback();
 		//返回结果
 		$this->ajaxReturn($result);
 	}
