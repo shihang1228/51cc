@@ -102,9 +102,10 @@ class PurchaseController extends BaseController {
 	
 	//发布采购后台
 	public function purchaseadd_bgd(){
-		$data = I('post.');
+		$userdata = I('post.');
+		$userdata = $userdata['guige_array'];
+		\Think\Log::Record(var_export($userdata,true));
 		//主信息
-		//$supply = $data;
 		$tb = new UserModel();
 		$ret = $tb->where('userid='.I('session.userid',0))->field('ordercode_purchase')->find();
 		if(strlen($ret['ordercode_purchase'])==0){
@@ -118,60 +119,68 @@ class PurchaseController extends BaseController {
 		$purchase['statusid'] = 1;  //待审核
 		$purchase['instime'] = date('Y-m-d H:i:s');
 		$purchase['updatetime'] = date('Y-m-d H:i:s');
-		$purchase['deliveryplace'] = $data['deliveryplace'];  //暂缺
-		$purchase['deliverydate'] = $data['deliverydate'];  //暂缺
-		$purchase['comments'] = $data['comments'];  //暂缺
 		
-		$result = array('result'=>false,'msg'=>'','pk'=>'','rowcount'=>'');
-		
+		//开户事务
 		$tb_o = new OrderPurchaseModel();
-		$tb_o->startTrans();
-		$ret_purchase = $tb_o->add($purchase);
-		if($ret_purchase['result']===true){
-			//明细信息
-			// $detail = $data;
-			$detail['orderid'] = $ret_purchase['pk'];  //外键
-			$detail['varietyid'] = $data['varietyid'];
-			$detail['gradeid'] = $data['gradeid'];
-			$grade = new GradeModel();
-			$ret = $grade->isNameExists($detail['gradeid']);
-			if($ret['result']===true) $detail['gradeid'] = $ret['pk'];
-			else{  //用户输入的，需要增加
-				$ret = $grade->add(array('gradename'=>$detail['gradeid'],'varietyid'=>$detail['varietyid'],'instime'=>date('Y-m-d H:i:s'),'createdby'=>I('session.userid',0),'delstatus'=>0));
+		$grade = new GradeModel();
+		$i = 0;
+		foreach($userdata as $data){
+			$tb_o->startTrans();
+			//预设返回值
+			$result = array('result'=>false,'msg'=>'','pk'=>'','rowcount'=>'');
+			$purchase['deliveryplace'] = $data['deliveryplace'];
+			$purchase['deliverydate'] = $data['deliverydate'];
+			$purchase['comments'] = '';//$data['comments'];
+			
+			$ret_purchase = $tb_o->add($purchase);
+			if($ret_purchase['result']===true){
+				//明细信息
+				$detail['orderid'] = $ret_purchase['pk'];  //外键
+				$detail['varietyid'] = $data['varietyid'];
+				$detail['gradeid'] = $data['gradeid'];
+				$ret = $grade->isNameExists($detail['gradeid']);
 				if($ret['result']===true) $detail['gradeid'] = $ret['pk'];
-				else{  //自动添加失败，操作无法继续
+				else{  //用户输入的，需要增加
+					$ret = $grade->add(array('gradename'=>$detail['gradeid'],'varietyid'=>$detail['varietyid'],'instime'=>date('Y-m-d H:i:s'),'createdby'=>I('session.userid',0),'delstatus'=>0));
+					if($ret['result']===true) $detail['gradeid'] = $ret['pk'];
+					else{  //自动添加失败，操作无法继续
+					}
 				}
-				\Think\Log::Record(var_export($ret,true));
+				if($ret['result']===true){
+					$detail['factoryid'] = $data['factoryid'];
+					$detail['specid'] = $data['specid'];  //暂时没有
+					$detail['quantity'] = $data['quantity'];
+					$detail['unitid'] = $data['unitid'];
+					$detail['unitprice'] = $data['unitprice'];
+					$detail['claddingid'] = $data['claddingid'];  //暂缺
+					$detail['comments'] = '';//$data['comments'];
+					$detail['instime'] = date('Y-m-d H:i:s');
+					$detail['updatetime'] = date('Y-m-d H:i:s');
+					$detail['length_diameter'] = $data['length_diameter'];
+					$detail['width_aperture'] = $data['width_aperture'];
+					$detail['height_thickness'] = $data['height_thickness'];
+					$tb_d = new DetailPurchaseModel();
+					$ret_detail = $tb_d->add($detail);
+					if($ret_detail['result']===true){
+						// $tb_o->commit();
+						$result['result'] = true;  //标记为所有操作全部成功
+					}
+					else{
+						// $tb_o->rollback();
+					}
+				}
 			}
-			if($ret['result']===true){
-				$detail['factoryid'] = $data['factoryid'];
-				$detail['specid'] = $data['specid'];  //暂时没有
-				$detail['quantity'] = $data['quantity'];
-				$detail['unitid'] = $data['unitid'];
-				$detail['unitprice'] = $data['unitprice'];
-				$detail['claddingid'] = $data['claddingid'];  //暂缺
-				$detail['comments'] = $data['comments'];
-				$detail['instime'] = date('Y-m-d H:i:s');
-				$detail['updatetime'] = date('Y-m-d H:i:s');
-				$detail['length_diameter'] = $data['length_diameter'];
-				$detail['width_aperture'] = $data['width_aperture'];
-				$detail['height_thickness'] = $data['height_thickness'];
-				$tb_d = new DetailPurchaseModel();
-				$ret_detail = $tb_d->add($detail);
-				if($ret_detail['result']===true){
-					// $tb_o->commit();
-					$result['result'] = true;  //标记为所有操作全部成功
-				}
-				else{
-					// $tb_o->rollback();
-				}
+			else{
+				// $tb_o->rollback();
 			}
+			if($result['result']===true){
+				$tb_o->commit();
+				$i++;
+			}
+			else $tb_o->rollback();
 		}
-		else{
-			// $tb_o->rollback();
-		}
-		if($result['result']===true) $tb_o->commit();
-		else $tb_o->rollback();
+		if($i==count($purchase)) $result = array('result'=>true,'msg'=>'您已经成功发布了'.$i.'条采购信息.','pk'=>'','rowcount'=>$i);
+		else $result = array('result'=>($i==0?false:true),'msg'=>'您有'.(count($purchase)-$i).'条采购信息发布失败.','pk'=>'','rowcount'=>$i);
 		//返回结果
 		$this->ajaxReturn($result);
 	}
