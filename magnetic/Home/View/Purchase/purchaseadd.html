@@ -55,29 +55,84 @@ $(function()
 	
 	//表单验证
 	
-if($(".inp_div1").length>0){
-	$("#myform").submit(function(){
-		if($.trim($('input[name="name"]').val())==''){
-			alert('请输入公司名称');
-			return false;
-		}else if($.trim($(".h_30").val())==''){
-			alert('请选择企业类型');
-			return false;
-		}else if($.trim($('input[name="provinceName"]').val())==''){
-			alert('请输入省份');
-			return false;
-		}else if($.trim($('input[name="cityName"]').val())==''){
-			alert('请输入城市');
-			return false;
-		}else if($.trim($('input[name="mainProducts"]').val())==''){
-			alert('请输入主营品种');
-			return false;
-		}else if($.trim($('input[name="linkman"]').val())==''){
-			alert('请输入联系人');
-			return false;
-		}
+if($(".input_div").length>0){
+	// $("#myform").submit(function(){
+	// 	if($.trim($('input[name="name"]').val())==''){
+	// 		alert('请输入公司名称');
+	// 		return false;
+	// 	}else if($.trim($(".h_30").val())==''){
+	// 		alert('请选择企业类型');
+	// 		return false;
+	// 	}else if($.trim($('input[name="provinceName"]').val())==''){
+	// 		alert('请输入省份');
+	// 		return false;
+	// 	}else if($.trim($('input[name="cityName"]').val())==''){
+	// 		alert('请输入城市');
+	// 		return false;
+	// 	}else if($.trim($('input[name="mainProducts"]').val())==''){
+	// 		alert('请输入主营品种');
+	// 		return false;
+	// 	}else if($.trim($('input[name="linkman"]').val())==''){
+	// 		alert('请输入联系人');
+	// 		return false;
+	// 	}
 		
-	});
+	// });
+	$(".fb_btn").on("click",function(){
+        var guige_array = [];
+        var goodsid_array = new Array();
+        var guige_i = 0;
+		$(".biaozhun").each(function(i){
+			var varietyid = $(this).find(".varietyid").val();
+			var gradeid = $(this).find(".gradeid").val();
+			var factoryid = $(this).find(".factoryid").val();
+			var quantity = $(this).find(".quantity").val();
+			var unitprice = $(this).find(".unitprice").val();
+			var unitid = $(this).find(".unitid").val();
+			var deliverydate = $(this).find(".deliverydate").val();
+			var deliveryplace = $(this).find(".deliveryplace").val();
+			var warehouse = $(this).find(".warehouse").val();
+			var specid = $(this).find(".specid").val();
+			var claddingid = $(this).find(".claddingid").val();
+			var length_diameter = $(this).find(".length_diameter").val();
+			var width_aperture = $(this).find(".width_aperture").val();
+			var height_thickness = $(this).find(".height_thickness").val();
+			var comments = $(this).find(".comments").val();
+			guige_array[guige_i]={
+				'varietyid':varietyid,
+				'gradeid':gradeid,
+				'factoryid':factoryid,
+				'quantity':quantity,
+				'unitprice':unitprice,
+				'unitid':unitid,
+				'deliverydate':deliverydate,
+				'deliveryplace':deliveryplace,
+				'specid':specid,
+				'warehouse':warehouse,
+				'claddingid':claddingid,
+				'length_diameter':length_diameter,
+				'width_aperture':width_aperture,
+				'height_thickness':height_thickness,
+				'comments':comments
+			};
+			guige_i = guige_i + 1;
+		})
+		var total_array = {guige_array:guige_array};
+		$.ajax({
+			url:"{:U('Home/Purchase/purchaseadd_bgd')}",
+			type:"POST",
+			data:total_array,
+			success:function(data){
+				if(data.result){
+					alert("提交成功",{time: 1000},function(){
+						window.location.href="{:U('Home/User/member')}";
+					});
+				}else if(data.result == false){
+					alert(data.msg+"失败",{time: 2000});
+				}
+			}
+		})
+	})
 	
 }else{
 	$("#myform").submit(function(){
@@ -140,7 +195,7 @@ if($(".inp_div1").length>0){
 							</span>
 							<span class="span_text">厂家：</span>
 							<span class="span_input">
-								<select name="factoryid" id="">
+								<select name="factoryid" class="factoryid">
 									<option value="0">请选择厂家</option>
 									<volist id="vo" name="factory">
 										<option value="{$vo['factoryid']}">{$vo['factoryname']}</option>
@@ -149,17 +204,17 @@ if($(".inp_div1").length>0){
 							</span>
 							<span class="span_text">数量：</span>
 							<span class="span_input">
-								<input type="text" name="quantity"/>
+								<input type="text" name="quantity" class="quantity"/>
 							</span>
 							<span class="span_text">价格：</span>
 							<span class="span_input">
-								<input type="text" name="unitprice"/>
+								<input type="text" name="unitprice" class="unitprice"/>
 							</span>
 						</div>
 						<div class="input_div mar_t10 mar_b20">
 							<span class="span_text">单位：</span>
 							<span class="span_input">
-								<select name="unitid" id="">
+								<select name="unitid" class="unitid">
 									<option value="0">请选择单位</option>
 									<volist id="vo" name="unit">
 										<option value="{$vo['unitid']}">{$vo['unitname']}</option>
@@ -168,21 +223,21 @@ if($(".inp_div1").length>0){
 							</span>
 							<span class="span_text">时间：</span>
 							<span class="span_input">
-								<input type="text" name="deliverydate"/>
+								<input type="text" name="deliverydate" class="deliverydate"/>
 							</span>
 							<span class="span_text">地点：</span>
 							<span class="span_input">
-								<input type="text" name="deliveryplace"/>
+								<input type="text" name="deliveryplace" class="deliveryplace"/>
 							</span>
 							<span class="span_text">仓库：</span>
 							<span class="span_input">
-								<input type="text" name="warehouse"/>
+								<input type="text" name="warehouse" class="warehouse"/>
 							</span>
 						</div>
 						<div class="input_div mar_t10 mar_b20">
 							<span class="span_text">形状：</span>
 							<span class="span_input">
-								<select name="specid" id="">
+								<select name="specid" class="specid">
 									<option value="0">请选择形状</option>
 									<volist id="vo" name="spec">
 										<option value="{$vo['specid']}">{$vo['specname']}</option>
@@ -191,7 +246,7 @@ if($(".inp_div1").length>0){
 							</span>
 							<span class="span_text">镀层：</span>
 							<span class="span_input">
-								<select name="claddingid" id="">
+								<select name="claddingid" class="claddingid">
 									<option value="0">请选择镀层</option>
 									<volist id="vo" name="cladding">
 										<option value="{$vo['claddingid']}">{$vo['claddingname']}</option>
@@ -200,21 +255,21 @@ if($(".inp_div1").length>0){
 							</span>
 							<span class="span_text mar_l0">长：</span>
 							<span class="span_input">
-								<input type="text" name="length_diameter"/>
+								<input type="text" name="length_diameter" class="length_diameter"/>
 							</span>
 							<span class="span_text mar_l0">宽：</span>
 							<span class="span_input">
-								<input type="text" name="width_aperture"/>
+								<input type="text" name="width_aperture" class="width_aperture"/>
 							</span>
 							<span class="span_text mar_l0">高：</span>
 							<span class="span_input">
-								<input type="text" name="height_thickness"/>
+								<input type="text" name="height_thickness" class="height_thickness"/>
 							</span>
 						</div>
 						<div class="input_div mar_t10 mar_b20">
 							<span class="span_text mar_l0">备注：</span>
 							<span class="span_input">
-								<input class="max_input" type="text" name="comments"/>
+								<input class="max_input" type="text" name="comments" class="comments"/>
 							</span>
 						</div>
 					</div>
@@ -225,7 +280,7 @@ if($(".inp_div1").length>0){
 				 </div>
 			 </div>
 			 <p class="queren">确认您发的采购信息真实无误，否则不能发布！谢谢！</p>
-			 <input type="submit" class="fb_btn" value="委托找货" />
+			 <input type="button" class="fb_btn" value="委托找货" />
 			 <input type="hidden" value="2" id="flag"  name="judge"/>
 		</form>
 	</div>
