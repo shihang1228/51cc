@@ -106,14 +106,17 @@ class UserController extends BaseController {
 	
 	//个人信息显示页面
 	public function userinfo(){
+		$this->header();
 		$user = new UserModel('user');
 		$info = $user->getUserInfoById(I('session.userid',0));
-		$this->assign('userinfo',$info);
+		$this->assign('userinfo',$info[0]);
+		//dump($info);
 		$this->display();
 	}
 	
 	//个人信息修改页面
 	public function edit(){
+		$this->header();
 		$user = new UserModel('user');
 		$rtn = $user->getUserInfoById(I('session.userid',0));
 		$this->assign('userinfo',$rtn);
@@ -130,6 +133,7 @@ class UserController extends BaseController {
 	
 	//修改密码页面
 	public function changepwd(){
+		$this->header();
 		$this->display();
 	}
 	

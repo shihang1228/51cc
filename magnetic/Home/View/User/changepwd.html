@@ -7,9 +7,9 @@
     <div class="top_t">
         <div class="w960">
             <div class="r">
-                您好，<span class="color">study1228（18235100872）</span><a href="http://www.zhaosuliao.com/logout">【退出】</a>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;<span>交易热线：<span >020-83939808</span></span>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;交易时间：工作日 9:00-17:30
+                您好，<span class="color">{$userdata['username']}({$userdata['phone']})</span><a href="{:U('Home/User/logout')}" class="logout" data-url="{:U('Home/Index/index')}">【退出】</a>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;<span>交易热线：<span >020-83939808</span></span>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;交易时间：工作日 9:00-17:30
             </div>
-            <a class="font_14" href="http://www.zhaosuliao.com/" target="_blank">回到首页</a>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;<a class="font_14" href="http://www.zhaosuliao.com/member">会员中心</a>
+            <a class="font_14" href="{:U('Home/Index/index')}" target="_blank">回到首页</a>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;<a class="font_14" href="{:U('Home/User/member')}">会员中心</a>
         </div>
     </div>
     <div class="logo">
@@ -34,55 +34,55 @@
 		});*/
 		
 		
-		$("#myform").validate({
-			 rules: {
-				 	old_password :{
-						 required : true,
-						 remote:{
-							    url: "http://www.zhaosuliao.com/member/isPasswordCorrect",//后台处理程序
-							    type: "GET",               	//数据发送方式
-							    dataType: "json",           //接受数据格式   
-							    data: {						//要传递的数据
-							    	"oldPassword":function(){
-							    		return $('#old_pwd').val()              
-							    	}
-						    	}
-						  }
-				 	},
-				 	new_password: {
-				 		required : true,
-						noEqualTo :"#old_pwd"
-				 	},
-				    new_password_confirm: {
-				      equalTo: "#new_pwd"
-				    }
-			 },
-			  messages:{
-				  old_password :{
-					  remote : "旧密码不正确"
-				  },	
-				  new_password : {
-					noEqualTo: "新密码不能跟旧密码一样"
-				}
+		// $("#myform").validate({
+		// 	 rules: {
+		// 		 	old_password :{
+		// 				 required : true,
+		// 				 remote:{
+		// 					    url: "http://www.zhaosuliao.com/member/isPasswordCorrect",//后台处理程序
+		// 					    type: "GET",               	//数据发送方式
+		// 					    dataType: "json",           //接受数据格式   
+		// 					    data: {						//要传递的数据
+		// 					    	"oldPassword":function(){
+		// 					    		return $('#old_pwd').val()              
+		// 					    	}
+		// 				    	}
+		// 				  }
+		// 		 	},
+		// 		 	new_password: {
+		// 		 		required : true,
+		// 				noEqualTo :"#old_pwd"
+		// 		 	},
+		// 		    new_password_confirm: {
+		// 		      equalTo: "#new_pwd"
+		// 		    }
+		// 	 },
+		// 	  messages:{
+		// 		  old_password :{
+		// 			  remote : "旧密码不正确"
+		// 		  },	
+		// 		  new_password : {
+		// 			noEqualTo: "新密码不能跟旧密码一样"
+		// 		}
 					
-			  },
-				//设置验证成功提示格式
-		      success:function(e)
-		      {
-		         	e.html("&nbsp;").addClass("ok");
-		      },
-		      submitHandler: function(form) {
-		    	  $.post("http://www.zhaosuliao.com/member/password/update",$("#myform").serialize(),function(rs) {
-			            if(rs.status<0){
-			            	alert(rs.msg);
-			            }
-			            else{
-			            	alert(rs.msg);
-			            	location.href="http://www.zhaosuliao.com/member";
-			            }
-			        },"json");
-		  	  }	 
-		})
+		// 	  },
+		// 		//设置验证成功提示格式
+		//       success:function(e)
+		//       {
+		//          	e.html("&nbsp;").addClass("ok");
+		//       },
+		//       submitHandler: function(form) {
+		//     	  $.post("http://www.zhaosuliao.com/member/password/update",$("#myform").serialize(),function(rs) {
+		// 	            if(rs.status<0){
+		// 	            	alert(rs.msg);
+		// 	            }
+		// 	            else{
+		// 	            	alert(rs.msg);
+		// 	            	location.href="http://www.zhaosuliao.com/member";
+		// 	            }
+		// 	        },"json");
+		//   	  }	 
+		// })
 	});
 
 	/*function showRequest(formData, jqForm, options) {
@@ -141,19 +141,19 @@
 				<span>修改密码</span>
 			
 			</div>
-			<form id="myform" method="post">
+			<form id="myform" method="post" action="{:U('Home/User/changePwd_bgd')}">
 				<ul class="zh_message">
 					<li>
 						<span class="l">旧密码：</span>
-						<span class="r"><input type="password" class="required" name="old_password" id="old_pwd" /></span>
+						<span class="r"><input type="password" class="required" name="oldpassword" id="old_pwd" /></span>
 					</li>
 					<li>
 						<span class="l">新密码：</span>
-						<span class="r"><input type="password" class="required"  name="new_password" id="new_pwd"/></span>
+						<span class="r"><input type="password" class="required"  name="password" id="new_pwd"/></span>
 					</li>
 					<li>
 						<span class="l">确认密码：</span>
-						<span class="r"><input type="password"  class="required" name="new_password_confirm" id="confirm_pwd"/></span>
+						<span class="r"><input type="password"  class="required" name="confirmpwd" id="confirm_pwd"/></span>
 					</li>
 					
 				</ul>
@@ -162,5 +162,30 @@
 	 </div>
 </div>
 </div>
+<script type="text/javascript">
+	$(function(){
+		$("#member_submit").on("click",function(e){
+			e.preventDefault();
+			var url = $("#myform").attr("action");
+			var data = $("#myform").serialize();
+
+			$.ajax({
+				url:url,
+				type:"POST",
+				data:data,
+				success:function(data){
+					if(data.result){
+						alert("修改成功");
+						window.location.href="{:U('Home/User/member')}";
+
+					}else if(data.result == false){
+						alert(data.msg);
+						return;
+					}
+				}
+			})
+		})
+	})
+</script>
 <!--底部公共部分-->
 <include file="Index/footer" />
