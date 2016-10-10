@@ -186,4 +186,14 @@ class ProductController extends BaseController {
 		//返回结果
 		$this->ajaxReturn($result);
 	}
+	
+	//我的报价
+	public function mysupply(){
+		$userid = I('session.userid',0);
+		$tb = new OrderSupplyModel();
+		$ret = $tb->getMySupply(1);//$userid);
+		// dump($ret);
+		$this->assign('supplylist',$ret);
+		$this->display();
+	}
 }
