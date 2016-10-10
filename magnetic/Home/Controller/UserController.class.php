@@ -148,7 +148,7 @@ class UserController extends BaseController {
 		//新密码
 		$password = $data['password'];
 		$password = md5($password);
-		$data['password'] = $password;
+		$data['userpwd'] = $password;
 		//确认密码
 		$confirmpassword = $data['confirmpwd'];
 		$confirmpassword = md5($confirmpassword);
