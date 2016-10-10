@@ -17,7 +17,13 @@ class UserModel extends BaseModel{
 	}
 	
 	public function getUserInfoById($arg_userid){
-		$rtn = $this->where('userid ='.$arg_userid)->select();
+		$sqlstr  = 'select u.userid,u.username,u.nickname,u.phone,u.telphone,u.headimage,u.logintimes';
+		$sqlstr .= ',c.companyid,c.companyname,c.mainproduct,c.companytype,t.typename,c.contact,c.telphone,c.address,c.email ';
+		$sqlstr .= 'from tb_user u ';
+		$sqlstr .= 'left join tb_company c on c.createdby=u.userid ';
+		$sqlstr .= 'left join tb_companytype t on t.typeid=c.companytype ';
+		$sqlstr .= 'where u.userid='.$arg_userid;
+		$rtn = $this->query($sqlstr);
 		return $rtn;
 	}
 	
