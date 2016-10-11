@@ -2,6 +2,7 @@
 namespace Home\Controller;
 use Think\Controller;
 use Home\Model\UserModel;
+use Home\Model\CompanyModel;
 
 class UserController extends BaseController {
 
@@ -24,35 +25,35 @@ class UserController extends BaseController {
 	
 	//注册信息提交地址(增加用户)
 	public function register_bgd(){
-		$rtn = array();
+		$ret = array();
 		$data = I('post.');
 		$phone = $data['mobile'];
 		unset($data['mobile']);
 		$data['phone'] = $phone;
 		if(strlen($phone)!=11){
-			$rtn = array('result'=>false,'msg'=>'手机号无效!');
-			$this->ajaxReturn($rtn);
+			$ret = array('result'=>false,'msg'=>'手机号无效!');
+			$this->ajaxReturn($ret);
 		}
 		$pwd = $data['password'];  //密码
 		$pwd_confirm = $data['password_two'];  //验证密码
 		if(strlen($pwd)==0 || strlen($pwd_confirm)==0){
-			$rtn = array('result'=>false,'msg'=>'密码/验证密码不能为空!');
-			$this->ajaxReturn($rtn);
+			$ret = array('result'=>false,'msg'=>'密码/验证密码不能为空!');
+			$this->ajaxReturn($ret);
 		}
 		if($pwd!=$pwd_confirm){
-			$rtn = array('result'=>false,'msg'=>'两次输入的密码不一致!');
+			$ret = array('result'=>false,'msg'=>'两次输入的密码不一致!');
 		}
 		else{   //两次输入的密码一致.
 			/*$verificationcode = $data['verificationcode'];  //用户提交的短信验证码
 			$sendcode = session('smscode');  //系统发送的短信验证码
 			if($verificationcode!=$sendcode){  //比较验证码
-				$rtn = array('result'=>false,'msg'=>'验证码输入错误!');
+				$ret = array('result'=>false,'msg'=>'验证码输入错误!');
 			}
 			else{  //通过短信验证
 				$sendtime = session('smssendtime');  //短信发送时间
 				$diff = time() - $sendtime;  //时间差(秒)
 				if($diff>600){
-					$rtn = array('result'=>false,'msg'=>'验证码超时!');
+					$ret = array('result'=>false,'msg'=>'验证码超时!');
 				}
 				else{*/
 					unset($data['password_two']);
@@ -63,15 +64,34 @@ class UserController extends BaseController {
 					$user = new UserModel();
 					$ret = $user->getUserInfoByPhone($phone);
 					if(!empty($ret)){
-						$rtn = array('result'=>false,'msg'=>'手机号已注册!');
+						$ret = array('result'=>false,'msg'=>'手机号已注册!');
 					}
 					else{
-						$rtn = $user->add($data);
+						$user->startTrans();
+						$ret = $user->add($data);
+						\Think\Log::Record('adduser:'.var_export($data,true));
+						\Think\Log::Record('adduser:'.var_export($rtn,true));
+						if($ret['result']===true){
+							$userid = $ret['pk'];
+							$mycompany = new CompanyModel();
+							$data = array('createdby'=>$userid,'instime'=>date('Y-m-d H:i:s'));
+							$ret = $mycompany->add($data);
+							\Think\Log::Record('注册结果：'.var_export($ret,true));
+							if($ret['result']===true){
+								$user->commit();
+							}
+							else{
+								$user->rollback();
+							}
+						}
+						else{
+							$user->rollback();
+						}
 					}
 				// }
 			// }
    		}
-		$this->ajaxReturn($rtn);
+		$this->ajaxReturn($ret);
 	}
 	
 	//登录页面显示
@@ -82,10 +102,9 @@ class UserController extends BaseController {
 	//登录请求提交地址
 	public function login_bgd(){
 		$data = I('post.');
-		// \Think\Log::Record('login step');
 		$rtn = array();
 		if(isset($data['phone']) && isset($data['password'])){
-			$user = new UserModel('user');
+			$user = new UserModel();
 			$rtn = $user->checkLogin($data);
 			if($rtn['result']==true){  //登录成功
 				$userinfo = $rtn['userinfo'];
@@ -109,7 +128,7 @@ class UserController extends BaseController {
 		$this->header();
 		$user = new UserModel('user');
 		$info = $user->getUserInfoById(I('session.userid',0));
-		// dump($info);
+		\Think\Log::Record('userid='.I('session.userid'));
 		$this->assign('userinfo',$info[0]);
 		//dump($info);
 		$this->display();
