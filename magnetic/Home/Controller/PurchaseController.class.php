@@ -184,4 +184,14 @@ class PurchaseController extends BaseController {
 		//返回结果
 		$this->ajaxReturn($result);
 	}
+	
+	//我的采购
+	public function mypurchase(){
+		$userid = I('session.userid',0);
+		$tb = new OrderPurchaseModel();
+		$ret = $tb->getMyPurchase($userid);
+		// dump($ret);
+		$this->assign('purchaselist',$ret);
+		$this->display();
+	}
 }

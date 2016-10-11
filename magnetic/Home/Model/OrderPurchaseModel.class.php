@@ -20,4 +20,11 @@ class OrderPurchaseModel extends BaseModel{
 		if(is_array($rtn)) $rtn = $rtn[0];
 		return $rtn;
 	}
+	
+	public function getMyPurchase($arg_userid){
+		$ret = $this->procedure('call p_mypurchase('.$arg_userid.')');
+		if(!is_array($ret)) $ret = array();
+		else $ret = $ret[0];
+		return $ret;
+	}
 }

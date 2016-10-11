@@ -24,7 +24,7 @@ class OrderSupplyModel extends BaseModel{
 	public function getMySupply($arg_userid){
 		$ret = $this->procedure('call p_mysupply('.$arg_userid.')');
 		if(!is_array($ret)) $ret = array();
-		else $ret = $ret[0][0];
+		else $ret = $ret[0];
 		return $ret;
 	}
 }

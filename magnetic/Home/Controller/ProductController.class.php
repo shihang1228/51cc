@@ -191,7 +191,7 @@ class ProductController extends BaseController {
 	public function mysupply(){
 		$userid = I('session.userid',0);
 		$tb = new OrderSupplyModel();
-		$ret = $tb->getMySupply(1);//$userid);
+		$ret = $tb->getMySupply($userid);
 		// dump($ret);
 		$this->assign('supplylist',$ret);
 		$this->display();
