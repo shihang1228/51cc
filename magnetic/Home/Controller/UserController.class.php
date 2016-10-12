@@ -147,8 +147,26 @@ class UserController extends BaseController {
 	//个人信息修改提交地址
 	public function edit_bgd(){
 		$data = I('post.');
-		$user = new UserModel('user');
-		$rtn = $user->save($data);
+		//用户数据
+		$user = array('username'=>$data['username'],'nickname'=>$data['nickname'],'userid'=>$data['userid']);
+		//公司数据
+		$company = array('companyid'=>$data['companyid'],'companyname'=>$data['companyname'],'address'=>$data['address'],'typename'=>$data['typename'],'mainproduct'=>$data['mainproduct'],'telphone'=>$data['telphone'],'email'=>$data['email']);
+		
+		$tb = new UserModel();
+		$tb->startTrans();
+		$rtn = $tb->save($user);  //保存用户数据
+		
+		$com = new CompanyModel();
+		$rtn2 = $com->save($company);  //保存公司数据
+		
+		if($rtn['result']===true && $rtn2['result']===true){
+			$tb->commit();
+			$rtn = array('result'=>true,'msg'=>'保存成功','pk'=>'','rowcount'=>'');
+		}
+		else{
+			$tb->rollback();
+			$rtn = array('result'=>false,'msg'=>'保存失败','pk'=>'','rowcount'=>'');
+		}
 		$this->ajaxReturn($rtn);
 	}
 	
