@@ -58,7 +58,7 @@
     <div class="lan">
         <p class="title">账户管理</p>
         <p><a href="<?php echo U('Home/User/userinfo');?>">账户信息</a></p>
-        <p><a href="<?php echo U('Home/User/editpassword');?>" >修改密码</a></p>
+        <p><a href="<?php echo U('Home/User/changepwd');?>" >修改密码</a></p>
     </div>
     <div class="tel">
         <img src="http://www.zhaosuliao.com/resources/fore/image/member/tel.png"alt="找塑料网交易热线"/>
@@ -91,7 +91,7 @@
 				<li>
 					<span class="l">公司名：</span>
 					<span class="r">
-						<span>太原海斯特电子有限公司</span>
+						<span><?php echo ($userinfo['companyname']); ?></span>
 					</span>
 				</li>
 				<li>
@@ -103,36 +103,28 @@
 				<li>
 					<span class="l">所在地：</span>
 					<span class="r">
-						<span>山西-太原</span>
+						<span><?php echo ($userinfo['address']); ?></span>
 					</span>
 				</li>
 				<li>
 					<span class="l">企业类型：</span>
 					<span class="r">
-						<span>终端</span>
+						<span><?php echo ($userinfo['typename']); ?></span>
 					</span>
 				</li>
 				<li>
 					<span class="l">主营品种：</span>
 					<span class="r">
-						<span>PVC</span>
+						<span><?php echo ($userinfo['mainproduct']); ?></span>
 					</span>
 				</li>
 				<li>
 					<span class="l">固话：</span>
-					<span class="r"><span></span></span>
+					<span class="r"><span><?php echo ($userinfo['telphone']); ?></span></span>
 				</li>
 				<li>
 					<span class="l">电子邮箱：</span>
-					<span class="r"><span></span></span>
-				</li>
-				<li>
-					<span class="l">QQ：</span>
-					<span class="r"><span></span></span>
-				</li>
-				<li>
-					<span class="l">传真：</span>
-					<span class="r"><span></span></span>
+					<span class="r"><span><?php echo ($userinfo['email']); ?></span></span>
 				</li>
 			</ul>
 			<p class="mar_t10"><input class="update_btn" type="button" onclick="location.href='<?php echo U("Home/User/edit");?>'"/></p>			

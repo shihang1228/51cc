@@ -140,7 +140,7 @@ class UserController extends BaseController {
 		$user = new UserModel('user');
 		$rtn = $user->getUserInfoById(I('session.userid',0));
 		// dump($rtn);
-		$this->assign('userinfo',$rtn);
+		$this->assign('userinfo',$rtn[0]);
 		$this->display();
 	}
 	

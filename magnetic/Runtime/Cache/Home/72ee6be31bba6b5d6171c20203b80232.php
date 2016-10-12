@@ -29,9 +29,9 @@
     <div class="top_t">
         <div class="w960">
             <div class="r">
-                您好，<span class="color">study1228（18235100872）</span><a href="http://www.zhaosuliao.com/logout">【退出】</a>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;<span>交易热线：<span >020-83939808</span></span>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;交易时间：工作日 9:00-17:30
+                您好，<span class="color"><?php echo ($userdata['username']); ?>(<?php echo ($userdata['phone']); ?>)</span><a href="<?php echo U('Home/User/logout');?>" class="logout" data-url="<?php echo U('Home/Index/index');?>">【退出】</a>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;<span>交易热线：<span >020-83939808</span></span>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;交易时间：工作日 9:00-17:30
             </div>
-            <a class="font_14" href="http://www.zhaosuliao.com/" target="_blank">回到首页</a>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;<a class="font_14" href="http://www.zhaosuliao.com/member">会员中心</a>
+            <a class="font_14" href="<?php echo U('Home/Index/index');?>" target="_blank">回到首页</a>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;<a class="font_14" href="<?php echo U('Home/User/member');?>">会员中心</a>
         </div>
     </div>
     <div class="logo">
@@ -56,108 +56,6 @@ function set_msg(o,class_name,msg)
 }
 
 $(function(){
-	$(".dwt").dwt({"url":"http://www.zhaosuliao.com/common/region"});
-	
-	jQuery.validator.addMethod("isUsername", function(value, element) {
-		  var length = value.length;
-		  var username =  /^[A-Za-z0-9]{6,12}$/;
-		  return this.optional(element) || username.test(value);
-		 }, "请正确填写您的用户名");
-	
-	
-	$("#inputForm").validate({
-		rules: {
-			username: {
-			    	required: true,
-			    	isUsername : true,
-			    	remote:{
-					    url: "http://www.zhaosuliao.com/member/account/isExistsUsername",//后台处理程序
-					    type: "GET",               	//数据发送方式
-					    dataType: "json",           //接受数据格式   
-					    data: {						//要传递的数据
-					    	"username":function(){
-					    		return $('#username').val()              
-					    	},
-					    	"mid":$('#mid').val()
-				    	}
-				  }
-			   },
-			tel :{
-				simplePhone : true
-			},
-			email:{
-				email : true
-			},
-			qq :{
-				qq : true
-			},
-			fax :{
-				simplePhone : true
-			}
-			
-			
-		},
-			  
-		messages:{
-			username: {
-				    required: "请输入您的用户名",
-				    isUsername : "请正确填写您的用户名",
-				    remote:"用户名已存在"
-			},
-			fax :{
-				simplePhone : "请正确填写您的传真"
-			}
-		},
-		//设置验证成功提示格式
-      success:function(e){
-         	e.html("&nbsp;").addClass("ok");
-      },
-      submitHandler: function(form) {
-    	  $.post("http://www.zhaosuliao.com/member/account/update",$("#inputForm").serialize(),function(rs) {
-	            if(rs.status<0){
-	            	alert(rs.msg);
-	            }
-	            else{
-	            	alert(rs.msg);
-	                location.href="http://www.zhaosuliao.com/member/account";
-	            }
-	        },"json");
-  	  }	  
-	});
-	
-	/* $('#member_submit').click(function(){
-		var username=$("#username").val();
-		if(username == null||username == ""||username == "6-12位字母或数字"){
-       	 	set_msg($("#username").next("span"),"wrong","请输入用户名");
-            $("#username").focus();
-            return false;
-       }else if(username.match('^[A-Za-z0-9]{6,12}$')==null){
-       		set_msg($("#username").next("span"),"wrong","请输入用户名(6-12位字母或数字)");
-           	$("#username").focus();
-           return false;
-       }
-	
-		var tel = $("#tel").val();
-		var telReg = /(0\d{2}(|-)\d{8})|(0\d{3}(|-)\d{7})/
-		alert(telReg.test(tel));
-		
-		$.post("http://www.zhaosuliao.com/member/account/isExistsUsername",{ "username":$('#username').val(),"mid":$('#mid').val()},function(rs){
-			if(rs.status < 0){
-				alert(rs.msg)
-			}else{
-				$.post("http://www.zhaosuliao.com/member/account/update",$("#inputForm").serialize(),function(rs) {
-		            if(rs.status<0){
-		            	alert(rs.msg);
-		            }
-		            else{
-		            	alert(rs.msg);
-		                location.href="http://www.zhaosuliao.com/member/account";
-		            }
-		        },"json");
-			}
-		},"json");
-	}); */ 
-	
 	$("#username").blur(function(){
     	var val=$.trim($(this).val());
     	if(val==""){
@@ -201,15 +99,24 @@ $(function(){
 		var emailval=$(this).val();
 		if(!emailReg.test(emailval)){
 			$(this).siblings("label").removeClass("ok");
-		}
-		
-		
+		}	
 	})
-	
-	
-	
-	
-	
+	$("#member_submit").on("click",function(e){
+		var formdata = $("#inputForm").serialize();
+		$.ajax({
+			url:"edit_bgd",
+			type:"POST",
+			data:formdata,
+			success:function(data){
+				if(data.result){
+					alert("修改成功");
+					window.location.href="<?php echo U('Home/User/userinfo');?>";
+				}else if(data.result == false){
+					alert("修改失败,"+data.msg);
+				}
+			}
+		})
+	})
 });
 </script>
   <div class="member_wrap" >
@@ -230,7 +137,7 @@ $(function(){
     <div class="lan">
         <p class="title">账户管理</p>
         <p><a href="<?php echo U('Home/User/userinfo');?>">账户信息</a></p>
-        <p><a href="<?php echo U('Home/User/editpassword');?>" >修改密码</a></p>
+        <p><a href="<?php echo U('Home/User/changepwd');?>" >修改密码</a></p>
     </div>
     <div class="tel">
         <img src="http://www.zhaosuliao.com/resources/fore/image/member/tel.png"alt="找塑料网交易热线"/>
@@ -240,8 +147,8 @@ $(function(){
         </div>
     </div>
 </div>  
-	<form action="http://www.zhaosuliao.com/member/account/update" method="post" id="inputForm">
-	<input type="hidden" id="mid" name="mid" value="153019" />
+	<form action="<?php echo U('Home/User/edit_bgd');?>" method="post" id="inputForm">
+	<input type="hidden" id="mid" name="userid" value="<?php echo ($userinfo['userid']); ?>" />
 	<div class="right index">
 			<div class="pulic_title">
 				<i class="icon"></i>
@@ -251,62 +158,50 @@ $(function(){
 			<ul class="zh_message">
 				<li>
 					<span class="l">用户名：</span>
-					<span class="r"><input type="text" value="study1228" name="username" id="username"/></span>
+					<span class="r"><input type="text" value="<?php echo ($userinfo['nickname']); ?>" name="nickname" id="username"/></span>
 				</li>
 				<li>
 					<span class="l">手机号码：</span>
 					<span class="r">
-						<span><a href="http://www.zhaosuliao.com/member/account/edit_mobile_step1">18235100872</a></span>
+						<span><a href="http://www.zhaosuliao.com/member/account/edit_mobile_step1"><?php echo ($userinfo['phone']); ?></a></span>
 						<span class="tips">点击修改手机号码</span>
 					</span>
 				</li>
 				<li>
 					<span class="l">公司名：</span>
-					<span class="r"><input type="text" name="name" id="name" class="required" value="太原海斯特电子有限公司"/></span>
+					<span class="r"><input type="text" name="companyname" id="name" class="required" value="<?php echo ($userinfo['companyname']); ?>"/></span>
 				</li>
 				<li>
 					<span class="l">姓名：</span>
-					<span class="r"><input type="text" name="linkman" id="linkman" class="required" value="李军"/></span>
+					<span class="r"><input type="text" name="username" id="linkman" class="required" value="<?php echo ($userinfo['username']); ?>"/></span>
 				</li>
 				<li>
 					<span class="l">所在地：</span>
-					<span class="r"><input type="text" class="dwt required"  value="山西-太原" readonly/>
-						<input type="hidden" name="provinceName" class="province" value="山西"/>
-			            <input type="hidden" name="provinceId" class="province_id" value="140000"/>
-			            <input type="hidden" name="cityId" class="city_id" value="140100"/>
-			            <input type="hidden" name="cityName" class="city" value="太原"/>
+					<span class="r"><input type="text" class="required" name="address" value="<?php echo ($userinfo['address']); ?>"/>
 					</span>
 				</li>
 				<li>
 					<span class="l">企业类型：</span>
 					<span class="r">
-						<input type="radio" name="type" class="radio_input" value="上游厂家" /><label class="label2">上游厂家</label>
-						<input type="radio" name="type" class="radio_input" value="贸易商" /><label class="label2">贸易商</label>
-						<input type="radio" name="type" class="radio_input" value="终端" checked="checked"/><label class="label2">终端</label>
+						<input type="radio" name="typename" class="radio_input" value="上游厂家"  <?php if(($userinfo['typename']) == "上游厂家"): ?>checked<?php endif; ?>/><label class="label2">上游厂家</label>
+						<input type="radio" name="typename" class="radio_input" value="贸易商"  <?php if(($userinfo['typename']) == "贸易商"): ?>checked<?php endif; ?>/><label class="label2">贸易商</label>
+						<input type="radio" name="typename" class="radio_input" value="终端" checked="checked" <?php if(($userinfo['typename']) == "终端"): ?>checked<?php endif; ?>/><label class="label2">终端</label>
 					</span>
 				</li>
 				<li>
 					<span class="l">主营品种：</span>
-					<span class="r"><input type="text"  name="mainProducts" class="required" id="main_products"value="PVC"></span>
+					<span class="r"><input type="text"  name="mainproduct" class="required" id="main_products" value="<?php echo ($userinfo['mainproduct']); ?>"></span>
 				</li>
 				<li>
 					<span class="l">固话：</span>
-					<span class="r"><input type="text" value="" name="tel" maxlength="20" id="tel"/></span>
+					<span class="r"><input type="text" value="<?php echo ($userinfo['telphone']); ?>" name="telphone" maxlength="20" id="tel" /></span>
 				</li>
 				<li>
 					<span class="l">电子邮箱：</span>
-					<span class="r"><input type="email" value="" name="email" maxlength="30" id="email"/></span>
-				</li>
-				<li>
-					<span class="l">QQ：</span>
-					<span class="r"><input type="text" value="" name="qq" maxlength="20" id="qq"/></span>
-				</li>
-				<li>
-					<span class="l">传真：</span>
-					<span class="r"><input type="text" value="" name="fax" maxlength="20" id="fax"/></span>
+					<span class="r"><input type="email" value="<?php echo ($userinfo['email']); ?>" name="email" maxlength="30" id="email"/></span>
 				</li>
 			</ul>
-			<p class="mar_t10"><input class="save_btn" type="submit" id="member_submit" value=""/></p>
+			<p class="mar_t10"><input class="save_btn" type="button" id="member_submit" value=""/></p>
 	 </div>
 	 </form>
 </div>
