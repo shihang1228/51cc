@@ -221,7 +221,7 @@ class PurchaseController extends BaseController {
         $this->assign('show_flag',$show_flag);  //?标记
         $this->assign('json_arr',$ret[1]);  //数据集
 		/*分页控制*/
-		
+		dump($show);
 		// $this->assign('purchaselist',$ret);
 		$this->display();
 	}
