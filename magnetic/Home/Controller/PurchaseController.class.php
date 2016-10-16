@@ -207,7 +207,7 @@ class PurchaseController extends BaseController {
         $show = str_replace("</div>",'',$show);
         $first = floor($Page->firstRow);
 		$ret = $tb->procedure('call p_mypurchase('.$userid.','.$first.','.$pagesize.')');
-		dump($ret);
+		// dump($ret);
 		//$end_page=ceil($rowcount/$pagesize);
 		// dump($ret);
         if(count($ret)==1){

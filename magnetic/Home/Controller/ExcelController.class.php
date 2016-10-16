@@ -3,6 +3,7 @@ namespace Home\Controller;
 use Think\Controller;
 use Think\Upload;
 use Home\Model\BaseModel;
+use Home\Model\UserModel;
 use Home\Model\VarietyModel;
 use Home\Model\GradeModel;
 use Home\Model\SpecificationModel;
@@ -84,10 +85,11 @@ class ExcelController extends Controller {
         $order['ordercode'] = $ordercode;
 		$order['companyid'] = I('session.companyid',1);
 		$order['createdby'] = I('session.userid',0);
-		$order['deliveryplace'] = 'JinZhong';
+		$order['deliveryplace'] = '';  //这个改为从文件中读取
 		$order['deliverydate'] = date('Y-m-d H:i');
 		$order['statusid'] = 1;  //默认为待审核
 		$order['comments'] = '';
+		$order['showstatus'] = 1;  //默认为展示状态
 		$order['instime'] = date('Y-m-d H:i');
 		$order['updatetime'] = date('Y-m-d H:i');
 		$supply->startTrans();
@@ -104,8 +106,8 @@ class ExcelController extends Controller {
 		// $detail = new DetailPurchaseModel();
 		$detail = new DetailSupplyModel();
         //需要记录导入操作(未完)
-        //品种 牌号 厂家 规格 单位 单价 镀层 数量 长度/直径 宽度/孔径 高度/厚度 纯度 回收料
-        $colname = array(0=>'varietyid',1=>'gradeid',2=>'factoryid',3=>'specid',4=>'unitid',5=>'unitprice',6=>'claddingid',7=>'quantity',8=>'length_diameter',9=>'width_aperture',10=>'height_thickness',11=>'purity',12=>'isreclaimed');
+        //品种 牌号 厂家 规格 单位 单价 镀层 数量 长度/直径 宽度/孔径 高度/厚度 纯度 回收料 交换地点
+        $colname = array(0=>'varietyid',1=>'gradeid',2=>'factoryid',3=>'specid',4=>'unitid',5=>'unitprice',6=>'claddingid',7=>'quantity',8=>'length_diameter',9=>'width_aperture',10=>'height_thickness',11=>'purity',12=>'isreclaimed',13=>'deliveryplace');
 		$data = array();
 		$variety = new VarietyModel();
 		$grade = new GradeModel();
@@ -199,6 +201,9 @@ class ExcelController extends Controller {
 							$row['isreclaimed'] = 'null';
 						}
 						break;
+					case 13:  //交货地
+						if(empty($row['deliveryplace'])) $row['deliveryplace'] = '';
+						break;
 					default:
 						/*$ret = $->isNameExists($row['id']);
 						if($ret['result']==true) $row['id'] = $ret['pk'];
@@ -209,17 +214,29 @@ class ExcelController extends Controller {
 			}
 			$data[$i] = $row;
         }
+		$order_makeup = array();
 		$retsum = true;
+		$makeup = true;
 		foreach($data as $row){
 			if($row['varietyid']!=null){
+				if(count($order_makeup)==0){
+					$order_makeup = array('orderid'=>$orderid,'deliveryplace'=>$row['deliveryplace']);
+					$makeup = $supply->save($order_makeup);  //地址信息补充到供应单表
+					$makeup = $makeup['result'];  //补充提交交货地点信息
+				}
 				$rtn = $detail->add($row);
-				if($rtn===false){
+				if($rtn['result']===false){
 					$retsum = false;
 					exit;
 				}
 			}
 		}
-		if($retsum===true){
+		$tb = new UserModel();
+		$user = $tb->save(array('userid'=I('session.userid',0),'ordercode_supply'=>$ordercode));  //保存用户的当前报价单
+		$user = $user['result'];
+		$status = $supply->where('ordercode<>\''.$ordercode.'\' and createdby='.I('session.userid',0))->save(array('showstatus'=>0));  //更改用户上传过的报价单状态为不可用
+		$status = $status['result'];
+		if($retsum===true && $makeup===true && $user===true){
 			$supply->commit();
 			dump('import success.');
 		}
