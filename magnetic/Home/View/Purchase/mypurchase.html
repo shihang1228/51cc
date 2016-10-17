@@ -54,27 +54,27 @@
             <table class="cg_table">
                 <thead>
                     <tr >
-                        <td class="th">采购单流水号</td>
-                        <td class="th word" >原采购内容</td>
-                        <td class="th">审核后的采购内容</td>
-                        <td class="th">状态:
-                            <select name="status" class="status_select">
-                                <option value="">全部</option>
-                                <option value="st0" >待审核</option>
-                                <option value="st3" >正在洽谈</option>
-                                <option value="st4,st5,st7" >等待打款</option>
-                                <option value="st8" >交易成功</option>
-                                <option value="stf5" >审核不通过</option>
-                                <option value="stf9" >已终止</option>
-                            </select>
-                        </td>
-                        <td class="th">跟进交易员</td>
+                        <td class="th">品种</td>
+                        <td class="th word" >牌号</td>
+                        <td class="th">厂家</td>
+                        <td class="th">数量</td>
+                        <td class="th">价格</td>
+                        <td class="th">交货地</td>
+                        <td class="th">时间</td>
                     </tr>
                 </thead>
                 <tbody>
+                    <volist id="vo" name="json_arr">
                     <tr>
-                        <td colspan="5">没有符合条件的记录</td>
+                        <td>{$vo['gradename']}</td>
+                        <td>{$vo['varietyname']}</td>
+                        <td>{$vo['factoryname']}</td>
+                        <td>{$vo['quantity']}</td>
+                        <td>{$vo['price']}</td>
+                        <td>{$vo['deliveryplace']}</td>
+                        <td>{$vo['deliverydate']}</td>
                     </tr>
+                    </volist>
                 </tbody>
            </table>
        </form>
