@@ -232,7 +232,7 @@ class ExcelController extends Controller {
 			}
 		}
 		$tb = new UserModel();
-		$user = $tb->save(array('userid'=I('session.userid',0),'ordercode_supply'=>$ordercode));  //保存用户的当前报价单
+		$user = $tb->save(array('userid'=>I('session.userid',0),'ordercode_supply'=>$ordercode));  //保存用户的当前报价单
 		$user = $user['result'];
 		$status = $supply->where('ordercode<>\''.$ordercode.'\' and createdby='.I('session.userid',0))->save(array('showstatus'=>0));  //更改用户上传过的报价单状态为不可用
 		$status = $status['result'];
@@ -247,5 +247,78 @@ class ExcelController extends Controller {
 		echo 'over';
 		// $PHPExcel = new \PHPExcel();
 		// var_dump($PHPExcel);
+	}
+	
+	public function variety_export(){
+		$tb = M('mm_variety');
+		$rtn = $tb->select();
+		$this->excel_export($rtn);
+	}
+	
+	public function excel_export($arg_data){
+		/*数据导出成excel,参数为二维数组
+			$tb = new WarehouseModel();
+			$arg_data = $tb->select();
+		*/
+		// set_include_path(get_include_path() . PATH_SEPARATOR . LIB_DIR.DIRECTORY_SEPARATOR."PHPExcel".DIRECTORY_SEPARATOR."Classes");
+		header("content-type:text/html;charset=utf-8");
+		/** Error reporting */
+		error_reporting(E_ALL);
+		/** PHPExcel */
+		import('Org.Util.PHPExcel');
+
+		// Create new PHPExcel object
+		$objPHPExcel = new \PHPExcel();
+		// dump($objPHPExcel);
+		// Set properties
+		$objPHPExcel->getProperties()->setCreator("51磁材网");
+		$objPHPExcel->getProperties()->setLastModifiedBy("51磁材网");
+		$objPHPExcel->getProperties()->setTitle("报价单");
+		$objPHPExcel->getProperties()->setSubject("报价单");
+		$objPHPExcel->getProperties()->setDescription("www.51cc.com");
+		
+		//保护
+		$objPHPExcel->getSecurity()->setLockWindows(true);
+		$objPHPExcel->getSecurity()->setLockStructure(true);
+		$objPHPExcel->getSecurity()->setWorkbookPassword("51cc");
+		
+		//保护
+		$objPHPExcel->getActiveSheet()->getProtection()->setSheet(true); // This should be enabled in order to enable any of the following!
+		$objPHPExcel->getActiveSheet()->getProtection()->setSort(true);
+		$objPHPExcel->getActiveSheet()->getProtection()->setInsertRows(true);
+		$objPHPExcel->getActiveSheet()->getProtection()->setFormatCells(true);
+		$objPHPExcel->getActiveSheet()->getProtection()->setPassword('51cc');
+		
+		if(is_array($arg_data)){
+			$objPHPExcel->setActiveSheetIndex(0);  //设置活动表单
+			$objactSheet = $objPHPExcel->getActiveSheet();  //取活动表单
+			$objactSheet->setTitle('hahahha');    //命名表单
+			$i = 0;
+			foreach($arg_data as $row){
+				if($i==0){  //首次进入,设置表格的表头(列名作为表头,需要显示中文的话,则需要为列指定中文别名)
+					$key = array_keys($row);  //取键名
+					$j=0;
+					foreach($key as $k=>$v){
+						$objactSheet->setCellValue(chr(65+$j).'1',$v);  //参数:列.行,值
+						$j++;
+					}
+					$i++;
+				}
+				
+				$i++;
+				$j=0;
+				foreach($row as $k=>$v){  //数据写入excel文件
+					$objactSheet->setCellValue(chr(65+$j).$i,$v);  //列.行 值
+					$j++;
+				}
+			}
+		}
+		
+		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+		header('Content-Disposition: attachment;filename="51cc_quotes.xlsx"');
+		header('Cache-Control: max-age=0');
+
+		$objWriter = \PHPExcel_IOFactory:: createWriter($objPHPExcel, 'Excel2007');
+		$objWriter->save('php://output');
 	}
 }

@@ -194,6 +194,15 @@ class ProductController extends BaseController {
 		/* $tb = new OrderSupplyModel();
 		$ret = $tb->getMySupply($userid); */
 		
+		//查询条件示例
+		$query = '';
+		//品种(id)
+		$gradeid = I('gradeid',0);
+		if($gradeid>0) $query .= ' and g.gradeid='.$gradeid.' ';
+		//城市
+		$city = I('city','');
+		if(strlen($city)>0) $query .= ' and o.deliveryplace=\''.$city.'\' ';
+		
 		/*分页控制*/
 		$page_num = I('get.page_num',0);  //当前页(一直是0)
         $pagesize = C('PAGESIZE');  //配置文件读取每页行数
@@ -241,7 +250,7 @@ class ProductController extends BaseController {
 		$userid = I('session.userid',0);
 		/* $tb = new OrderSupplyModel();
 		$ret = $tb->getMySupply($userid); */
-		
+		dump(I('post.'));
 		/*分页控制*/
 		$page_num = I('get.page_num',0);  //当前页(一直是0)
         $pagesize = C('PAGESIZE');  //配置文件读取每页行数
