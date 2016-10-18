@@ -48,36 +48,42 @@
         </div>
         </form>
          -->
-	 <form action="list" method="post" id="myform">
- 			<input id="pageNo" name="pageNo" type="hidden" value="1" />
-			<input id="pageSize" name="pageSize" type="hidden" value="10" />
-            <table class="cg_table">
-                <thead>
-                    <tr >
-                        <td class="th">品种</td>
-                        <td class="th word" >牌号</td>
-                        <td class="th">厂家</td>
-                        <td class="th">数量</td>
-                        <td class="th">价格</td>
-                        <td class="th">交货地</td>
-                        <td class="th">时间</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <volist id="vo" name="json_arr">
-                    <tr>
-                        <td>{$vo['gradename']}</td>
-                        <td>{$vo['varietyname']}</td>
-                        <td>{$vo['factoryname']}</td>
-                        <td>{$vo['quantity']}</td>
-                        <td>{$vo['price']}</td>
-                        <td>{$vo['deliveryplace']}</td>
-                        <td>{$vo['deliverydate']}</td>
-                    </tr>
-                    </volist>
-                </tbody>
-           </table>
-       </form>
+        <table class="cg_table">
+            <thead>
+                <tr>
+                    <td class="th">订单号</td>
+                    <td class="th">品种</td>
+                    <td class="th">牌号</td>
+                    <td class="th">生产厂商</td>
+                    <td class="th">规格</td>
+                    <td class="th">长度</td>
+                    <td class="th">宽度</td>
+                    <td class="th">高度</td>
+                    <td class="th">数量</td>
+                    <td class="th">价格</td>
+                    <td class="th">镀层</td>
+                    <td class="th">交货时间</td>
+                </tr>
+            </thead>
+            <tbody>
+                <volist id="vo" name="json_arr">
+                <tr>
+                    <td>{$vo['orderid']}</td>
+                    <td>{$vo['gradename']}</td>
+                    <td>{$vo['varietyname']}</td>
+                    <td>{$vo['factoryname']}</td>
+                    <td>{$vo['specname']}</td>
+                    <td>{$vo['length_diameter']}</td>
+                    <td>{$vo['width_aperture']}</td>
+                    <td>{$vo['height_thickness']}</td>
+                    <td>{$vo['quantity']}{$vo['unitname']}</td>
+                    <td>{$vo['unitprice']}</td>
+                    <td>{$vo['claddingname']}</td>
+                    <td>{$vo['deliverydate']}</td>
+                </tr>
+                </volist>
+            </tbody>
+       </table>
        <!--分页-->
         <div class="pager">
             <div class="digg" style="center">{$page}</div>

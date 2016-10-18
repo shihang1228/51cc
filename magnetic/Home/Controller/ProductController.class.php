@@ -189,6 +189,7 @@ class ProductController extends BaseController {
 	
 	//我的报价
 	public function mysupply(){
+		$this->header();
 		$userid = I('session.userid',0);
 		/* $tb = new OrderSupplyModel();
 		$ret = $tb->getMySupply($userid); */
