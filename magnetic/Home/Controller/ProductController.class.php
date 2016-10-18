@@ -231,6 +231,13 @@ class ProductController extends BaseController {
 	
 	//报价单
 	public function quotes(){
+		$this->header();
+		$hotcity = getHotCity();
+		$this->assign('hotcity',$hotcity);
+		$tb = new VarietyModel();
+		$ret = $tb->getVarietyGrade();
+		$this->assign('variety',$ret);
+		
 		$userid = I('session.userid',0);
 		/* $tb = new OrderSupplyModel();
 		$ret = $tb->getMySupply($userid); */
@@ -266,7 +273,7 @@ class ProductController extends BaseController {
         $this->assign('json_arr',$ret[1]);  //数据集
 		/*分页控制*/
 		
-		// dump($ret);
+		 //dump($ret);
 		// $this->assign('supplylist',$ret);
 		$this->display();
 	}
