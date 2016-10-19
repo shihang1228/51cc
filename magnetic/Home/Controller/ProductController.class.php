@@ -250,12 +250,16 @@ class ProductController extends BaseController {
 		$userid = I('session.userid',0);
 		/* $tb = new OrderSupplyModel();
 		$ret = $tb->getMySupply($userid); */
-		dump(I('post.'));
+		$query = '';
+		$gradeid = I('gradeid',0);
+		if($gradeid!='') $query = ' and g.gradeid = \''.$gradeid.'\'';
+		/* $varietyname = I('varietyname','');
+		if($varietyname!='') $query .= ' and v.varietyname like \''.$varietyname.'\''; */
 		/*分页控制*/
 		$page_num = I('get.page_num',0);  //当前页(一直是0)
         $pagesize = C('PAGESIZE');  //配置文件读取每页行数
 		$tb = M();
-		$ret = $tb->procedure('call p_quotes(0,'.$pagesize.',\'\')');  //查询记录总数,页数
+		$ret = $tb->procedure('call p_quotes(0,'.$pagesize.',"'.$query.'")');  //查询记录总数,页数
         $rowcount = $ret[0][0]['rowcount'];//记录总数
 		$end_page = $ret[0][0]['pagecount'];//last page
         //查询记录如果小于页面显示数量，则标记页码div 不显示。反之展示。
@@ -265,7 +269,7 @@ class ProductController extends BaseController {
 		$show = str_replace("<div>",'',$show);
         $show = str_replace("</div>",'',$show);
         $first = floor($Page->firstRow);
-		$ret = $tb->procedure('call p_quotes('.$first.','.$pagesize.',\'\')');
+		$ret = $tb->procedure('call p_quotes('.$first.','.$pagesize.',"'.$query.'")');
 		// dump($ret);
 		//$end_page=ceil($rowcount/$pagesize);
 		// dump($ret);
