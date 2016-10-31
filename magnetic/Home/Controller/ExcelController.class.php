@@ -15,12 +15,12 @@ use Home\Model\OrderSupplyModel;
 use Home\Model\OrderPurchaseModel;
 use Home\Model\DetailSupplyModel;
 use Home\Model\DetailPurchaseModel;
-
+use Home\Model\ImportModel;
 //import("Org.Util.PHPExcel");
 //包含excel处理文件
-require_once('excel/PHPExcel.class.php');
-require_once('excel/PHPExcel/IOFactory.php');
-require_once('excel/PHPExcel/Reader/Excel5.php');
+// require_once('excel/PHPExcel.class.php');
+// require_once('excel/PHPExcel/IOFactory.php');
+// require_once('excel/PHPExcel/Reader/Excel5.php');
 
 class ExcelController extends Controller {
 	
@@ -49,8 +49,10 @@ class ExcelController extends Controller {
 		}else{// 上传成功
 			//$this->success('上传成功！');
 			$xlsfile = $upload->rootPath.$info["importfile"]['savepath'].$info["importfile"]['savename'];
-			echo $xlsfile.'上传成功！';
-			$this->import_supply($xlsfile);
+			// echo $xlsfile.'上传成功！';
+			$ret = $this->import_supply($xlsfile);
+			if($ret) $this->redirect('Product/mysupply');
+			else $this->redirect('User/member');
 			//$PHPExcel = new \PHPExcel();
 			//var_dump($PHPExcel);
 			/*
@@ -65,25 +67,26 @@ class ExcelController extends Controller {
 	
 	public function import_supply($arg_filename){
 		//$arg_filename = 'E:\cc\Public\Uploads\2016-09-10\57d36509c4679.xlsx';
+		import('Org.Util.PHPExcel');
 		$objReader = \PHPExcel_IOFactory::createReaderForFile($arg_filename);  //读取句柄
 		$objPHPExcel = $objReader->load($arg_filename);  //加载文件
 		$sheet = $objPHPExcel->getSheet(0);  //第一个表单
 		$highestRow = $sheet->getHighestRow();  //总行数 
 		$highestColumn = $sheet->getHighestColumn();  //总列数
-		if($highestColumn < 'M'){  //列数不足(固定为8列)
+		if($highestColumn < 'N'){  //列数不足(固定为14列)
 			echo '<script>alert(\'您选择的文件看起来有些问题,信息太少哦.\');</script>';
-			return;
+			return false;
 		}
-		$highestColumn = 'M';  //最多取到O列(15)
+		$highestColumn = 'N';  //最多取到N列(14)
 		//$objPHPExcel->setActiveSheetIndex(1);
 		//$objPHPExcel->getActiveSheet();
         //转换成列名
 		// $supply = new OrderPurchaseModel();
-		$supply = new OrderSupplyModel();
+		$supply = new OrderSupplyModel();  //供应单信息
 		
 		$ordercode = date('YmdHi').rand(1000,9999);  //导入操作的批标识
         $order['ordercode'] = $ordercode;
-		$order['companyid'] = I('session.companyid',1);
+		$order['companyid'] = I('session.companyid',0);
 		$order['createdby'] = I('session.userid',0);
 		$order['deliveryplace'] = '';  //这个改为从文件中读取
 		$order['deliverydate'] = date('Y-m-d H:i');
@@ -106,147 +109,79 @@ class ExcelController extends Controller {
 		// $detail = new DetailPurchaseModel();
 		$detail = new DetailSupplyModel();
         //需要记录导入操作(未完)
-        //品种 牌号 厂家 规格 单位 单价 镀层 数量 长度/直径 宽度/孔径 高度/厚度 纯度 回收料 交换地点
+        //品种 牌号 厂家 规格 单位 单价 镀层 数量 长度/直径 宽度/孔径 高度/厚度 纯度 回收料 交货地点
         $colname = array(0=>'varietyid',1=>'gradeid',2=>'factoryid',3=>'specid',4=>'unitid',5=>'unitprice',6=>'claddingid',7=>'quantity',8=>'length_diameter',9=>'width_aperture',10=>'height_thickness',11=>'purity',12=>'isreclaimed',13=>'deliveryplace');
 		$data = array();
-		$variety = new VarietyModel();
-		$grade = new GradeModel();
-		$factory = new ManufacturerModel();
-		$spec = new SpecificationModel();
-		$unit = new UnitModel();
-		$cladding = new CladdingModel();
-		$reclaim = new ReclaimModel();
 
+		$tb = new ImportModel();
+		$rtnsum = true;  //事务控制标记  导入
 		for($i=2;$i<=$highestRow;$i++)  //首行含标题
 		{
 			$row = array();
             //拼接插入sql语句
 			for($j='A',$k=0;$j<=$highestColumn;$j++,$k++)  //从A列开始读数据
 			{
+				$row['instime'] = date('Y-m-d H:i:s');
+				$val = $sheet->getCell("$j$i")->getValue();  //取单元格的值(下标顺序:列 行)
+				$row[$colname[$k]] = empty($val)?'':$val;  //按字段名存储
+			}
+			$row['ordercode'] = $ordercode;
+			if(!empty($row['varietyid'])){
+				$rtn = $tb->add($row);  //数据存入中间表
+				if($rtn['result']===false){
+					$rtnsum = false;
+					exit;
+				}
+			}
+		}
+		
+		if($rtnsum===true){  //全部成功了
+			$sql  = 'select i.impid,i.ordercode,i.userid,v.varietyid,g.gradeid,f.factoryid,s.specid,u.unitid';
+			$sql .= ',i.unitprice,c.claddingid,i.quantity,i.length_diameter,i.width_aperture,i.height_thickness';
+			$sql .= ',i.purity,r.reclaimid as isreclaimed,i.deliveryplace,i.instime';
+			$sql .= ' from tb_import i';
+			$sql .= ' left join tb_mm_variety v on v.varietyname=i.varietyid';
+			$sql .= ' left join tb_mm_grade g on g.gradename=i.gradeid';
+			$sql .= ' left join tb_manufacturer f on f.factoryname=i.factoryid';
+			$sql .= ' left join tb_mm_specification s on s.specname=i.specid';
+			$sql .= ' left join tb_mm_unit u on u.unitname=i.unitid';
+			$sql .= ' left join tb_mm_claddingmaterial c on c.claddingname=i.claddingid';
+			$sql .= ' left join tb_order_reclaim r on r.reclaimname=i.isreclaimed';
+			$sql .= ' where ordercode=\''.$ordercode.'\'';
+			$data = $tb->query($sql);  //关联取出数据,转换成外键
+			$order_makeup = array();
+			$retsum = true;
+			$makeup = true;  //补充信息(交货地点)
+			foreach($data as $row){
 				$row['orderid'] = $orderid;
 				$row['instime'] = date('Y-m-d H:i:s');
 				$row['updatetime'] = date('Y-m-d H:i:s');
-				$row[$colname[$k]] = $sheet->getCell("$j$i")->getValue();  //取单元格的值(下标顺序:列 行)
-				switch($k)
-				{
-					case 0:
-						if(!empty($row['varietyid'])){
-							$ret = $variety->isNameExists($row['varietyid']);
-							if($ret['result']==true) $row['varietyid'] = $ret['pk'];
-							else{//数据不存在,自动添加还是忽略此条内容?
-							}
-						}
-						break;
-					case 1:
-						if(!empty($row['gradeid'])){
-							$ret = $grade->isNameExists($row['gradeid']);
-							if($ret['result']==true) $row['gradeid'] = $ret['pk'];
-							else{//数据不存在,自动添加还是忽略此条内容?
-							}
-						}
-						break;
-					case 2:
-						if(!empty($row['factoryid'])){
-							$ret = $factory->isNameExists($row['factoryid']);
-							if($ret['result']==true) $row['factoryid'] = $ret['pk'];
-							else{//数据不存在,自动添加还是忽略此条内容?
-							}
-						}
-						break;
-					case 3:
-						if(!empty($row['specid'])){
-							$ret = $spec->isNameExists($row['specid']);
-							if($ret['result']==true) $row['specid'] = $ret['pk'];
-							else{//数据不存在,自动添加还是忽略此条内容?
-							}
-						}
-						break;
-					case 4:
-						if(!empty($row['unitid'])){
-							$ret = $unit->isNameExists($row['unitid']);
-							if($ret['result']==true) $row['unitid'] = $ret['pk'];
-							else{//数据不存在,自动添加还是忽略此条内容?
-							}
-						}
-						break;
-					case 6:
-						if(!empty($row['claddingid'])){
-							$ret = $cladding->isNameExists($row['claddingid']);
-							if($ret['result']==true) $row['claddingid'] = $ret['pk'];
-							else{//数据不存在,自动添加还是忽略此条内容?
-							}
-						}
-						break;
-					case 8:
-						if(empty($row['length_diameter'])) $row['length_diameter'] = 0;
-						break;
-					case 9:
-						if(empty($row['width_aperture'])) $row['width_aperture'] = 0;
-						break;
-					case 10:
-						if(empty($row['height_thickness'])) $row['height_thickness'] = 0;
-						break;
-					case 11:
-						//if(strtolower($row['purity'])=='null' || isnull($row['purity'])) $row['purity'] = 0;
-						if(empty($row['purity'])) $row['purity'] = 0;
-						break;
-					case 12:
-						if(!empty($row['isreclaimed'])){
-							$ret = $reclaim->isNameExists($row['isreclaimed']);
-							if($ret['result']==true) $row['isreclaimed'] = $ret['pk'];
-							else{//数据不存在,自动添加还是忽略此条内容?
-							}
-						}
-						else{
-							$row['isreclaimed'] = 'null';
-						}
-						break;
-					case 13:  //交货地
-						if(empty($row['deliveryplace'])) $row['deliveryplace'] = '';
-						break;
-					default:
-						/*$ret = $->isNameExists($row['id']);
-						if($ret['result']==true) $row['id'] = $ret['pk'];
-						else{//数据不存在,自动添加还是忽略此条内容?
-						}*/
-						break;
-				}
-			}
-			$data[$i] = $row;
-        }
-		$order_makeup = array();
-		$retsum = true;
-		$makeup = true;
-		foreach($data as $row){
-			if($row['varietyid']!=null){
 				if(count($order_makeup)==0){
 					$order_makeup = array('orderid'=>$orderid,'deliveryplace'=>$row['deliveryplace']);
 					$makeup = $supply->save($order_makeup);  //地址信息补充到供应单表
 					$makeup = $makeup['result'];  //补充提交交货地点信息
 				}
-				$rtn = $detail->add($row);
+				$rtn = $detail->add($row);  //保存明细
 				if($rtn['result']===false){
 					$retsum = false;
 					exit;
 				}
 			}
+			$tb = new UserModel();
+			$user = $tb->save(array('userid'=>I('session.userid',0),'ordercode_supply'=>$ordercode));  //保存用户的当前报价单
+			$user = $user['result'];
+			$status = $supply->where('ordercode<>\''.$ordercode.'\' and createdby='.I('session.userid',0))->save(array('showstatus'=>0));  //更改用户上传过的报价单状态为不可用
+			$status = $status['result'];
+			if($retsum===true && $makeup===true && $user===true){
+				$supply->commit();
+				$rtnsum = true;
+			}
+			else{
+				$supply->rollback();
+				$rtnsum = false;
+			}
 		}
-		$tb = new UserModel();
-		$user = $tb->save(array('userid'=>I('session.userid',0),'ordercode_supply'=>$ordercode));  //保存用户的当前报价单
-		$user = $user['result'];
-		$status = $supply->where('ordercode<>\''.$ordercode.'\' and createdby='.I('session.userid',0))->save(array('showstatus'=>0));  //更改用户上传过的报价单状态为不可用
-		$status = $status['result'];
-		if($retsum===true && $makeup===true && $user===true){
-			$supply->commit();
-			dump('import success.');
-		}
-		else{
-			$supply->rollback();
-			dump('import failed.');
-		}
-		echo 'over';
-		// $PHPExcel = new \PHPExcel();
-		// var_dump($PHPExcel);
+		return $rtnsum;
 	}
 	
 	public function variety_export(){

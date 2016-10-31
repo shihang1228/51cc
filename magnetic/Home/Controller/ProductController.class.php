@@ -290,4 +290,9 @@ class ProductController extends BaseController {
 		// $this->assign('supplylist',$ret);
 		$this->display();
 	}
+	
+	public function batchupload(){
+		$this->header();
+		$this->display();
+	}
 }
