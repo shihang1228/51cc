@@ -1,0 +1,79 @@
+<!--头部公共部分-->
+<include file="User/header2" />
+<link href="__PUBLIC__/pc/css/member.css" rel="stylesheet" type="text/css" />
+<div class="top">
+    <div class="top_t">
+        <div class="w960">
+            <div class="r">
+                您好，<span class="color">{$userdata['username']}({$userdata['phone']})</span><a href="{:U('Home/User/logout')}" class="logout" data-url="{:U('Home/Index/index')}">【退出】</a>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;<span>交易热线：<span >020-83939808</span></span>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;交易时间：工作日 9:00-17:30
+            </div>
+            <a class="font_14" href="{:U('Home/Index/index')}" target="_blank">回到首页</a>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;<a class="font_14" href="{:U('Home/User/member')}">会员中心</a>
+        </div>
+    </div>
+    <div class="logo">
+        <div class="w960" style=" overflow:hidden;">
+            <img src="__PUBLIC__/pc/image/member/member_logo.png" title="找磁材网" alt="找磁材网logo"/>
+        </div>
+    </div>
+</div><script type="text/javascript">
+$(function()
+{
+	// $(".fb_btn").on("click",function(){
+	// 	var data = $("#myform").serialize();
+	// 	$.ajax({
+
+	// 	})
+	// })
+	
+}
+	
+});
+</script>
+
+	<div class="member_wrap" >
+	<div class="member_content" >
+ 		<!--左侧公共部分-->
+        <include file="User/left" />
+	<div class="right index">
+	<div class="pulic_title">单条上传报价</div>
+	<div class="fbcg">
+		<p>您的报价单内容：</p>
+		<form method="post" action="{:U('Home/Product/addbaojiandan_bgd')}" id="myform" enctype="multipart/form-data">
+			<div class="tab_head">
+				<ul>
+					<li class="on">批量报价单</li>
+				</ul>
+				<!-- <a href="javascript:void(0)" class="content_why">如何填写采购内容？</a> -->
+			</div>
+			<div class="tab_content">
+				<div class="toggle_div" style="display:block;">
+					<div class="biaozhun pr" >
+						<div class="input_div">
+							<input type="file" name="importfile"/>
+						</div>
+					</div>
+				 </div>
+				 <div class="text toggle_div hide">
+					
+				 </div>
+			 </div>
+			 <p class="queren">确认您上传的批量报价单信息真实无误，否则不能发布！谢谢！</p>
+			 <input type="submit" class="fb_btn" value="上传" />
+		</form>
+	</div>
+</div>
+</div>
+</div>
+
+
+<div id="mask"></div>
+<div class="tan_div">
+		<div class="title">如何填写采购内容<span class="close"></span></div>
+		<div class="tan_content">
+			<p class="p1">写下您的真实需求，包括品种、牌号、厂家等。收到后我们会立即给您回电确认，剩下就交给我们吧。</p>
+			<p class="p2">可按标准格式或文本格式进行填写。<br/>
+				可填写多条采购信息。</p>
+		</div>
+</div>
+<!--底部公共部分-->
+<include file="Index/footer" />

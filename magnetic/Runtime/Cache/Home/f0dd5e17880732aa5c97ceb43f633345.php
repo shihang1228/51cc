@@ -1,0 +1,302 @@
+<?php if (!defined('THINK_PATH')) exit();?>    <!--头部公共部分-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="baidu-site-verification" content="GEYeUSYelI" />
+        <meta property="qc:admins" content="1376034076620173541176375" />
+        <meta property="wb:webmaster" content="98f17058f76adb4c" />
+        <title>会员登陆 - 找磁材网</title>
+        <meta name="keywords" content='找磁材网登录,找磁材网会员登录,会员登录'/>
+        <meta name="description" content='找磁材网zhaosuliao.com领先的一站式塑化电商。专注于聚乙烯PE，聚丙烯PP、PVC、ABS等磁材原料交易，提供撮合交易及代销代购（自营）、物流、金融、行情分析、改性磁材OEM等服务。' />
+        <link href="/51ccnew/Public/pc/plugin/artdialog/dialog.css" rel="stylesheet" type="text/css"/>     
+        <link href="/51ccnew/Public/pc/css/common.css" rel="stylesheet" type="text/css" />
+        <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+        <link href="/51ccnew/Public/pc/css/page.css" rel="stylesheet" type="text/css" />
+        <link href="/51ccnew/Public/pc/plugin/jquery-validate/jquery.validate.min.css" type="text/css" rel="stylesheet" />
+        <script src="/51ccnew/Public/pc/plugin/jquery-validate/jquery.validate.min.js" type="text/javascript"></script>
+        <script src="/51ccnew/Public/pc/plugin/jquery-validate/jquery.validate.method.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="/51ccnew/Public/pc/plugin/jquery-areapop/jquery-areapop.js"></script>
+        <script src="/51ccnew/Public/pc/plugin/artdialog/dialog.js" type="text/javascript"></script>
+        <script src="/51ccnew/Public/pc/plugin/form.js" type="text/javascript"></script>
+        <script src="/51ccnew/Public/pc/js/js.js" type="text/javascript"></script>
+        <script src="/51ccnew/Public/pc/js/common.js" type="text/javascript"></script>        
+    </head>
+<body>
+<link href="http://www.zhaosuliao.com/resources/fore/css/member.css?v=20151030" rel="stylesheet" type="text/css" />
+<div class="top">
+    <div class="top_t">
+        <div class="w960">
+            <div class="r">
+                您好，<span class="color"><?php echo ($userdata['username']); ?>(<?php echo ($userdata['phone']); ?>)</span><a href="<?php echo U('Home/User/logout');?>" class="logout" data-url="<?php echo U('Home/Index/index');?>">【退出】</a>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;<span>交易热线：<span >020-83939808</span></span>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;交易时间：工作日 9:00-17:30
+            </div>
+            <a class="font_14" href="<?php echo U('Home/Index/index');?>" target="_blank">回到首页</a>&nbsp;&nbsp;<i>|</i>&nbsp;&nbsp;<a class="font_14" href="<?php echo U('Home/User/member');?>">会员中心</a>
+        </div>
+    </div>
+    <div class="logo">
+        <div class="w960" style=" overflow:hidden;">
+            <img src="http://www.zhaosuliao.com/resources/fore/image/member/member_logo.png" title="找磁材网" alt="找磁材网logo"/>
+        </div>
+    </div>
+</div>
+<div class="member_wrap" >
+	<div class="member_content" >
+<!--左侧公共部分-->
+        <div class="left">
+    <div class="lan">
+        <p class="title" style="margin-top:0;">我的报价单</p>
+        <p><a href="http://www.zhaosuliao.com/member/product/product_import" >批量上传报价</a></p>
+        <p><a href="<?php echo U('Home/Product/baojiadanadd');?>" >单条发布报价</a></p>
+        <p><a href="<?php echo U('Home/Product/mysupply');?>" >我的报价单</a></p>
+    </div>
+    <div class="lan">
+        <p class="title">我的交易信息</p>
+        <p><a href="<?php echo U('Home/Purchase/purchaseadd');?>" >发布采购</a></p>
+        <p><a href="<?php echo U('Home/Purchase/mypurchase');?>" >我的采购</a></p>
+    </div>
+    <div class="lan">
+        <p class="title">账户管理</p>
+        <p><a href="<?php echo U('Home/User/userinfo');?>">账户信息</a></p>
+        <p><a href="<?php echo U('Home/User/changepwd');?>" >修改密码</a></p>
+    </div>
+    <div class="tel">
+        <img src="http://www.zhaosuliao.com/resources/fore/image/member/tel.png"alt="找磁材网交易热线"/>
+        <div class="jyrx">
+            <p>交易热线</p>
+            <p>020-83939808</p>
+        </div>
+    </div>
+</div>  
+	<div class="right index">
+	
+	
+ 
+ 	<div class="pulic_title">我的报价单</div>
+ 	<!-- 
+ 	<form action="list" method="post" id="myform">
+ 			<input id="pageNo" name="pageNo" type="hidden" value="1" />
+			<input id="pageSize" name="pageSize" type="hidden" value="10" />
+ 	<div class="status">
+ 		<p class="r_p">
+	 		<span class="status_text">状态：</span>
+	 		<span class="status_select">
+	 			<select name="status">
+					<option value="">全部</option>
+					<option value="st0" >待审核</option>
+					<option value="st3" >正在洽谈</option>
+					<option value="st4,st5,st7" >等待打款</option>
+					<option value="st8" >交易成功</option>
+					<option value="stf5" >审核不通过</option>
+					<option value="stf9" >已终止</option>
+				</select>
+	 		</span>
+	 		<input class="btn" type="submit" value=" "/>
+ 		</p>
+	</div>
+	</form>
+	 -->
+	<table class="cg_table">
+        <thead>
+            <tr>
+                <td class="th">订单号</td>
+                <td class="th">品种</td>
+                <td class="th">牌号</td>
+                <td class="th">生产厂商</td>
+                <td class="th">规格</td>
+                <td class="th">长度</td>
+                <td class="th">宽度</td>
+                <td class="th">高度</td>
+                <td class="th">数量</td>
+                <td class="th">价格</td>
+                <td class="th">镀层</td>
+                <td class="th">交货时间</td>
+            </tr>
+        </thead>
+        <tbody>
+            <?php if(is_array($json_arr)): $i = 0; $__LIST__ = $json_arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+                <td><?php echo ($vo['orderid']); ?></td>
+                <td><?php echo ($vo['gradename']); ?></td>
+                <td><?php echo ($vo['varietyname']); ?></td>
+                <td><?php echo ($vo['factoryname']); ?></td>
+                <td><?php echo ($vo['specname']); ?></td>
+                <td><?php echo ($vo['length_diameter']); ?></td>
+                <td><?php echo ($vo['width_aperture']); ?></td>
+                <td><?php echo ($vo['height_thickness']); ?></td>
+                <td><?php echo ($vo['quantity']); echo ($vo['unitname']); ?></td>
+                <td><?php echo ($vo['unitprice']); ?></td>
+                <td><?php echo ($vo['claddingname']); ?></td>
+                <td><?php echo ($vo['deliverydate']); ?></td>
+            </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+        </tbody>
+   </table>
+   <!--分页-->
+    <div class="pager">
+        <div class="digg" style="center"><?php echo ($page); ?></div>
+    </div>
+ </div>
+  </div>
+   </div>
+<script>
+	function page(n,s){
+		$("#pageNo").val(n);
+		$("#pageSize").val(s);
+		$("#myform").attr("action","http://www.zhaosuliao.com/member/purchase/list").submit();
+		return;
+	};
+	$(function()
+	{
+		//播放语音
+		$(".play_audio").on("click",function()
+		{
+			$(this).siblings("audio")[0].play();
+		});
+
+		//审核不通过消息
+		$(".nopass").on("click",function()
+		{
+			$.showmessage($(this).data("content"));
+		});
+		
+		//分页跳转
+		$('input.jump_page').bind("keyup",function(event){
+		    if (event && event.keyCode == 13) {
+		    	$(this).parent().next(".go").click();
+		    }
+		})
+		$("span.go").click(function(){
+			var $input = $(this).prev(".to").children("input");
+			var num=$input.val();
+			if(isNaN(num)){
+				alert("只能输入数字");
+				$input.val(1);
+				return false;
+			}
+			if(!num.match('^\\d+$')){
+				alert("只能输入数字");
+				$input.val(1);
+				return false;
+			}
+			if(num<1){
+				alert("请输入大于1的数字");
+				$input.val(1);
+				return false;
+			}
+			page(num,10);
+		});
+		//状态改变
+		$(".status_select").change(function(){
+			$("#myform").submit();
+		});
+	});
+</script>
+<div class="footer_wrap">
+        <div class="in_box">
+        <ul class="box1">
+            <li class="one">
+                <p class="p1">海量客户资源</p>
+                <p>连通上下游</p>
+            </li>
+            <li class="two">
+                <p class="p1">行情、交易、物流、金融</p>
+                <p>一站式服务</p>
+            </li>
+            <li class="three">
+                <p class="p1">资深交易员</p>
+                <p>免费服务一对一</p>
+            </li>
+            <li class="four">
+                <p class="p1">高效IT系统</p>
+                <p>实现供需精准匹配</p>
+            </li>
+        </ul>
+        
+        <ul class="box2">
+            <li>
+                <h3>我要买磁材</h3>
+                <p><i>▪&nbsp;&nbsp;</i><a href="http://www.zhaosuliao.com/help/trade.html#trade2" target="_blank"><b></b>如何委托交易</a></p>
+                <p><i>▪&nbsp;&nbsp;</i><a href="http://www.zhaosuliao.com/help/trade.html#trade3" target="_blank"><b></b>如何自己找货</a></p>
+                <p><i>▪&nbsp;&nbsp;</i><a href="http://www.zhaosuliao.com/help/trade.html#trade4" target="_blank"><b></b>如何查看采购单状态</a></p>
+            </li>
+            <li>
+                <h3>我要卖磁材</h3>
+                <p><i>▪&nbsp;&nbsp;</i><a href="http://www.zhaosuliao.com/help/trade.html#trade7" target="_blank"><b></b>如何发布报价单</a></p>
+                <p><i>▪&nbsp;&nbsp;</i><a href="http://www.zhaosuliao.com/help/trade.html#trade6" target="_blank"><b></b>如何单条发布报价</a></p>
+                <p><i>▪&nbsp;&nbsp;</i><a href="http://www.zhaosuliao.com/help/trade.html#trade8" target="_blank"><b></b>如何报价采购信息</a></p>
+            </li>
+            <li class="list3">
+                <h3>常见问题</h3>
+                <p><i>▪&nbsp;&nbsp;</i><a href="http://www.zhaosuliao.com/help/user.html#user1" target="_blank"><b></b>注册流程</a></p>
+                <p><i>▪&nbsp;&nbsp;</i><a href="http://www.zhaosuliao.com/help/user.html#user2" target="_blank"><b></b>无法登录/忘记密码</a></p>
+                <p><i>▪&nbsp;&nbsp;</i><a href="http://www.zhaosuliao.com/help/user.html#user3" target="_blank"><b></b>修改账户信息</a></p>
+            </li>
+        </ul>
+        
+        <div class="box3">
+            <div class="code">
+                <p class="img"><img src="http://www.zhaosuliao.com/resources/fore/image/common/code_wechat.jpg" alt="找磁材网微信二维码" /></p>
+                <p>扫一扫，看行情资讯</p>
+            </div>
+            <div class="code">
+                <p class="img"><img src="http://www.zhaosuliao.com/resources/fore/image/common/code_app.jpg" alt="找磁材网APP二维码" /></p>
+                <p>扫一扫，下载移动端</p>
+            </div>
+        </div>
+    </div>
+    <div class="in_box">
+        <div class="box4">
+            <span class="s">热门标签：</span>
+            <div class="list">
+                <div class="list_div">
+                                    <a href="http://www.zhaosuliao.com/company" target="_blank" title="磁材价格">磁材价格</a>
+                    <a href="http://hq.zhaosuliao.com/zzrl.html" target="_blank" title="最全石化装置动态">最全石化装置动态</a>
+                    <a href="http://www.zhaosuliao.com/baike/16587.html" target="_blank" title="PP磁材">PP磁材</a>
+                    <a href="http://www.zhaosuliao.com/baike/16583.html" target="_blank" title="POM磁材">POM磁材</a>
+                    <a href="http://www.zhaosuliao.com/baike/16595.html" target="_blank" title="通用磁材">通用磁材</a>
+                    <a href="http://www.zhaosuliao.com/baike/16600.html" target="_blank" title="磁材原料物性">磁材原料物性</a>
+                    <a href="http://www.zhaosuliao.com/baike/16574.html" target="_blank" title="PE磁材">PE磁材</a>
+                    <a href="http://www.zhaosuliao.com/baike/16544.html" target="_blank" title="PBT磁材">PBT磁材</a>
+                    <a href="http://www.zhaosuliao.com/baike/16545.html" target="_blank" title="HDPE磁材">HDPE磁材</a>
+                    <a href="http://www.zhaosuliao.com/baike/16565.html" target="_blank" title="HIPS磁材">HIPS磁材</a>
+                    <a href="http://hq.zhaosuliao.com/price/0_1_0_0_0_1_0_0.html" target="_blank" title="磁材价格行情">磁材价格行情</a>
+                    <a href="http://hq.zhaosuliao.com/price/cc.html" target="_blank" title="石化出厂价格查询">石化出厂价格查询</a>
+                </div>
+            </div>
+            <a href="javascript:;" class="close"></a>
+        </div>
+
+        <div class="box5">
+            <p>
+                <a href="http://www.zhaosuliao.com/about.html" target="_blank">关于我们</a> | 
+                <a href="http://www.zhaosuliao.com/zixun/gsdt/" target="_blank">公司动态</a> | 
+                <a href="http://www.zhaosuliao.com/zixun/mtbd/" target="_blank">媒体报道</a> | 
+                <a href="http://www.zhaosuliao.com/job.html" target="_blank">诚聘英才</a> | 
+                <a href="http://www.zhaosuliao.com/contact.html" target="_blank">联系我们</a> | 
+                <a href="http://www.zhaosuliao.com/feedback.html" target="_blank">意见反馈</a> | 
+                <!-- <a href="http://www.zhaosuliao.com/ceo_mailbox.html" target="_blank">CEO邮箱</a> |  -->
+                <a href="http://www.zhaosuliao.com/law.html" target="_blank">法律声明</a> | 
+                <a href="http://www.zhaosuliao.com/sitemap.html" target="_blank">网站地图</a> | 
+                <a href="http://www.zhaosuliao.com/links.html" target="_blank">友情链接</a>
+            </p>
+            <p>
+                COPYRIGHT © 找磁材网 www.zhaosuliao.com <a href="http://www.miitbeian.gov.cn">粤ICP备15107234号</a>&nbsp;<a rel="nofollow" href="http://www.miibeian.gov.cn">ICP经营许可证：粤B2-20160023</a>
+                <script>
+                //站长统计
+                var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1253441689'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s6.cnzz.com/z_stat.php%3Fid%3D1253441689%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+              
+                </script>
+            </p>
+        </div>
+        <div class="box6">
+            <!--<a  key ="54a107ffc274e76dc1035520"  logo_size="124x47"  logo_type="realname"  href="http://www.anquan.org" ><script src="http://static.anquan.org/resources/fore/outer/js/aq_auth.js"></script></a>
+            <a href="http://webscan.360.cn/index/checkwebsite/url/zhaosuliao.com"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/ef7e1c147d6253064bea858dfeeb5ebc"/></a> -->
+            <a target="_blank" href="http://www.anquan.org/authenticate/cert/?site=www.zhaosuliao.com&at=realname"><img alt="安全联盟实名验证" src="http://www.zhaosuliao.com/resources/fore/image/common/aqlm.png" /></a>
+            <a target="_blank" href="http://webscan.360.cn/index/checkwebsite/url/zhaosuliao.com"><img alt="360网站安全检测" src="http://www.zhaosuliao.com/resources/fore/image/common/aqjc_360.png" /></a>
+            <a target="_blank" href="http://si.trustutn.org/info?sn=137141229010801735265&certType=1"><img alt="实名认证" src="http://www.zhaosuliao.com/resources/fore/image/common/smrz.png" /></a>
+            <a id='___szfw_logo___' href='https://credit.szfw.org/CX20160123013832180167.html' target='_blank'><img alt="诚信网站" src="http://www.zhaosuliao.com/resources/fore/image/common/cxrz.png" /></a>
+            <script type='text/javascript'>(function(){document.getElementById('___szfw_logo___').oncontextmenu = function(){return false;}})();</script>
+            <a target="_blank" href="http://www.itrust.org.cn/Home/Index/itrust_certifi?wm=1304763357"><img alt="ICP网站征信" src="http://www.zhaosuliao.com/resources/fore/image/common/qyxypj.png" /></a>
+            <a target="_blank" href='http://netadreg.gzaic.gov.cn/ntmm/WebSear/WebLogoPub.aspx?logo=440115115012014072300011'><img alt="工商网监电子标识" src="http://www.zhaosuliao.com/resources/fore/image/common/gswj.png" width="124" height="47"/></a>
+        </div>
+    </div></div>
+</body>
+</html>

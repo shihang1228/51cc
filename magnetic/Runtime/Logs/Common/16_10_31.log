@@ -1,0 +1,12 @@
+[ 2016-10-31T20:10:12+08:00 ] ::1 /51ccnew/Public/pc/upload/news/201608/38da7e1e-b816-42d9-8fde-664ef47bac6f.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2016-10-31T20:29:35+08:00 ] ::1 /51ccnew/default.htm
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Default
+

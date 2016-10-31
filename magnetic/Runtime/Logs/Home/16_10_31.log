@@ -1,0 +1,395 @@
+[ 2016-10-31T20:01:35+08:00 ] ::1 /51ccnew/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_order_supply` [ RunTime:0.0470s ]
+SQL: call p_ordersupply(3) [ RunTime:2.2111s ]
+SQL: SHOW COLUMNS FROM `tb_order_purchase` [ RunTime:0.0590s ]
+SQL: call p_orderpurchase(5) [ RunTime:0.0520s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.160009s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.160009s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.015001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-31T20:01:49+08:00 ] ::1 /51ccnew/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-31T20:07:02+08:00 ] ::1 /51ccnew/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_order_supply` [ RunTime:0.0500s ]
+SQL: call p_ordersupply(3) [ RunTime:1.6401s ]
+SQL: SHOW COLUMNS FROM `tb_order_purchase` [ RunTime:0.0510s ]
+SQL: call p_orderpurchase(5) [ RunTime:0.0520s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.082005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.082005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-31T20:07:13+08:00 ] ::1 /51ccnew/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_order_supply` [ RunTime:0.0670s ]
+SQL: call p_ordersupply(3) [ RunTime:0.9051s ]
+SQL: SHOW COLUMNS FROM `tb_order_purchase` [ RunTime:0.0500s ]
+SQL: call p_orderpurchase(5) [ RunTime:0.1430s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.084005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.084005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-31T20:09:57+08:00 ] ::1 /51ccnew/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_order_supply` [ RunTime:0.0480s ]
+SQL: call p_ordersupply(3) [ RunTime:1.0211s ]
+SQL: SHOW COLUMNS FROM `tb_order_purchase` [ RunTime:0.0460s ]
+SQL: call p_orderpurchase(5) [ RunTime:0.1470s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.079004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.079004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-31T20:10:11+08:00 ] ::1 /51ccnew/index.php/Home/Hq/hq.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001001s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.065003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.065003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-31T20:29:05+08:00 ] ::1 /51ccnew/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_order_supply` [ RunTime:0.0480s ]
+SQL: call p_ordersupply(3) [ RunTime:2.4581s ]
+SQL: SHOW COLUMNS FROM `tb_order_purchase` [ RunTime:0.0460s ]
+SQL: call p_orderpurchase(5) [ RunTime:0.1030s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.081005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.081005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-31T20:52:25+08:00 ] ::1 /51ccnew/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-31T20:52:44+08:00 ] ::1 /51ccnew/index.php/Home/User/login_bgd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.0500s ]
+SQL: SELECT `userid`,`phone`,`username`,`nickname`,`logintimes` FROM `tb_user` WHERE ( phone='18235100872' and userpwd='e10adc3949ba59abbe56e057f20f883e' )  [ RunTime:0.0520s ]
+
+[ 2016-10-31T20:53:06+08:00 ] ::1 /51ccnew/index.php/Home/User/login_bgd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.0500s ]
+SQL: SELECT `userid`,`phone`,`username`,`nickname`,`logintimes` FROM `tb_user` WHERE ( phone='18235100872' and userpwd='96e79218965eb72c92a549dd5a330112' )  [ RunTime:0.0500s ]
+SQL: UPDATE `tb_user` SET `logintimes`='24',`lastlogin`='2016-10-31 20:53:06' WHERE `userid` = 16 [ RunTime:0.0600s ]
+
+[ 2016-10-31T20:53:08+08:00 ] ::1 /51ccnew/index.php/Home/User/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-31T20:53:12+08:00 ] ::1 /51ccnew/index.php/Home/Product/baojiadanadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0510s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.0640s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0530s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:0.8901s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:0.0500s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:0.0490s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:0.0500s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:0.0530s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:0.0940s ]
+SQL: SELECT `claddingid`,`claddingname` FROM `tb_mm_claddingmaterial` WHERE ( delstatus=0 )  [ RunTime:0.0860s ]
+SQL: SHOW COLUMNS FROM `tb_mm_unit` [ RunTime:0.0500s ]
+SQL: SELECT `unitid`,`unitname`,`raw` FROM `tb_mm_unit` WHERE ( delstatus=0 )  [ RunTime:0.0500s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-10-31T20:57:36+08:00 ] ::1 /51ccnew/index.php/Home/Product/mysupply.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: call p_mypurchase(16,0,10) [ RunTime:0.0550s ]
+NOTIC: [2] Missing argument 1 for Think\cPage::show(), called in D:\phpstudy\WWW\51ccnew\magnetic\Home\Controller\ProductController.class.php on line 216 and defined D:\phpstudy\WWW\51ccnew\ThinkPHP\Library\Think\cPage.class.php 第 81 行.
+NOTIC: [8] Undefined variable: page_inputer D:\phpstudy\WWW\51ccnew\ThinkPHP\Library\Think\cPage.class.php 第 165 行.
+SQL: call p_mypurchase(16,0,10) [ RunTime:0.0510s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-31T21:00:40+08:00 ] ::1 /51ccnew/index.php/Home/Product/baojiadanadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0480s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.0510s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0830s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:0.0570s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:0.0470s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:0.0480s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:0.0490s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:0.0480s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:0.1400s ]
+SQL: SELECT `claddingid`,`claddingname` FROM `tb_mm_claddingmaterial` WHERE ( delstatus=0 )  [ RunTime:0.0470s ]
+SQL: SHOW COLUMNS FROM `tb_mm_unit` [ RunTime:0.0490s ]
+SQL: SELECT `unitid`,`unitname`,`raw` FROM `tb_mm_unit` WHERE ( delstatus=0 )  [ RunTime:0.0480s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-10-31T21:02:12+08:00 ] ::1 /51ccnew/index.php/Home/Product/baojiadanadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0490s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.0580s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0580s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:0.0490s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:0.0500s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:0.0500s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:0.0520s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:0.0470s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:0.0500s ]
+SQL: SELECT `claddingid`,`claddingname` FROM `tb_mm_claddingmaterial` WHERE ( delstatus=0 )  [ RunTime:0.0490s ]
+SQL: SHOW COLUMNS FROM `tb_mm_unit` [ RunTime:0.0510s ]
+SQL: SELECT `unitid`,`unitname`,`raw` FROM `tb_mm_unit` WHERE ( delstatus=0 )  [ RunTime:0.0490s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-31T21:03:17+08:00 ] ::1 /51ccnew/index.php/Home/Product/baojiadanadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_mm_variety` [ RunTime:0.0500s ]
+SQL: SELECT `varietyid`,`varietyname` FROM `tb_mm_variety` WHERE ( delstatus=0 )  [ RunTime:0.1240s ]
+SQL: SHOW COLUMNS FROM `tb_mm_grade` [ RunTime:0.0540s ]
+SQL: select g.varietyid,v.varietyname,g.gradeid,g.gradename from tb_mm_grade g inner join tb_mm_variety v on g.varietyid=v.varietyid where g.delstatus=0 order by g.gradeid [ RunTime:0.0540s ]
+SQL: SHOW COLUMNS FROM `tb_manufacturer` [ RunTime:0.0510s ]
+SQL: SELECT `factoryid`,`factoryname` FROM `tb_manufacturer` WHERE ( delstatus=0 )  [ RunTime:0.0480s ]
+SQL: SHOW COLUMNS FROM `tb_mm_specification` [ RunTime:0.0570s ]
+SQL: SELECT `specid`,`specname` FROM `tb_mm_specification` WHERE ( delstatus=0 )  [ RunTime:0.0720s ]
+SQL: SHOW COLUMNS FROM `tb_mm_claddingmaterial` [ RunTime:0.0610s ]
+SQL: SELECT `claddingid`,`claddingname` FROM `tb_mm_claddingmaterial` WHERE ( delstatus=0 )  [ RunTime:0.0490s ]
+SQL: SHOW COLUMNS FROM `tb_mm_unit` [ RunTime:0.0480s ]
+SQL: SELECT `unitid`,`unitname`,`raw` FROM `tb_mm_unit` WHERE ( delstatus=0 )  [ RunTime:0.0510s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-31T21:03:20+08:00 ] ::1 /51ccnew/index.php/Home/Product/batchupload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: userdata D:\phpstudy\WWW\51ccnew\magnetic\Runtime\Cache\Home\63d8d54661757ef45cb67f4a80a9c4ea.php 第 31 行.
+NOTIC: [8] Undefined variable: userdata D:\phpstudy\WWW\51ccnew\magnetic\Runtime\Cache\Home\63d8d54661757ef45cb67f4a80a9c4ea.php 第 31 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
