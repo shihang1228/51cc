@@ -11,6 +11,8 @@ use Home\Model\DetailSupplyModel;
 use Home\Model\UnitModel;
 use Home\Model\UserModel;
 use Home\Model\CladdingModel;
+use Home\Model\OrderTurnoverModel;
+use Home\Model\SalesIntentModel;
 
 class ProductController extends BaseController {
 
@@ -207,7 +209,7 @@ class ProductController extends BaseController {
 		$page_num = I('get.page_num',0);  //当前页(一直是0)
         $pagesize = C('PAGESIZE');  //配置文件读取每页行数
 		$tb = M();
-		$ret = $tb->procedure('call p_mypurchase('.$userid.',0,'.$pagesize.')');  //查询记录总数,页数
+		$ret = $tb->procedure('call p_mysupply('.$userid.',0,'.$pagesize.')');  //查询记录总数,页数
         $rowcount = $ret[0][0]['rowcount'];//记录总数
 		$end_page = $ret[0][0]['pagecount'];//last page
         //查询记录如果小于页面显示数量，则标记页码div 不显示。反之展示。
@@ -217,7 +219,7 @@ class ProductController extends BaseController {
 		$show = str_replace("<div>",'',$show);
         $show = str_replace("</div>",'',$show);
         $first = floor($Page->firstRow);
-		$ret = $tb->procedure('call p_mypurchase('.$userid.','.$first.','.$pagesize.')');
+		$ret = $tb->procedure('call p_mysupply('.$userid.','.$first.','.$pagesize.')');
 		//$end_page=ceil($rowcount/$pagesize);
 		// dump($ret);
         if(count($ret)==1){
@@ -291,7 +293,40 @@ class ProductController extends BaseController {
 		$this->display();
 	}
 	
+	//批量上传报价单
 	public function batchupload(){
+		$this->header();
+		$this->display();
+	}
+	
+	/*
+		我要供货的处理页面(简要填写供货信息后，提交),
+		需要取用户点击求购信息的orderid,用orderid_purchase的名称传给后台
+		货物信息以文本方式传递,参数名称:salesinfo
+	*/
+	public function provide(){
+		$this->header();
+		$this->display();
+	}
+	
+	//我要供货的后台(最好是post传送)
+	public function provide_bgd(){
+		$data = I('post.');
+		$result = array('result'=>true,'msg'=>'你传输的参数是:'.var_export($data,true).'.请等待后台调试结果.');
+		$this->ajaxReturn($result);
+		$data['dateofsubmit'] = date('Y-m-d H:i:s');
+		$data['dealstatus'] = 1;  //默认为正在洽谈
+		$data['supplier'] = I('session.userid',0);  //供货人id
+		$data['instime'] = date('Y-m-d H:i:s');
+		$tb = new SalesIntentModel();
+		$ret = $tb->add($data);
+		$this->ajaxReturn($ret);
+	}
+	
+	/*订单处理,主要处理成交订单.含关闭洽谈不成功的订单.
+		这个对要列出的订单进行管理,主要是网站管理人员使用.
+	*/
+	public function turnover(){
 		$this->header();
 		$this->display();
 	}

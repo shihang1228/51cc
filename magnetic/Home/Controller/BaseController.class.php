@@ -12,6 +12,7 @@ class BaseController extends Controller {
         $data['phone'] = I('session.phone','');
         $this->assign('userdata',$data);
     }
+
     /*品牌级联*/
     public function gradelist(){
         $varietyid = I("post.varietyid");

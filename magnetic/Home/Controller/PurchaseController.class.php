@@ -187,6 +187,7 @@ class PurchaseController extends BaseController {
 	
 	//我的采购
 	public function mypurchase(){
+		$this->header();
 		$userid = I('session.userid',0);
 		//$tb = new OrderPurchaseModel();
 		// $ret = $tb->getMyPurchase($userid);
