@@ -309,7 +309,7 @@ class ProductController extends BaseController {
 		$this->display();
 	}
 	
-	//我要供货的后台(最好是post传送)
+	//我要供货的后台(最好是post传参)
 	public function provide_bgd(){
 		$data = I('post.');
 		$result = array('result'=>true,'msg'=>'你传输的参数是:'.var_export($data,true).'.请等待后台调试结果.');
@@ -324,7 +324,7 @@ class ProductController extends BaseController {
 	}
 	
 	/*订单处理,主要处理成交订单.含关闭洽谈不成功的订单.
-		这个对要列出的订单进行管理,主要是网站管理人员使用.
+		这个要对列出的订单进行管理,主要是网站管理人员使用.
 	*/
 	public function turnover(){
 		$this->header();

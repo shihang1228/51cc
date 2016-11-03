@@ -46,7 +46,7 @@ class IndexController extends BaseController {
 		$this->assign('purchaseF3',$rtn);
 		//dump($rtn);
 		$links = new FriendLinksModel();
-		$ret = $tb->getLinksList();
+		$ret = $links->getLinksList();
 		$this->assign('links',$ret);
 		//显示
 		$this->display();
