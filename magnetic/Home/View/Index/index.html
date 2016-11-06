@@ -650,8 +650,11 @@ $(function(){
         </div>
     </div>   
     <!--石化价格 end-->
-
-<input type="hidden" name="purchase_url" class="purchase_url" value="{:U('Home/Purchase/supply_check')}">
+	
+<!--我要供货后台请求数据地址-->
+<input type="hidden" class="purchase_url" value="{:U('Home/Purchase/supply_check')}">
+<!--我要供货后台提交地址-->
+<input type="hidden" class="purchase_submit_url" value="{:U('Home/SalesIntent/supply')}">
 <!--1f start-->
     <div id="new_onef" class="mar_t20 floor_flag">
     	<div class="new_onef_content">

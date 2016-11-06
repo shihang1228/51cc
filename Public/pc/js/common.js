@@ -588,6 +588,7 @@ var supplyCommodity = {
             that.toggleHide();
         }).on('click', '.supply_submit', function() {
             var json = $("#form_supply").serialize();
+			var purchase_submit_url = $(".purchase_submit_url").val();
             if ($(".supply_input").length > 0) {
                 if ($.trim($('#companyNameJs').val()) == '') {
                     alert('请输入公司名称');
@@ -620,7 +621,7 @@ var supplyCommodity = {
                 if ($.trim($(".textarea_content").val()) == '') {
                     alert('请输入供货内容')
                 } else {
-                    $.post(SITE_URL + 'purchaseView/supplySave' + "@v=" + $.now(), json, function(data) {
+                    $.post(purchase_submit_url, json, function(data) {
                         alert(data.msg);
                         that.toggleHide();
                     });
