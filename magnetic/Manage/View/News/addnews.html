@@ -16,7 +16,7 @@
 <form action="{:U('Manage/News/addnews_bgo')}" method="POST" enctype="multipart/form-data">
 <p>图片：<input type="file" name="newspicture"/><p>
 <p>分类：
-	<select name="" class="textbox" style="width:320px;height:30px;">
+	<select name="category" class="textbox" style="width:320px;height:30px;">
 		<option value="0">请选择分类</option>
 		<volist name="category" id="vo">
 			<option value="{$vo['categoryid']}">{$vo['categoryname']}</option>
