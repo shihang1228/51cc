@@ -22,9 +22,4 @@ class NewsModel extends BaseModel{
 		$rtnarray = array('total'=>$total,'rows'=>$result);
 		return $rtnarray;
 	}
-	
-	public function addnews_bgo(){
-		$this->assign('category',array('categoryid'=>1,'categoryname'=>'haha'));
-		$this->display();
-	}
 }
