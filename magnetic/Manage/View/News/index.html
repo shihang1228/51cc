@@ -12,7 +12,7 @@
 <body>
 <div id="loading" style="position: absolute; z-index: 1000; top: 0px; left: 0px; width: 100%; height: 100%; background: #000;opacity:0.8; text-align: center; padding-top: 20%;">正在加载中，请稍后</div>
 
-<table id="goodunit"></table>
+<table id="news"></table>
 
 <div id="goodunit_tool" style="padding:5px;">
 	<!-- <div class="toolsearch">
@@ -29,18 +29,6 @@
 		<a href="#" class="easyui-linkbutton btn-redo" iconCls="icon-redo" plain="true" onclick="">取消选择</a>		
 	</div>
 </div>
-<form id="goodunit_add" method="POST" style="margin:0;padding:5px 0 0 25px;color:#333;">
-	<table>
-		<tr>
-			<td>物品单位：</td>
-			<td><input type="text" name="unitname" class="textbox unitname">
-				<input type="hidden" value="" name="unitid" />
-			</td>
-		</tr>
-	</table>
-</form>
-
-<!-- <script type="text/javascript" src="__PUBLIC__/pc/js/companylist.js"></script> -->
 <script src="__PUBLIC__/manage/easyui/jquery.min.js"></script>
 <script src="__PUBLIC__/manage/easyui/jquery.easyui.min.js"></script>
 <script src="__PUBLIC__/manage/easyui/easyui-lang-zh_CN.js" ></script>
@@ -49,11 +37,13 @@
 	var PUBLIC = "__PUBLIC__";
   	var URL = "__URL__";
 	$(function(){
-		var col_array = [[{field : 'unitname',title : '物品单位',width : 50}
+		var col_array = [[{field : 'newspicture',title : '图片',width : 50},
+							{field : 'newstitle',title : '标题',width : 50},
+							{field : 'newsbrief',title : '摘要',width : 50},
+							{field : 'newscontent',title : '内容',width : 50},
+							{field : 'newspubdate',title : '时间',width : 50},
 						]];
-		public_datagrid('goodunit',col_array,'{:U("Manage/GoodsUnit/lists_bgo")}');
-		/*新增弹窗*/
-		addDialog('goodunit','add','新增/修改物品单位');
+		public_datagrid('news',col_array,'{:U("Manage/News/lists_bgd")}');
 		/*点击修改按钮*/
 		$("#goodunit_tool .btn-edit").on("click",function(){
 			manager_tool.edit('goodunit','{:U("Manage/GoodsUnit/edit")}?unitid=','unitid','','',editFunc);
@@ -83,15 +73,6 @@
 			e.preventDefault();
 			savePro('goodunit','add',"{:U('Manage/GoodsUnit/add')}");
 		})
-
-		/*校验*/
-        $('input[name="unitname"]').validatebox({
-			required : true,
-			validType : 'length[1,20]',
-			missingMessage : '请输入物品名称',
-			invalidMessage : '物品名称在 1-20 位',
-		});
-		
 	})
 function show(){
      $("#loading").fadeOut("normal", function(){
