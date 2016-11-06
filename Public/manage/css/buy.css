@@ -1,0 +1,38 @@
+body{
+	background-color:#ebebeb;
+	font-family:"微软雅黑";
+}
+.buy-content{
+	margin:20px;
+	background-color:#fff;
+}
+.title{
+	background-color:#ff4442;
+	color:#fff;
+	line-height:40px;
+	padding-left:20px;
+}
+.box{
+	width:70px;
+	line-height:40px;
+	border-radius:6px;
+	background-color:#ff4442;
+	color:#fff;
+	margin-left:20px;
+	margin-top:20px;
+	text-align:center;
+}
+.tbox{
+	margin-left:20px;
+	background-color:#f1f1f1;
+	line-height:35px;
+	margin-top:15px;
+	width:800px;
+}
+.tbox span{
+	margin-left:20px;
+}
+.time{
+	float:right;
+	margin-right:40px;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>物品单位管理</title>
+<meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/manage/easyui/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/manage/easyui/themes/default/combo.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/manage/easyui/themes/default/textbox.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/manage/easyui/themes/icon.css" />
+<link rel="stylesheet" href="__PUBLIC__/manage/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="__PUBLIC__/manage/css/public.css">
+
+<body>
+<div id="loading" style="position: absolute; z-index: 1000; top: 0px; left: 0px; width: 100%; height: 100%; background: #000;opacity:0.8; text-align: center; padding-top: 20%;">正在加载中，请稍后</div>
+
+<table id="goodunit"></table>
+
+<div id="goodunit_tool" style="padding:5px;">
+	<!-- <div class="toolsearch">
+		查询帐号：<input type="text" class="textbox" name="user" style="width:110px">
+		创建时间从：<input type="text" name="date_from" class="easyui-datebox" editable="false" style="width:110px">
+		到：<input type="text" name="date_to" class="easyui-datebox" editable="false" style="width:110px">
+		<a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="obj.search();">查询</a>
+	</div> -->
+	<div class="toolbar">
+		<a href="#" class="easyui-linkbutton btn-add" iconCls="icon-add-new" plain="true">添加</a>
+		<a href="#" class="easyui-linkbutton btn-edit" iconCls="icon-edit-new" plain="true">修改</a>
+		<a href="#" class="easyui-linkbutton btn-remove" iconCls="icon-delete-new" plain="true" onclick="">删除</a>
+		<a href="#" class="easyui-linkbutton btn-refresh" iconCls="icon-reload" plain="true">刷新</a>
+		<a href="#" class="easyui-linkbutton btn-redo" iconCls="icon-redo" plain="true" onclick="">取消选择</a>		
+	</div>
+</div>
+<form id="goodunit_add" method="POST" style="margin:0;padding:5px 0 0 25px;color:#333;">
+	<table>
+		<tr>
+			<td>物品单位：</td>
+			<td><input type="text" name="unitname" class="textbox unitname">
+				<input type="hidden" value="" name="unitid" />
+			</td>
+		</tr>
+	</table>
+</form>
+
+<!-- <script type="text/javascript" src="__PUBLIC__/pc/js/companylist.js"></script> -->
+<script src="__PUBLIC__/manage/easyui/jquery.min.js"></script>
+<script src="__PUBLIC__/manage/easyui/jquery.easyui.min.js"></script>
+<script src="__PUBLIC__/manage/easyui/easyui-lang-zh_CN.js" ></script>
+<script type="text/javascript" src="__PUBLIC__/manage/js/public.js" ></script>
+<script>
+	var PUBLIC = "__PUBLIC__";
+  	var URL = "__URL__";
+	$(function(){
+		var col_array = [[{field : 'unitname',title : '物品单位',width : 50}
+						]];
+		public_datagrid('goodunit',col_array,'{:U("Manage/GoodsUnit/lists_bgo")}');
+		/*新增弹窗*/
+		addDialog('goodunit','add','新增/修改物品单位');
+		/*点击修改按钮*/
+		$("#goodunit_tool .btn-edit").on("click",function(){
+			manager_tool.edit('goodunit','{:U("Manage/GoodsUnit/edit")}?unitid=','unitid','','',editFunc);
+		})
+		/*点击删除按钮*/
+		$("#goodunit_tool .btn-remove").on("click",function(){
+			manager_tool.remove('goodunit','{:U("Manage/GoodsUnit/delete")}','unitid');
+		})
+		/*点击新增按钮*/
+	    $("#goodunit_tool .btn-add").on("click",function(){
+	        manager_tool.add('goodunit','新增/修改物品单位');
+	    })
+	    /*点击刷新按钮*/
+	    $("#goodunit_tool .btn-refresh").on("click",function(){
+	        manager_tool.reload('goodunit');
+	    })
+	    /*点击取消选择按钮*/
+	    $("#goodunit_tool .btn-redo").on("click",function(){
+	        manager_tool.redo('goodunit');
+	    })
+		/*点击修改额外执行的方法*/
+		function editFunc(provice,city){
+			
+		}
+		/*新增和修改点击提交的方法*/
+		$("#btnsubmit_goodunit_add").on("click",function(e){
+			e.preventDefault();
+			savePro('goodunit','add',"{:U('Manage/GoodsUnit/add')}");
+		})
+
+		/*校验*/
+        $('input[name="unitname"]').validatebox({
+			required : true,
+			validType : 'length[1,20]',
+			missingMessage : '请输入物品名称',
+			invalidMessage : '物品名称在 1-20 位',
+		});
+		
+	})
+function show(){
+     $("#loading").fadeOut("normal", function(){
+         $(this).remove();
+     });
+ }    
+ var delayTime;
+ $.parser.onComplete = function(){
+     if(delayTime) 
+         clearTimeout(delayTime);
+     delayTime = setTimeout(show,500);
+ }
+</script>
+</body>
+</html>

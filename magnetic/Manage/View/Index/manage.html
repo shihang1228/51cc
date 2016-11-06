@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>后台管理系统</title>
+<meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/manage/easyui/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/manage/easyui/themes/default/combo.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/manage/easyui/themes/default/textbox.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/manage/easyui/themes/icon.css" />
+<link rel="stylesheet" href="__PUBLIC__/manage/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="__PUBLIC__/manage/css/public.css">
+</head>
+<body class="easyui-layout">
+<!--头部-->
+<div data-options="region:'north',title:'header',split:true,noheader:true" class="header-north">
+    <div class="logo"><img src="__PUBLIC__/manage/images/logo.png" alt="logo" width="38" height="38" class="logoimg"><img src="__PUBLIC__/manage/images/name.png" alt=""></div>
+    <div class="logout">
+        <p>{:date('Y-m-d').' 星期'.mb_substr('日一二三四五六',date('w'),1)}</p>
+        <ul class="log-items">
+            <li><a href=""><i class="iconfont">&#x3146;</i>系统管理</a></li>
+            <li><a href=""><i class="iconfont">&#x3104;</i>用户管理</a></li>
+            <li><a href=""><i class="iconfont">&#x3134;</i>帮助</a></li>
+            <li><a href=""><i class="iconfont">&#x3112;</i>修改密码</a></li>
+            <li><a href="{:U('Home/Index/index')}"><i class="iconfont">&#x3156;</i>返回首页</a></li>
+        </ul>
+    </div>
+</div>
+<!--左侧导航-->      
+<div  class="leftnav" data-options="region:'west',title:'导航',split:true" style="width:190px;padding:0px;color:#f63;">
+    <div class="easyui-accordion accordion leftnav" fit="true" border="false" style="width:163px;" id="leftnav">
+		
+		<div title="系统管理"  icon="" style="overflow:auto;width: 163px;">
+			<ul class="ul_list" id="nav">
+				<li>
+					<div><a href="{:U('Manage/DataAnalyse/buy')}" target="mainFrame"><span class="" ></span>浏览轨迹</a></div>
+				</li>
+                <li>
+                    <div><a href="{:U('Manage/DataAnalyse/marketdetail')}" target="mainFrame"><span class="" ></span>供应详情页</a></div>
+                </li>
+                <li>
+                    <div><a href="{:U('Manage/DataAnalyse/personal')}" target="mainFrame"><span class="" ></span>个人信息</a></div>
+                </li>
+			</ul>
+		</div>
+		
+		
+    </div>
+</div>  
+<!--右侧内容--> 
+<div data-options="region:'center'" style="overflow:hidden;">
+    <div id="tabs">
+        <div title="起始页" iconCls="icon-house" style="padding:0 10px;display:block;background:#ebebed;">
+            <!--订单及库存 start-->
+            <div class="manage-public">
+                <p class="manage-public-title">
+                    <i class="iconfont color-2ab">&#x3105;</i>
+                    <span>订单及库存</span>
+                </p>
+                <div class="manage-public-content">
+                    <div class="m-order-filter">
+                        <ul class="taber">
+                            <li class="actived">本日</li>
+                            <li>本周</li>
+                            <li>本月</li>
+                        </ul>
+                        <p>
+                            <span><i class="color-block bg-1"></i>单日已完成量</span>
+                            <span><i class="color-block bg-3"></i>单日总任务量</span>
+                            <span><i class="color-block bg-2"></i>单日已出货物量</span>
+                            <span><i class="color-block bg-4"></i>单日剩余库存</span>
+                        </p>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="manage-public-calendarlist">
+                        <!--本日 start-->
+                        <div class="taber-div">
+                            <table class="calendar-item" border="1">
+                                <thead>
+                                    <tr>
+                                        <td colspan="2"><i class="iconfont">&#x3120;</i>{$daily['taskday']}</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="{:U('Home/Lease/lists')}?statusid=7&date_start={$daily['taskday']}" class="color-1" data-text="单日已完成量">{$daily['taskover']}</a></td>
+                                        <td><a href="{:U('Home/Lease/dailygoodsout')}?date_query={$daily['taskday']}" class="color-2" data-text="单日已出货物量">{$daily['goodsout']}</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="{:U('Home/Lease/lists')}?date_start={$daily['taskday']}" class="color-3" data-text="单日总任务量">{$daily['taskcount']}</a></td>
+                                        <td><a href="{:U('Home/Lease/dailystock')}?date_query={$daily['taskday']}" class="color-4" data-text="单日剩余库存">{$daily['goodskeep']}</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="clear"></div>
+                        </div>
+                        <!--本日 end-->
+                        <!--本周 start-->
+                        <div class="taber-div hide">
+                            <volist id="vo" name="week">
+                            <table class="calendar-item" border="1">
+                                <thead>
+                                    <tr>
+                                        <td colspan="2"><i class="iconfont">&#x3120;</i>{$vo['taskday']}</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="{:U('Home/Lease/lists')}?statusid=7&date_start={$vo['taskday']}" class="color-1" data-text="单日已完成量">{$vo['taskover']}</a></td>
+                                        <td><a href="{:U('Home/Lease/dailygoodsout')}?date_query={$vo['taskday']}" class="color-2" data-text="单日总任务量">{$vo['goodsout']}</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="{:U('Home/Lease/lists')}?date_start={$vo['taskday']}" class="color-3" data-text="单日总任务量">{$vo['taskcount']}</a></td>
+                                        <td><a href="{:U('Home/Lease/dailystock')}?date_query={$vo['taskday']}" class="color-4" data-text="单日剩余库存">{$vo['goodskeep']}</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </volist>
+                            <div class="clear"></div>
+                        </div>
+                        <!--本周 end-->
+                        <!--本月 start-->
+                        <div class="taber-div hide">
+                            <volist id="vo" name="month">
+                            <table class="calendar-item" border="1">
+                                <thead>
+                                    <tr>
+                                        <td colspan="2"><i class="iconfont">&#x3120;</i>{$vo['taskday']}</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="{:U('Home/Lease/lists')}?statusid=7&date_start={$vo['taskday']}" class="color-1" data-text="单日已完成量">{$vo['taskover']}</a></td>
+                                        <td><a href="{:U('Home/Lease/dailygoodsout')}?date_query={$vo['taskday']}" class="color-2" data-text="单日总任务量">{$vo['goodsout']}</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="{:U('Home/Lease/lists')}?date_start={$vo['taskday']}" class="color-3" data-text="单日总任务量">{$vo['taskcount']}</a></td>
+                                        <td><a href="{:U('Home/Lease/dailystock')}?date_query={$vo['taskday']}" class="color-4" data-text="单日剩余库存">{$vo['goodskeep']}</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </volist>
+                            <div class="clear"></div>
+                        </div>
+                        <!--本月 end-->
+                    </div>
+                </div>
+            </div>
+            <!--订单及库存 end-->
+
+            <!--财务管理 start-->
+            <div class="manage-public manage-bottom">
+                <p class="manage-public-title">
+                    <i class="iconfont color-2ab">&#x3108;</i>
+                    <span>财务管理</span>
+                </p>
+                <div class="manage-public-content manage-finance-item">
+                    <div class="manage-finance-left fl width-50 text-center">
+                        <input type="hidden" class="piedata" value='{$pie}' />
+                        <div id="container-pie"></div>
+                    </div>
+                    <div class="manage-finance-right fl width-50">
+                        <p>公司名称/联系人：{$piediag['companyname']}</p>
+                        <p>统计范围：{$piediag['date_start']}-{$piediag['date_end']}</p>
+                        <p>应收：{$piediag['total']}</p>
+                        <p>已收：{$piediag['income']}</p>
+                        <p>合计：{$piediag['total']}</p>
+                        <a href="{:U('Home/Finance/finance_mgr')}" class="btn-link-detail" data-text="财务汇总">查看详情</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <!--财务管理 end-->
+            <!--待办事项 start-->
+            <div class="manage-public manage-bottom">
+                <p class="manage-public-title">
+                    <i class="iconfont color-2ab">&#x3140;</i>
+                    <span>待办事项</span>
+                </p>
+                <div class="manage-public-content manage-finance-item">
+                    <ul class="dai-ul">
+                        <volist id="vo" name="todolist">
+                            <li>
+                                <if condition="$vo.ordertype eq 0">
+                                    <a href="{:U('Home/Order/lists')}?statusid={$vo['statusid']}" class="pr display-block" data-text="订单管理">
+                                    <else />
+                                    <a href="{:U('Home/Lease/lists')}?statusid={$vo['statusid']}" class="pr display-block" data-text="租赁管理">
+                                </if>
+                                <i class="iconfont icon-order">&#x3107;</i>{$vo['statusname']}订单
+                                <div class="dai-num">（<span class="color-1">{$vo['ordercounts']}</span>）</div>
+                                </a>
+                            </li>
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+            <!--待办事项 end-->
+        </div>
+    </div>
+		<div>
+		</div>
+	</div> 
+<!--底部-->
+<input type="hidden" value="{:U('Manage/Index/navigator_pc')}" id="input-nav" />
+<div data-options="region:'south',title:'footer',split:true,noheader:true" class="footer-south" style="color: #15428B;">
+    设备租赁管理系统
+</div> 
+<script src="__PUBLIC__/manage/easyui/jquery.min.js"></script>
+<script src="__PUBLIC__/manage/easyui/jquery.easyui.min.js"></script>
+<script src="__PUBLIC__/manage/easyui/easyui-lang-zh_CN.js" ></script>
+<script type="text/javascript" src="__PUBLIC__/manage/js/public.js" ></script>
+ <script>
+ var PUBLIC = '__PUBLIC__';
+ var URL = '__URL__';
+    $(function () {
+        InitLeftMenu();
+        /*左侧导航点击在右侧打开页面*/
+        $("#leftnav").on("click",".ul_list li div",function(e){
+            e.preventDefault();
+            var text = $(this).text();
+            var href = $(this).find("a").attr("href");
+            addTab(text,href);
+        })
+        /*财务查看详情*/
+        $(".manage-public a").on("click",function(e){
+            e.preventDefault();
+            var text = $(this).data("text");
+            var href = $(this).attr("href");
+            addTab(text,href);
+        })
+        $('#tabs').tabs({
+            fit : true,
+            cache:true,
+            iconCls:"icon-add",
+            border : false
+        });
+        $("#leftnav").on("click",".ul_list li",function(){
+            $(this).addClass("selected").siblings().removeClass("selected");
+        })
+        /*每月每周切换*/
+        $(".m-order-filter .taber").find("li").on("click",function(e){
+            e.preventDefault();
+            var index = $(this).index();
+            $(this).addClass("actived").siblings().removeClass("actived");
+            $(".manage-public-calendarlist .taber-div").eq(index).removeClass("hide").siblings().addClass('hide');
+        })
+    });
+
+ </script>
+</body>
+</html>

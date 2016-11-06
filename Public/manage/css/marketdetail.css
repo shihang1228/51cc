@@ -1,0 +1,89 @@
+ul{
+	padding: 0;
+	margin: 0;
+}
+.bodybox{
+	background-color: #ebebeb;
+}
+.market-content{
+	overflow:hidden;
+	margin: 10px;
+	font-family: "微软雅黑";
+	background-color: #fff;
+}
+.market-content-title{
+	line-height:40px;
+	font-size:14px; 
+	padding-left: 15px;
+	color:#fff;
+	background-color: #ff4442;
+	margin:0;
+}
+.market-detail{
+	overflow: hidden;
+	margin: 20px 30px;
+}
+.left-pic{
+	float: left;
+	width: 385px;
+}
+.market-picture img{
+	width: 340px;
+	height:230px;
+	display:none;
+}
+.right-info{
+	float: left;
+	font-size:16px;
+	letter-spacing:2px;
+}
+.left-pic ul{
+	overflow: hidden;
+	margin-top: 9px;
+}
+.left-pic ul li{
+	float: left;
+	margin-right: 7px;
+}
+.left-pic ul li img{
+	width:80px;
+	height:60px; 
+	display:block;
+	cursor: pointer;
+}
+.right-info ul div{
+	color:#ff4442;
+	margin-bottom: 25px;
+}
+.right-info span{
+	margin-right: 25px;
+}
+.right-info ul li{
+	color:#555;
+	margin-top: 17px; 
+}
+.right-info ul .time{
+	color: #02b7fe;
+	font-size:14px;
+	margin-top: 20px;
+}
+.market-explicit{
+	margin-top:35px; 
+	font-size:14px;
+	margin: 20px 30px;
+}
+.market-explicit-title{
+	color:#ff4442;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+table td{
+	height:30px;
+	color:#666;
+}
+.bg-color-f7{
+	background-color: #f7f7f7;
+}
+.bg-color-fc{
+	background-color: #fcfcfc;
+}

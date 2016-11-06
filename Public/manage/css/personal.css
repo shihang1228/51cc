@@ -1,0 +1,45 @@
+.bodybox{
+	background-color: #ebebeb;
+}
+.personal-content{
+	overflow:hidden;
+	margin: 10px;
+	font-family: "微软雅黑";
+	background-color: #fff;
+}
+.title{
+	line-height:40px;
+	font-size:14px; 
+	padding-left: 15px;
+	color:#fff;
+	background-color: #ff4442;
+	margin:0;
+}
+table td{
+	height:40px;
+	color:#666;
+	border:none;
+}
+.bg-color-f7{
+	background-color: #f7f7f7;
+}
+.bg-color-fc{
+	background-color: #fcfcfc;
+}
+.personal-row{
+	overflow:hidden;
+	padding-left: 45px;
+}
+.personal-row span{
+	float: left;
+	width: 80px;
+}
+.personal-row div{
+	float: left;
+	width: 320px;
+}
+.taber{
+	line-height: 40px;
+	font-size:14px;
+	color:#555;
+}
