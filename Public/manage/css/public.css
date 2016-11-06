@@ -80,7 +80,7 @@ table tr td{font-size:13px;font-family:"microsoft yahei";}
 .detail-all{width: 94%;line-height: 35px;text-align: center;border-spacing: 0;border: 1px solid #ccc;margin: 0 auto;}
 .detail-all thead tr{background:#dedede;}
 .detail-all tbody tr:nth-child(even){background:#dedede;}
-.btn-shenhe{padding: 9px 16px;background: #2ab7ff;color: #fff;text-decoration: none;border-radius: 3px;margin: 22px 10px 5px 10px;font-family: "microsoft yahei";display: inline-block;}
+.btn-shenhe{padding: 9px 16px;background: #2ab7ff;color: #fff;text-decoration: none;border-radius: 3px;margin: 22px 10px 5px 10px;font-family: "microsoft yahei";display: inline-block;border:0;}
 .color-ccc{background:#bfbfbf;}
 .text-center{text-align: center;}
 

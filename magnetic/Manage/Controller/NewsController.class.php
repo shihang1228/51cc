@@ -17,4 +17,7 @@ class NewsController extends Controller {
 		$ret = $tb->getList($page,$pageSize,$search);  //第一个参数需要传入用户id(登录者id)
 		$this->ajaxReturn($ret);
 	}
+	public function addnews(){
+		$this->display();
+	}
 }

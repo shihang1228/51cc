@@ -510,7 +510,7 @@ $().ready(function() {
 				var str = '';
 				str += '<form action="' + SITE_URL + '/purchaseView/supplySave" id="form_supply" method="post">';
 				str += '<input type="hidden" id="midJS" name="mid" value="' + mid + '"/>';
-				str += '<input type="hidden" id="purchase_idJS" name="purchase_id" value="' + purchase_id + '"/>';
+				str += '<input type="hidden" id="purchase_idJS" name="orderid" value="' + purchase_id + '"/>';
 				str += '<p class="supply_p1">采购内容： <span>' + info + '</span></p>';
 				str += '<p class="supply_p2">请在下方填写您的真实报价（价格必填），并对您的货物描述清楚。</p>';
 				str += '<p class="supply_p3">例如：ABS HP171 惠州中海油乐金 5吨 13450元 东莞市 东莞塑胶交易市场</p>';

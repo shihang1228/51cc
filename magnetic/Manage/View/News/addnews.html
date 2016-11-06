@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>发布资讯</title>
+<meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/manage/easyui/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/manage/easyui/themes/default/combo.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/manage/easyui/themes/default/textbox.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/manage/easyui/themes/icon.css" />
+<link rel="stylesheet" href="__PUBLIC__/manage/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="__PUBLIC__/manage/css/public.css">
+<style>
+	p{font-family:"microsoft yahei"}
+</style>
+<body>
+<form action="{:U('Manage/News/addnews_bgo')}" method="POST" enctype="multipart/form-data">
+<p>图片：<input type="file" name="newspicture"/><p>
+<p>分类：
+	<select name="" class="textbox" style="width:320px;height:30px;">
+		<option value="0">请选择分类</option>
+		<volist name="category" id="vo">
+			<option value="{$vo['categoryid']}">{$vo['categoryname']}</option>
+		</volist>
+	</select>
+<p>
+<p>标题：<input type="text" name="newstitle" placeholder="请输入标题" class="textbox" /><p>
+<p>摘要：<textarea placeholder="请输入摘要" name="newsbrief" col="10" class="textbox"></textarea><p>
+<!-- 加载编辑器的容器 -->
+<script id="container" name="newscontent" type="text/plain">
+	这里写你的初始化内容
+</script>
+<input type="submit" class="btn-shenhe" value="提交">
+</form>
+<script src="__PUBLIC__/manage/easyui/jquery.min.js"></script>
+<script src="__PUBLIC__/manage/easyui/jquery.easyui.min.js"></script>
+<script src="__PUBLIC__/manage/easyui/easyui-lang-zh_CN.js" ></script>
+<!--ueditor编辑器 start-->
+<!-- 配置文件 -->
+<script type="text/javascript" src="__PUBLIC__/manage/ueditor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="__PUBLIC__/manage/ueditor/ueditor.all.js"></script>
+<!-- 实例化编辑器 -->
+<script type="text/javascript">
+	var ue = UE.getEditor('container');
+</script>
+<!--ueditor编辑器 end-->
+</body>
+</html>
