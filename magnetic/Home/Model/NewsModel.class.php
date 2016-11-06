@@ -3,7 +3,7 @@ namespace Home\Model;
 use Think\Model;
 
 class NewsModel extends BaseModel{
-	public $tbname = 'news';
+	public $tbname = 'news_content';
 	// public $tablePrefix = '';
 	// public $connection = '';
 	
@@ -21,5 +21,10 @@ class NewsModel extends BaseModel{
 		if(!is_array($result)) $result = array();
 		$rtnarray = array('total'=>$total,'rows'=>$result);
 		return $rtnarray;
+	}
+	
+	public function addnews_bgo(){
+		$this->assign('category',array('categoryid'=>1,'categoryname'=>'haha'));
+		$this->display();
 	}
 }
