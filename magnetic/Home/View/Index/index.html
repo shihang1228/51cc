@@ -656,7 +656,7 @@ $(function(){
     <div id="new_onef" class="mar_t20 floor_flag">
     	<div class="new_onef_content">
         	<div class="new_f_title clearfix">
-            	<div class="f_title_bg lt"><span class="fcolor_1">1F</span><h2 class="f_title_text">聚乙烯 PE</h2></div>
+            	<div class="f_title_bg lt"><span class="fcolor_1">1F</span><h2 class="f_title_text">{$supplyF1[0]['varietyname']}</h2></div>
                 <div class="f_title_tab">
                 	<a class="selecd" href="javascript:void(0)">华南市场</a>
                     <a  href="javascript:void(0)">华东市场</a>
@@ -669,7 +669,7 @@ $(function(){
                         	最新<a href="purchaseView/list@name=PE" class="fcolor_1">采购信息</a>
                         </h4>
                         <ul class="content_text_list">
-                            <volist id="vo" name="purchase">
+                            <volist id="vo" name="purchaseF1">
                                 <li>
                                     <p class="sp_w85">
                                         <span class="sp1">{$vo['varietyname']} &nbsp;{$vo['gradename']}</span>
@@ -681,7 +681,7 @@ $(function(){
                             </volist>
                         </ul>  
                         <ul class="content_text_list" style="display:none;">
-                            <volist id="vo" name="purchase">
+                            <volist id="vo" name="purchaseF1">
                                 <li>
                                     <p class="sp_w85">
                                         <span class="sp1">{$vo['varietyname']} &nbsp;{$vo['gradename']}</span>
@@ -710,7 +710,7 @@ $(function(){
                                     <td class="td_w85">交货时间</td>
                                     <td class="td_w65">更新时间 </td>
                                 </tr>
-                                <volist id="vo" name="supply">
+                                <volist id="vo" name="supplyF1">
                                     <tr class="tr_37 open_link" data-cate="{$vo['varietyname']}" data-material="{$vo['gradename']}" data-manufacturer="{$vo['factoryname']}">
                                         <td class="td_w90"><span class="pz">{$vo['varietyname']}</span></td>
                                         <td class="td_w85"><span class="ph">{$vo['gradename']}</span></td>
@@ -743,7 +743,7 @@ $(function(){
                                     <td class="td_w85">交货时间</td>
                                     <td class="td_w65">更新时间 </td>
                                 </tr>
-                                    <volist id="vo" name="supply">
+                                    <volist id="vo" name="supplyF1">
                                     <tr class="tr_37 open_link" data-cate="{$vo['varietyname']}" data-material="{$vo['gradename']}" data-manufacturer="{$vo['factoryname']}">
                                         <td class="td_w90"><span class="pz">{$vo['varietyname']}</span></td>
                                         <td class="td_w85"><span class="ph">{$vo['gradename']}</span></td>
@@ -857,7 +857,7 @@ $(function(){
 	<div id="new_twof" class="mar_t20 floor_flag">
 		<div class="new_twof_content">
 	    	<div class="new_f_title clearfix">
-            	<div class="f_title_bg f_two_bg lt"><span class="fcolor_4">2F</span><h2 class="f_title_text">聚丙烯 PP</h2></div>
+            	<div class="f_title_bg f_two_bg lt"><span class="fcolor_4">2F</span><h2 class="f_title_text">{$supplyF2[0]['varietyname']}</h2></div>
                 <div class="f_title_tab">
                 	<a class="selecd two_selecd" href="javascript:void(0)">华南市场</a>
                     <a class="two_noselecd" href="javascript:void(0)">华东市场</a>
@@ -870,121 +870,29 @@ $(function(){
 							最新<a href="purchaseView/list@name=PP" class="fcolor_4">采购信息</a>
 						</h4>
                         <ul class="content_text_list">
-		                            <li>
-		                            	<p class="sp_w85">
-		                                    <span class="sp1">PP &nbsp;S1003</span>
-		                                    <span class="sp2">宁夏宝丰 &nbsp;200吨</span>
-	                                	</p>
-		                                <p class="sp_w63">￥8200</p>
-		                                <p class="sp_w60"><a href="javascript:void(0);" class="two_a supply_button" data-id="231210">我要供货</a></p>
-		                            </li>
-		                            <li>
-		                            	<p class="sp_w85">
-		                                    <span class="sp1">PP &nbsp;S1003</span>
-		                                    <span class="sp2">中石化茂名 &nbsp;15吨</span>
-	                                	</p>
-		                                <p class="sp_w63">￥8320</p>
-		                                <p class="sp_w60"><a href="javascript:void(0);" class="two_a supply_button" data-id="231195">我要供货</a></p>
-		                            </li>
-		                            <li>
-		                            	<p class="sp_w85">
-		                                    <span class="sp1">PP &nbsp;K8003</span>
-		                                    <span class="sp2">中石化茂名 &nbsp;20吨</span>
-	                                	</p>
-		                                <p class="sp_w63">￥8100</p>
-		                                <p class="sp_w60"><a href="javascript:void(0);" class="two_a supply_button" data-id="231189">我要供货</a></p>
-		                            </li>
-		                            <li>
-		                            	<p class="sp_w85">
-		                                    <span class="sp1">PP &nbsp;PPH-T03</span>
-		                                    <span class="sp2">中石化茂名 &nbsp;10吨</span>
-	                                	</p>
-		                                <p class="sp_w63">￥8200</p>
-		                                <p class="sp_w60"><a href="javascript:void(0);" class="two_a supply_button" data-id="231188">我要供货</a></p>
-		                            </li>
-		                            <li>
-		                            	<p class="sp_w85">
-		                                    <span class="sp1">PP &nbsp;PPB-M09</span>
-		                                    <span class="sp2">中石化茂名 &nbsp;10吨</span>
-	                                	</p>
-		                                <p class="sp_w63">￥8450</p>
-		                                <p class="sp_w60"><a href="javascript:void(0);" class="two_a supply_button" data-id="231184">我要供货</a></p>
-		                            </li>
-		                            <li>
-		                            	<p class="sp_w85">
-		                                    <span class="sp1">PP &nbsp;T30S</span>
-		                                    <span class="sp2">延炼 &nbsp;10吨</span>
-	                                	</p>
-		                                <p class="sp_w63">￥8200</p>
-		                                <p class="sp_w60"><a href="javascript:void(0);" class="two_a supply_button" data-id="231176">我要供货</a></p>
-		                            </li>
-		                            <li>
-		                            	<p class="sp_w85">
-		                                    <span class="sp1">PP &nbsp;S1003</span>
-		                                    <span class="sp2">中石化茂名 &nbsp;10吨</span>
-	                                	</p>
-		                                <p class="sp_w63">￥8230</p>
-		                                <p class="sp_w60"><a href="javascript:void(0);" class="two_a supply_button" data-id="231138">我要供货</a></p>
-		                            </li>
+		                    <volist id="vo" name="purchaseF2">
+								<li>
+									<p class="sp_w85">
+										<span class="sp1">{$vo['varietyname']} &nbsp;{$vo['gradename']}</span>
+										<span class="sp2">{$vo['factoryname']} &nbsp;{$vo['quantity']}{$vo['unitname']}</span>
+									</p>
+									<p class="sp_w63">￥{$vo['unitprice']}</p>
+									<p class="sp_w60"><a href="javascript:void(0);" class="supply_button" data-id="{$vo['orderid']}_{$vo['detailid']}">我要供货</a></p>
+								</li> 
+							</volist>
                         </ul>
                         
                         <ul class="content_text_list" style="display:none;">
-	                            <li>
-	                                <p class="sp_w85">
-	                                    <span class="sp1">PP &nbsp;T30S</span>
-	                                    <span class="sp2">宁波禾元化学  200吨</span>
-	                                </p>
-	                                <p class="sp_w63">￥8000</p>
-	                                <p class="sp_w60"><a href="javascript:void(0);" class="two_a supply_button" data-id="231166">我要供货</a></p>
-	                            </li>
-	                            <li>
-	                                <p class="sp_w85">
-	                                    <span class="sp1">PP &nbsp;K8303</span>
-	                                    <span class="sp2">中石化燕山  10吨</span>
-	                                </p>
-	                                <p class="sp_w63">￥10250</p>
-	                                <p class="sp_w60"><a href="javascript:void(0);" class="two_a supply_button" data-id="231124">我要供货</a></p>
-	                            </li>
-	                            <li>
-	                                <p class="sp_w85">
-	                                    <span class="sp1">PP &nbsp;1120</span>
-	                                    <span class="sp2">宁波台塑  20吨</span>
-	                                </p>
-	                                <p class="sp_w63">￥8850</p>
-	                                <p class="sp_w60"><a href="javascript:void(0);" class="two_a supply_button" data-id="231121">我要供货</a></p>
-	                            </li>
-	                            <li>
-	                                <p class="sp_w85">
-	                                    <span class="sp1">PP &nbsp;L5E89</span>
-	                                    <span class="sp2">中煤  100吨</span>
-	                                </p>
-	                                <p class="sp_w63">￥8100</p>
-	                                <p class="sp_w60"><a href="javascript:void(0);" class="two_a supply_button" data-id="231098">我要供货</a></p>
-	                            </li>
-	                            <li>
-	                                <p class="sp_w85">
-	                                    <span class="sp1">PP &nbsp;S1003</span>
-	                                    <span class="sp2">宁夏宝丰  100吨</span>
-	                                </p>
-	                                <p class="sp_w63">￥8100</p>
-	                                <p class="sp_w60"><a href="javascript:void(0);" class="two_a supply_button" data-id="231096">我要供货</a></p>
-	                            </li>
-	                            <li>
-	                                <p class="sp_w85">
-	                                    <span class="sp1">PP &nbsp;T30S</span>
-	                                    <span class="sp2">宁波禾元化学  100吨</span>
-	                                </p>
-	                                <p class="sp_w63">￥8120</p>
-	                                <p class="sp_w60"><a href="javascript:void(0);" class="two_a supply_button" data-id="231095">我要供货</a></p>
-	                            </li>
-	                            <li>
-	                                <p class="sp_w85">
-	                                    <span class="sp1">PP &nbsp;T30S</span>
-	                                    <span class="sp2">浙江三圆石化  30吨</span>
-	                                </p>
-	                                <p class="sp_w63">￥8100</p>
-	                                <p class="sp_w60"><a href="javascript:void(0);" class="two_a supply_button" data-id="230917">我要供货</a></p>
-	                            </li>
+	                        <volist id="vo" name="purchaseF2">
+								<li>
+									<p class="sp_w85">
+										<span class="sp1">{$vo['varietyname']} &nbsp;{$vo['gradename']}</span>
+										<span class="sp2">{$vo['factoryname']} &nbsp;{$vo['quantity']}{$vo['unitname']}</span>
+									</p>
+									<p class="sp_w63">￥{$vo['unitprice']}</p>
+									<p class="sp_w60"><a href="javascript:void(0);" class="supply_button" data-id="{$vo['orderid']}_{$vo['detailid']}">我要供货</a></p>
+								</li> 
+							</volist>
                         </ul>
                     
                     </div>
@@ -1004,76 +912,18 @@ $(function(){
                                     <td class="td_w85">交货时间</td>
                                     <td class="td_w65">更新时间 </td>
                                 </tr>
-                                    <tr class="tr_37 open_link" data-cate="PP" data-material="PPH-T03" data-manufacturer="中石化北海">
-                                        <td class="td_w90"><span class="pz">PP</span></td>
-                                        <td class="td_w85"><span class="ph">PPH-T03</span></td>
-                                        <td class="td_w125"><span class="cj">中石化北海</span></td>
-                                        <td class="fcolor_1 td_w85">￥8200</td>
-                                        <td class=" td_w85">10</td>
-                                        <td class="td_w90">东莞</td>
-                                        <td class="td_w85">现货</td>
-                                        <td class="td_w65">5小时前</td>
-                                    </tr>
-                                    <tr class="tr_37 open_link" data-cate="PP" data-material="T30S" data-manufacturer="中石化湛江东兴">
-                                        <td class="td_w90"><span class="pz">PP</span></td>
-                                        <td class="td_w85"><span class="ph">T30S</span></td>
-                                        <td class="td_w125"><span class="cj">中石化湛江东兴</span></td>
-                                        <td class="fcolor_1 td_w85">￥8200</td>
-                                        <td class=" td_w85">20</td>
-                                        <td class="td_w90">东莞</td>
-                                        <td class="td_w85">现货</td>
-                                        <td class="td_w65">5小时前</td>
-                                    </tr>
-                                    <tr class="tr_37 open_link" data-cate="PP" data-material="PPM-T03" data-manufacturer="中石化湛江东兴">
-                                        <td class="td_w90"><span class="pz">PP</span></td>
-                                        <td class="td_w85"><span class="ph">PPM-T03</span></td>
-                                        <td class="td_w125"><span class="cj">中石化湛江东兴</span></td>
-                                        <td class="fcolor_1 td_w85">￥8200</td>
-                                        <td class=" td_w85">20</td>
-                                        <td class="td_w90">东莞</td>
-                                        <td class="td_w85">现货</td>
-                                        <td class="td_w65">5小时前</td>
-                                    </tr>
-                                    <tr class="tr_37 open_link" data-cate="PP" data-material="PPH-T03" data-manufacturer="中石化湛江东兴">
-                                        <td class="td_w90"><span class="pz">PP</span></td>
-                                        <td class="td_w85"><span class="ph">PPH-T03</span></td>
-                                        <td class="td_w125"><span class="cj">中石化湛江东兴</span></td>
-                                        <td class="fcolor_1 td_w85">￥8200</td>
-                                        <td class=" td_w85">20</td>
-                                        <td class="td_w90">东莞</td>
-                                        <td class="td_w85">现货</td>
-                                        <td class="td_w65">5小时前</td>
-                                    </tr>
-                                    <tr class="tr_37 open_link" data-cate="PP" data-material="J801" data-manufacturer="韩国晓星">
-                                        <td class="td_w90"><span class="pz">PP</span></td>
-                                        <td class="td_w85"><span class="ph">J801</span></td>
-                                        <td class="td_w125"><span class="cj">韩国晓星</span></td>
-                                        <td class="fcolor_1 td_w85">￥9700</td>
-                                        <td class=" td_w85">10</td>
-                                        <td class="td_w90">东莞</td>
-                                        <td class="td_w85">现货</td>
-                                        <td class="td_w65">5小时前</td>
-                                    </tr>
-                                    <tr class="tr_37 open_link" data-cate="PP" data-material="K8003" data-manufacturer="中石油独山子">
-                                        <td class="td_w90"><span class="pz">PP</span></td>
-                                        <td class="td_w85"><span class="ph">K8003</span></td>
-                                        <td class="td_w125"><span class="cj">中石油独山子</span></td>
-                                        <td class="fcolor_1 td_w85">￥8200</td>
-                                        <td class=" td_w85">10</td>
-                                        <td class="td_w90">东莞</td>
-                                        <td class="td_w85">现货</td>
-                                        <td class="td_w65">5小时前</td>
-                                    </tr>
-                                    <tr class="tr_37 open_link" data-cate="PP" data-material="V30G" data-manufacturer="中石化湛江东兴">
-                                        <td class="td_w90"><span class="pz">PP</span></td>
-                                        <td class="td_w85"><span class="ph">V30G</span></td>
-                                        <td class="td_w125"><span class="cj">中石化湛江东兴</span></td>
-                                        <td class="fcolor_1 td_w85">￥8200</td>
-                                        <td class=" td_w85">10</td>
-                                        <td class="td_w90">东莞</td>
-                                        <td class="td_w85">现货</td>
-                                        <td class="td_w65">5小时前</td>
-                                    </tr>
+                                <volist id="vo" name="supplyF2">
+									<tr class="tr_37 open_link" data-cate="{$vo['varietyname']}" data-material="{$vo['gradename']}" data-manufacturer="{$vo['factoryname']}">
+										<td class="td_w90"><span class="pz">{$vo['varietyname']}</span></td>
+										<td class="td_w85"><span class="ph">{$vo['gradename']}</span></td>
+										<td class="td_w125"><span class="cj">{$vo['factoryname']}</span></td>
+										<td class="fcolor_1 td_w85">￥{$vo['unitprice']}</td>
+										<td class=" td_w85">{$vo['quantity']}</td>
+										<td class="td_w90">{$vo['deliveryplace']}</td>
+										<td class="td_w85">现货</td>
+										<td class="td_w65">{$vo['updatetime_d']}</td>
+									</tr>
+								</volist>
                             </table>
                         </div>
                     </div>
@@ -1094,76 +944,18 @@ $(function(){
                                     <td class="td_w85">交货时间</td>
                                     <td class="td_w65">更新时间 </td>
                                 </tr>
-	                                    <tr class="tr_37 open_link" data-cate="PP" data-material="5250T" data-manufacturer="台塑">
-	                                        <td class="td_w90"><span class="pz">PP</span></td>
-	                                        <td class="td_w85"><span class="ph">5250T</span></td>
-	                                        <td class="td_w125"><span class="cj">台塑</span></td>
-                                         	<td class="fcolor_1 td_w85">￥11000</td>
-                                        	<td class="td_w85">24</td>
-                                        	<td class="td_w90">华南华东配送</td>
-                                        	<td class="td_w85">现货</td>
-                                        	<td class="td_w65">7小时前</td>
-	                                    </tr>
-	                                    <tr class="tr_37 open_link" data-cate="PP" data-material="H4540" data-manufacturer="韩国现代">
-	                                        <td class="td_w90"><span class="pz">PP</span></td>
-	                                        <td class="td_w85"><span class="ph">H4540</span></td>
-	                                        <td class="td_w125"><span class="cj">韩国现代</span></td>
-                                         	<td class="fcolor_1 td_w85">￥9600</td>
-                                        	<td class="td_w85">24</td>
-                                        	<td class="td_w90">华南华东配送</td>
-                                        	<td class="td_w85">现货</td>
-                                        	<td class="td_w65">7小时前</td>
-	                                    </tr>
-	                                    <tr class="tr_37 open_link" data-cate="PP" data-material="H730F" data-manufacturer="韩国SK">
-	                                        <td class="td_w90"><span class="pz">PP</span></td>
-	                                        <td class="td_w85"><span class="ph">H730F</span></td>
-	                                        <td class="td_w125"><span class="cj">韩国SK</span></td>
-                                         	<td class="fcolor_1 td_w85">￥10700</td>
-                                        	<td class="td_w85">24</td>
-                                        	<td class="td_w90">华南华东配送</td>
-                                        	<td class="td_w85">现货</td>
-                                        	<td class="td_w65">7小时前</td>
-	                                    </tr>
-	                                    <tr class="tr_37 open_link" data-cate="PP" data-material="H870F" data-manufacturer="韩国SK">
-	                                        <td class="td_w90"><span class="pz">PP</span></td>
-	                                        <td class="td_w85"><span class="ph">H870F</span></td>
-	                                        <td class="td_w125"><span class="cj">韩国SK</span></td>
-                                         	<td class="fcolor_1 td_w85">￥10400</td>
-                                        	<td class="td_w85">25</td>
-                                        	<td class="td_w90">华南华东配送</td>
-                                        	<td class="td_w85">现货</td>
-                                        	<td class="td_w65">7小时前</td>
-	                                    </tr>
-	                                    <tr class="tr_37 open_link" data-cate="PP" data-material="1005" data-manufacturer="台湾永嘉">
-	                                        <td class="td_w90"><span class="pz">PP</span></td>
-	                                        <td class="td_w85"><span class="ph">1005</span></td>
-	                                        <td class="td_w125"><span class="cj">台湾永嘉</span></td>
-                                         	<td class="fcolor_1 td_w85">￥9000</td>
-                                        	<td class="td_w85">25</td>
-                                        	<td class="td_w90">华南华东配送</td>
-                                        	<td class="td_w85">现货</td>
-                                        	<td class="td_w65">7小时前</td>
-	                                    </tr>
-	                                    <tr class="tr_37 open_link" data-cate="PP" data-material="1040" data-manufacturer="台湾台塑">
-	                                        <td class="td_w90"><span class="pz">PP</span></td>
-	                                        <td class="td_w85"><span class="ph">1040</span></td>
-	                                        <td class="td_w125"><span class="cj">台湾台塑</span></td>
-                                         	<td class="fcolor_1 td_w85">￥9670</td>
-                                        	<td class="td_w85">31</td>
-                                        	<td class="td_w90">华南华东配送</td>
-                                        	<td class="td_w85">现货</td>
-                                        	<td class="td_w65">7小时前</td>
-	                                    </tr>
-	                                    <tr class="tr_37 open_link" data-cate="PP" data-material="1120D" data-manufacturer="台湾永嘉">
-	                                        <td class="td_w90"><span class="pz">PP</span></td>
-	                                        <td class="td_w85"><span class="ph">1120D</span></td>
-	                                        <td class="td_w125"><span class="cj">台湾永嘉</span></td>
-                                         	<td class="fcolor_1 td_w85">￥9200</td>
-                                        	<td class="td_w85">30</td>
-                                        	<td class="td_w90">华南华东配送</td>
-                                        	<td class="td_w85">现货</td>
-                                        	<td class="td_w65">7小时前</td>
-	                                    </tr>
+	                                <volist id="vo" name="supplyF2">
+									<tr class="tr_37 open_link" data-cate="{$vo['varietyname']}" data-material="{$vo['gradename']}" data-manufacturer="{$vo['factoryname']}">
+										<td class="td_w90"><span class="pz">{$vo['varietyname']}</span></td>
+										<td class="td_w85"><span class="ph">{$vo['gradename']}</span></td>
+										<td class="td_w125"><span class="cj">{$vo['factoryname']}</span></td>
+										<td class="fcolor_1 td_w85">￥{$vo['unitprice']}</td>
+										<td class=" td_w85">{$vo['quantity']}</td>
+										<td class="td_w90">{$vo['deliveryplace']}</td>
+										<td class="td_w85">现货</td>
+										<td class="td_w65">{$vo['updatetime_d']}</td>
+									</tr>
+								</volist>
                             </table>
                         </div>
                     </div>
@@ -1268,7 +1060,7 @@ $(function(){
 	<div id="new_threef" class="mar_t20 floor_flag">
 		<div class="new_threef_content">
     		<div class="new_f_title clearfix">
-            	<div class="f_title_bg f_three_bg lt"><span class="fcolor_5">3F</span><h2 class="f_title_text">聚氯乙烯 PVC</h2></div>
+            	<div class="f_title_bg f_three_bg lt"><span class="fcolor_5">3F</span><h2 class="f_title_text">{$supplyF3[0]['varietyname']}</h2></div>
                 <div class="f_title_tab">
                 	<a class="selecd three_selecd" href="javascript:void(0)">华南市场</a>
                     <a class="three_noselecd" href="javascript:void(0)">华东市场</a>
@@ -1281,120 +1073,28 @@ $(function(){
                         	最新<a href="purchaseView/list@name=PVC" class="fcolor_5">采购信息</a>
                         </h4>
                         <ul class="content_text_list">
-		                            <li>
-		                            	<p class="sp_w85">
-		                                    <span class="sp1">PVC &nbsp;SG-5</span>
-		                                    <span class="sp2">新疆圣雄能源 &nbsp;30吨</span>
-	                                	</p>
-		                                <p class="sp_w63">￥5550</p>
-		                                <p class="sp_w60"><a href="javascript:void(0);" class="three_a supply_button" data-id="231206">我要供货</a></p>
-		                            </li>
-		                            <li>
-		                            	<p class="sp_w85">
-		                                    <span class="sp1">PVC &nbsp;SG-5</span>
-		                                    <span class="sp2">新疆中泰 &nbsp;30吨</span>
-	                                	</p>
-		                                <p class="sp_w63">￥6060</p>
-		                                <p class="sp_w60"><a href="javascript:void(0);" class="three_a supply_button" data-id="231203">我要供货</a></p>
-		                            </li>
-		                            <li>
-		                            	<p class="sp_w85">
-		                                    <span class="sp1">PVC &nbsp;SG-5</span>
-		                                    <span class="sp2">内蒙天湖 &nbsp;28.25吨</span>
-	                                	</p>
-		                                <p class="sp_w63">￥6080</p>
-		                                <p class="sp_w60"><a href="javascript:void(0);" class="three_a supply_button" data-id="231202">我要供货</a></p>
-		                            </li>
-		                            <li>
-		                            	<p class="sp_w85">
-		                                    <span class="sp1">PVC &nbsp;SG-8</span>
-		                                    <span class="sp2">新疆天辰 &nbsp;15吨</span>
-	                                	</p>
-		                                <p class="sp_w63">￥6200</p>
-		                                <p class="sp_w60"><a href="javascript:void(0);" class="three_a supply_button" data-id="231183">我要供货</a></p>
-		                            </li>
-		                            <li>
-		                            	<p class="sp_w85">
-		                                    <span class="sp1">PVC &nbsp;SG-5</span>
-		                                    <span class="sp2">新疆中泰 &nbsp;30吨</span>
-	                                	</p>
-		                                <p class="sp_w63">￥6080</p>
-		                                <p class="sp_w60"><a href="javascript:void(0);" class="three_a supply_button" data-id="231182">我要供货</a></p>
-		                            </li>
-		                            <li>
-		                            	<p class="sp_w85">
-		                                    <span class="sp1">PVC &nbsp;SG-5</span>
-		                                    <span class="sp2">新疆圣雄能源 &nbsp;30吨</span>
-	                                	</p>
-		                                <p class="sp_w63">￥6000</p>
-		                                <p class="sp_w60"><a href="javascript:void(0);" class="three_a supply_button" data-id="231180">我要供货</a></p>
-		                            </li>
-		                            <li>
-		                            	<p class="sp_w85">
-		                                    <span class="sp1">PVC &nbsp;SG-5</span>
-		                                    <span class="sp2">新疆圣雄能源 &nbsp;30吨</span>
-	                                	</p>
-		                                <p class="sp_w63">￥6040</p>
-		                                <p class="sp_w60"><a href="javascript:void(0);" class="three_a supply_button" data-id="231169">我要供货</a></p>
-		                            </li>
+		                    <volist id="vo" name="purchaseF3">
+								<li>
+									<p class="sp_w85">
+										<span class="sp1">{$vo['varietyname']} &nbsp;{$vo['gradename']}</span>
+										<span class="sp2">{$vo['factoryname']} &nbsp;{$vo['quantity']}{$vo['unitname']}</span>
+									</p>
+									<p class="sp_w63">￥{$vo['unitprice']}</p>
+									<p class="sp_w60"><a href="javascript:void(0);" class="supply_button" data-id="{$vo['orderid']}_{$vo['detailid']}">我要供货</a></p>
+								</li> 
+							</volist>
                         </ul>
                         <ul class="content_text_list" style="display:none;">
-	                            <li>
-	                                <p class="sp_w85">
-	                                    <span class="sp1">PVC &nbsp;SG-5</span>
-	                                    <span class="sp2">内蒙古君正（老）  28吨</span>
-	                                </p>
-	                                <p class="sp_w63">￥5950</p>
-	                                <p class="sp_w60"><a href="javascript:void(0);" class="three_a supply_button" data-id="231123">我要供货</a></p>
-	                            </li>
-	                            <li>
-	                                <p class="sp_w85">
-	                                    <span class="sp1">PVC &nbsp;SG-5</span>
-	                                    <span class="sp2">内蒙古君正（新）  20吨</span>
-	                                </p>
-	                                <p class="sp_w63">￥5940</p>
-	                                <p class="sp_w60"><a href="javascript:void(0);" class="three_a supply_button" data-id="231119">我要供货</a></p>
-	                            </li>
-	                            <li>
-	                                <p class="sp_w85">
-	                                    <span class="sp1">PVC &nbsp;SG-5</span>
-	                                    <span class="sp2">新疆圣雄能源  40吨</span>
-	                                </p>
-	                                <p class="sp_w63">￥5900</p>
-	                                <p class="sp_w60"><a href="javascript:void(0);" class="three_a supply_button" data-id="231118">我要供货</a></p>
-	                            </li>
-	                            <li>
-	                                <p class="sp_w85">
-	                                    <span class="sp1">PVC &nbsp;SG-5</span>
-	                                    <span class="sp2">新疆圣雄能源  40吨</span>
-	                                </p>
-	                                <p class="sp_w63">￥5900</p>
-	                                <p class="sp_w60"><a href="javascript:void(0);" class="three_a supply_button" data-id="231115">我要供货</a></p>
-	                            </li>
-	                            <li>
-	                                <p class="sp_w85">
-	                                    <span class="sp1">PVC &nbsp;SG-5</span>
-	                                    <span class="sp2">湖北宜化  40吨</span>
-	                                </p>
-	                                <p class="sp_w63">￥5940</p>
-	                                <p class="sp_w60"><a href="javascript:void(0);" class="three_a supply_button" data-id="231111">我要供货</a></p>
-	                            </li>
-	                            <li>
-	                                <p class="sp_w85">
-	                                    <span class="sp1">PVC &nbsp;SG-5</span>
-	                                    <span class="sp2">宜宾天原  40吨</span>
-	                                </p>
-	                                <p class="sp_w63">￥6000</p>
-	                                <p class="sp_w60"><a href="javascript:void(0);" class="three_a supply_button" data-id="231101">我要供货</a></p>
-	                            </li>
-	                            <li>
-	                                <p class="sp_w85">
-	                                    <span class="sp1">PVC &nbsp;SG-5</span>
-	                                    <span class="sp2">新疆天业  40吨</span>
-	                                </p>
-	                                <p class="sp_w63">￥6000</p>
-	                                <p class="sp_w60"><a href="javascript:void(0);" class="three_a supply_button" data-id="231100">我要供货</a></p>
-	                            </li>
+	                        <volist id="vo" name="purchaseF3">
+								<li>
+									<p class="sp_w85">
+										<span class="sp1">{$vo['varietyname']} &nbsp;{$vo['gradename']}</span>
+										<span class="sp2">{$vo['factoryname']} &nbsp;{$vo['quantity']}{$vo['unitname']}</span>
+									</p>
+									<p class="sp_w63">￥{$vo['unitprice']}</p>
+									<p class="sp_w60"><a href="javascript:void(0);" class="supply_button" data-id="{$vo['orderid']}_{$vo['detailid']}">我要供货</a></p>
+								</li> 
+							</volist>
                         </ul>
                     
                     </div>
@@ -1414,76 +1114,18 @@ $(function(){
                                     <td class="td_w85">交货时间</td>
                                     <td class="td_w65">更新时间 </td>
                                 </tr>
-	                                    <tr class="tr_37 open_link" data-cate="PVC" data-material="DG-700" data-manufacturer="天津大沽化工">
-	                                        <td class="td_w90"><span class="pz">PVC</span></td>
-	                                        <td class="td_w85"><span class="ph">DG-700</span></td>
-	                                        <td class="td_w125"><span class="cj">天津大沽化工</span></td>
-	                                        <td class="fcolor_1 td_w85">￥6200</td>
-	                                        <td class="td_w85">50</td>
-	                                        <td class="td_w90">乐从</td>
-	                                        <td class="td_w85">现货</td>
-	                                        <td class="td_w65">5小时前</td>
-	                                    </tr>
-	                                    <tr class="tr_37 open_link" data-cate="PVC" data-material="S-60(粉）" data-manufacturer="宁波台塑">
-	                                        <td class="td_w90"><span class="pz">PVC</span></td>
-	                                        <td class="td_w85"><span class="ph">S-60(粉）</span></td>
-	                                        <td class="td_w125"><span class="cj">宁波台塑</span></td>
-	                                        <td class="fcolor_1 td_w85">￥6500</td>
-	                                        <td class="td_w85">50</td>
-	                                        <td class="td_w90">乐从</td>
-	                                        <td class="td_w85">现货</td>
-	                                        <td class="td_w65">5小时前</td>
-	                                    </tr>
-	                                    <tr class="tr_37 open_link" data-cate="PVC" data-material="s-60" data-manufacturer="宁波台塑">
-	                                        <td class="td_w90"><span class="pz">PVC</span></td>
-	                                        <td class="td_w85"><span class="ph">s-60</span></td>
-	                                        <td class="td_w125"><span class="cj">宁波台塑</span></td>
-	                                        <td class="fcolor_1 td_w85">￥7800</td>
-	                                        <td class="td_w85">20</td>
-	                                        <td class="td_w90">乐从</td>
-	                                        <td class="td_w85">现货</td>
-	                                        <td class="td_w65">5小时前</td>
-	                                    </tr>
-	                                    <tr class="tr_37 open_link" data-cate="PVC" data-material="DG-700" data-manufacturer="天津大沽化工">
-	                                        <td class="td_w90"><span class="pz">PVC</span></td>
-	                                        <td class="td_w85"><span class="ph">DG-700</span></td>
-	                                        <td class="td_w125"><span class="cj">天津大沽化工</span></td>
-	                                        <td class="fcolor_1 td_w85">￥6000</td>
-	                                        <td class="td_w85">50</td>
-	                                        <td class="td_w90">东莞</td>
-	                                        <td class="td_w85">现货</td>
-	                                        <td class="td_w65">8小时前</td>
-	                                    </tr>
-	                                    <tr class="tr_37 open_link" data-cate="PVC" data-material="SG-5" data-manufacturer="鄂尔多斯">
-	                                        <td class="td_w90"><span class="pz">PVC</span></td>
-	                                        <td class="td_w85"><span class="ph">SG-5</span></td>
-	                                        <td class="td_w125"><span class="cj">鄂尔多斯</span></td>
-	                                        <td class="fcolor_1 td_w85">￥5650</td>
-	                                        <td class="td_w85">50</td>
-	                                        <td class="td_w90">东莞</td>
-	                                        <td class="td_w85">现货</td>
-	                                        <td class="td_w65">8小时前</td>
-	                                    </tr>
-	                                    <tr class="tr_37 open_link" data-cate="PVC" data-material="SG-5" data-manufacturer="新疆圣雄能源">
-	                                        <td class="td_w90"><span class="pz">PVC</span></td>
-	                                        <td class="td_w85"><span class="ph">SG-5</span></td>
-	                                        <td class="td_w125"><span class="cj">新疆圣雄能源</span></td>
-	                                        <td class="fcolor_1 td_w85">￥5600</td>
-	                                        <td class="td_w85">20</td>
-	                                        <td class="td_w90">东莞</td>
-	                                        <td class="td_w85">现货</td>
-	                                        <td class="td_w65">8小时前</td>
-	                                    </tr>
-	                                    <tr class="tr_37 open_link" data-cate="PVC" data-material="DG-1000" data-manufacturer="天津大沽化工">
-	                                        <td class="td_w90"><span class="pz">PVC</span></td>
-	                                        <td class="td_w85"><span class="ph">DG-1000</span></td>
-	                                        <td class="td_w125"><span class="cj">天津大沽化工</span></td>
-	                                        <td class="fcolor_1 td_w85">￥6200</td>
-	                                        <td class="td_w85">50</td>
-	                                        <td class="td_w90">东莞</td>
-	                                        <td class="td_w85">现货</td>
-	                                        <td class="td_w65">11小时前</td>
-	                                    </tr>
+	                            <volist id="vo" name="supplyF3">
+									<tr class="tr_37 open_link" data-cate="{$vo['varietyname']}" data-material="{$vo['gradename']}" data-manufacturer="{$vo['factoryname']}">
+										<td class="td_w90"><span class="pz">{$vo['varietyname']}</span></td>
+										<td class="td_w85"><span class="ph">{$vo['gradename']}</span></td>
+										<td class="td_w125"><span class="cj">{$vo['factoryname']}</span></td>
+										<td class="fcolor_1 td_w85">￥{$vo['unitprice']}</td>
+										<td class=" td_w85">{$vo['quantity']}</td>
+										<td class="td_w90">{$vo['deliveryplace']}</td>
+										<td class="td_w85">现货</td>
+										<td class="td_w65">{$vo['updatetime_d']}</td>
+									</tr>
+								</volist>
                             </table>
                         </div>
                     </div>
@@ -1505,76 +1147,18 @@ $(function(){
                                     <td class="td_w85">交货时间</td>
                                     <td class="td_w65">更新时间 </td>
                                 </tr>
-	                                    <tr class="tr_37 open_link" data-cate="PVC" data-material="SG-5" data-manufacturer="天湖">
-	                                        <td class="td_w90"><span class="pz">PVC</span></td>
-	                                        <td class="td_w85"><span class="ph">SG-5</span></td>
-	                                        <td class="td_w125"><span class="cj">天湖</span></td>
-                                         	<td class="fcolor_1 td_w85">￥6020</td>
-                                        	<td class="td_w85">100</td>
-                                        	<td class="td_w90">金华</td>
-                                        	<td class="td_w85">现货</td>
-                                        	<td class="td_w65">11小时前</td>
-	                                    </tr>
-	                                    <tr class="tr_37 open_link" data-cate="PVC" data-material="SG-5" data-manufacturer="天湖">
-	                                        <td class="td_w90"><span class="pz">PVC</span></td>
-	                                        <td class="td_w85"><span class="ph">SG-5</span></td>
-	                                        <td class="td_w125"><span class="cj">天湖</span></td>
-                                         	<td class="fcolor_1 td_w85">￥6000</td>
-                                        	<td class="td_w85">100</td>
-                                        	<td class="td_w90">浦江</td>
-                                        	<td class="td_w85">现货</td>
-                                        	<td class="td_w65">11小时前</td>
-	                                    </tr>
-	                                    <tr class="tr_37 open_link" data-cate="PVC" data-material="SG-8" data-manufacturer="北元">
-	                                        <td class="td_w90"><span class="pz">PVC</span></td>
-	                                        <td class="td_w85"><span class="ph">SG-8</span></td>
-	                                        <td class="td_w125"><span class="cj">北元</span></td>
-                                         	<td class="fcolor_1 td_w85">￥6250</td>
-                                        	<td class="td_w85">100</td>
-                                        	<td class="td_w90">杭州</td>
-                                        	<td class="td_w85">现货</td>
-                                        	<td class="td_w65">11小时前</td>
-	                                    </tr>
-	                                    <tr class="tr_37 open_link" data-cate="PVC" data-material="SG-5" data-manufacturer="天辰">
-	                                        <td class="td_w90"><span class="pz">PVC</span></td>
-	                                        <td class="td_w85"><span class="ph">SG-5</span></td>
-	                                        <td class="td_w125"><span class="cj">天辰</span></td>
-                                         	<td class="fcolor_1 td_w85">￥6020</td>
-                                        	<td class="td_w85">100</td>
-                                        	<td class="td_w90">杭州</td>
-                                        	<td class="td_w85">现货</td>
-                                        	<td class="td_w65">11小时前</td>
-	                                    </tr>
-	                                    <tr class="tr_37 open_link" data-cate="PVC" data-material="SG-3" data-manufacturer="天湖">
-	                                        <td class="td_w90"><span class="pz">PVC</span></td>
-	                                        <td class="td_w85"><span class="ph">SG-3</span></td>
-	                                        <td class="td_w125"><span class="cj">天湖</span></td>
-                                         	<td class="fcolor_1 td_w85">￥6320</td>
-                                        	<td class="td_w85">100</td>
-                                        	<td class="td_w90">杭州</td>
-                                        	<td class="td_w85">现货</td>
-                                        	<td class="td_w65">11小时前</td>
-	                                    </tr>
-	                                    <tr class="tr_37 open_link" data-cate="PVC" data-material="SG-5" data-manufacturer="天湖">
-	                                        <td class="td_w90"><span class="pz">PVC</span></td>
-	                                        <td class="td_w85"><span class="ph">SG-5</span></td>
-	                                        <td class="td_w125"><span class="cj">天湖</span></td>
-                                         	<td class="fcolor_1 td_w85">￥6020</td>
-                                        	<td class="td_w85">100</td>
-                                        	<td class="td_w90">杭州</td>
-                                        	<td class="td_w85">现货</td>
-                                        	<td class="td_w65">11小时前</td>
-	                                    </tr>
-	                                    <tr class="tr_37 open_link" data-cate="PVC" data-material="SG-5" data-manufacturer="东兴">
-	                                        <td class="td_w90"><span class="pz">PVC</span></td>
-	                                        <td class="td_w85"><span class="ph">SG-5</span></td>
-	                                        <td class="td_w125"><span class="cj">东兴</span></td>
-                                         	<td class="fcolor_1 td_w85">￥6020</td>
-                                        	<td class="td_w85">100</td>
-                                        	<td class="td_w90">杭州</td>
-                                        	<td class="td_w85">现货</td>
-                                        	<td class="td_w65">11小时前</td>
-	                                    </tr>
+	                            <volist id="vo" name="supplyF3">
+									<tr class="tr_37 open_link" data-cate="{$vo['varietyname']}" data-material="{$vo['gradename']}" data-manufacturer="{$vo['factoryname']}">
+										<td class="td_w90"><span class="pz">{$vo['varietyname']}</span></td>
+										<td class="td_w85"><span class="ph">{$vo['gradename']}</span></td>
+										<td class="td_w125"><span class="cj">{$vo['factoryname']}</span></td>
+										<td class="fcolor_1 td_w85">￥{$vo['unitprice']}</td>
+										<td class=" td_w85">{$vo['quantity']}</td>
+										<td class="td_w90">{$vo['deliveryplace']}</td>
+										<td class="td_w85">现货</td>
+										<td class="td_w65">{$vo['updatetime_d']}</td>
+									</tr>
+								</volist>
                             </table>
                         </div>
                     </div>
