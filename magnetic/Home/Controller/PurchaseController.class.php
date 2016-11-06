@@ -227,4 +227,18 @@ class PurchaseController extends BaseController {
 		// $this->assign('purchaselist',$ret);
 		$this->display();
 	}
+	
+	/*查询采购数据*/
+	public function supply_check(){
+		$data = [];
+		$data['status'] = 1;
+		$data['orderid'] = "11";
+		$data['varietyname'] = "钕铁硼(烧结毛坯)";
+		$data['gradename'] = "N30";
+		$data['factoryname'] = "山西得润丰";
+		$data['quantity'] = "11";
+		$data['unitname'] = "片";
+		$data['unitprice'] = "￥12";
+		$this->ajaxReturn($data);
+	}
 }

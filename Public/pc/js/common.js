@@ -492,86 +492,77 @@ $().ready(function() {
     }
     $(".supply_button").on("click", function() {
         var purchase_id = $(this).data("id");
+		var purchase_url = $(".purchase_url").val();
         var that = this;
         if (!tip_open_time()) {
             return false;
         }
-        $.get(SITE_URL + 'common/check_login', function(rs) {
-            if (rs.status == 0) {
-                show_dialog_login();
-            } else {
-                $.get(SITE_URL + 'purchaseView/supply_check', {
-                    "purchase_id": purchase_id
-                }, function(rs) {
-                    if (rs.status < 0) {
-                        alert(rs.msg);
-                    } else {
-                        var mid = rs.data.mid;
-                        var name = rs.data.name;
-                        var info = rs.data.pur_name + ' ' + rs.data.pur_material + ' ' + rs.data.pur_manufacturer + ' ' + rs.data.pur_onsaleNumber + '吨 ' + rs.data.pur_price;
-                        if (rs.data.pur_priceto == '' && rs.data.pur_priceto > 0 && rs.data.pur_price != rs.data.pur_priceto) {
-                            info += '~' + rs.data.pur_priceto;
-                        }
-                        info += rs.data.pur_tradeCoin == 2 ? '美元' : '元';
-                        info += ' ' + rs.data.pur_city + ' ' + rs.data.pur_market
-                        var str = '';
-                        str += '<form action="' + SITE_URL + '/purchaseView/supplySave" id="form_supply" method="post">';
-                        str += '<input type="hidden" id="midJS" name="mid" value="' + mid + '"/>';
-                        str += '<input type="hidden" id="purchase_idJS" name="purchase_id" value="' + purchase_id + '"/>';
-                        str += '<p class="supply_p1">采购内容： <span>' + info + '</span></p>';
-                        str += '<p class="supply_p2">请在下方填写您的真实报价（价格必填），并对您的货物描述清楚。</p>';
-                        str += '<p class="supply_p3">例如：ABS HP171 惠州中海油乐金 5吨 13450元 东莞市 东莞塑胶交易市场</p>';
-                        str += '<p class="supply_p4">ABS AG15E1 台湾台化 5吨 13800 东莞塑胶交易市场</p>';
-                        if (name == '') {
-                            str += '<div class="supply_input">';
-                            str += '	<div class="supply_line_input">';
-                            str += '		<span class="supply_input_text">公司名称：</span>';
-                            str += '		<input type="text" class="supply_input_inp" name="name" id="companyNameJs"/>';
-                            str += '		<span class="supply_input_text">企业类型：</span>';
-                            str += '		<select class="supply_select" name="type">';
-                            str += '			<option value="-1">--请选择--</option>';
-                            str += '			<option value="上游厂家">上游厂家</option>';
-                            str += '			<option value="贸易商">贸易商</option>';
-                            str += '			<option value="终端">终端</option>';
-                            str += '		</select>';
-                            str += '		<span class="supply_input_text">地区：</span>';
-                            str += '		<div class="area_wrapper">';
-                            str += '			<div class="rovince_parent parent_div province_div" data-target="province">';
-                            str += '				<input type="text" readonly  name="province" class="areapop_input"/>';
-                            str += '				<input type="hidden"  name="provinceId" />';
-                            str += '			</div>';
-                            str += '			<div class="city_parent parent_div city_div" data-target="city">';
-                            str += '				<input type="text" readonly name="city" class="areapop_input" />';
-                            str += '				<input type="hidden"  name="cityId" />';
-                            str += '			</div>';
-                            str += '		</div>';
-                            str += '	</div>';
-                            str += '	<div class="supply_line_input">';
-                            str += '		<span class="supply_input_text">主营品种：</span>';
-                            str += '		<input type="text" class="supply_input_inp " name="mainProducts"/>';
-                            str += '		<span class="supply_input_text">联系人：</span>';
-                            str += '		<input type="text" class="supply_input_inp "  name="linkman"/>';
-                            str += '	</div>';
-                            str += '</div>';
-                        }
-                        str += '<div class="supply_textarea_div">';
-                        str += '	<div class="textarea_left">货物描述：</div>';
-                        str += '	<div class="textarea_right">';
-                        str += '		<textarea class="textarea_content" name="content"></textarea>';
-                        str += '	</div>';
-                        str += '</div>';
-                        str += '<p class="supply_tips"><span>不合理报价会被系统自动屏蔽</span></p>';
-                        str += '<input class="supply_submit" type="button" value="我要供货"/>';
-                        str += '</form>';
-                        if (name == '') {
-                            supplyCommodity.supplyBomb(that, 750, 535, str, info, mid, purchase_id);
-                        } else {
-                            supplyCommodity.supplyBomb(that, 750, 450, str, info, mid, purchase_id);
-                        }
-                    }
-                });
-            }
-        });
+		$.get(purchase_url, {
+			"orderid": purchase_id
+		}, function(rs) {
+			if (rs.status < 0) {
+				alert(rs.msg);
+			} else {
+				var mid = rs.orderid;
+				var name = rs.varietyname;
+				var info = rs.varietyname + ' ' + rs.gradename + ' ' + rs.factoryname + ' ' + rs.quantity + rs.unitname  + rs.unitprice;
+				
+				var str = '';
+				str += '<form action="' + SITE_URL + '/purchaseView/supplySave" id="form_supply" method="post">';
+				str += '<input type="hidden" id="midJS" name="mid" value="' + mid + '"/>';
+				str += '<input type="hidden" id="purchase_idJS" name="purchase_id" value="' + purchase_id + '"/>';
+				str += '<p class="supply_p1">采购内容： <span>' + info + '</span></p>';
+				str += '<p class="supply_p2">请在下方填写您的真实报价（价格必填），并对您的货物描述清楚。</p>';
+				str += '<p class="supply_p3">例如：ABS HP171 惠州中海油乐金 5吨 13450元 东莞市 东莞塑胶交易市场</p>';
+				str += '<p class="supply_p4">ABS AG15E1 台湾台化 5吨 13800 东莞塑胶交易市场</p>';
+				if (name == '') {
+					str += '<div class="supply_input">';
+					str += '	<div class="supply_line_input">';
+					str += '		<span class="supply_input_text">公司名称：</span>';
+					str += '		<input type="text" class="supply_input_inp" name="name" id="companyNameJs"/>';
+					str += '		<span class="supply_input_text">企业类型：</span>';
+					str += '		<select class="supply_select" name="type">';
+					str += '			<option value="-1">--请选择--</option>';
+					str += '			<option value="上游厂家">上游厂家</option>';
+					str += '			<option value="贸易商">贸易商</option>';
+					str += '			<option value="终端">终端</option>';
+					str += '		</select>';
+					str += '		<span class="supply_input_text">地区：</span>';
+					str += '		<div class="area_wrapper">';
+					str += '			<div class="rovince_parent parent_div province_div" data-target="province">';
+					str += '				<input type="text" readonly  name="province" class="areapop_input"/>';
+					str += '				<input type="hidden"  name="provinceId" />';
+					str += '			</div>';
+					str += '			<div class="city_parent parent_div city_div" data-target="city">';
+					str += '				<input type="text" readonly name="city" class="areapop_input" />';
+					str += '				<input type="hidden"  name="cityId" />';
+					str += '			</div>';
+					str += '		</div>';
+					str += '	</div>';
+					str += '	<div class="supply_line_input">';
+					str += '		<span class="supply_input_text">主营品种：</span>';
+					str += '		<input type="text" class="supply_input_inp " name="mainProducts"/>';
+					str += '		<span class="supply_input_text">联系人：</span>';
+					str += '		<input type="text" class="supply_input_inp "  name="linkman"/>';
+					str += '	</div>';
+					str += '</div>';
+				}
+				str += '<div class="supply_textarea_div">';
+				str += '	<div class="textarea_left">货物描述：</div>';
+				str += '	<div class="textarea_right">';
+				str += '		<textarea class="textarea_content" name="content"></textarea>';
+				str += '	</div>';
+				str += '</div>';
+				str += '<p class="supply_tips"><span>不合理报价会被系统自动屏蔽</span></p>';
+				str += '<input class="supply_submit" type="button" value="我要供货"/>';
+				str += '</form>';
+				if (name == '') {
+					supplyCommodity.supplyBomb(that, 750, 535, str, info, mid, purchase_id);
+				} else {
+					supplyCommodity.supplyBomb(that, 750, 450, str, info, mid, purchase_id);
+				}
+			}
+		});
     });
 });
 var supplyCommodity = {
