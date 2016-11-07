@@ -31,7 +31,7 @@ class NewsController extends Controller {
 	//资讯发布后台
 	public function addnews_bgo(){
 		$data = I('post.');
-		$pic = uploadPics('./Public/NewsPic/');
+		$pic = uploadPics(C('PICPATH'));
 		\Think\Log::Record('tu:'.var_export($pic,true));
 		if(!empty($pic)){
 			$pic['newspicture'] = C('WEBPC').$pic['newspicture'];
