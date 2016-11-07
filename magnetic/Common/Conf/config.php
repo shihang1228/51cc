@@ -21,5 +21,7 @@ return array(
 		'EMAIL'				=>	'sdhylj@163.com'
 	),
 	
-	'PAGESIZE'				=>  10
+	'PAGESIZE'				=>  10,
+	'PICPATH'               =>  './Public/NewsPic/',
+	'WEBPC'                 =>  'http://127.0.0.1/public/newspic/',
 );

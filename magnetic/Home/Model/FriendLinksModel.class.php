@@ -2,7 +2,7 @@
 namespace Home\Model;
 use Think\Model;
 
-//成交信息
+//友情链接
 class FriendLinksModel extends BaseModel{
 	public $tbname = 'friendlinks';
 	// public $tablePrefix = '';

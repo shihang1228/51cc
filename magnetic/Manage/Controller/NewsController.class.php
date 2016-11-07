@@ -31,6 +31,13 @@ class NewsController extends Controller {
 	//资讯发布后台
 	public function addnews_bgo(){
 		$data = I('post.');
+		$pic = uploadPics('./Public/NewsPic/');
+		\Think\Log::Record('tu:'.var_export($pic,true));
+		if(!empty($pic)){
+			$pic['newspicture'] = C('WEBPC').$pic['newspicture'];
+			$data = array_merge($data,$pic);
+		}
+		\Think\Log::Record('tu:'.var_export($data,true));
 		//newsid,newstitle,newsbrief,newspubdate,newsdatasource,newspicture,newsinfomation,userid
 		//,categoryid,newsorder,newsstatus,gradeid,gradename,varietyid,instime,createdby,delstatus
 		$categoryid = $data['category'];
@@ -45,7 +52,7 @@ class NewsController extends Controller {
 		$data['newsorder'] = 0;
 		$data['instime'] = date('Y-m-d H:i:s');
 		
-		// \Think\Log::Record('addnews:'.var_export($data,true));
+		\Think\Log::Record('addnews:'.var_export($data,true));
 		$tb = new NewsModel();
 		$ret = $tb->add($data);
 		$this->ajaxReturn($ret);
