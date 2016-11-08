@@ -11,4 +11,11 @@ class SalesIntentModel extends BaseModel{
 	public function __construct(){
 		parent::__construct($this->tbname);
 	}
+	
+	public function getOrderIntent($arg_varietyid){
+		$pageSize = 8;
+		$rtn = $this->procedure('call p_orderdynamics('.$arg_varietyid.','.$pageSize.')');
+		if(is_array($rtn)) $rtn = $rtn[0];
+		return $rtn;
+	}
 }
