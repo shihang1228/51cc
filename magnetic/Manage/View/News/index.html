@@ -10,8 +10,6 @@
 <link rel="stylesheet" href="__PUBLIC__/manage/css/iconfont/iconfont.css">
 <link rel="stylesheet" href="__PUBLIC__/manage/css/public.css">
 <body>
-<div id="loading" style="position: absolute; z-index: 1000; top: 0px; left: 0px; width: 100%; height: 100%; background: #000;opacity:0.8; text-align: center; padding-top: 20%;">正在加载中，请稍后</div>
-
 <table id="news"></table>
 
 <div id="news_tool" style="padding:5px;">
@@ -22,7 +20,7 @@
 		<a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="obj.search();">查询</a>
 	</div> -->
 	<div class="toolbar">
-		<a href="#" class="easyui-linkbutton btn-add" iconCls="icon-add-new" plain="true">添加</a>
+		<a href="{:U('Manage/News/addnews')}" class="easyui-linkbutton btn-add" iconCls="icon-add-new" plain="true">添加</a>
 		<a href="#" class="easyui-linkbutton btn-edit" iconCls="icon-edit-new" plain="true">修改</a>
 		<a href="#" class="easyui-linkbutton btn-remove" iconCls="icon-delete-new" plain="true" onclick="">删除</a>
 		<a href="#" class="easyui-linkbutton btn-refresh" iconCls="icon-reload" plain="true">刷新</a>
@@ -47,16 +45,21 @@
 		public_datagrid('news',col_array,'{:U("Manage/News/lists_bgd")}');
 		/*点击修改按钮*/
 		$("#news_tool .btn-edit").on("click",function(){
-			manager_tool.edit('news','{:U("Manage/GoodsUnit/edit")}?unitid=','unitid','','',editFunc);
+			var rows = $('#news').datagrid('getSelections');
+            if (rows.length > 1) {
+                $.messager.alert('警告操作！', '编辑记录只能选定一条数据！', 'warning');
+            }else if(rows.length == 1){
+                window.location.href="{:U('Manage/News/addnews')}?newsid="+rows[0].newsid;
+                
+            }else if (rows.length == 0) {
+                $.messager.alert('警告操作！', '编辑记录至少选定一条数据！', 'warning');
+            }
 		})
 		/*点击删除按钮*/
 		$("#news_tool .btn-remove").on("click",function(){
-			manager_tool.remove('news','{:U("Manage/GoodsUnit/delete")}','unitid');
+			manager_tool.remove('news','{:U("Manage/News/delete")}','newsid');
 		})
-		/*点击新增按钮*/
-	    $("#news_tool .btn-add").on("click",function(){
-	        manager_tool.add('news','新增/修改物品单位');
-	    })
+		
 	    /*点击刷新按钮*/
 	    $("#news_tool .btn-refresh").on("click",function(){
 	        manager_tool.reload('news');
@@ -65,27 +68,7 @@
 	    $("#news_tool .btn-redo").on("click",function(){
 	        manager_tool.redo('news');
 	    })
-		/*点击修改额外执行的方法*/
-		function editFunc(provice,city){
-			
-		}
-		/*新增和修改点击提交的方法*/
-		$("#btnsubmit_news_add").on("click",function(e){
-			e.preventDefault();
-			savePro('news','add',"{:U('Manage/GoodsUnit/add')}");
-		})
 	})
-function show(){
-     $("#loading").fadeOut("normal", function(){
-         $(this).remove();
-     });
- }    
- var delayTime;
- $.parser.onComplete = function(){
-     if(delayTime) 
-         clearTimeout(delayTime);
-     delayTime = setTimeout(show,500);
- }
 </script>
 </body>
 </html>
