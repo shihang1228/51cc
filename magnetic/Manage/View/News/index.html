@@ -14,7 +14,7 @@
 
 <table id="news"></table>
 
-<div id="goodunit_tool" style="padding:5px;">
+<div id="news_tool" style="padding:5px;">
 	<!-- <div class="toolsearch">
 		查询帐号：<input type="text" class="textbox" name="user" style="width:110px">
 		创建时间从：<input type="text" name="date_from" class="easyui-datebox" editable="false" style="width:110px">
@@ -37,41 +37,42 @@
 	var PUBLIC = "__PUBLIC__";
   	var URL = "__URL__";
 	$(function(){
-		var col_array = [[{field : 'newspicture',title : '图片',width : 50},
+		var col_array = [[
+		{field : 'categoryname',title : '资讯类型',width : 50},
 							{field : 'newstitle',title : '标题',width : 50},
 							{field : 'newsbrief',title : '摘要',width : 50},
-							{field : 'newscontent',title : '内容',width : 50},
+							{field : 'newsinfomation',title : '内容',width : 50},
 							{field : 'newspubdate',title : '时间',width : 50},
 						]];
 		public_datagrid('news',col_array,'{:U("Manage/News/lists_bgd")}');
 		/*点击修改按钮*/
-		$("#goodunit_tool .btn-edit").on("click",function(){
-			manager_tool.edit('goodunit','{:U("Manage/GoodsUnit/edit")}?unitid=','unitid','','',editFunc);
+		$("#news_tool .btn-edit").on("click",function(){
+			manager_tool.edit('news','{:U("Manage/GoodsUnit/edit")}?unitid=','unitid','','',editFunc);
 		})
 		/*点击删除按钮*/
-		$("#goodunit_tool .btn-remove").on("click",function(){
-			manager_tool.remove('goodunit','{:U("Manage/GoodsUnit/delete")}','unitid');
+		$("#news_tool .btn-remove").on("click",function(){
+			manager_tool.remove('news','{:U("Manage/GoodsUnit/delete")}','unitid');
 		})
 		/*点击新增按钮*/
-	    $("#goodunit_tool .btn-add").on("click",function(){
-	        manager_tool.add('goodunit','新增/修改物品单位');
+	    $("#news_tool .btn-add").on("click",function(){
+	        manager_tool.add('news','新增/修改物品单位');
 	    })
 	    /*点击刷新按钮*/
-	    $("#goodunit_tool .btn-refresh").on("click",function(){
-	        manager_tool.reload('goodunit');
+	    $("#news_tool .btn-refresh").on("click",function(){
+	        manager_tool.reload('news');
 	    })
 	    /*点击取消选择按钮*/
-	    $("#goodunit_tool .btn-redo").on("click",function(){
-	        manager_tool.redo('goodunit');
+	    $("#news_tool .btn-redo").on("click",function(){
+	        manager_tool.redo('news');
 	    })
 		/*点击修改额外执行的方法*/
 		function editFunc(provice,city){
 			
 		}
 		/*新增和修改点击提交的方法*/
-		$("#btnsubmit_goodunit_add").on("click",function(e){
+		$("#btnsubmit_news_add").on("click",function(e){
 			e.preventDefault();
-			savePro('goodunit','add',"{:U('Manage/GoodsUnit/add')}");
+			savePro('news','add',"{:U('Manage/GoodsUnit/add')}");
 		})
 	})
 function show(){

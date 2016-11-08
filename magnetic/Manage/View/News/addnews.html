@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="__PUBLIC__/manage/css/iconfont/iconfont.css">
 <link rel="stylesheet" href="__PUBLIC__/manage/css/public.css">
 <style>
-	p{font-family:"microsoft yahei"}
+	p{font-family:"microsoft yahei";}
 </style>
 <body>
 <form action="{:U('Manage/News/addnews_bgo')}" method="POST" enctype="multipart/form-data">
@@ -44,5 +44,27 @@
 	var ue = UE.getEditor('container');
 </script>
 <!--ueditor编辑器 end-->
+<script type="text/javascript">
+    $(function(){
+        $(".btn-shenhe").on("click",function(e){
+            e.preventDefault();
+            var form_serialize = $("form").serialize();
+            var url = $("form").attr("action");
+            $.ajax({
+                url:url,
+                type:"POST",
+                data:form_serialize,
+                success:function(data){
+                    if(data.result){
+                        $.messager.alert('成功操作！', '新增成功', 'success');
+                        window.location.href = "{:U('Manage/News/index')}"
+                    }else{
+                        $.messager.alert('警告操作！', data.msg, 'warning');
+                    }
+                }
+            })
+        })
+    })
+</script>
 </body>
 </html>
