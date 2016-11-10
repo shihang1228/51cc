@@ -776,66 +776,14 @@ $(function(){
                             </table>
                             <div class="mj_message_table purchase_scroll1">
                                 <table>
-	                                   <tr class="tr_30">
-	                                        <td class="td_w40">王**</td>
-	                                        <td class="td_w84 fcolor_3 text_hide"><span>LDPE FT4119 北欧化工 24.75吨 </span> </td>
-	                                        <td class="td_w84 fcolor_1">交易成功</td>
-	                                        <td class="td_w40" title="2016-08-26 17:39">17:39</td>
-	                                   </tr>
-	                                   <tr class="tr_30">
-	                                        <td class="td_w40">徐**</td>
-	                                        <td class="td_w84 fcolor_3 text_hide"><span>HDPE N125Y 马来大腾石化 85.95吨 </span> </td>
-	                                        <td class="td_w84 fcolor_1">交易成功</td>
-	                                        <td class="td_w40" title="2016-08-26 17:38">17:38</td>
-	                                   </tr>
-	                                   <tr class="tr_30">
-	                                        <td class="td_w40">兜**</td>
-	                                        <td class="td_w84 fcolor_3 text_hide"><span>LDPE 2119 伊朗国家石化 100吨 </span> </td>
-	                                        <td class="td_w84 fcolor_1">交易成功</td>
-	                                        <td class="td_w40" title="2016-08-26 17:27">17:27</td>
-	                                   </tr>
-	                                   <tr class="tr_30">
-	                                        <td class="td_w40">林**</td>
-	                                        <td class="td_w84 fcolor_3 text_hide"><span>HDPE BL3 伊朗国家石化 77吨 </span> </td>
-	                                        <td class="td_w84 fcolor_1">交易成功</td>
-	                                        <td class="td_w40" title="2016-08-26 17:26">17:26</td>
-	                                   </tr>
-	                                   <tr class="tr_30">
-	                                        <td class="td_w40">陆**</td>
-	                                        <td class="td_w84 fcolor_3 text_hide"><span>HDPE DMDA8008 中石化福炼 10吨 </span> </td>
-	                                        <td class="td_w84 fcolor_1">交易成功</td>
-	                                        <td class="td_w40" title="2016-08-26 17:22">17:22</td>
-	                                   </tr>
-	                                   <tr class="tr_30">
-	                                        <td class="td_w40">叶**</td>
-	                                        <td class="td_w84 fcolor_3 text_hide"><span>LLDPE DFDC-7050 中石化福炼 100吨 </span> </td>
-	                                        <td class="td_w84 fcolor_1">交易成功</td>
-	                                        <td class="td_w40" title="2016-08-26 17:22">17:22</td>
-	                                   </tr>
-	                                   <tr class="tr_30">
-	                                        <td class="td_w40">庄**</td>
-	                                        <td class="td_w84 fcolor_3 text_hide"><span>HDPE 52518 伊朗国家石化 297吨 </span> </td>
-	                                        <td class="td_w84 fcolor_1">交易成功</td>
-	                                        <td class="td_w40" title="2016-08-26 17:15">17:15</td>
-	                                   </tr>
-	                                   <tr class="tr_30">
-	                                        <td class="td_w40">林**</td>
-	                                        <td class="td_w84 fcolor_3 text_hide"><span>HDPE HD54404 伊朗国家石化 297吨 </span> </td>
-	                                        <td class="td_w84 fcolor_1">交易成功</td>
-	                                        <td class="td_w40" title="2016-08-26 17:14">17:14</td>
-	                                   </tr>
-	                                   <tr class="tr_30">
-	                                        <td class="td_w40">李**</td>
-	                                        <td class="td_w84 fcolor_3 text_hide"><span>HDPE HF4760(BL3) 伊朗国家石化 306吨 </span> </td>
-	                                        <td class="td_w84 fcolor_1">交易成功</td>
-	                                        <td class="td_w40" title="2016-08-26 16:53">16:53</td>
-	                                   </tr>
-	                                   <tr class="tr_30">
-	                                        <td class="td_w40">戴**</td>
-	                                        <td class="td_w84 fcolor_3 text_hide"><span>LLDPE DFDA-7042 延长榆能化 40吨 </span> </td>
-	                                        <td class="td_w84 fcolor_1">交易成功</td>
-	                                        <td class="td_w40" title="2016-08-26 16:52">16:52</td>
-	                                   </tr>
+                                    <volist id="vo" name="intentscrollF1">
+                                        <tr class="tr_30">
+                                            <td class="td_w40">{$vo['username']}</td>
+                                            <td class="td_w84 fcolor_3 text_hide"><span>{$vo['spec']}</span> </td>
+                                            <td class="td_w84 fcolor_1">{$vo['statusname']}</td>
+                                            <td class="td_w40" title="2016-08-26 17:39">{$vo['dateofsubmit']}</td>
+                                       </tr>
+                                    </volist>
                                 </table> 
                             </div>
                         </div>
@@ -978,66 +926,14 @@ $(function(){
                             </table>
                             <div class="mj_message_table purchase_scroll2">
                                 <table>
-		                                    <tr class="tr_30">
-		                                        <td class="td_w40">黎**</td>
-		                                        <td class="td_w84 fcolor_3 text_hide"><span>PP S1003 宁夏宝丰 200吨 </span> </td>
-		                                        <td class="td_w84 ">正在洽谈</td>
-		                                        <td class="td_w40" title="2016-08-26 17:22">17:22</td>
-		                                    </tr>
-		                                    <tr class="tr_30">
-		                                        <td class="td_w40">秦**</td>
-		                                        <td class="td_w84 fcolor_3 text_hide"><span>PP K8003 中石化扬子 15吨 </span> </td>
-		                                        <td class="td_w84 fcolor_1">交易成功</td>
-		                                        <td class="td_w40" title="2016-08-26 17:02">17:02</td>
-		                                    </tr>
-		                                    <tr class="tr_30">
-		                                        <td class="td_w40">唐**</td>
-		                                        <td class="td_w84 fcolor_3 text_hide"><span>PP S1003 中石化茂名 15吨 </span> </td>
-		                                        <td class="td_w84 fcolor_1">交易成功</td>
-		                                        <td class="td_w40" title="2016-08-26 16:22">16:22</td>
-		                                    </tr>
-		                                    <tr class="tr_30">
-		                                        <td class="td_w40">崔**</td>
-		                                        <td class="td_w84 fcolor_3 text_hide"><span>PP K8003 中石化扬子 20吨 </span> </td>
-		                                        <td class="td_w84 fcolor_1">交易成功</td>
-		                                        <td class="td_w40" title="2016-08-26 16:01">16:01</td>
-		                                    </tr>
-		                                    <tr class="tr_30">
-		                                        <td class="td_w40">崔**</td>
-		                                        <td class="td_w84 fcolor_3 text_hide"><span>PP K8003 中石化扬子 20吨 </span> </td>
-		                                        <td class="td_w84 fcolor_1">交易成功</td>
-		                                        <td class="td_w40" title="2016-08-26 15:56">15:56</td>
-		                                    </tr>
-		                                    <tr class="tr_30">
-		                                        <td class="td_w40">秦**</td>
-		                                        <td class="td_w84 fcolor_3 text_hide"><span>PP EPS30R 延长榆能化 3吨 </span> </td>
-		                                        <td class="td_w84 fcolor_1">交易成功</td>
-		                                        <td class="td_w40" title="2016-08-26 15:52">15:52</td>
-		                                    </tr>
-		                                    <tr class="tr_30">
-		                                        <td class="td_w40">陆**</td>
-		                                        <td class="td_w84 fcolor_3 text_hide"><span>PP T30S 延炼 6.5吨 </span> </td>
-		                                        <td class="td_w84 fcolor_1">交易成功</td>
-		                                        <td class="td_w40" title="2016-08-26 15:49">15:49</td>
-		                                    </tr>
-		                                    <tr class="tr_30">
-		                                        <td class="td_w40">郭**</td>
-		                                        <td class="td_w84 fcolor_3 text_hide"><span>PP K8003 中石化茂名 20吨 </span> </td>
-		                                        <td class="td_w84 ">正在洽谈</td>
-		                                        <td class="td_w40" title="2016-08-26 15:48">15:48</td>
-		                                    </tr>
-		                                    <tr class="tr_30">
-		                                        <td class="td_w40">梁**</td>
-		                                        <td class="td_w84 fcolor_3 text_hide"><span>PP PPH-T03 中石化茂名 10吨 </span> </td>
-		                                        <td class="td_w84 ">正在洽谈</td>
-		                                        <td class="td_w40" title="2016-08-26 15:47">15:47</td>
-		                                    </tr>
-		                                    <tr class="tr_30">
-		                                        <td class="td_w40">卢**</td>
-		                                        <td class="td_w84 fcolor_3 text_hide"><span>PP PPB-M09 中石化茂名 10吨 </span> </td>
-		                                        <td class="td_w84 fcolor_1">交易成功</td>
-		                                        <td class="td_w40" title="2016-08-26 15:46">15:46</td>
-		                                    </tr>
+                                    <volist id="vo" name="intentscrollF2">
+                                        <tr class="tr_30">
+                                            <td class="td_w40">{$vo['username']}</td>
+                                            <td class="td_w84 fcolor_3 text_hide"><span>{$vo['spec']}</span> </td>
+                                            <td class="td_w84 fcolor_1">{$vo['statusname']}</td>
+                                            <td class="td_w40" title="2016-08-26 17:39">{$vo['dateofsubmit']}</td>
+                                       </tr>
+                                    </volist>
                                 </table>
                             </div>
                         </div>
@@ -1181,66 +1077,14 @@ $(function(){
                             </table>
                             <div class="mj_message_table purchase_scroll3">
                                  <table>
-		                                   <tr class="tr_30">
-		                                        <td class="td_w40">何**</td>
-		                                        <td class="td_w84 fcolor_3 text_hide"><span>PVC SG-5 新疆圣雄能源 30吨 </span> </td>
-		                                        <td class="td_w84 fcolor_1">交易成功</td>
-		                                        <td class="td_w40" title="2016-08-26 17:05">17:05</td>
-		                                   </tr>
-		                                   <tr class="tr_30">
-		                                        <td class="td_w40">张**</td>
-		                                        <td class="td_w84 fcolor_3 text_hide"><span>PVC SG-5 新疆中泰 30吨 </span> </td>
-		                                        <td class="td_w84 ">正在洽谈</td>
-		                                        <td class="td_w40" title="2016-08-26 16:56">16:56</td>
-		                                   </tr>
-		                                   <tr class="tr_30">
-		                                        <td class="td_w40">严**</td>
-		                                        <td class="td_w84 fcolor_3 text_hide"><span>PVC SG-5 内蒙天湖 28.25吨 </span> </td>
-		                                        <td class="td_w84 fcolor_1">交易成功</td>
-		                                        <td class="td_w40" title="2016-08-26 16:56">16:56</td>
-		                                   </tr>
-		                                   <tr class="tr_30">
-		                                        <td class="td_w40">王**</td>
-		                                        <td class="td_w84 fcolor_3 text_hide"><span>PVC SG-5 内蒙天湖 140吨 </span> </td>
-		                                        <td class="td_w84 fcolor_1">交易成功</td>
-		                                        <td class="td_w40" title="2016-08-26 16:54">16:54</td>
-		                                   </tr>
-		                                   <tr class="tr_30">
-		                                        <td class="td_w40">姚**</td>
-		                                        <td class="td_w84 fcolor_3 text_hide"><span>PVC SG-5 新疆中泰 400吨 </span> </td>
-		                                        <td class="td_w84 fcolor_1">交易成功</td>
-		                                        <td class="td_w40" title="2016-08-26 16:53">16:53</td>
-		                                   </tr>
-		                                   <tr class="tr_30">
-		                                        <td class="td_w40">陈**</td>
-		                                        <td class="td_w84 fcolor_3 text_hide"><span>PVC SG-8 新疆天辰 15吨 </span> </td>
-		                                        <td class="td_w84 fcolor_1">交易成功</td>
-		                                        <td class="td_w40" title="2016-08-26 15:45">15:45</td>
-		                                   </tr>
-		                                   <tr class="tr_30">
-		                                        <td class="td_w40">章**</td>
-		                                        <td class="td_w84 fcolor_3 text_hide"><span>PVC SG-5 新疆中泰 30吨 </span> </td>
-		                                        <td class="td_w84 ">正在洽谈</td>
-		                                        <td class="td_w40" title="2016-08-26 15:43">15:43</td>
-		                                   </tr>
-		                                   <tr class="tr_30">
-		                                        <td class="td_w40">刘**</td>
-		                                        <td class="td_w84 fcolor_3 text_hide"><span>PVC SG-5 新疆圣雄能源 30吨 </span> </td>
-		                                        <td class="td_w84 ">正在洽谈</td>
-		                                        <td class="td_w40" title="2016-08-26 15:41">15:41</td>
-		                                   </tr>
-		                                   <tr class="tr_30">
-		                                        <td class="td_w40">谢**</td>
-		                                        <td class="td_w84 fcolor_3 text_hide"><span>PVC SG-5 内蒙古君正（老） 100吨 </span> </td>
-		                                        <td class="td_w84 fcolor_1">交易成功</td>
-		                                        <td class="td_w40" title="2016-08-26 15:35">15:35</td>
-		                                   </tr>
-		                                   <tr class="tr_30">
-		                                        <td class="td_w40">谢**</td>
-		                                        <td class="td_w84 fcolor_3 text_hide"><span>PVC SG-5 新疆中泰 100吨 </span> </td>
-		                                        <td class="td_w84 fcolor_1">交易成功</td>
-		                                        <td class="td_w40" title="2016-08-26 15:13">15:13</td>
-		                                   </tr>
+		                            <volist id="vo" name="intentscrollF3">
+                                        <tr class="tr_30">
+                                            <td class="td_w40">{$vo['username']}</td>
+                                            <td class="td_w84 fcolor_3 text_hide"><span>{$vo['spec']}</span> </td>
+                                            <td class="td_w84 fcolor_1">{$vo['statusname']}</td>
+                                            <td class="td_w40" title="2016-08-26 17:39">{$vo['dateofsubmit']}</td>
+                                       </tr>
+                                    </volist>
                                 </table>
                             </div>
                         </div>
