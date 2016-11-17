@@ -6,6 +6,7 @@ use Home\Model\OrderPurchaseModel;
 use Home\Model\VarietyModel;
 use Home\Model\FriendLinksModel;
 use Home\Model\SalesIntentModel;
+use Home\Model\UserModel;
 
 class IndexController extends BaseController {
 	
@@ -74,4 +75,34 @@ class IndexController extends BaseController {
     	$this->display();
     }
 	
+	
+	//登录页面显示
+	public function login(){
+		$this->display();
+	}
+	
+	
+	//登录请求提交地址
+	public function login_bgd(){
+		$data = I('post.');
+		$rtn = array();
+		if(isset($data['phone']) && isset($data['password'])){
+			$user = new UserModel();
+			$rtn = $user->checkLogin($data);
+			if($rtn['result']==true){  //登录成功
+				$userinfo = $rtn['userinfo'];
+				//设置session
+				session('userid',$userinfo['userid']);      //用户id
+				session('username',$userinfo['username']);  //用户名(注册时限定成英文了)
+				session('nickname',$userinfo['nickname']);  //昵称(注册时间未填写,个人中心要加设定入口)
+				session('phone',$userinfo['phone']);        //手机号
+				//控制跳转？
+				unset($rtn['userinfo']);
+			}
+		}
+		else{
+			$rtn = array('result'=>false,'msg'=>'请输入登录信息');
+		}
+		$this->ajaxReturn($rtn);
+	}
 }

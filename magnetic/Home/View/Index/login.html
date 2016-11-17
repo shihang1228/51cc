@@ -1,0 +1,35 @@
+<!--头部公共部分-->
+<include file="User/header2" />
+<link href="__PUBLIC__/pc/css/user.css" rel="stylesheet" type="text/css" />
+<script src="__PUBLIC__/pc/js/user.js" type="text/javascript"></script>
+<div class="user_logo">
+    <a href="../default.htm" class="logo"><img src="__PUBLIC__/pc/image/common/logo.png" title="找磁材网" alt="找磁材网logo"/></a>
+</div><div class="login">
+    <div class="w960">
+        <form id="form_login" action="{:U('Home/Index/login_bgd')}" method="post">
+            <input type="hidden" class="location_url" value="{:U('Home/User/member')}" />
+        <div class="d">
+            <p class="p1">
+                <span>没有账号？<a href="register" style="color:#06c; text-decoration:underline;">免费注册</a>&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;会员登录
+            </p>
+            <div id="error" style="color:red;height: 26px;margin:0px 0px 10px 80px;"></div>
+            <ul>
+                <li>
+                    <span class="s">手机号：</span><input placeholder="手机号码" type="text" class="text" id="mobile" name="phone" />
+                </li>
+                <li>
+                    <span class="s">密&nbsp;&nbsp;&nbsp;&nbsp;码：</span><input placeholder="6-16位字母、数字或符号" type="password" class="text" id="password" name="password" />
+                </li>
+            </ul>
+            <div class="b">
+                <input id="redirect" value="/member" type="hidden" />
+                <p><input type="submit" value="登录" id="submit_login" class="button" /></p>
+                <p><a href="password/find1" class="a">忘记密码？<!-- </a><input type="checkbox" style="vertical-align:middle;" value="1" name="autologin" />&nbsp;2周自动登录</p> -->
+                <!-- <p><a href="login/passport/qq" class="qq_login"><img src="__PUBLIC__/pc/image/user/qq_login.png" /></a></p> -->
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+<!--底部公共部分-->
+<include file="Index/footer" />
